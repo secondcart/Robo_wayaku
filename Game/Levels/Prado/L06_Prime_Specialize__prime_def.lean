@@ -20,7 +20,7 @@ Statement (a p : ℕ) (hp : Prime p) (h : 2 ≤ a) (ha : a ∣ p) : a = p := by
     この仮定を使うには, `rw [prime_def] at hp`とするのがベストだよ. "
   Branch
     unfold Prime at hp
-    Hint "**Robo**: いや, それはやめた方がいい. `Prime`をunfoldしないで！
+    Hint "**Robo**: いや, それはやめた方がいい. `Prime`をunfoldしないで! 
     そうすると全てが難しくなるだけだ. 私が言ったように`rw [prime_def] at hp`を使うんだ. "
   rw [prime_def] at hp
   Hint "**あなた**: なるほど. 素数とは2以上の自然数で, 1と自分自身でのみ割り切れる数なんだ. 聞き覚えがあるな. "

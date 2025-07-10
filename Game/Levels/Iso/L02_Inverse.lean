@@ -31,7 +31,7 @@ Statement bijective_iff_has_inverse {A B : Type} (f : A → B) :
   · intro h
     Hint (hidden := true)"
       **Robo**: まず`Bijective`を`obtain ⟨hinj, hsurj⟩  := {h}`で
-      `Injective`と`Surjective`に分解してみてください！"
+      `Injective`と`Surjective`に分解してみてください! "
     obtain ⟨finj, fsurj⟩  := h
     Hint (hidden := true)"
       **Robo**: 全射性から, 各`y : B`には原像`x : A`があることが分かります. 
@@ -60,9 +60,9 @@ Statement bijective_iff_has_inverse {A B : Type} (f : A → B) :
     · assumption
   · intro h
     --obtain ⟨g, hL, hR⟩ := h
-    Hint (hidden := true) "**Robo**: `{h}`をできるだけ分解してください！"
+    Hint (hidden := true) "**Robo**: `{h}`をできるだけ分解してください! "
     obtain ⟨g, h⟩ := h
-    Hint (hidden := true) "**Robo**: ANDもさらに分解！"
+    Hint (hidden := true) "**Robo**: ANDもさらに分解! "
     obtain ⟨hL, hR⟩  := h
     constructor
     Hint (hidden := true) "
@@ -93,7 +93,7 @@ Conclusion
 
 **Robo**: 私たちはもう一度...カプセル化できますか? 
 
-**イソソフ**: もちろん！ しかし順序よく進めましょう. 
+**イソソフ**: もちろん!  しかし順序よく進めましょう. 
 私たちが双方向でカプセルを使い始めてから, また事故が増えています. 
 
 Roboはさらに3往復します. その後, あなたたちはさらに進みます. 

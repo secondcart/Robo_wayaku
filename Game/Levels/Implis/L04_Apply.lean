@@ -22,7 +22,7 @@ Statement (A B C : Prop) (f : A → B) (g : B → C) : A → C := by
     **Robo**: 私の好みから言うと少し余計だな. 
     まあ, やってもいいけど. 
 
-    **Robo** *(あなたへ)*: さあ, やってみて！
+    **Robo** *(あなたへ)*: さあ, やってみて! 
   "
   have hB : B := by
     Hint "
@@ -36,7 +36,7 @@ Statement (A B C : Prop) (f : A → B) (g : B → C) : A → C := by
   apply g
   assumption
 
-Conclusion "**作戦責任者**: 君たちは本当にすごい！"
+Conclusion "**作戦責任者**: 君たちは本当にすごい! "
 
 NewTactic «have»  -- introduced here already so that Luna becomes independent of Spinoza
 DisabledTactic tauto

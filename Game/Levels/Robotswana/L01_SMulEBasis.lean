@@ -71,7 +71,7 @@ Statement Matrix.smul_ebasis {n : ℕ} (A : Mat[n,n][ℝ]) (i j) :
   \\end\{pmatrix}
   $$
 
-  **あなた**: それならこれはまた...自明ですね！? 
+  **あなた**: それならこれはまた...自明ですね! ? 
 
   **Robo**: はい. `unfold E`から始めれば, 残りは自然に進むと思います. 
   "

@@ -31,5 +31,5 @@ Statement {A B : Type} {f : A → B} (h : HasLeftInverse f) :
   assumption
 
   Conclusion "
-    **Robo**: よくできました！もうすぐ終わりそうですね…
+    **Robo**: よくできました! もうすぐ終わりそうですね…
   "

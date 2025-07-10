@@ -36,7 +36,7 @@ Statement Nat.even_square (n : ℕ) (h : Even n) : Even (n ^ 2) := by
     **あなた**: `decide`では? 
 
     **Robo**: `decide`は機能しません. `{n}`は具体的な数値ではなく任意の数だからです. 
-    ここでは実際に作業が必要です！"
+    ここでは実際に作業が必要です! "
   Branch
     unfold Even
     Hint "
@@ -55,7 +55,7 @@ Statement Nat.even_square (n : ℕ) (h : Even n) : Even (n ^ 2) := by
     1 ^ 2 = (1 ^ 2) / 2 + (1 ^ 2) / 2
     ```
 
-    これは計算すると`1 = 1 / 2 + 1 / 2 = 0 + 0`となり, 間違っています！"
+    これは計算すると`1 = 1 / 2 + 1 / 2 = 0 + 0`となり, 間違っています! "
   Hint "
     **あなた**: `{h}`から, `s`が存在して`s + s = {n}`となることがわかった...
 
@@ -70,12 +70,12 @@ Statement Nat.even_square (n : ℕ) (h : Even n) : Even (n ^ 2) := by
     Hint "**Robo**: それも可能ですが, 実際に数を考える必要があります. "
   let r := 2 * s^2
   Hint "
-    **Robo**: この数は良さそうです！あとは`use r`と言うだけです. 
+    **Robo**: この数は良さそうです! あとは`use r`と言うだけです. 
     最初から`use 2 * s^2`と言っても構いません. 
   "
   use r
   Hint (hidden := true) "
-    **あなた**: あ, そして`ring`！
+    **あなた**: あ, そして`ring`! 
 
     **Robo**: ただし先に`rw`で`n`を`{s} + {s}`に置き換える必要があります. 
     `ring`だけではわからないからです. "
@@ -91,4 +91,4 @@ NewHiddenTactic «using»
 
 NewDefinition Even Odd
 
-Conclusion "拍手！"
+Conclusion "拍手! "

@@ -36,7 +36,7 @@ Statement (A B : Prop) : (A ↔ B) → (A → B) := by
 
 Conclusion
 "
-**作戦責任者**: 完璧, これで十分だ！
+**作戦責任者**: 完璧, これで十分だ! 
 "
 
 OnlyTactic intro obtain assumption

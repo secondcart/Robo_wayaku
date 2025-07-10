@@ -44,7 +44,7 @@ Statement
     apply i
     Branch
       apply g
-      Hint "**Robo**: 待って！道を間違えたよ. "
+      Hint "**Robo**: 待って! 道を間違えたよ. "
     apply f
     assumption
   Branch

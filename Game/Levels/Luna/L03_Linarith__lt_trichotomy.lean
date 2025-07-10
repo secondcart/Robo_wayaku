@@ -10,7 +10,7 @@ Title ""
 
 Introduction
 "
-**リナ**: これで試してみて！
+**リナ**: これで試してみて! 
 "
 
 /--
@@ -39,7 +39,7 @@ Statement lt_trichotomy: ∀ a b : ℝ, a < b ∨ a = b ∨ b < a := by
       Hint "
         **あなた**: で, どうする? 
 
-        **リナ** (*勝利の表情*): `linarith`だよ！
+        **リナ** (*勝利の表情*): `linarith`だよ! 
         "
       linarith  -- WANT LINARITH in this exercise!
   · right

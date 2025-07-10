@@ -31,11 +31,11 @@ Statement (n : ℕ) (h : Odd (n ^ 2)): Odd n := by
   rw [← even_iff_not_odd]
   rw [← even_iff_not_odd]
   Hint "
-    **あなた**: 良さそうです. これで古い補題`even_square`が使えます！"
+    **あなた**: 良さそうです. これで古い補題`even_square`が使えます! "
   apply even_square
 
 NewTactic contrapose
 DisabledTactic by_contra
 TheoremTab "ℕ"
 
-Conclusion "**ベネディクトゥス**: 素晴らしい！これで十分に準備が整いましたね. "
+Conclusion "**ベネディクトゥス**: 素晴らしい! これで十分に準備が整いましたね. "

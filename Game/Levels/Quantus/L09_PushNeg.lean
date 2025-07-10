@@ -19,7 +19,7 @@ Statement : ¬ ∃ (n : ℕ), ∀ (k : ℕ) , Odd (n + k) := by
     Hint "
       **Robo**: この解法は少し難しすぎるようです. 
       `Odd`を保持したままにして, 
-      最終的に`even_iff_not_odd`を使えるようにした方が良いでしょう！"
+      最終的に`even_iff_not_odd`を使えるようにした方が良いでしょう! "
   push_neg
   intro n
   Branch
@@ -27,7 +27,7 @@ Statement : ¬ ∃ (n : ℕ), ∀ (k : ℕ) , Odd (n + k) := by
     Hint "
       **Robo**: この解法は少し難しすぎるようです. 
       `Odd`を保持したままにして, 
-      最終的に`even_iff_not_odd`を使えるようにした方が良いでしょう！"
+      最終的に`even_iff_not_odd`を使えるようにした方が良いでしょう! "
   Hint "
     **Robo**: ここで`use`を使って数値を指定し, その後おそらく
     補題`even_iff_not_odd`を使う必要があります. 
@@ -42,12 +42,12 @@ Statement : ¬ ∃ (n : ℕ), ∀ (k : ℕ) , Odd (n + k) := by
     今は`use`で適切な数値を指定してから書き換えることをお勧めします. "
   Branch
     use n + 2
-    Hint "**Robo**: 良い選択です！これで`even_iff_not_odd`が使えます. "
+    Hint "**Robo**: 良い選択です! これで`even_iff_not_odd`が使えます. "
   Branch
     use n + 4
-    Hint "**Robo**: 良い選択です！これで`even_iff_not_odd`が使えます. "
+    Hint "**Robo**: 良い選択です! これで`even_iff_not_odd`が使えます. "
   use n
-  Hint "**Robo**: 良い選択です！これで`even_iff_not_odd`が使えます. "
+  Hint "**Robo**: 良い選択です! これで`even_iff_not_odd`が使えます. "
   rw [← even_iff_not_odd]
   Branch
     tauto

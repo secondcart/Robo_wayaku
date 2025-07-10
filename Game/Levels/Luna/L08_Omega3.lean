@@ -6,7 +6,7 @@ Level 8
 Title ""
 
 Introduction "
-**リタ**:  今度は私の番よ！
+**リタ**:  今度は私の番よ! 
 "
 
 open Finset

@@ -37,12 +37,12 @@ Statement (A B : Prop) (hA : A) (hB : B) : A ∧ B := by
 
 Conclusion
 "
-**Robo**: 素晴らしい！
+**Robo**: 素晴らしい! 
 
 彼はこれらの質問を楽しんでいるようです. 
 
 **Robo**: 「編集モード」と書かれたこのレバーは本物だと思う? 
-それともただの絵? 試してみて！
+それともただの絵? 試してみて! 
 "
 
 NewDefinition And

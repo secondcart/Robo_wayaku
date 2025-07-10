@@ -26,7 +26,7 @@ Statement (A : Prop) (hA : A) : A := by
   assumption
 
 Conclusion "
-**家臣**: あっという間でした. 素晴らしい！どうもありがとう. 
+**家臣**: あっという間でした. 素晴らしい! どうもありがとう. 
 "
 
 DisabledTactic tauto

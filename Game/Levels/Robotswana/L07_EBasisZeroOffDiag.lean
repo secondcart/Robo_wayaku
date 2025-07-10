@@ -39,7 +39,7 @@ Statement Matrix.zero_on_offDiag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[ℝ]
 
     **Robo**: なぜそうするのですか? 
 
-    **あなた**: この積で因子を入れ替えるとゼロになります！`E.mul_of_ne`のようなものでしたよね. "
+    **あなた**: この積で因子を入れ替えるとゼロになります! `E.mul_of_ne`のようなものでしたよね. "
     Hint (hidden := true) "**Robo**: そうですか. では`trans f (E i j * E j j)`を試してみてください. "
     trans f (E i j * E j j)
     · Hint (hidden := true) "**あなた**: ええと, これは定義から明らかです. 
@@ -48,7 +48,7 @@ Statement Matrix.zero_on_offDiag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[ℝ]
       simp [E]
     · Hint "**Robo**: ここで可換にしたいのですか? 
 
-      **あなた**: その通りです！"
+      **あなた**: その通りです! "
       Branch
         rw [E.mul_of_ne] -- (***)
         -- Would ideally like to already trigger a warning here, but

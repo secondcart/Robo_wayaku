@@ -14,7 +14,7 @@ $$
 [A, B] = AB - BA
 $$
 
-**Robo**: ああ, 交換子だね！
+**Robo**: ああ, 交換子だね! 
 
 **あなた**: でもかなり無効化されているみたい. 干からびてるんじゃない? 
 
@@ -38,7 +38,7 @@ Statement Matrix.eq_on_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[ℝ] ℝ}
     ∀ (i j : Fin n), f (E i i) = f (E j j) := by
   Hint "**あなた**: つまり, `f`が交換子を無効化するなら, すべての`E i i`での値は一致するってこと? 合ってる? 
 
-  **Robo**: 確かめてみよう！"
+  **Robo**: 確かめてみよう! "
   intro i j
   Branch
     Hint "**あなた**: でも仮定`{h₁}`をどう使えばいいの? まず行列積が必要だ. 
@@ -52,7 +52,7 @@ Statement Matrix.eq_on_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[ℝ] ℝ}
       simp
     · Hint (hidden := true) "**Robo**: `{h₁}`を使いたかったからこれをやってたんじゃない? 
 
-      **あなた**: あ, そうだった！"
+      **あなた**: あ, そうだった! "
       rw [h₁]
       unfold E
       simp

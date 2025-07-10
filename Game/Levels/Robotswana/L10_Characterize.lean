@@ -9,13 +9,13 @@ Introduction
 "
 ゆっくりと忍び寄る. 
 
-**あなた**（小声で）: 君の言う通りだったみたい. これらのメモは一種の特徴リストだ！
-そしてこれは明らかにここの生き物を説明している！
+**あなた**（小声で）: 君の言う通りだったみたい. これらのメモは一種の特徴リストだ! 
+そしてこれは明らかにここの生き物を説明している! 
 
 **Robo**: どういう意味? 
 
 **あなた**: 見てよ, その大きさ, 交換子への好み, その他の全ての特徴, 
-これで明確に識別できる！
+これで明確に識別できる! 
 
 **Robo**: もっと詳しく説明してくれ. 
 
@@ -46,7 +46,7 @@ Statement Matrix.trace_eq {n : ℕ} (f : Matrix (Fin n) (Fin n) ℝ →ₗ[ℝ] 
 
     **Robo**: そして君は, Tracyだけがこれらの性質を持つと言うのかい? 
 
-    **あなた**: そうだよ. そう信じてる. どんな`f`でもこれらの性質を持てば, 全ての行列でTracyと同じように振る舞う. だからそれはTracyなんだ！"
+    **あなた**: そうだよ. そう信じてる. どんな`f`でもこれらの性質を持てば, 全ての行列でTracyと同じように振る舞う. だからそれはTracyなんだ! "
   Hint (hidden := true) "
     **Robo**: `ext`!"
   ext A
@@ -55,15 +55,15 @@ Statement Matrix.trace_eq {n : ℕ} (f : Matrix (Fin n) (Fin n) ℝ →ₗ[ℝ] 
   Hint "
     **あなた**: `induction n`?
 
-    **Robo**: 試してみて！
+    **Robo**: 試してみて! 
     "
   induction n with d hd
   · Hint (hidden := true) "**Robo**: 頭の中で`simp`を試したよ. 君も試してみて. "
     simp
   · clear hd
-    Hint "**あなた**: さっき`f (E i i) = 1`ってわかったよね！
+    Hint "**あなた**: さっき`f (E i i) = 1`ってわかったよね! 
 
-      **Robo**: 調べるのは得意だよ！`one_on_diag_ebasis`だった. "
+      **Robo**: 調べるのは得意だよ! `one_on_diag_ebasis`だった. "
     Hint (hidden := true) "
       **Robo**: `one_on_diag_ebasis`にはいくつかの前提が必要だ. 
       `{d} + 1 > 0`という前提をまず`have`で確認しておくといいよ. 
@@ -72,10 +72,10 @@ Statement Matrix.trace_eq {n : ℕ} (f : Matrix (Fin n) (Fin n) ℝ →ₗ[ℝ] 
     have : d + 1 > 0 := by
       omega
     Hint (hidden := true) "
-      **Robo**: `one_on_diag_ebasis`の等式も`simp`で使えるよ！
+      **Robo**: `one_on_diag_ebasis`の等式も`simp`で使えるよ! 
     "
     simp [one_on_diag_ebasis this h₁ h₂] -- Lvl 8
-    Hint (hidden := true) "**Robo**: 両辺は定義的に等しいよ！"
+    Hint (hidden := true) "**Robo**: 両辺は定義的に等しいよ! "
     rfl
   Hint "**あなた**: この証明目標はどこから来たんだっけ? 
 

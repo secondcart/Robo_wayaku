@@ -23,7 +23,7 @@ Statement (A B C : Prop) (h : A ∧ (B ∧ C)) : B := by
     例えば`obtain ⟨hA, hBC⟩ := {h}`のように. "
   Branch
     obtain ⟨_h₁, _h₂⟩ := h
-    Hint "**Robo**: だいぶ良くなってきました！もう一度やってみましょう！"
+    Hint "**Robo**: だいぶ良くなってきました! もう一度やってみましょう! "
   obtain ⟨_h₁, g, _h₃⟩ := h
   Hint (hidden := true) "**Robo**: あなたはその証明を*仮定*の中に持っています. "
   assumption

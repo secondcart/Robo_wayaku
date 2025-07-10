@@ -25,7 +25,7 @@ Roboがあなたに水の入ったボトルを手渡す.
 
 **あなた**: それで, 道は見つかった? 
 
-**Robo**: ああ, ついてきて！あそこに何か見えたんだ. "
+**Robo**: ああ, ついてきて! あそこに何か見えたんだ. "
 
 open Nat Matrix StdBasisMatrix Finset
 
@@ -54,7 +54,7 @@ Statement Matrix.eq_sum_apply_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[�
 
   おそらく最初に`f A`の`A`を基底行列の和として書くべきだ. 
 
-  **Robo** (*遠くから*): `nth_rw 1 [ ... ]`！`rw`のように使えるよ. "
+  **Robo** (*遠くから*): `nth_rw 1 [ ... ]`! `rw`のように使えるよ. "
   Hint (hidden := true) "**あなた** (*叫びながら*): どういうこと? 
 
   **Robo** (*同じく叫びながら*): `matrix_eq_sum_ebasis A`を使いたいんだろうけど, `rw`じゃなくて`nth_rw 1`で. "
@@ -84,7 +84,7 @@ Statement Matrix.eq_sum_apply_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[�
     apply congr_arg
     ext j
     Hint "**あなた**: そして`{i} = {j}`で場合分け…"
-    Hint (hidden := true) "**Robo**: `by_cases`だよ, そう！"
+    Hint (hidden := true) "**Robo**: `by_cases`だよ, そう! "
     by_cases h₂ : i = j
     · Hint "**Robo**: ここは`if_pos {h₂}`が役立つ. "
       rw [if_pos h₂]
@@ -92,7 +92,7 @@ Statement Matrix.eq_sum_apply_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[�
 
       **あなた**: 知ってるよ. "
       rw [if_neg h₂]
-      Hint "**あなた**: `f (E i j)`はゼロだよね, 前に見た！"
+      Hint "**あなた**: `f (E i j)`はゼロだよね, 前に見た! "
       Hint (hidden := true) "**Robo**: それは`zero_on_offDiag_ebasis`だった. "
       rw [zero_on_offDiag_ebasis]
       · simp

@@ -17,7 +17,7 @@ namespace Nat
 
 Statement prime_two : Prime 2 := by
   Hint "**Robo** *(囁きながら)*: これはとても簡単だよ. `2`は具体的な数字で, 
-  素数かどうかを判定するアルゴリズムがあるから, `decide`を使うだけでいいんだ！"
+  素数かどうかを判定するアルゴリズムがあるから, `decide`を使うだけでいいんだ! "
   decide
 
 TheoremTab "ℕ"

@@ -16,7 +16,7 @@ Statement (n : ℕ) (h : n ≠ n) : n = 37 := by
   Hint "
     **あなた**: `{n} ≠ {n}`も矛盾してるんじゃない? 
 
-    **Robo**: 試してみて！"
+    **Robo**: 試してみて! "
   contradiction
 
 Conclusion

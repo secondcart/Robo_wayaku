@@ -17,7 +17,7 @@ Statement (A B : Prop) (h : A → ¬ B) (k : A ∧ B) : False := by
 
     **ベネディクトゥス**: …適切な中間結果を準備するべきです. 
 
-    **Robo**: そうだ！また`have`を使ってみて！具体的には`have g : ¬ B`！"
+    **Robo**: そうだ! また`have`を使ってみて! 具体的には`have g : ¬ B`! "
   have g : ¬ B
   · Hint "
       **あなた**: え? 今これを正しいと仮定しただけ? 
@@ -31,7 +31,7 @@ Statement (A B : Prop) (h : A → ¬ B) (k : A ∧ B) : False := by
   **Robo**: `contradiction`です. "
   contradiction
 
-Conclusion "**ベネディクトゥス**: 良さそうですね！"
+Conclusion "**ベネディクトゥス**: 良さそうですね! "
 
 --NewTactic «have»  -- now introduced very briefly in Implis
 DisabledTactic «suffices» tauto

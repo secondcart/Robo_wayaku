@@ -17,7 +17,7 @@ Statement :
   Hint "
     **Robo** *(小声で)*: `Bijective f` は `Injective f ∧ Surjective f` と定義されています. 
 
-    **あなた**: それならとても簡単ですね！"
+    **あなた**: それならとても簡単ですね! "
   unfold Bijective
   constructor
   · intro a b hab

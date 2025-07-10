@@ -32,5 +32,5 @@ Statement  {A B : Type} {f : A → B} {g : B → A}
   assumption
 
 Conclusion "
-  **アラプカ**: わあ！あなたたちは本当に素晴らしいです. 
+  **アラプカ**: わあ! あなたたちは本当に素晴らしいです. 
 "

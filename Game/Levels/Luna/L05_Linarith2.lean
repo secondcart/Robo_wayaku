@@ -9,7 +9,7 @@ Level 5
 Title ""
 
 Introduction "
-  **リナ:** 同じ質問をもう一度, 今度はℝで！
+  **リナ:** 同じ質問をもう一度, 今度はℝで! 
 "
 
 Statement (l m n x : ℝ) (h₁ : l ≤ m) (h₂ : m ≤ n) : l ≤ x ∧ x ≤ n → ¬ (m ≤ x ∧ x ≤ n) → x ≤ m := by
@@ -27,7 +27,7 @@ Statement (l m n x : ℝ) (h₁ : l ≤ m) (h₂ : m ≤ n) : l ≤ x ∧ x ≤ 
   push_neg at hx
   Hint "
     **Robo**: うーん… `{hx} : m ≤ x → n < x`はまだ最適ではありません. 
-    しかし, `→`の意味はわかっていますね. `imp_iff_or_not`で`rw`してみましょう！
+    しかし, `→`の意味はわかっていますね. `imp_iff_or_not`で`rw`してみましょう! 
   "
   --linarith (config := {splitNe := true, splitHypotheses := true}) -- fails
   rw [imp_iff_or_not] at hx

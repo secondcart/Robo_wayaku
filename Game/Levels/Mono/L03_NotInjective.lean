@@ -33,7 +33,7 @@ Statement :
   Hint (hidden := true)"
     **Du** つまり反例を挙げればいいんですよね? 
 
-    **Robo** その通り！どの2つの数字を使いますか? "
+    **Robo** その通り! どの2つの数字を使いますか? "
   use 2
   use 3
   Hint (hidden := true) "**Robo**: ここでは具体的な値なので, `decide`で解決できるかもしれません"

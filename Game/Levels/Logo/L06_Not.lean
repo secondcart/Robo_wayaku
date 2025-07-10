@@ -21,7 +21,7 @@ Statement : ¬False := by
 
     **あなた**: これは結局`decide`ではないのですか? 
 
-    **Robo**: 試してみてください！"
+    **Robo**: 試してみてください! "
   decide
 
 Conclusion

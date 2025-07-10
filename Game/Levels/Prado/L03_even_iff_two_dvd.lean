@@ -17,7 +17,7 @@ namespace Nat
 
 Statement even_iff_two_dvd {a : ℕ} : Even a ↔ 2 ∣ a := by
   Hint (hidden := true) "
-    **Robo**: まずは`rw [dvd_iff_exists_eq_mul_left]`から始めてみよう！
+    **Robo**: まずは`rw [dvd_iff_exists_eq_mul_left]`から始めてみよう! 
   "
   Branch
     unfold Even

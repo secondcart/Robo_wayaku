@@ -42,7 +42,7 @@ Statement  (n : ℕ) (hn : 3 ≤ n) : ∑ i ∈ Icc 0 n, (i^3 - 3 * i^2 + 2*i : 
     · assumption
   · -- showing that x = 0 or 1 or 2:  see Luna L??
     Hint "
-      **Robo**: 素晴らしい！あとはさっき言ったことを示すだけ：
+      **Robo**: 素晴らしい! あとはさっき言ったことを示すだけ：
       和の下の式は最初の3つのインデックスで0になる. "
     Hint (hidden := true)"
       **Robo**: まずすべての仮定を導入して, 

@@ -27,7 +27,7 @@ Statement (I : Finset ℕ) : (∑ i ∈ I, 1) = card I := by
 
 TheoremTab "∑ Π"
 
-Conclusion "**バビロニア人**: よくできました, これで合っています！"
+Conclusion "**バビロニア人**: よくできました, これで合っています! "
 
 NewDefinition Finset.card
 

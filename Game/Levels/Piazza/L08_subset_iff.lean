@@ -17,7 +17,7 @@ TheoremDoc Set.subset_iff as "subset_iff" in "Set"
 namespace Set
 
 Statement subset_iff {A : Type} {s₁ s₂ : Set A} : s₁ ⊆ s₂ ↔ ∀ {x : A}, x ∈ s₁ → x ∈ s₂ := by
-  Hint "**Robo**: これは定義そのものですよ！
+  Hint "**Robo**: これは定義そのものですよ! 
 
   **Robo** *(あなたへ)*: `tauto`を試してみてください. あるいは直接`rfl`でもいいです. "
   Branch

@@ -31,4 +31,4 @@ Statement (x y : ℚ) (h₁ : 35/11 * y ≤ 35/2 - 22/21 * x) (h₂ : 8/9 * y �
   "
   linarith
 
-Conclusion "**あなた**: 悪くないね！"
+Conclusion "**あなた**: 悪くないね! "

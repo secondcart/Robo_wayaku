@@ -14,10 +14,10 @@ Introduction
 
 **あなた**: 広場に重要なものを置き忘れてないか気になるな...
 
-**Robo**: どうでもいいよ, もうずいぶん先に進んでる. ここで試してみて！
+**Robo**: どうでもいいよ, もうずいぶん先に進んでる. ここで試してみて! 
 "
 
-Conclusion "**あなた**: 行列の対角線に興味がある誰かの跡を追ってる気がする. でも喉が渇いてきた！"
+Conclusion "**あなた**: 行列の対角線に興味がある誰かの跡を追ってる気がする. でも喉が渇いてきた! "
 
 
 open Nat Matrix StdBasisMatrix
@@ -74,20 +74,20 @@ Statement Matrix.ebasis_diag_sum_eq_one {n : ℕ} : ∑ i : Fin n, E i i = 1 := 
   · simp
   Hint "**Robo**: 良かった. これで`sum_subset`が使えるよ. "
   rw [← sum_subset h]
-  · Hint "**あなた**: ありがとう, 助かる！このステップは簡単だ: 1要素の和で, 
-    `1 {i} {i}`は1で, `1 • _`も簡約される！"
+  · Hint "**あなた**: ありがとう, 助かる! このステップは簡単だ: 1要素の和で, 
+    `1 {i} {i}`は1で, `1 • _`も簡約される! "
     Hint (hidden := true) "**Robo**: `simp`はいつでも試せる..."
     simp
   · intro x h₁ h₂
     clear h₁ -- not needed
     Hint "**あなた**: でもここはどうする? `{h₂}`はほぼ`{i} ≠ {x}`ってことだよね. 
 
-    **Robo**: そうだけど, 完全には. `have h₃ : {i} ≠ {x}`を導入して簡単に示して！"
+    **Robo**: そうだけど, 完全には. `have h₃ : {i} ≠ {x}`を導入して簡単に示して! "
     -- TODO: There are other ways to get `i ≠ x`!
     Branch
       have h₃ : x ≠ i
       Hint "**Robo**: 逆の方が有用だよ, 
-      `1 {i} {x}`は`if {i} = {x} then _ else _`で定義されてるから！
+      `1 {i} {x}`は`if {i} = {x} then _ else _`で定義されてるから! 
 
       **あなた**: その通り, すぐ`{i} = {x}`か`{i} ≠ {x}`が必要だ. 変えよう. "
     have h₃ : i ≠ x
@@ -96,7 +96,7 @@ Statement Matrix.ebasis_diag_sum_eq_one {n : ℕ} : ∑ i : Fin n, E i i = 1 := 
       -- TODO : `tauto` already solves this.
       Hint "**あなた**: うーん, 今は逆だ. 
 
-      **Robo**: `symm`を思い出して！
+      **Robo**: `symm`を思い出して! 
 
       **あなた**: そうだった, あのベルトコンベアの変な人の時も使ったね. "
       symm
@@ -105,7 +105,7 @@ Statement Matrix.ebasis_diag_sum_eq_one {n : ℕ} : ∑ i : Fin n, E i i = 1 := 
       simp [h₃]
     Hint "**あなた**: `1 {i} {x}`の定義はどう入れる? 
 
-    **Robo**: `Matrix.one_apply`！"
+    **Robo**: `Matrix.one_apply`! "
     rw [Matrix.one_apply]
     Hint "**Robo**: 間違ってるから, `rw`と`if_neg`で進めるよ. "
     rw [if_neg h₃]

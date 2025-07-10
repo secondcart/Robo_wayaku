@@ -32,10 +32,10 @@ Statement :
   Hint (hidden := true) "**Robo**: `apply`が使えますよ"
   Branch
     intro a b
-    Hint "**Robo**: この方法は難しすぎるようです. 最初からやり直した方が良さそうです！"
+    Hint "**Robo**: この方法は難しすぎるようです. 最初からやり直した方が良さそうです! "
   Branch
     intro a b h
-    Hint "**Robo**: この方法は難しすぎるようです. 最初からやり直した方が良さそうです！"
+    Hint "**Robo**: この方法は難しすぎるようです. 最初からやり直した方が良さそうです! "
   apply StrictMono.injective
   apply StrictMono.add
   · Branch
@@ -44,9 +44,9 @@ Statement :
       --exact Odd.strictMono_pow h_odd
       exact h_odd.strictMono_pow
     apply Odd.strictMono_pow
-    Hint (hidden := true) "**あなた**: `Odd 3`. これは自明じゃないですか? ちょっと待って！"
+    Hint (hidden := true) "**あなた**: `Odd 3`. これは自明じゃないですか? ちょっと待って! "
     decide
-  · Hint "**あなた**: はっ！そしてこの部分はおそらくまた初等的に解けるでしょう"
+  · Hint "**あなた**: はっ! そしてこの部分はおそらくまた初等的に解けるでしょう"
     Hint (hidden := true) "
       **あなた**: それとも…? 
 

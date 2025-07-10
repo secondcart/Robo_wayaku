@@ -14,7 +14,7 @@ open Set Nat -- Nat is opened in case someone wants to use `Nat.even_iff_not_odd
 
 Statement : {2, 7} ⊆ {2} ∪ { n : ℕ | Odd n} := by
   Hint (hidden := true) "
-    **Robo**: 私はまた`intro`から始めます。
+    **Robo**: 私はまた`intro`から始めます. 
   "
   intro x
   Hint (hidden := true) "

@@ -23,10 +23,10 @@ Statement :
   $$
   そして`f + f`とは何ですか？
 
-  **Robo**: これは`ℕ → ℕ`の関数で, 各点で`f`の2倍の値を取ります。
+  **Robo**: これは`ℕ → ℕ`の関数で, 各点で`f`の2倍の値を取ります. 
   "
   Hint (hidden := true) "
-  **Robo**: まず`Injective`を`unfold`で展開してみましょう。すると`¬ ∀`…と表示されます"
+  **Robo**: まず`Injective`を`unfold`で展開してみましょう. すると`¬ ∀`…と表示されます"
   unfold Injective
   Hint (hidden := true) (strict := true) "**Robo**: `push_neg`を覚えていますか？"
   push_neg

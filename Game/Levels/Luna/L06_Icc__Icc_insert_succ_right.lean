@@ -8,7 +8,7 @@ Level 6
 Title ""
 
 Introduction
-"**リサ**: 私もやってみていい？ほら。"
+"**リサ**: 私もやってみていい？ほら. "
 
 open Finset
 namespace Robo.ZZ.Finset
@@ -21,21 +21,21 @@ Statement insert_Icc_eq_Icc_add_one_right {a b : ℤ} (h : a ≤ b + 1) :
   Hint "
     **あなた**: Iccって何？
 
-    **リサ**: 左閉右閉の**閉**区間よ。
+    **リサ**: 左閉右閉の**閉**区間よ. 
 
-    **Robo**: ℕでは`Icc a b`を[a, b]や$\\\{a, a+1,\\dots,b\\}$と書くでしょう。
+    **Robo**: ℕでは`Icc a b`を[a, b]や$\\\{a, a+1,\\dots,b\\}$と書くでしょう. 
     示すべきは：
      $$
      [a, b] ∪ \\\{ b + 1 \\} = [a, b + 1]
      $$
      "
-  Hint (hidden := true) "**Robo:** 集合の等式は`ext`で。"
+  Hint (hidden := true) "**Robo:** 集合の等式は`ext`で. "
   ext x
   Hint "
-    **Robo:** すぐに`simp`も使いましょう。
+    **Robo:** すぐに`simp`も使いましょう. 
   "
   simp
-  Hint "リサがまた何か書いている。"
+  Hint "リサがまた何か書いている. "
   omega
 
 

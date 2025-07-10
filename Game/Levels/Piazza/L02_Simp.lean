@@ -15,11 +15,11 @@ open Set
 
 Statement : 9 ∈ {n : ℕ | Odd n} := by
   Hint "
-    **Robo**: ここは`simp`を使うのが一番簡単だと思うよ。
+    **Robo**: ここは`simp`を使うのが一番簡単だと思うよ. 
   "
   simp
   Hint (hidden := true) "
-    **Robo**: `decide`を思い出して。
+    **Robo**: `decide`を思い出して. 
   "
   decide
 

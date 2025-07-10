@@ -7,7 +7,7 @@ Title "Implikation"
 
 Introduction
 "
-次のページは少し複雑に見えます。混乱しないように, Roboがすぐにさまざまな含意を図式にまとめます。
+次のページは少し複雑に見えます. 混乱しないように, Roboがすぐにさまざまな含意を図式にまとめます. 
   $$
   \\begin{CD}
        A  @>{f}>> B @<{g}<< C    \\\\
@@ -23,12 +23,12 @@ Statement
     (f : A → B) (g : C → B) (h : A → D) (i : B → E) (j : C → F) (k : E → D) (l : E → F)
     (m : G → D) (n : H → E) (p : F → I) (q : H → G) (r : H → I) : A → I := by
   Hint "
-    **あなた**: つまり, $A \\Rightarrow I$ の含意の経路を見つけなければならない。
+    **あなた**: つまり, $A \\Rightarrow I$ の含意の経路を見つけなければならない. 
 
     **Robo**: どう始めるか考えてみよう…また `intro` かな？"
 
   intro hyp
-  Hint (hidden := true) "**Robo**: やっぱり `apply` でしょ。"
+  Hint (hidden := true) "**Robo**: やっぱり `apply` でしょ. "
   Branch
     apply r
     Hint "**Robo**: これは行き止まりみたいだ…"
@@ -36,7 +36,7 @@ Statement
     apply p
     Branch
       apply j
-      Hint "**Robo**: これは良くないね。"
+      Hint "**Robo**: これは良くないね. "
     apply l
     Branch
       apply n
@@ -44,7 +44,7 @@ Statement
     apply i
     Branch
       apply g
-      Hint "**Robo**: 待って！道を間違えたよ。"
+      Hint "**Robo**: 待って！道を間違えたよ. "
     apply f
     assumption
   Branch
@@ -61,8 +61,8 @@ Statement
 
 Conclusion
 "
-作戦責任者は再び丁寧にお礼を言いました。彼は再びいくつかのボタンを押し, 
-大きなガタンという音と共に, いくつかのコンベアが同時に再起動します。
+作戦責任者は再び丁寧にお礼を言いました. 彼は再びいくつかのボタンを押し, 
+大きなガタンという音と共に, いくつかのコンベアが同時に再起動します. 
 "
 
 DisabledTactic tauto

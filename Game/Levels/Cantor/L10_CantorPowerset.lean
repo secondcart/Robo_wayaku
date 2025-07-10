@@ -13,8 +13,8 @@ Introduction
 
 **あなた**: え？
 
-**Robo**: 部分集合`S : Set A`は, `a : A`を`a ∈ S`という命題に写す`A → Prop`の写像と同一視できます。
-形式主義者にとっては同じものです。
+**Robo**: 部分集合`S : Set A`は, `a : A`を`a ∈ S`という命題に写す`A → Prop`の写像と同一視できます. 
+形式主義者にとっては同じものです. 
 "
 Conclusion "
   **あなた**: これが本当に簡単だったのかどうかわかりません…
@@ -29,7 +29,7 @@ Statement {A : Type} : ¬ ∃ f : A → Set A, Surjective f := by
     Hint (hidden := true) "
     **あなた**: ここで`cantor_diagonal`を使うの？
 
-    **Robo**: おそらくね, 例えば`apply cantor_diagonal at {hf}`とかで。
+    **Robo**: おそらくね, 例えば`apply cantor_diagonal at {hf}`とかで. 
     "
   push_neg
   intro f
@@ -37,7 +37,7 @@ Statement {A : Type} : ¬ ∃ f : A → Set A, Surjective f := by
   Hint (hidden := true) "
     **あなた**: ここで`cantor_diagonal`を使うの？
 
-    **Robo**: おそらくね, 例えば`apply cantor_diagonal at {hf}`とかで。
+    **Robo**: おそらくね, 例えば`apply cantor_diagonal at {hf}`とかで. 
   "
   Branch
     clear hf

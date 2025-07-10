@@ -15,7 +15,7 @@ open Function
 Statement {A B : Type} {f : A → B} (h : HasLeftInverse f) :
     Injective f := by
   Hint "
-    **あなた**: 左逆元を持つ写像は単射です。聞いたことがあるような気がします…
+    **あなた**: 左逆元を持つ写像は単射です. 聞いたことがあるような気がします…
   "
   intro a a' ha
   obtain ⟨g, hg⟩ := h

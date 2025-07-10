@@ -5,8 +5,8 @@ Level 6
 
 Title ""
 
-Introduction "どうやら誰かが`StrictMono.injective`が予測されていたことに気づいたようです。
-今, 彼らはその証明を見たいと思っています。"
+Introduction "どうやら誰かが`StrictMono.injective`が予測されていたことに気づいたようです. 
+今, 彼らはその証明を見たいと思っています. "
 
 open Set Function
 
@@ -17,7 +17,7 @@ Statement StrictMono.injective {f : ℤ → ℤ}
   "
   intro a b h
   Hint (hidden := true) (strict := true)"
-    **Robo**: 次に場合分けをしてみましょう。`lt_trichotomy`を覚えていますか？
+    **Robo**: 次に場合分けをしてみましょう. `lt_trichotomy`を覚えていますか？
   "
   obtain hlt | heq | hgt := lt_trichotomy a b
   · apply hf at hlt

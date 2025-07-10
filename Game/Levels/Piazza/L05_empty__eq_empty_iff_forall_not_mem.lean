@@ -13,11 +13,11 @@ namespace Set
 
 Statement : { n : ℕ | Even n } ∩ { n : ℕ | Odd n } = ∅ := by
   Hint "
-    **あなた**: いいえ, `∅`は知っています。
+    **あなた**: いいえ, `∅`は知っています. 
 
     **Robo**: あなたが正しく理解していることを完全に確認するために, 
-    `rw [eq_empty_iff_forall_not_mem]`で始めることもできます。
-    または, 早く終わらせたい場合は`simp [eq_empty_iff_forall_not_mem]`を使うこともできます。
+    `rw [eq_empty_iff_forall_not_mem]`で始めることもできます. 
+    または, 早く終わらせたい場合は`simp [eq_empty_iff_forall_not_mem]`を使うこともできます. 
   "
   /- Want `eq_empty_iff_forall_not_mem` to be introduced here,
      because it is needed in SAMARKAND!

@@ -11,7 +11,7 @@ Introduction ""
 Conclusion "
   **カントール**: おや, もう終わったのかい？？
 
-  **Robo**: まだメモが1枚残ってるよ。
+  **Robo**: まだメモが1枚残ってるよ. 
 "
 
 open Function Set
@@ -23,18 +23,18 @@ open Function Set
 Statement {A : Type} (f : A → A) (h : f ∘ f = f) :
     range f = fixedPoints f := by
   Hint "
-    **Robo**: まずは全ての定義を書き出すことから始めるのがいいよ。
-    `unfold range fixedPoints IsFixedPt`って感じで。
-    仮定`{h}`は`congr_fun`で詳しく展開できるんじゃないかな。
+    **Robo**: まずは全ての定義を書き出すことから始めるのがいいよ. 
+    `unfold range fixedPoints IsFixedPt`って感じで. 
+    仮定`{h}`は`congr_fun`で詳しく展開できるんじゃないかな. 
     "
   unfold range fixedPoints IsFixedPt
   Hint (hidden := true) (strict := true) "
-    **Robo**: `apply congr_fun at h`ってやるつもりだったんだ。
+    **Robo**: `apply congr_fun at h`ってやるつもりだったんだ. 
   "
   apply congr_fun at h
   Hint (hidden := true) (strict := true) "
     **Robo**: まずは`ext`から始めてみたら？
-    あるいは`Subset.antisymm_iff`でもいいかも。
+    あるいは`Subset.antisymm_iff`でもいいかも. 
     "
   Branch
     rw [Subset.antisymm_iff]

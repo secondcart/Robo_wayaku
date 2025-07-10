@@ -7,7 +7,7 @@ Title "Implikation"
 
 Introduction
 "
-**作戦責任者**: これはまたローカルな問題になりました。
+**作戦責任者**: これはまたローカルな問題になりました. 
 "
 
 Statement (A B C : Prop) (f : A → B) (g : B → C) : A → C := by
@@ -17,10 +17,10 @@ Statement (A B C : Prop) (f : A → B) (g : B → C) : A → C := by
     **Robo**: また `intro` から始めてみたら？"
   intro h
   Hint "
-    **作戦責任者**: 私はこの時点でまず `have hB : B` と記録しておくね。
+    **作戦責任者**: 私はこの時点でまず `have hB : B` と記録しておくね. 
 
-    **Robo**: 私の好みから言うと少し余計だな。
-    まあ, やってもいいけど。
+    **Robo**: 私の好みから言うと少し余計だな. 
+    まあ, やってもいいけど. 
 
     **Robo** *(あなたへ)*: さあ, やってみて！
   "
@@ -31,7 +31,7 @@ Statement (A B C : Prop) (f : A → B) (g : B → C) : A → C := by
     apply f
     assumption
   Hint "
-      **Robo**: …それができたら, `{hB} : {B}` が仮定として使えるよ。
+      **Robo**: …それができたら, `{hB} : {B}` が仮定として使えるよ. 
   "
   apply g
   assumption

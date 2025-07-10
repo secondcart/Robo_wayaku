@@ -7,8 +7,8 @@ Title ""
 
 Introduction
 "
-**サブ**: あなたの言う通りです。
-訪問者にもう少し包含について質問してみましょう。
+**サブ**: あなたの言う通りです. 
+訪問者にもう少し包含について質問してみましょう. 
 "
 
 /---/
@@ -19,7 +19,7 @@ namespace Set
 Statement subset_iff {A : Type} {s₁ s₂ : Set A} : s₁ ⊆ s₂ ↔ ∀ {x : A}, x ∈ s₁ → x ∈ s₂ := by
   Hint "**Robo**: これは定義そのものですよ！
 
-  **Robo** *(あなたへ)*: `tauto`を試してみてください。あるいは直接`rfl`でもいいです。"
+  **Robo** *(あなたへ)*: `tauto`を試してみてください. あるいは直接`rfl`でもいいです. "
   Branch
     tauto
   rfl

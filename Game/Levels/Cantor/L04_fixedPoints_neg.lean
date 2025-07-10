@@ -12,7 +12,7 @@ Introduction
 Conclusion "
   **カントール**: その調子で続けてください！
 
-  彼はサボテンをスズメと交換しました。
+  彼はサボテンをスズメと交換しました. 
 "
 open Function Set
 
@@ -21,11 +21,11 @@ Statement :
   Hint (strict := true) "
     **あなた**: ここで`fixedPoints f`はおそらくすべての不動点の集合ですか？
 
-    **Roboット**: 試してみてください - `unfold`がまた役立つはずです。
+    **Roboット**: 試してみてください - `unfold`がまた役立つはずです. 
   "
   unfold fixedPoints
   Hint (strict := true)  "
-    **Roboット**: 良さそうです。そして今すぐ`unfold IsFixedPt`もするのが良いでしょう。
+    **Roboット**: 良さそうです. そして今すぐ`unfold IsFixedPt`もするのが良いでしょう. 
   "
   unfold IsFixedPt
   Hint (strict := true) (hidden := true) "

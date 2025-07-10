@@ -12,7 +12,7 @@ Introduction "
 open Finset
 Statement (n x : ℕ) (h : 3 ≤ n): x ∈ Icc 0 n \ Icc 3 n → x = 0 ∨ x = 1 ∨ x = 2 := by
   intro h'
-  Hint (hidden := true) "**リタ**:  絶対に`simp at {h'}`を試してみて。"
+  Hint (hidden := true) "**リタ**:  絶対に`simp at {h'}`を試してみて. "
   simp at h'
   omega
 

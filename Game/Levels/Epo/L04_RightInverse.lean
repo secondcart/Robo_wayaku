@@ -16,10 +16,10 @@ Statement {A B : Type} {f : A -> B} {g : B -> A} :
   Hint "
   **あなた**: そろそろ定義を少しずつ確認していく必要がありそうですね？
 
-  **Robo**: そのようです。"
+  **Robo**: そのようです. "
   Hint (hidden := true) "
-  **Robo**: 実際, また`constructor`から始めるのが良いでしょう。
-  そして`comp_apply`, `congr_fun`などお馴染みのものを使うと良いです。"
+  **Robo**: 実際, また`constructor`から始めるのが良いでしょう. 
+  そして`comp_apply`, `congr_fun`などお馴染みのものを使うと良いです. "
   constructor
   · intro h
     funext x
@@ -34,9 +34,9 @@ Statement {A B : Type} {f : A -> B} {g : B -> A} :
     intro h
     intro x
     Hint (hidden := true) "
-    **Robo**: `apply congr_fun at h` または `rw [← comp_apply (f:= f)]`を使ってみてはどうでしょう。
+    **Robo**: `apply congr_fun at h` または `rw [← comp_apply (f:= f)]`を使ってみてはどうでしょう. 
     (`rw [← comp_apply]`だけではここでは機能しません
-    - `comp_apply`の命題において変数`f`がどの値を持つかを明示的に指定する必要があります。"
+    - `comp_apply`の命題において変数`f`がどの値を持つかを明示的に指定する必要があります. "
     Branch
       rw [← comp_apply (f:= f)]
       rw [h]

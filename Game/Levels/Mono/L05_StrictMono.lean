@@ -15,13 +15,13 @@ Statement :
   Hint "
     **あなた**: うーん, これは少し難しいですね…
 
-    **Robo**: 私も今は良いアイデアが浮かびません。
+    **Robo**: 私も今は良いアイデアが浮かびません. 
 
     すると観衆の中から誰かが囁きます: `StrictMono`…
 
-    **Robo**: ああ, そうですね。`StrictMono.injective`という補題があります:
-    厳密単調な写像はすべて単射です。
-    そして写像が単調であることを示すための補題もたくさんあります。
+    **Robo**: ああ, そうですね. `StrictMono.injective`という補題があります:
+    厳密単調な写像はすべて単射です. 
+    そして写像が単調であることを示すための補題もたくさんあります. 
     例えば:
 
     `StrictMono.add` - 2つの厳密単調写像の和は再び厳密単調です
@@ -32,10 +32,10 @@ Statement :
   Hint (hidden := true) "**Robo**: `apply`が使えますよ"
   Branch
     intro a b
-    Hint "**Robo**: この方法は難しすぎるようです。最初からやり直した方が良さそうです！"
+    Hint "**Robo**: この方法は難しすぎるようです. 最初からやり直した方が良さそうです！"
   Branch
     intro a b h
-    Hint "**Robo**: この方法は難しすぎるようです。最初からやり直した方が良さそうです！"
+    Hint "**Robo**: この方法は難しすぎるようです. 最初からやり直した方が良さそうです！"
   apply StrictMono.injective
   apply StrictMono.add
   · Branch
@@ -44,13 +44,13 @@ Statement :
       --exact Odd.strictMono_pow h_odd
       exact h_odd.strictMono_pow
     apply Odd.strictMono_pow
-    Hint (hidden := true) "**あなた**: `Odd 3`。これは自明じゃないですか？ちょっと待って！"
+    Hint (hidden := true) "**あなた**: `Odd 3`. これは自明じゃないですか？ちょっと待って！"
     decide
   · Hint "**あなた**: はっ！そしてこの部分はおそらくまた初等的に解けるでしょう"
     Hint (hidden := true) "
       **あなた**: それとも…？
 
-      **Robo**: いえいえ, できますよ。`unfold`で`StrictMono`の定義を覗いてみてください
+      **Robo**: いえいえ, できますよ. `unfold`で`StrictMono`の定義を覗いてみてください
     "
     intro a b
     simp

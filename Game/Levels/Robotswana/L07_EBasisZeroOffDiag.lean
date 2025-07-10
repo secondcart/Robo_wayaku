@@ -7,13 +7,13 @@ Title "Desinteresse"
 
 Introduction
 "
-木のすぐ横に, 大きく`E i j`と書かれたメモが線で消されているのを見つけました。
+木のすぐ横に, 大きく`E i j`と書かれたメモが線で消されているのを見つけました. 
 
-**あなた**: つまり, i ≠ jの場合の`E i j`は興味がないということでしょう。
+**あなた**: つまり, i ≠ jの場合の`E i j`は興味がないということでしょう. 
 
 "
 
-Conclusion "足跡はますます新鮮に見え, あなたは以前よりも速く, そして無防備にそれらを追いかけています。"
+Conclusion "足跡はますます新鮮に見え, あなたは以前よりも速く, そして無防備にそれらを追いかけています. "
 
 open Nat Matrix StdBasisMatrix
 
@@ -39,12 +39,12 @@ Statement Matrix.zero_on_offDiag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[ℝ]
 
     **Robo**: なぜそうするのですか？
 
-    **あなた**: この積で因子を入れ替えるとゼロになります！`E.mul_of_ne`のようなものでしたよね。"
-    Hint (hidden := true) "**Robo**: そうですか。では`trans f (E i j * E j j)`を試してみてください。"
+    **あなた**: この積で因子を入れ替えるとゼロになります！`E.mul_of_ne`のようなものでしたよね. "
+    Hint (hidden := true) "**Robo**: そうですか. では`trans f (E i j * E j j)`を試してみてください. "
     trans f (E i j * E j j)
-    · Hint (hidden := true) "**あなた**: ええと, これは定義から明らかです。
+    · Hint (hidden := true) "**あなた**: ええと, これは定義から明らかです. 
 
-      **Robo**: `unfold E`を忘れずに, または`E`の定義を使用するように`simp`に伝えてください(`simp [E]`)。"
+      **Robo**: `unfold E`を忘れずに, または`E`の定義を使用するように`simp`に伝えてください(`simp [E]`). "
       simp [E]
     · Hint "**Robo**: ここで可換にしたいのですか？
 
@@ -55,7 +55,7 @@ Statement Matrix.zero_on_offDiag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[ℝ]
         -- first goal and proof state are identical to first proof
         -- reached in a correct solution (see (***) in first Branch above)
         simp
-        Hint "**Robo**: おや。これは間違っているようです。"
+        Hint "**Robo**: おや. これは間違っているようです. "
       rw [h₁]
       rw [E.mul_of_ne] -- Lvl 2
       · simp

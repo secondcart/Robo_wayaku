@@ -19,7 +19,7 @@ Statement {A B : Type} {f : A → B} (h : HasLeftInverse f) :
   "
   intro a a' ha
   obtain ⟨g, hg⟩ := h
-  Hint "**Robo**: たぶん`congr_arg g`で何かできる？"
+  Hint "**Robo**: たぶん`congr_arg g`で何かできる? "
   Branch
     trans g (f a)
     · rw [hg]

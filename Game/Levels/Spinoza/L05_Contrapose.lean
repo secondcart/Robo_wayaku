@@ -23,7 +23,7 @@ Statement (n : ℕ) (h : Odd (n ^ 2)): Odd n := by
     **Robo**: `revert`を思い出してください. `revert {h}`で仮定`{h}`を証明目標の含意に戻せます. "
   revert h
   Hint "
-    **あなた**: これで対偶法の補題が使えますか？名前は何でしたっけ？
+    **あなた**: これで対偶法の補題が使えますか? 名前は何でしたっけ? 
 
     **Robo**: 実際には単に`contrapose`と書けます. "
   contrapose

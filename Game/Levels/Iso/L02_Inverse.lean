@@ -22,7 +22,7 @@ Statement bijective_iff_has_inverse {A B : Type} (f : A → B) :
     Bijective f ↔ ∃ g, LeftInverse g f ∧ RightInverse g f := by
   Hint "**あなた**: 写像が全単射であることと, それに対する逆写像が存在することは同値です. 
   これは基本的に, EpoとMonoで既に示したことと同じです. 
-  これらの主張を保存していましたか？
+  これらの主張を保存していましたか? 
 
   **Robo**: はい, しかしここでそれらを展開すると眉を上げられるでしょう. 
   代わりに, しっかり考えて, それがどうだったか思い出しましょう. 
@@ -35,7 +35,7 @@ Statement bijective_iff_has_inverse {A B : Type} (f : A → B) :
     obtain ⟨finj, fsurj⟩  := h
     Hint (hidden := true)"
       **Robo**: 全射性から, 各`y : B`には原像`x : A`があることが分かります. 
-      `choose`を使って逆写像を構築できませんか？"
+      `choose`を使って逆写像を構築できませんか? "
     choose g hg using fsurj
     Hint "
       まず`{g}`が`{f}`の右逆元であることを示すのが良いでしょう, 
@@ -49,7 +49,7 @@ Statement bijective_iff_has_inverse {A B : Type} (f : A → B) :
       --  assumption
       Hint (hidden := true)"**Robo**: `simp [LeftInverse]`で証明目標を簡略化できます. "
       simp [LeftInverse]
-      Hint (hidden := true) "**Robo**: `intro`から始めてみては？"
+      Hint (hidden := true) "**Robo**: `intro`から始めてみては? "
       intro x
       have : f (g (f x)) = f x  := by rw [hR]
       Branch
@@ -73,7 +73,7 @@ Statement bijective_iff_has_inverse {A B : Type} (f : A → B) :
       --  congr -- not used in this game
       Hint (hidden := true) "
         **あなた**: 引数`f a = f b`が等しいなら`g (f a) = g (f b)`も等しい—
-        どう言えばいいんだっけ？
+        どう言えばいいんだっけ? 
 
       **Robo**: `f a = f b`があるなら, 単に`rw`を使えますよ. "
       rw [eq]
@@ -91,7 +91,7 @@ Conclusion
 "
 イソソフたちはとても満足そうでした. 
 
-**Robo**: 私たちはもう一度...カプセル化できますか？
+**Robo**: 私たちはもう一度...カプセル化できますか? 
 
 **イソソフ**: もちろん！ しかし順序よく進めましょう. 
 私たちが双方向でカプセルを使い始めてから, また事故が増えています. 

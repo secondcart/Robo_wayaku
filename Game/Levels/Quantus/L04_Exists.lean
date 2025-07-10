@@ -33,7 +33,7 @@ Statement Nat.even_square (n : ℕ) (h : Even n) : Even (n ^ 2) := by
     **Robo**: 上で見たように, `Even {n}`は`r`が存在して`r + r = {n}`となることで定義されています. 
     この定義を`unfold Even at *`で開くとわかりやすいでしょう. 
 
-    **あなた**: `decide`では？
+    **あなた**: `decide`では? 
 
     **Robo**: `decide`は機能しません. `{n}`は具体的な数値ではなく任意の数だからです. 
     ここでは実際に作業が必要です！"
@@ -47,7 +47,7 @@ Statement Nat.even_square (n : ℕ) (h : Even n) : Even (n ^ 2) := by
     use n^2/2
     Hint "群衆から困惑したつぶやきが聞こえる. 
 
-    **あなた**: 待って, なぜ`{n} ^ 2 / 2`が自然数になるの？
+    **あなた**: 待って, なぜ`{n} ^ 2 / 2`が自然数になるの? 
 
     **Robo**: Leanでのℕ上の除算は常に切り捨てられます. `{n} = 1`の場合, 
 
@@ -62,7 +62,7 @@ Statement Nat.even_square (n : ℕ) (h : Even n) : Even (n ^ 2) := by
     **Robo**: `choose s hs using {h}`で実際にこの`s`を導入できます. "
   choose s hs using h
   Hint "
-    **あなた**: 今度は`n ^ 2 = r + r`となる適切な数`r`を見つける必要がある？
+    **あなた**: 今度は`n ^ 2 = r + r`となる適切な数`r`を見つける必要がある? 
 
     **Robo**: その通りです. 必要なら`let r := …`でこの数を準備できます. "
   Branch

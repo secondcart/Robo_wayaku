@@ -41,7 +41,7 @@ Statement {A B : Type} {f : A → B} : Surjective f ↔ range f = univ := by
   constructor
   · intro hf
     Hint (hidden := true) "
-      **Robo**: また集合の等式を示す必要がありますね？つまり`ext`です. 
+      **Robo**: また集合の等式を示す必要がありますね? つまり`ext`です. 
       "
     ext b
     Branch
@@ -69,7 +69,7 @@ NewTheorem Set.mem_range
 Conclusion "
   **アラプカ**: これもきれいですね. 
 
-  **Robo**: ところで, あなたはこの惑星全体を絵で埋め尽くしたんですか？
+  **Robo**: ところで, あなたはこの惑星全体を絵で埋め尽くしたんですか? 
 
   **アラプカ**: いいえ. これは世代を超えた課題です. 
   最初の模様要素は私の高祖祖父が刻みました. 

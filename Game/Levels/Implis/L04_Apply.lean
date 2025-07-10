@@ -12,9 +12,9 @@ Introduction
 
 Statement (A B C : Prop) (f : A → B) (g : B → C) : A → C := by
   Hint "
-    **あなた**: 含意 $A \\Rightarrow B \\Rightarrow C$ を $A \\Rightarrow C$ に結合する必要がある？
+    **あなた**: 含意 $A \\Rightarrow B \\Rightarrow C$ を $A \\Rightarrow C$ に結合する必要がある? 
 
-    **Robo**: また `intro` から始めてみたら？"
+    **Robo**: また `intro` から始めてみたら? "
   intro h
   Hint "
     **作戦責任者**: 私はこの時点でまず `have hB : B` と記録しておくね. 

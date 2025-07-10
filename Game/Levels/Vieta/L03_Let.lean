@@ -19,7 +19,7 @@ Statement : ∃ f : ℤ → ℤ, ∀ x, f x < x := by
   Hint (strict := true) "**Robo**: `{f}`を正しく定義できたら, `use`で使える. 結果の不等式は簡単になるはずだ"
   use f
   intro x
-  Hint (hidden := true) "**あなた**: これはどう簡略化されるんだろう？"
+  Hint (hidden := true) "**あなた**: これはどう簡略化されるんだろう? "
   simp [f]
   -- linarith
 

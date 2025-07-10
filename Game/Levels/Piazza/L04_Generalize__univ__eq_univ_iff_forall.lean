@@ -15,11 +15,11 @@ namespace Set
 
 Statement : { n : ℕ | Even n} ∪ { n : ℕ | Odd n} = univ := by
   Hint "
-    **Du**:  `univ`って何ですか？
+    **Du**:  `univ`って何ですか? 
 
     **Robo**:  `univ`は最大部分集合です：すべての自然数を含みます. 
 
-    **Du**:  つまり単に`ℕ`ですか？
+    **Du**:  つまり単に`ℕ`ですか? 
 
     **Robo**:  はい, でも違います. `univ : Set ℕ`は「ℕ全体」ですが, ℕの部分集合として扱われます. 
 
@@ -30,7 +30,7 @@ Statement : { n : ℕ | Even n} ∪ { n : ℕ | Odd n} = univ := by
 
     **Mem**:  同様に, 5は自然数です(`5 : ℕ`), 
     `univ : Set ℕ`は全ての自然数の集合で, `5`はこの集合に含まれます(`5 ∈ univ`). 
-    何が混乱するのでしょうか？
+    何が混乱するのでしょうか? 
 
     **Robo** (*あなたに*): 頭を悩ませないでください. 
     ここではまず`rw [eq_univ_iff_forall]`から始めることをお勧めします, 
@@ -53,7 +53,7 @@ Statement : { n : ℕ | Even n} ∪ { n : ℕ | Odd n} = univ := by
   simp
   intro x
   Hint "
-    **Du**: 次は`by_cases h : Even n`ですか？
+    **Du**: 次は`by_cases h : Even n`ですか? 
 
     **Robo**: はい, それでゴールに到達できます. 
     しかし実際には`Even x ∨ ¬Even x`はトートロジーです. 

@@ -19,11 +19,11 @@ Conclusion "**あなた**: やっとだ.
 
 Roboがあなたに水の入ったボトルを手渡す. 
 
-**あなた**: いったいどこから手に入れたの？
+**あなた**: いったいどこから手に入れたの? 
 
 **Robo**: トリック17だよ. 
 
-**あなた**: それで, 道は見つかった？
+**あなた**: それで, 道は見つかった? 
 
 **Robo**: ああ, ついてきて！あそこに何か見えたんだ. "
 
@@ -36,7 +36,7 @@ Statement Matrix.eq_sum_apply_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[�
     (h₁ : ∀ A B, f (A * B) = f (B * A))
     (A : Mat[n,n][ℝ]) :
     f A = ∑ i : Fin n, (A i i) * f (E i i) := by
-  Hint "**あなた**: これはいったい…？
+  Hint "**あなた**: これはいったい…? 
 
   あなたは少し落書きをする. 
 
@@ -55,21 +55,21 @@ Statement Matrix.eq_sum_apply_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[�
   おそらく最初に`f A`の`A`を基底行列の和として書くべきだ. 
 
   **Robo** (*遠くから*): `nth_rw 1 [ ... ]`！`rw`のように使えるよ. "
-  Hint (hidden := true) "**あなた** (*叫びながら*): どういうこと？
+  Hint (hidden := true) "**あなた** (*叫びながら*): どういうこと? 
 
   **Robo** (*同じく叫びながら*): `matrix_eq_sum_ebasis A`を使いたいんだろうけど, `rw`じゃなくて`nth_rw 1`で. "
   Branch
       rw [matrix_eq_sum_ebasis A]
       Hint "**あなた**: `rw`は良くないな. 複雑すぎる. `nth_rw`で試してみよう. "
   nth_rw 1 [matrix_eq_sum_ebasis A] -- Lvl 3
-  Hint "**あなた** (*心の中で*): 線形性を使う…そして水のことを考えないように…バビロンには十分な水があった…何をしてたんだっけ？"
+  Hint "**あなた** (*心の中で*): 線形性を使う…そして水のことを考えないように…バビロンには十分な水があった…何をしてたんだっけ? "
   Hint "**Robo** (*どこからか*): `map_sum`みたいだね. バビロンでは見なかったと思うけど, 想像してるんだろう. でも`simp`はこの補題を知ってるはず. "
   Branch
     simp
   rw [map_sum] -- simp knows this
   Hint "**あなた**: ああ, 迷ったら簡略化だ. "
   simp
-  Hint "**Robo**: 今どこまで進んだ？
+  Hint "**Robo**: 今どこまで進んだ? 
 
   **あなた**: `i≠j`の`E i j`で`f`が消えることをどうにかして入れないと. 
 
@@ -80,7 +80,7 @@ Statement Matrix.eq_sum_apply_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[�
   · Hint "**Robo**: 和は和と等しい…`apply congr_arg`, `ext`で攻めるんだ. "
     apply congr_arg
     ext i
-    Hint (hidden := true) "**あなた**: もう一度やる？"
+    Hint (hidden := true) "**あなた**: もう一度やる? "
     apply congr_arg
     ext j
     Hint "**あなた**: そして`{i} = {j}`で場合分け…"

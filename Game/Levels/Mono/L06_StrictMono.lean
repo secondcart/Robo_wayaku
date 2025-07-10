@@ -13,11 +13,11 @@ open Set Function
 Statement StrictMono.injective {f : ℤ → ℤ}
     (hf : StrictMono f)  : Injective f := by
   Hint (hidden := true) "
-    **Robo**: まずは古典的に, `Injective f`から変数と仮定を導入してみては？
+    **Robo**: まずは古典的に, `Injective f`から変数と仮定を導入してみては? 
   "
   intro a b h
   Hint (hidden := true) (strict := true)"
-    **Robo**: 次に場合分けをしてみましょう. `lt_trichotomy`を覚えていますか？
+    **Robo**: 次に場合分けをしてみましょう. `lt_trichotomy`を覚えていますか? 
   "
   obtain hlt | heq | hgt := lt_trichotomy a b
   · apply hf at hlt

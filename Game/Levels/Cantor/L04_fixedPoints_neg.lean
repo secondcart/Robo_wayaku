@@ -19,7 +19,7 @@ open Function Set
 Statement :
     fixedPoints (fun (x : ℝ) ↦ -x) = {0} := by
   Hint (strict := true) "
-    **あなた**: ここで`fixedPoints f`はおそらくすべての不動点の集合ですか？
+    **あなた**: ここで`fixedPoints f`はおそらくすべての不動点の集合ですか? 
 
     **Roboット**: 試してみてください - `unfold`がまた役立つはずです. 
   "

@@ -8,7 +8,7 @@ Level 6
 Title ""
 
 Introduction
-"**リサ**: 私もやってみていい？ほら. "
+"**リサ**: 私もやってみていい? ほら. "
 
 open Finset
 namespace Robo.ZZ.Finset
@@ -19,7 +19,7 @@ TheoremDoc Robo.ZZ.Finset.insert_Icc_eq_Icc_add_one_right as "insert_Icc_eq_Icc_
 Statement insert_Icc_eq_Icc_add_one_right {a b : ℤ} (h : a ≤ b + 1) :
   insert (b + 1) (Icc a b) = Icc a (b + 1) := by
   Hint "
-    **あなた**: Iccって何？
+    **あなた**: Iccって何? 
 
     **リサ**: 左閉右閉の**閉**区間よ. 
 

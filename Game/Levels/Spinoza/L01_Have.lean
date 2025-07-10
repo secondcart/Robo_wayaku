@@ -20,13 +20,13 @@ Statement (A B : Prop) (h : A → ¬ B) (k : A ∧ B) : False := by
     **Robo**: そうだ！また`have`を使ってみて！具体的には`have g : ¬ B`！"
   have g : ¬ B
   · Hint "
-      **あなた**: え？今これを正しいと仮定しただけ？
+      **あなた**: え? 今これを正しいと仮定しただけ? 
 
       **Robo**: いや, 使う前にこれを証明する必要がありますよ. "
     Hint (hidden := true) "**Robo**: `apply`が役立つはず"
     apply h
     assumption
-  Hint "**あなた**: そして, 2つの仮定が矛盾する場合はどうするんでしたっけ？
+  Hint "**あなた**: そして, 2つの仮定が矛盾する場合はどうするんでしたっけ? 
 
   **Robo**: `contradiction`です. "
   contradiction

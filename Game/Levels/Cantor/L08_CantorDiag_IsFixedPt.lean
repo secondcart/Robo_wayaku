@@ -31,7 +31,7 @@ Statement {A Y : Type} {f : A → A → Y} {s : Y → Y}
      {a : A} (ha : f a = fun a' ↦ s (f a' a')) :
     IsFixedPt s (f a a) := by
   Hint "
-    **あなた** *(Roboに向かって)*: ここに積集合が見える？
+    **あなた** *(Roboに向かって)*: ここに積集合が見える? 
 
     **Robo**: ああ, もちろん. `f`の括弧の位置を思い出して: `A → (A → Y)`. 
     `A`から`A → Y`への写像の集合への写像は, 

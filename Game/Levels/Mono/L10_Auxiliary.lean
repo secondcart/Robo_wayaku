@@ -13,7 +13,7 @@ open Function Set
 -- Presumably needs hints!!
 Statement {A B : Type} [hA : Nonempty A] (f : A → B ) : ∀ b : B, ∃ a : A, f a = b ∨ ¬ ∃ a' : A , f a' = b   := by
   Hint "
-    **Du**:  私たちは今クァンタスに戻ったの？とにかく：`a`が存在するか, 存在しないかのどちらかで, これはトートロジーのように見える. 
+    **Du**:  私たちは今クァンタスに戻ったの? とにかく：`a`が存在するか, 存在しないかのどちらかで, これはトートロジーのように見える. 
 
     **Robo**:  ゆっくり！暗黙の括弧に注意する必要がある. もっと括弧を付けて書き直してみよう：
     ```
@@ -22,7 +22,7 @@ Statement {A B : Type} [hA : Nonempty A] (f : A → B ) : ∀ b : B, ∃ a : A, 
     ```
   "
   Hint (hidden := true) "
-    **Robo**:  まず最初に`obtain`を使って`A`から何か要素を取得してみては？
+    **Robo**:  まず最初に`obtain`を使って`A`から何か要素を取得してみては? 
     要素が存在することはわかっているからね. 
   "
   obtain ⟨a₀⟩ := hA

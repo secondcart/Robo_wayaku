@@ -15,7 +15,7 @@ open Function
 Statement :
     let f := fun (n : ℤ) ↦ n + 1
     Surjective f := by
-  Hint "**あなた**: `Surjective f`の定義は`∀ y, (∃ x, f x = y)`だと推測していますが, 正しいでしょうか？
+  Hint "**あなた**: `Surjective f`の定義は`∀ y, (∃ x, f x = y)`だと推測していますが, 正しいでしょうか? 
 
   **Roboット**: そうだと思います. `unfold Surjective`で中身を見ることができます. 必ずしも必要ではありませんが. "
   unfold Surjective

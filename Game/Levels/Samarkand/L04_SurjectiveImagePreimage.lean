@@ -8,7 +8,7 @@ Title "" -- ""
 open Set
 
 Introduction "
-  **アラプカ**:  これも手伝ってもらえるかな？
+  **アラプカ**:  これも手伝ってもらえるかな? 
   "
 /---/
 TheoremDoc Function.Surjective.image_preimage as "Surjective.image_preimage" in "Function"
@@ -17,7 +17,7 @@ namespace Function
 Statement Surjective.image_preimage {A B : Type} {f : A → B} (hf : Surjective f) (T : Set B) :
 f '' (f ⁻¹' T) = T := by
   Hint "
-    **あなた**:  これさっきもやったんじゃない？
+    **あなた**:  これさっきもやったんじゃない? 
 
     **Robo**:  いいえ. さっきは包含関係 `image_preimage_subset` だけでした：
     ```

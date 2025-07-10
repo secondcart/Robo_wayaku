@@ -10,7 +10,7 @@ Introduction "アラプカがもう一つ課題を出しています. "
 
 Statement {A B C : Type} (f : A → B) (g : B → C) : image (g ∘ f) = (image g) ∘ (image f) := by
   Hint "
-    **あなた**: ああ！つまり, この''のような煩わしい記法が嫌なら, 単に`image`と書いてもいいんだ？
+    **あなた**: ああ！つまり, この''のような煩わしい記法が嫌なら, 単に`image`と書いてもいいんだ? 
 
     **Robo**: いいえ, よく見てください. ここでの`image f`は写像です. 
     これはもちろん, Aの部分集合をBの対応する像集合に送る写像で, 
@@ -25,7 +25,7 @@ example : image f = fun S ↦ f '' S := by
   rfl
 --/
   Hint (hidden := true) "
-    **Robo**: 2つの写像の一致を示す必要があります. `funext`を覚えていますか？
+    **Robo**: 2つの写像の一致を示す必要があります. `funext`を覚えていますか? 
   "
   Branch
     funext

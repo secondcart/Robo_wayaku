@@ -18,7 +18,7 @@ Conclusion "
 open Function Set
 
 Statement : ¬ ∃ (P : Prop),  IsFixedPt (¬ .) P := by
-  Hint "**あなた**: ここで2つ目の`¬`はどういう意味ですか？
+  Hint "**あなた**: ここで2つ目の`¬`はどういう意味ですか? 
 
   **Robo**: 1つ目と同じです：論理否定です. 
   これは可能な命題すべての集合`Prop`の自己写像と見なせます. 

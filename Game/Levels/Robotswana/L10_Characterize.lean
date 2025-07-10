@@ -12,14 +12,14 @@ Introduction
 **あなた**（小声で）: 君の言う通りだったみたい. これらのメモは一種の特徴リストだ！
 そしてこれは明らかにここの生き物を説明している！
 
-**Robo**: どういう意味？
+**Robo**: どういう意味? 
 
 **あなた**: 見てよ, その大きさ, 交換子への好み, その他の全ての特徴, 
 これで明確に識別できる！
 
 **Robo**: もっと詳しく説明してくれ. 
 
-**あなた**: やってみるよ. Leanには跡(trace)の名前がある？
+**あなた**: やってみるよ. Leanには跡(trace)の名前がある? 
 
 **Robo**: ああもちろん, `trace`って呼ばれてるよ. 一部の形式主義者はTracyって愛称で呼んでる. 
 
@@ -44,7 +44,7 @@ Statement Matrix.trace_eq {n : ℕ} (f : Matrix (Fin n) (Fin n) ℝ →ₗ[ℝ] 
     trace = f := by
   Hint "**あなた**: ここに全ての性質がまとめられているよ. 
 
-    **Robo**: そして君は, Tracyだけがこれらの性質を持つと言うのかい？
+    **Robo**: そして君は, Tracyだけがこれらの性質を持つと言うのかい? 
 
     **あなた**: そうだよ. そう信じてる. どんな`f`でもこれらの性質を持てば, 全ての行列でTracyと同じように振る舞う. だからそれはTracyなんだ！"
   Hint (hidden := true) "
@@ -77,7 +77,7 @@ Statement Matrix.trace_eq {n : ℕ} (f : Matrix (Fin n) (Fin n) ℝ →ₗ[ℝ] 
     simp [one_on_diag_ebasis this h₁ h₂] -- Lvl 8
     Hint (hidden := true) "**Robo**: 両辺は定義的に等しいよ！"
     rfl
-  Hint "**あなた**: この証明目標はどこから来たんだっけ？
+  Hint "**あなた**: この証明目標はどこから来たんだっけ? 
 
   **Robo**: 最初の`rw [eq_sum_apply_diag_ebasis]`でこの引数を省略したんだよ. 今ならまだ追いつける. "
   assumption

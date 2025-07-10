@@ -7,7 +7,7 @@ Title "Einheitsmatrix"
 
 Introduction
 "
-**あなた**: ちょっと見せて, 何を持ってるの？単位行列？私たちのコレクションにぴったりじゃない？
+**あなた**: ちょっと見せて, 何を持ってるの? 単位行列? 私たちのコレクションにぴったりじゃない? 
 
 **Robo**: はい - 右端の`1`がここでは単位行列です. 
   `matrix_eq_sum_ebasis`から始められると思います. 
@@ -57,19 +57,19 @@ Statement Matrix.ebasis_diag_sum_eq_one {n : ℕ} : ∑ i : Fin n, E i i = 1 := 
   apply sum_congr
   rfl
   intro i hi
-  Hint "**あなた**: で, 次は？
+  Hint "**あなた**: で, 次は? 
 
   **Robo**: `funext r s`で行列の$(r,s)$成分に注目できるよ. "
   funext r s
-  Hint "**あなた**: ここでの`1`は単位行列だよね？
+  Hint "**あなた**: ここでの`1`は単位行列だよね? 
 
   **Robo**: そうだよ. 
 
   **あなた**: なら`1 {i} j`は`j ≠ {i}`なら全部0だ. 
   だから`j = {i}`の項以外は消える. 
 
-  **Robo**: そうかな？考えさせて...
-  まず`have h : \{{i}} ⊆ univ`を証明できる？"
+  **Robo**: そうかな? 考えさせて...
+  まず`have h : \{{i}} ⊆ univ`を証明できる? "
   have h : {i} ⊆ univ
   · simp
   Hint "**Robo**: 良かった. これで`sum_subset`が使えるよ. "
@@ -80,7 +80,7 @@ Statement Matrix.ebasis_diag_sum_eq_one {n : ℕ} : ∑ i : Fin n, E i i = 1 := 
     simp
   · intro x h₁ h₂
     clear h₁ -- not needed
-    Hint "**あなた**: でもここはどうする？`{h₂}`はほぼ`{i} ≠ {x}`ってことだよね. 
+    Hint "**あなた**: でもここはどうする? `{h₂}`はほぼ`{i} ≠ {x}`ってことだよね. 
 
     **Robo**: そうだけど, 完全には. `have h₃ : {i} ≠ {x}`を導入して簡単に示して！"
     -- TODO: There are other ways to get `i ≠ x`!
@@ -103,7 +103,7 @@ Statement Matrix.ebasis_diag_sum_eq_one {n : ℕ} : ∑ i : Fin n, E i i = 1 := 
       assumption
     Branch
       simp [h₃]
-    Hint "**あなた**: `1 {i} {x}`の定義はどう入れる？
+    Hint "**あなた**: `1 {i} {x}`の定義はどう入れる? 
 
     **Robo**: `Matrix.one_apply`！"
     rw [Matrix.one_apply]

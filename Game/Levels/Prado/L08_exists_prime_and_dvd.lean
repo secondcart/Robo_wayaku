@@ -15,7 +15,7 @@ Introduction
 namespace Nat
 
 Statement : ∃ p : ℕ, Prime p ∧ p ∣ 67280421310721 := by
-  Hint "**あなた** *(Roboに向かって)*: ここで素因数は何かわかる？
+  Hint "**あなた** *(Roboに向かって)*: ここで素因数は何かわかる? 
 
   **Robo**: ううん. 
 

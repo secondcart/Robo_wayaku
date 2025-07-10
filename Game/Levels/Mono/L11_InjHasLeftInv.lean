@@ -72,7 +72,7 @@ Statement injective_iff_hasLeftInverse {A B : Type} [hA : Nonempty A]  (f : A �
        exactly L09_injOfHasLeftInv, now without hints-/
     Hint (hidden := true) "
       **Robo**: これは前に証明した内容ですね…しかし保存し忘れていました. 
-      証明を覚えていますか？
+      証明を覚えていますか? 
     "
     intro hL
     intro a a' ha

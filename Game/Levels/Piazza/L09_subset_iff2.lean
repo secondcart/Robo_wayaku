@@ -8,7 +8,7 @@ Title "" -- "Teilmengen"
 Introduction
 "
 **Sub**: さてさて. ただの定義ですね！
-では, このような包含関係で作業する場合どうすればいいのでしょうか？
+では, このような包含関係で作業する場合どうすればいいのでしょうか? 
 "
 
 open Set
@@ -16,7 +16,7 @@ open Set
 Statement {A B C : Set ℕ} (h₁ : A ⊆ B) (h₂ : B ⊆ C) : A ⊆ C := by
   -- Hint: do this for understanding the def!
   Hint "
-    **あなた**: ここで`ext`を使って議論することはできますか？
+    **あなた**: ここで`ext`を使って議論することはできますか? 
 
     **Robo**: いいえ, もっと簡単です. `intro a`でAの任意の要素を取り, 
     それがCに含まれることを示してください. 

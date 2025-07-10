@@ -47,7 +47,7 @@ Statement {A : Type} : ¬ ∃ f : A → Set A, Surjective f := by
   push_neg
   intro f
   by_contra hf
-  Hint "**カントール**: さて, どう思いますか？おそらく`f`によってカバーされない集合があるのではないでしょうか？"
+  Hint "**カントール**: さて, どう思いますか? おそらく`f`によってカバーされない集合があるのではないでしょうか? "
   Hint (hidden := true) "**Robo**: 先ほどの集合を試してみてください！
   まず`let s := \{ a | a ∉ {f} a }`で導入できます. "
   let s := { a | a ∉ f a }
@@ -59,7 +59,7 @@ Statement {A : Type} : ¬ ∃ f : A → Set A, Surjective f := by
   obtain ⟨a, ha⟩ := hf
   Hint "**カントール**: そうだ！
 
-  **あなた**: Robo, 今こそ先ほどの結果を使えるのでは？
+  **あなた**: Robo, 今こそ先ほどの結果を使えるのでは? 
 
   **Robo**: すみません, 全てが早すぎました！保存するのを忘れたようです. "
   by_cases h : a ∈ f a

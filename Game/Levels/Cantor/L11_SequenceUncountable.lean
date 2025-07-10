@@ -7,7 +7,7 @@ Level 11
 Title ""
 
 Introduction "
-  **カントール**: 簡単？わからないな. でもエレガントだ！
+  **カントール**: 簡単? わからないな. でもエレガントだ！
 
   彼は後方宙返りを3回して, 
   あなたたちへの新しいメモを持って戻ってきた. 
@@ -38,7 +38,7 @@ Statement : ¬ ∃ f : ℕ → ℕ → ℕ, Surjective f := by
   by_contra hf
   apply cantor_diagonal at hf
   Hint (hidden := true) "
-    **あなた**: 写像`n ↦ n + 1`って何て言うんだっけ？
+    **あなた**: 写像`n ↦ n + 1`って何て言うんだっけ? 
 
     **Robo**: `succ`
   "

@@ -9,9 +9,9 @@ Introduction
 "
 **オペレーションマネージャー**: 本当に助かりました！これが最後の問題です. 
 前任者から引き継いだもので, これを解決できれば全てがうまくいくと言っていました. 
-しかし私には難しすぎて挑戦する気にもなりませんでした. 試してみますか？
+しかし私には難しすぎて挑戦する気にもなりませんでした. 試してみますか? 
 
-**あなた**: もちろん見せて！Robo, ここまで5分間で学んだ理論的なことをまとめて表示してくれる？
+**あなた**: もちろん見せて！Robo, ここまで5分間で学んだ理論的なことをまとめて表示してくれる? 
 
 **Robo**: 概要はこちらです：
 
@@ -46,7 +46,7 @@ TheoremDoc imp_iff_not_or as "imp_iff_not_or" in "Logic"
 set_option tactic.hygienic false
 
 Statement imp_iff_not_or {A B : Prop} : (A → B) ↔ ¬ A ∨ B := by
-  Hint "**あなた** *(小声)*: これって`→`の定義じゃない？
+  Hint "**あなた** *(小声)*: これって`→`の定義じゃない? 
 
   **Robo** *(小声)*: そう見えるかも. でもLeanでは単なる同値です"
   constructor
@@ -69,7 +69,7 @@ Statement imp_iff_not_or {A B : Prop} : (A → B) ↔ ¬ A ∨ B := by
     by_cases ha : A
   Branch
     by_cases A
-  Hint (hidden := true) "**Robo**: 仮定`h`を`obtain`で分割してみたら？"
+  Hint (hidden := true) "**Robo**: 仮定`h`を`obtain`で分割してみたら? "
   obtain h | h :=  h
   contradiction
   assumption
@@ -80,13 +80,13 @@ NewTheorem imp_iff_or_not
 
 Conclusion "
 **オペレーションマネージャー**: 素晴らしい！本当にありがとう！もうこれ以上引き止めません. 
-クアンタス星へ向かうんでしょう？
+クアンタス星へ向かうんでしょう? 
 
 **あなた**: ええ, 多分…
 
 **オペレーションマネージャー**: 最後にお願いがあります. クアンタスの女王様への小包が…
 これも前任者から引き継いだものです. 住所が分からないので郵便局が引き取ってくれません. 
-届けてもらえませんか？
+届けてもらえませんか? 
 
 **あなた**: もちろん！Robo, ちょっと. 
 

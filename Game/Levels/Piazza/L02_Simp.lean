@@ -8,7 +8,7 @@ Title ""
 
 Introduction
 "
-**Mem**: これでどうかな？
+**Mem**: これでどうかな? 
 "
 
 open Set

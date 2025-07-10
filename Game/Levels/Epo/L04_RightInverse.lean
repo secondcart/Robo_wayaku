@@ -14,7 +14,7 @@ open Function
 Statement {A B : Type} {f : A -> B} {g : B -> A} :
     RightInverse g f ↔ f ∘ g = id := by
   Hint "
-  **あなた**: そろそろ定義を少しずつ確認していく必要がありそうですね？
+  **あなた**: そろそろ定義を少しずつ確認していく必要がありそうですね? 
 
   **Robo**: そのようです. "
   Hint (hidden := true) "

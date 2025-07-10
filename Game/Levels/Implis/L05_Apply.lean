@@ -25,7 +25,7 @@ Statement
   Hint "
     **あなた**: つまり, $A \\Rightarrow I$ の含意の経路を見つけなければならない. 
 
-    **Robo**: どう始めるか考えてみよう…また `intro` かな？"
+    **Robo**: どう始めるか考えてみよう…また `intro` かな? "
 
   intro hyp
   Hint (hidden := true) "**Robo**: やっぱり `apply` でしょ. "
@@ -49,7 +49,7 @@ Statement
     assumption
   Branch
     apply h at hyp
-    Hint "**Robo**: 本当にそれでいい？"
+    Hint "**Robo**: 本当にそれでいい? "
   apply f at hyp
   apply i at hyp
   Branch

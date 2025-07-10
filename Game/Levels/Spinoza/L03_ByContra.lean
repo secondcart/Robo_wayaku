@@ -11,7 +11,7 @@ Statement (A B : Prop) (g : A → B) (b : ¬ B) : ¬ A := by
   Hint "
     **Robo**: ゴールにある`¬`は, しばしば矛盾による証明を行いたいことを意味します. 
 
-    **あなた**: どうやってやるの？`contradiction`を使う？
+    **あなた**: どうやってやるの? `contradiction`を使う? 
 
     **Robo**: `by_contra h`で矛盾による証明を開始します. `contradiction`で終了します. "
   by_contra h

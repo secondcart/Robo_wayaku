@@ -9,7 +9,7 @@ Title ""
 Introduction ""
 
 Conclusion "
-  **カントール**: おや, もう終わったのかい？？
+  **カントール**: おや, もう終わったのかい? ? 
 
   **Robo**: まだメモが1枚残ってるよ. 
 "
@@ -33,7 +33,7 @@ Statement {A : Type} (f : A → A) (h : f ∘ f = f) :
   "
   apply congr_fun at h
   Hint (hidden := true) (strict := true) "
-    **Robo**: まずは`ext`から始めてみたら？
+    **Robo**: まずは`ext`から始めてみたら? 
     あるいは`Subset.antisymm_iff`でもいいかも. 
     "
   Branch
@@ -50,7 +50,7 @@ Statement {A : Type} (f : A → A) (h : f ∘ f = f) :
     rw [← hy]
     specialize h y
     clear hy
-    Hint (hidden := true) "**Robo**: `comp_apply`が役立つかも？あるいは`simp`？"
+    Hint (hidden := true) "**Robo**: `comp_apply`が役立つかも? あるいは`simp`? "
     simp at h -- or: rw [comp_apply] at h
     assumption
   · intro ha

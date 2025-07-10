@@ -15,7 +15,7 @@ Introduction
 彼はシルクハットから紙片を取り出し, ツバメのように折りたたみ, 
 あなた方へと飛ばしてくる. 
 
-**カントール**: 二人の観客がいるのなら, 少し参加してもらおうじゃないか？
+**カントール**: 二人の観客がいるのなら, 少し参加してもらおうじゃないか? 
 "
 
 Conclusion ""
@@ -24,11 +24,11 @@ open Set Function
 
 Statement {A : Type} (f : A → Set A) : ¬ ∃ (a : A), f a = { x | x ∉ f x } := by
   --Hint "**Robo**: Denk daran, dass `mem_setOf` aus `Set` irgendwann hilfreich sein wird."
-  Hint "**あなた**: つまり`Set A`は`A`の冪集合なの？
+  Hint "**あなた**: つまり`Set A`は`A`の冪集合なの? 
 
   **Robo**: まあそういうことだね. `A`の全ての部分集合の集合, より正確には型だ. 
 
-  **あなた**: そして私が示すべきは…なるほど. おそらく背理法かな？
+  **あなた**: そして私が示すべきは…なるほど. おそらく背理法かな? 
 
   **Robo**: おそらくね. 
   "
@@ -40,7 +40,7 @@ Statement {A : Type} (f : A → Set A) : ¬ ∃ (a : A), f a = { x | x ∉ f x }
   Hint "**カントール**: よしよし！さあ`{h}`をきれいに分解しよう…"
   Hint (hidden := true)"**Robo: …いつものように`obtain`でね"
   obtain ⟨a, ha⟩ := h
-  Hint (strict := true) "**あなた**: 今度は`{a} ∈ {f} {a}`について場合分けする？"
+  Hint (strict := true) "**あなた**: 今度は`{a} ∈ {f} {a}`について場合分けする? "
   Hint (hidden := true) (strict := true) "**Robo**: `by_cases h₁ : {a} ∈ {f} {a}`だね"
   by_cases h₁ : a ∈ f a
   Hint "カントールは手を擦り合わせる. 

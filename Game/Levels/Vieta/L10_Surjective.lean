@@ -22,7 +22,7 @@ open Function Nat
 Statement {A : Type} {f : A → ℕ} (h : ∃ a : A, f a = 0) {g : A → A}
     (hs : f ∘ g = succ ∘ f) : ∀ n, ∃ a, f a = n := by
   Hint "
-    **あなた**: ここでの`succ`って何？
+    **あなた**: ここでの`succ`って何? 
 
     **Robo**:  `succ : ℕ → ℕ`は自然数をその*successor*(後継者), つまり次の数に写す関数です. 
     言い換えれば: `n ↦ n + 1`. 
@@ -47,7 +47,7 @@ Statement {A : Type} {f : A → ℕ} (h : ∃ a : A, f a = 0) {g : A → A}
       rw [← hb]
       apply congr_fun hs
     Hint (hidden := true) "**Robo**: もしかして`congr_fun`を使って仮定`{hs}`を
-    `∀ x, ({f} ∘ {g}) x = (succ ∘ {f})`に書き換えたい？"
+    `∀ x, ({f} ∘ {g}) x = (succ ∘ {f})`に書き換えたい? "
     apply congr_fun at hs
     specialize hs b
     simp at hs

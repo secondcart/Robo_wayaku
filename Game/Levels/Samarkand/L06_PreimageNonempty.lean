@@ -7,7 +7,7 @@ Level 6
 
 Title ""
 
-Introduction "**アラプカ**: では, これはどうかな？"
+Introduction "**アラプカ**: では, これはどうかな? "
 
 Statement {A B : Type} (f : A → B)  (y : B) :
      f ⁻¹' {y} ≠ ∅ ↔ (∃ a, f a = y) := by

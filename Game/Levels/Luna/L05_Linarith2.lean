@@ -22,7 +22,7 @@ Statement (l m n x : ℝ) (h₁ : l ≤ m) (h₂ : m ≤ n) : l ≤ x ∧ x ≤ 
   intro hn hx
   Hint "
     **Robo**: そして, 仮定`{hx}`をもう少し読みやすくします. 
-    `push_neg at {hx}`を試してみては？
+    `push_neg at {hx}`を試してみては? 
   "
   push_neg at hx
   Hint "

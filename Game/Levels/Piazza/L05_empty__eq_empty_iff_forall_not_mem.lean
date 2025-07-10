@@ -7,7 +7,7 @@ Title ""
 
 Introduction
 "
-  **Mem:** この発言もまた混乱させられると思いませんか？
+  **Mem:** この発言もまた混乱させられると思いませんか? 
 "
 namespace Set
 

@@ -33,11 +33,11 @@ Statement Matrix.zero_on_offDiag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[ℝ]
     -- match the first goal and proof state
     -- of an incorrect attempt further below!
   Branch
-    Hint "**Robo**: ここで`{h₁}`をどう使えるでしょうか？
+    Hint "**Robo**: ここで`{h₁}`をどう使えるでしょうか? 
 
-    **あなた**: 今回は`E i j`を積`E i j * E j j`と書いてみたらどうでしょう？
+    **あなた**: 今回は`E i j`を積`E i j * E j j`と書いてみたらどうでしょう? 
 
-    **Robo**: なぜそうするのですか？
+    **Robo**: なぜそうするのですか? 
 
     **あなた**: この積で因子を入れ替えるとゼロになります！`E.mul_of_ne`のようなものでしたよね. "
     Hint (hidden := true) "**Robo**: そうですか. では`trans f (E i j * E j j)`を試してみてください. "
@@ -46,7 +46,7 @@ Statement Matrix.zero_on_offDiag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[ℝ]
 
       **Robo**: `unfold E`を忘れずに, または`E`の定義を使用するように`simp`に伝えてください(`simp [E]`). "
       simp [E]
-    · Hint "**Robo**: ここで可換にしたいのですか？
+    · Hint "**Robo**: ここで可換にしたいのですか? 
 
       **あなた**: その通りです！"
       Branch

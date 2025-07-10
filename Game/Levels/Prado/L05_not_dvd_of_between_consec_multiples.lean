@@ -10,7 +10,7 @@ Title ""
 Introduction
 "**あなた** *(Roboに向かって)*: もっと面白いものをちょうだい！
 
-**Robo**: これはどうかな？
+**Robo**: これはどうかな? 
 "
 
 /---/
@@ -19,7 +19,7 @@ TheoremDoc Nat.not_dvd_of_between_consec_multiples as "not_dvd_of_between_consec
 namespace Nat
 Statement not_dvd_of_between_consec_multiples {m n k : ℕ} (h1 : n * k < m) (h2 : m < n * (k + 1)) : ¬n ∣ m := by
   Hint "
-  **あなた**: `by_contra`を使う？
+  **あなた**: `by_contra`を使う? 
 
   **Robo**: それでいけるかもしれないね. 
   おそらく`lt_of_mul_lt_mul_left`という補題が必要になるだろう. 

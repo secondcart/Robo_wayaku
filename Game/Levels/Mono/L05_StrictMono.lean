@@ -28,7 +28,7 @@ Statement :
 
     `Odd.strictMono_pow` - 奇数の`n`に対して`x ↦ x ^ n`は厳密単調です
 
-    これで試してみましょうか？"
+    これで試してみましょうか? "
   Hint (hidden := true) "**Robo**: `apply`が使えますよ"
   Branch
     intro a b
@@ -44,11 +44,11 @@ Statement :
       --exact Odd.strictMono_pow h_odd
       exact h_odd.strictMono_pow
     apply Odd.strictMono_pow
-    Hint (hidden := true) "**あなた**: `Odd 3`. これは自明じゃないですか？ちょっと待って！"
+    Hint (hidden := true) "**あなた**: `Odd 3`. これは自明じゃないですか? ちょっと待って！"
     decide
   · Hint "**あなた**: はっ！そしてこの部分はおそらくまた初等的に解けるでしょう"
     Hint (hidden := true) "
-      **あなた**: それとも…？
+      **あなた**: それとも…? 
 
       **Robo**: いえいえ, できますよ. `unfold`で`StrictMono`の定義を覗いてみてください
     "

@@ -14,7 +14,7 @@ open Function Nat
 
 Statement {A B : Type} (f : ℕ → A → B) : ¬ Surjective f ↔ ∃ g : A → B, ∀ n, g ≠ f n := by
   Hint "
-  **あなた**: `ℕ → A → B`…この連続した矢印はどう読むのですか？
+  **あなた**: `ℕ → A → B`…この連続した矢印はどう読むのですか? 
 
   **Robo**: これは`ℕ → (A → B)`と読みます. 自然数`ℕ`からAからBへの写像の集合`A → B`への写像です. これは, あなたがここで示すべきことを読み進めると明らかになります. "
   Hint (hidden := true) "

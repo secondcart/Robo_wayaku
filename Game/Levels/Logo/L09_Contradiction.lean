@@ -14,7 +14,7 @@ Introduction
 /--  -/
 Statement (n : ℕ) (h : n = 10) (g : n ≠ 10) : n = 42 := by
   Hint "
-    **あなた** また仮定の中に矛盾があるの？
+    **あなた** また仮定の中に矛盾があるの? 
 
     **Robo**: だんだんコツがわかってきたみたいだね"
   contradiction

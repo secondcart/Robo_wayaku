@@ -7,14 +7,14 @@ Title "Einheitsmatrix"
 
 Introduction
 "
-**あなた**: ちょっと見せて、何を持ってるの？単位行列？私たちのコレクションにぴったりじゃない？
+**あなた**: ちょっと見せて, 何を持ってるの？単位行列？私たちのコレクションにぴったりじゃない？
 
 **ロボ**: はい - 右端の`1`がここでは単位行列です。
   `matrix_eq_sum_ebasis`から始められると思います。
 
 **あなた**: 広場に重要なものを置き忘れてないか気になるな...
 
-**ロボ**: どうでもいいよ、もうずいぶん先に進んでる。ここで試してみて！
+**ロボ**: どうでもいいよ, もうずいぶん先に進んでる。ここで試してみて！
 "
 
 Conclusion "**あなた**: 行列の対角線に興味がある誰かの跡を追ってる気がする。でも喉が渇いてきた！"
@@ -42,22 +42,22 @@ TheoremDoc Matrix.ebasis_diag_sum_eq_one as "ebasis_diag_sum_eq_one" in "Matrix"
 
 Statement Matrix.ebasis_diag_sum_eq_one {n : ℕ} : ∑ i : Fin n, E i i = 1 := by
   Hint (hidden := true) "
-    **ロボ**: 言った通り、`matrix_eq_sum_ebasis`から始められると思うよ、
+    **ロボ**: 言った通り, `matrix_eq_sum_ebasis`から始められると思うよ, 
     等号の右側の単位行列`1`に適用して。
     だから`matrix_eq_sum_ebasis 1`で目標を`r`e`w`riteしたいんだ。
   "
   Branch
     rw [matrix_eq_sum_std_basis 1]
-    Hint "**ロボ**: 違うよ、`matrix_eq_sum_std_basis`じゃなくて`matrix_eq_sum_ebasis`だよ。"
+    Hint "**ロボ**: 違うよ, `matrix_eq_sum_std_basis`じゃなくて`matrix_eq_sum_ebasis`だよ。"
   rw [matrix_eq_sum_ebasis 1] -- Lvl 3
-  Hint "**あなた**: 各項が同じだから、2つの和は同じだと思う。"
+  Hint "**あなた**: 各項が同じだから, 2つの和は同じだと思う。"
   Hint (hidden := true) "
     **ロボ**: それならまた`sum_congr`を使うべきかも。
   "
   apply sum_congr
   rfl
   intro i hi
-  Hint "**あなた**: で、次は？
+  Hint "**あなた**: で, 次は？
 
   **ロボ**: `funext r s`で行列の$(r,s)$成分に注目できるよ。"
   funext r s
@@ -74,31 +74,31 @@ Statement Matrix.ebasis_diag_sum_eq_one {n : ℕ} : ∑ i : Fin n, E i i = 1 := 
   · simp
   Hint "**ロボ**: 良かった。これで`sum_subset`が使えるよ。"
   rw [← sum_subset h]
-  · Hint "**あなた**: ありがとう、助かる！このステップは簡単だ: 1要素の和で、
-    `1 {i} {i}`は1で、`1 • _`も簡約される！"
+  · Hint "**あなた**: ありがとう, 助かる！このステップは簡単だ: 1要素の和で, 
+    `1 {i} {i}`は1で, `1 • _`も簡約される！"
     Hint (hidden := true) "**ロボ**: `simp`はいつでも試せる..."
     simp
   · intro x h₁ h₂
     clear h₁ -- not needed
     Hint "**あなた**: でもここはどうする？`{h₂}`はほぼ`{i} ≠ {x}`ってことだよね。
 
-    **ロボ**: そうだけど、完全には。`have h₃ : {i} ≠ {x}`を導入して簡単に示して！"
+    **ロボ**: そうだけど, 完全には。`have h₃ : {i} ≠ {x}`を導入して簡単に示して！"
     -- TODO: There are other ways to get `i ≠ x`!
     Branch
       have h₃ : x ≠ i
-      Hint "**ロボ**: 逆の方が有用だよ、
+      Hint "**ロボ**: 逆の方が有用だよ, 
       `1 {i} {x}`は`if {i} = {x} then _ else _`で定義されてるから！
 
-      **あなた**: その通り、すぐ`{i} = {x}`か`{i} ≠ {x}`が必要だ。変えよう。"
+      **あなた**: その通り, すぐ`{i} = {x}`か`{i} ≠ {x}`が必要だ。変えよう。"
     have h₃ : i ≠ x
     · Hint "**あなた**: まず`{h₂}`が簡約できるか見てみよう。"
       simp at h₂
       -- TODO : `tauto` already solves this.
-      Hint "**あなた**: うーん、今は逆だ。
+      Hint "**あなた**: うーん, 今は逆だ。
 
       **ロボ**: `symm`を思い出して！
 
-      **あなた**: そうだった、あのベルトコンベアの変な人の時も使ったね。"
+      **あなた**: そうだった, あのベルトコンベアの変な人の時も使ったね。"
       symm
       assumption
     Branch
@@ -107,7 +107,7 @@ Statement Matrix.ebasis_diag_sum_eq_one {n : ℕ} : ∑ i : Fin n, E i i = 1 := 
 
     **ロボ**: `Matrix.one_apply`！"
     rw [Matrix.one_apply]
-    Hint "**ロボ**: 間違ってるから、`rw`と`if_neg`で進めるよ。"
+    Hint "**ロボ**: 間違ってるから, `rw`と`if_neg`で進めるよ。"
     rw [if_neg h₃]
     simp
 

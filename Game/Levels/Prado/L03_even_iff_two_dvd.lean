@@ -8,7 +8,7 @@ Level 3
 Title ""
 
 Introduction
-"ギノを博物館で追いかけながら、ロボがさらに課題を出してきます。
+"ギノを博物館で追いかけながら, ロボがさらに課題を出してきます。
 "
 /---/
 TheoremDoc Nat.even_iff_two_dvd as "even_iff_two_dvd" in "ℕ"

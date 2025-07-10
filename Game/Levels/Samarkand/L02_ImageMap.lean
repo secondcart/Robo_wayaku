@@ -10,14 +10,14 @@ Introduction "アラプカがもう一つ課題を出しています。"
 
 Statement {A B C : Type} (f : A → B) (g : B → C) : image (g ∘ f) = (image g) ∘ (image f) := by
   Hint "
-    **あなた**: ああ！つまり、この''のような煩わしい記法が嫌なら、単に`image`と書いてもいいんだ？
+    **あなた**: ああ！つまり, この''のような煩わしい記法が嫌なら, 単に`image`と書いてもいいんだ？
 
-    **ロボ**: いいえ、よく見てください。ここでの`image f`は写像です。
-    これはもちろん、Aの部分集合をBの対応する像集合に送る写像で、
+    **ロボ**: いいえ, よく見てください。ここでの`image f`は写像です。
+    これはもちろん, Aの部分集合をBの対応する像集合に送る写像で, 
     ```
     image f = fun S ↦ f '' S
     ```
-    つまり`image f`は`f ''`で表現できますが、逆はできません。
+    つまり`image f`は`f ''`で表現できますが, 逆はできません。
   "
 /-
 This is literally true:
@@ -30,7 +30,7 @@ example : image f = fun S ↦ f '' S := by
   Branch
     funext
     Hint "
-      **ロボ**: ああ、いや。これは複雑すぎます。明示的に`funext S`と書いた方がいいです。
+      **ロボ**: ああ, いや。これは複雑すぎます。明示的に`funext S`と書いた方がいいです。
       "
   funext S
   Hint (hidden := true) "
@@ -45,5 +45,5 @@ example : image f = fun S ↦ f '' S := by
 NewDefinition Set.image Set.preimage
 
 Conclusion "
-  **アラプカ**: 素敵、素敵。
+  **アラプカ**: 素敵, 素敵。
 "

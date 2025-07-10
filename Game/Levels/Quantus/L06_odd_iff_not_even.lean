@@ -20,7 +20,7 @@ Statement (i : ℕ): (-1 : ℤ)^i  + (-1 : ℤ)^(i+1) = 0 := by
     by_cases h : Odd i
     swap  -- TODO: check whether this triggers in the correct moment
     Hint "
-      **ロボット**:  `odd_iff_not_even`を使えば、`¬Odd`を`Even`に変換できます。
+      **ロボット**:  `odd_iff_not_even`を使えば, `¬Odd`を`Even`に変換できます。
       "
     rw [← even_iff_not_odd] at h
   by_cases h : Even i
@@ -33,7 +33,7 @@ Statement (i : ℕ): (-1 : ℤ)^i  + (-1 : ℤ)^(i+1) = 0 := by
       ring
     · assumption
   · Hint "
-      **ロボット**:  `odd_iff_not_even`を使えば、`¬Even`を`Odd`に変換できます。
+      **ロボット**:  `odd_iff_not_even`を使えば, `¬Even`を`Odd`に変換できます。
     "
     rw [← odd_iff_not_even] at h
     rw [Odd.neg_pow]

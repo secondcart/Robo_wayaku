@@ -6,14 +6,14 @@ Level 6
 Title ""
 
 Introduction "どうやら誰かが`StrictMono.injective`が予測されていたことに気づいたようです。
-今、彼らはその証明を見たいと思っています。"
+今, 彼らはその証明を見たいと思っています。"
 
 open Set Function
 
 Statement StrictMono.injective {f : ℤ → ℤ}
     (hf : StrictMono f)  : Injective f := by
   Hint (hidden := true) "
-    **ロボ**: まずは古典的に、`Injective f`から変数と仮定を導入してみては？
+    **ロボ**: まずは古典的に, `Injective f`から変数と仮定を導入してみては？
   "
   intro a b h
   Hint (hidden := true) (strict := true)"

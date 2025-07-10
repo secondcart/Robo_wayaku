@@ -7,17 +7,17 @@ Level 6
 
 Title ""
 
-Introduction "**アラプカ**: では、これはどうかな？"
+Introduction "**アラプカ**: では, これはどうかな？"
 
 Statement {A B : Type} (f : A → B)  (y : B) :
      f ⁻¹' {y} ≠ ∅ ↔ (∃ a, f a = y) := by
   Hint "
-   **あなた**: つまり、`b`のファイバーが空でないのは、`b`に原像があるときだけ、ってことですね。
+   **あなた**: つまり, `b`のファイバーが空でないのは, `b`に原像があるときだけ, ってことですね。
    またしてもかなり自明なことです。
 
-   **ロボ**: はい、表記法を除けば。
-   幸い、`eq_empty_iff_forall_not_mem`は既に証明済みです。
-   これを使うには、不等号を展開する必要があります。例えば`unfold Ne`で簡単にできます。
+   **ロボ**: はい, 表記法を除けば。
+   幸い, `eq_empty_iff_forall_not_mem`は既に証明済みです。
+   これを使うには, 不等号を展開する必要があります。例えば`unfold Ne`で簡単にできます。
   "
   unfold Ne
   rw [eq_empty_iff_forall_not_mem]

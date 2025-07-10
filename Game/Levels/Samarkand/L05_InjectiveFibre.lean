@@ -35,5 +35,5 @@ Statement Injective.exists_unique_of_mem_range {A B : Type} {f : A → B} (hf : 
     rw [ha',ha]
 
 Conclusion "
-  アラプカはまだじっと動かずにいますが、幸せそうに見えます。
+  アラプカはまだじっと動かずにいますが, 幸せそうに見えます。
 "

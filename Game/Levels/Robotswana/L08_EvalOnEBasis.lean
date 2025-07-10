@@ -9,9 +9,9 @@ Title "Die Summe der Summe der Summe"
 
 Introduction
 "
-再び手がかりを見つけましたが、急いでいるうちに道を見失いました。
-あなたは今、とても喉が渇いています。
-ロボが周辺を探している間、あなたは疲れ果てて座り込み、
+再び手がかりを見つけましたが, 急いでいるうちに道を見失いました。
+あなたは今, とても喉が渇いています。
+ロボが周辺を探している間, あなたは疲れ果てて座り込み, 
 暖かい日差しの中で少しぼんやりと羊皮紙の切れ端を眺めています。
 "
 
@@ -23,9 +23,9 @@ Conclusion "**あなた**: やっとだ。
 
 **ロボ**: トリック17だよ。
 
-**あなた**: それで、道は見つかった？
+**あなた**: それで, 道は見つかった？
 
-**ロボ**: ああ、ついてきて！あそこに何か見えたんだ。"
+**ロボ**: ああ, ついてきて！あそこに何か見えたんだ。"
 
 open Nat Matrix StdBasisMatrix Finset
 
@@ -49,25 +49,25 @@ Statement Matrix.eq_sum_apply_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[�
   \\end\{aligned}
   $$
 
-  **あなた**: そうか、こうすればいいんだ。`A`を基底行列の和として書き、
-  線形性を利用し、最後に`f`が`i ≠ j`の`E i j`で消えることを使う。
+  **あなた**: そうか, こうすればいいんだ。`A`を基底行列の和として書き, 
+  線形性を利用し, 最後に`f`が`i ≠ j`の`E i j`で消えることを使う。
 
   おそらく最初に`f A`の`A`を基底行列の和として書くべきだ。
 
   **ロボ** (*遠くから*): `nth_rw 1 [ ... ]`！`rw`のように使えるよ。"
   Hint (hidden := true) "**あなた** (*叫びながら*): どういうこと？
 
-  **ロボ** (*同じく叫びながら*): `matrix_eq_sum_ebasis A`を使いたいんだろうけど、`rw`じゃなくて`nth_rw 1`で。"
+  **ロボ** (*同じく叫びながら*): `matrix_eq_sum_ebasis A`を使いたいんだろうけど, `rw`じゃなくて`nth_rw 1`で。"
   Branch
       rw [matrix_eq_sum_ebasis A]
       Hint "**あなた**: `rw`は良くないな。複雑すぎる。`nth_rw`で試してみよう。"
   nth_rw 1 [matrix_eq_sum_ebasis A] -- Lvl 3
   Hint "**あなた** (*心の中で*): 線形性を使う…そして水のことを考えないように…バビロンには十分な水があった…何をしてたんだっけ？"
-  Hint "**ロボ** (*どこからか*): `map_sum`みたいだね。バビロンでは見なかったと思うけど、想像してるんだろう。でも`simp`はこの補題を知ってるはず。"
+  Hint "**ロボ** (*どこからか*): `map_sum`みたいだね。バビロンでは見なかったと思うけど, 想像してるんだろう。でも`simp`はこの補題を知ってるはず。"
   Branch
     simp
   rw [map_sum] -- simp knows this
-  Hint "**あなた**: ああ、迷ったら簡略化だ。"
+  Hint "**あなた**: ああ, 迷ったら簡略化だ。"
   simp
   Hint "**ロボ**: 今どこまで進んだ？
 
@@ -84,7 +84,7 @@ Statement Matrix.eq_sum_apply_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[�
     apply congr_arg
     ext j
     Hint "**あなた**: そして`{i} = {j}`で場合分け…"
-    Hint (hidden := true) "**ロボ**: `by_cases`だよ、そう！"
+    Hint (hidden := true) "**ロボ**: `by_cases`だよ, そう！"
     by_cases h₂ : i = j
     · Hint "**ロボ**: ここは`if_pos {h₂}`が役立つ。"
       rw [if_pos h₂]
@@ -92,7 +92,7 @@ Statement Matrix.eq_sum_apply_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[�
 
       **あなた**: 知ってるよ。"
       rw [if_neg h₂]
-      Hint "**あなた**: `f (E i j)`はゼロだよね、前に見た！"
+      Hint "**あなた**: `f (E i j)`はゼロだよね, 前に見た！"
       Hint (hidden := true) "**ロボ**: それは`zero_on_offDiag_ebasis`だった。"
       rw [zero_on_offDiag_ebasis]
       · simp
@@ -100,7 +100,7 @@ Statement Matrix.eq_sum_apply_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[�
       · assumption
   · Hint  "**あなた**: もう終わりかと思った。
 
-    **ロボ**: ほぼ、`trans`コマンドの後半が残ってる。これは簡単だ。"
+    **ロボ**: ほぼ, `trans`コマンドの後半が残ってる。これは簡単だ。"
     simp
 
 -- TODO: Where to introduce it? It is for additive `f : A →+ B`, so Babylon might not be ideal

@@ -7,13 +7,13 @@ Title "Desinteresse"
 
 Introduction
 "
-木のすぐ横に、大きく`E i j`と書かれたメモが線で消されているのを見つけました。
+木のすぐ横に, 大きく`E i j`と書かれたメモが線で消されているのを見つけました。
 
-**あなた**: つまり、i ≠ jの場合の`E i j`は興味がないということでしょう。
+**あなた**: つまり, i ≠ jの場合の`E i j`は興味がないということでしょう。
 
 "
 
-Conclusion "足跡はますます新鮮に見え、あなたは以前よりも速く、そして無防備にそれらを追いかけています。"
+Conclusion "足跡はますます新鮮に見え, あなたは以前よりも速く, そして無防備にそれらを追いかけています。"
 
 open Nat Matrix StdBasisMatrix
 
@@ -42,9 +42,9 @@ Statement Matrix.zero_on_offDiag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[ℝ]
     **あなた**: この積で因子を入れ替えるとゼロになります！`E.mul_of_ne`のようなものでしたよね。"
     Hint (hidden := true) "**ロボ**: そうですか。では`trans f (E i j * E j j)`を試してみてください。"
     trans f (E i j * E j j)
-    · Hint (hidden := true) "**あなた**: ええと、これは定義から明らかです。
+    · Hint (hidden := true) "**あなた**: ええと, これは定義から明らかです。
 
-      **ロボ**: `unfold E`を忘れずに、または`E`の定義を使用するように`simp`に伝えてください(`simp [E]`)。"
+      **ロボ**: `unfold E`を忘れずに, または`E`の定義を使用するように`simp`に伝えてください(`simp [E]`)。"
       simp [E]
     · Hint "**ロボ**: ここで可換にしたいのですか？
 

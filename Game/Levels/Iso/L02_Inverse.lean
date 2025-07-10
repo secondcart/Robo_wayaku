@@ -20,12 +20,12 @@ TheoremDoc Function.bijective_iff_has_inverse as "bijective_iff_has_inverse" in 
 
 Statement bijective_iff_has_inverse {A B : Type} (f : A → B) :
     Bijective f ↔ ∃ g, LeftInverse g f ∧ RightInverse g f := by
-  Hint "**あなた**: 写像が全単射であることと、それに対する逆写像が存在することは同値です。
-  これは基本的に、EpoとMonoで既に示したことと同じです。
+  Hint "**あなた**: 写像が全単射であることと, それに対する逆写像が存在することは同値です。
+  これは基本的に, EpoとMonoで既に示したことと同じです。
   これらの主張を保存していましたか？
 
-  **ロボ**: はい、しかしここでそれらを展開すると眉を上げられるでしょう。
-  代わりに、しっかり考えて、それがどうだったか思い出しましょう。
+  **ロボ**: はい, しかしここでそれらを展開すると眉を上げられるでしょう。
+  代わりに, しっかり考えて, それがどうだったか思い出しましょう。
   "
   constructor
   · intro h
@@ -34,11 +34,11 @@ Statement bijective_iff_has_inverse {A B : Type} (f : A → B) :
       `Injective`と`Surjective`に分解してみてください！"
     obtain ⟨finj, fsurj⟩  := h
     Hint (hidden := true)"
-      **ロボ**: 全射性から、各`y : B`には原像`x : A`があることが分かります。
+      **ロボ**: 全射性から, 各`y : B`には原像`x : A`があることが分かります。
       `choose`を使って逆写像を構築できませんか？"
     choose g hg using fsurj
     Hint "
-      まず`{g}`が`{f}`の右逆元であることを示すのが良いでしょう、
+      まず`{g}`が`{f}`の右逆元であることを示すのが良いでしょう, 
       例えば`have hR : RightInverse {g} {f}`のように"
     have hR : RightInverse g f := by
       assumption
@@ -75,7 +75,7 @@ Statement bijective_iff_has_inverse {A B : Type} (f : A → B) :
         **あなた**: 引数`f a = f b`が等しいなら`g (f a) = g (f b)`も等しい—
         どう言えばいいんだっけ？
 
-      **ロボ**: `f a = f b`があるなら、単に`rw`を使えますよ。"
+      **ロボ**: `f a = f b`があるなら, 単に`rw`を使えますよ。"
       rw [eq]
     · intro b
       use g b
@@ -94,7 +94,7 @@ Conclusion
 **ロボ**: 私たちはもう一度...カプセル化できますか？
 
 **イソソフ**: もちろん！ しかし順序よく進めましょう。
-私たちが双方向でカプセルを使い始めてから、また事故が増えています。
+私たちが双方向でカプセルを使い始めてから, また事故が増えています。
 
-ロボはさらに3往復します。その後、あなたたちはさらに進みます。
+ロボはさらに3往復します。その後, あなたたちはさらに進みます。
 "

@@ -23,7 +23,7 @@ Statement :
   $$
   そして`f + f`とは何ですか？
 
-  **Robo**: これは`ℕ → ℕ`の関数で、各点で`f`の2倍の値を取ります。
+  **Robo**: これは`ℕ → ℕ`の関数で, 各点で`f`の2倍の値を取ります。
   "
   Hint (hidden := true) "
   **Robo**: まず`Injective`を`unfold`で展開してみましょう。すると`¬ ∀`…と表示されます"
@@ -36,7 +36,7 @@ Statement :
     **Robo** その通り！どの2つの数字を使いますか？"
   use 2
   use 3
-  Hint (hidden := true) "**Robo**: ここでは具体的な値なので、`decide`で解決できるかもしれません"
+  Hint (hidden := true) "**Robo**: ここでは具体的な値なので, `decide`で解決できるかもしれません"
   decide
 
 TheoremTab "Function"

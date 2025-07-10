@@ -14,7 +14,7 @@ Statement (A B : Prop) (h : A ↔ B) : B ↔ A := by
   Hint "
     **あなた**: これはただ逆になっただけだ。
 
-    **ロボ**: それ用のツールを知っています。`symm` または `symm at {h}` を使えば、どちらかを反転できます。"
+    **ロボ**: それ用のツールを知っています。`symm` または `symm at {h}` を使えば, どちらかを反転できます。"
   Branch
     symm at h
     assumption

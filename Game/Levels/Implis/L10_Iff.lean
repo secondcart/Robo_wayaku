@@ -12,12 +12,12 @@ Introduction
 
 Statement (A B C : Prop) (h : A ↔ B) (g : B → C) : A → C := by
   Hint "
-    **あなた**: まあ、とりあえず`intro`から始められるかな…
+    **あなた**: まあ, とりあえず`intro`から始められるかな…
 
     **ロボ**: …そしてその後どうなるか見てみましょう！"
   intro hA
   Hint "
-    **ロボ**: つまり、含意は`apply`で適用できます…
+    **ロボ**: つまり, 含意は`apply`で適用できます…
 
     **あなた**: 知ってるよ！でも`{h}`は含意ではなく同値です。
     本当は`rw [← {h}]`と言いたいところです。
@@ -25,7 +25,7 @@ Statement (A B C : Prop) (h : A ↔ B) (g : B → C) : A → C := by
     **ロボ**: `{h}`の`{A} → {B}`方向は`{h}.mp`と呼ばれます。`apply ({h}.mp) at …`で適用できます。"
   Branch
     apply g
-    Hint "**ロボ**: もちろん、このように始めることもできます。"
+    Hint "**ロボ**: もちろん, このように始めることもできます。"
     apply h.mp
     assumption
   apply h.mp at hA
@@ -33,7 +33,7 @@ Statement (A B C : Prop) (h : A ↔ B) (g : B → C) : A → C := by
   assumption
 
 Conclusion "
-**作戦責任者**: はい、素晴らしい。これでうまくいくはずです。
+**作戦責任者**: はい, 素晴らしい。これでうまくいくはずです。
 
 彼はまた電話しています。
 

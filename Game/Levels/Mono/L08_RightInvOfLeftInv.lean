@@ -15,7 +15,7 @@ Statement {A B : Type} {f : A → B} {g : B → A} (injf : Injective f)
     (hL : LeftInverse f g) : RightInverse f g := by
   Hint "**あなた**: ここには何が書いてあるの？
 
-  **ロボ**: 射影`f`が単射で、写像`g`に対して左逆元である場合、同じ写像に対して右逆元でもあります。
+  **ロボ**: 射影`f`が単射で, 写像`g`に対して左逆元である場合, 同じ写像に対して右逆元でもあります。
   "
   intro x
   apply injf

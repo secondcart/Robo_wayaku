@@ -7,7 +7,7 @@ Level 7
 Title "Preimage of the inverse"
 
 Introduction "
-  **アラプカ**: さて、本当に難しい課題がまだ残っています。
+  **アラプカ**: さて, 本当に難しい課題がまだ残っています。
 "
 
 open Function Set

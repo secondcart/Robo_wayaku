@@ -20,5 +20,5 @@ Statement (l m n x : ℕ) (h₁ : l ≤ m) (h₂ : m ≤ n) : l ≤ x ∧ x ≤ 
 TheoremTab "ℕ"
 
 Conclusion "
-  **リナ**:  はい、わかった、私のミスね。
+  **リナ**:  はい, わかった, 私のミスね。
 "

@@ -15,7 +15,7 @@ open Function
 Statement {x y : ℤ} (f : ℤ → ℤ) (h : x = y) :
     let g : ℤ → ℤ := fun x ↦ x + 3;
     f (g 0) = f 3 := by
-  Hint "**ロボ**: ああ、これは`congr_arg`のケースだ。`x = y`が既に分かっているなら、
+  Hint "**ロボ**: ああ, これは`congr_arg`のケースだ。`x = y`が既に分かっているなら, 
  `apply congr_arg`で`f x = f y`を得られるよ。"
   apply congr_arg
   rfl

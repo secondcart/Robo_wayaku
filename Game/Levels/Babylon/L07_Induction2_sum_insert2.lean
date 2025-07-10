@@ -7,7 +7,7 @@ Level 7
 Title ""
 
 Introduction
-"ガウスの塔のすぐ隣に、再び空き地があります。 今回は看板に次のように書かれています："
+"ガウスの塔のすぐ隣に, 再び空き地があります。 今回は看板に次のように書かれています："
 
 open Finset
 open Robo.ZZ.Finset -- temporary solution to make correct version of `insert_Icc_eq_Icc_add_one_right` available
@@ -15,10 +15,10 @@ open Robo.ZZ.Finset -- temporary solution to make correct version of `insert_Icc
 
 Statement  (n : ℕ) : ∑ i ∈ Icc (-n : ℤ) n, i = 0 := by
     Hint "
-      **あなた**:  $\\sum_\{i=-n}^{n} i = 0$ – はい、これは正しいようです。
+      **あなた**:  $\\sum_\{i=-n}^{n} i = 0$ – はい, これは正しいようです。
 
       **ロボ**: 先ほどのガウス和と同じように証明できるはずです…
-      ただし、`insert_Icc_eq_Icc_add_one_right` の後には
+      ただし, `insert_Icc_eq_Icc_add_one_right` の後には
       `insert_Icc_eq_Icc_sub_one_left` も必要になるでしょう。
     "
     induction n with d hd
@@ -26,12 +26,12 @@ Statement  (n : ℕ) : ∑ i ∈ Icc (-n : ℤ) n, i = 0 := by
     · simp
       rw [← insert_Icc_eq_Icc_add_one_right]
       Hint (hidden := true) "
-        **ロボ**: その通り、今度も `rw [sum_insert]` を使ってください。
+        **ロボ**: その通り, 今度も `rw [sum_insert]` を使ってください。
         "
       · rw [sum_insert]
         Hint "
           **ロボ**: 次は `-1 + -{d}` を `-{d} - 1` と書き換える必要があります。
-          おそらく、この等式を `have` で表現するのが最も簡単でしょう。
+          おそらく, この等式を `have` で表現するのが最も簡単でしょう。
           ℤ における等式であることを明確にする必要があります。
           例えば次のように：
           ```

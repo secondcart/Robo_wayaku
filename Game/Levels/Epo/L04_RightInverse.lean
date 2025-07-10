@@ -18,8 +18,8 @@ Statement {A B : Type} {f : A -> B} {g : B -> A} :
 
   **ロボ**: そのようです。"
   Hint (hidden := true) "
-  **ロボ**: 実際、また`constructor`から始めるのが良いでしょう。
-  そして`comp_apply`、`congr_fun`などお馴染みのものを使うと良いです。"
+  **ロボ**: 実際, また`constructor`から始めるのが良いでしょう。
+  そして`comp_apply`, `congr_fun`などお馴染みのものを使うと良いです。"
   constructor
   · intro h
     funext x

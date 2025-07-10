@@ -8,12 +8,12 @@ Title ""
 
 Introduction
 "
-**カントール**: さあ、この美しい対角線論法を使って、`A → Set A`の全射写像が存在しないことをもう一度示してみよう！
+**カントール**: さあ, この美しい対角線論法を使って, `A → Set A`の全射写像が存在しないことをもう一度示してみよう！
 `Set A`を`A → Prop`と解釈するだけだ！
 
 **あなた**: え？
 
-**ロボ**: 部分集合`S : Set A`は、`a : A`を`a ∈ S`という命題に写す`A → Prop`の写像と同一視できます。
+**ロボ**: 部分集合`S : Set A`は, `a : A`を`a ∈ S`という命題に写す`A → Prop`の写像と同一視できます。
 形式主義者にとっては同じものです。
 "
 Conclusion "
@@ -29,7 +29,7 @@ Statement {A : Type} : ¬ ∃ f : A → Set A, Surjective f := by
     Hint (hidden := true) "
     **あなた**: ここで`cantor_diagonal`を使うの？
 
-    **ロボ**: おそらくね、例えば`apply cantor_diagonal at {hf}`とかで。
+    **ロボ**: おそらくね, 例えば`apply cantor_diagonal at {hf}`とかで。
     "
   push_neg
   intro f
@@ -37,7 +37,7 @@ Statement {A : Type} : ¬ ∃ f : A → Set A, Surjective f := by
   Hint (hidden := true) "
     **あなた**: ここで`cantor_diagonal`を使うの？
 
-    **ロボ**: おそらくね、例えば`apply cantor_diagonal at {hf}`とかで。
+    **ロボ**: おそらくね, 例えば`apply cantor_diagonal at {hf}`とかで。
   "
   Branch
     clear hf

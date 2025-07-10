@@ -8,7 +8,7 @@ Title "" -- "Richtige Indizes"
 Introduction ""
 
 Conclusion "
-  **あなた**: でも、誰がここにメモを落としたり捨てたりしたのか気になってきたな。さあ、先に進もう。
+  **あなた**: でも, 誰がここにメモを落としたり捨てたりしたのか気になってきたな。さあ, 先に進もう。
 "
 
 open Nat Matrix

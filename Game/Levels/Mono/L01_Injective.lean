@@ -8,8 +8,8 @@ Title ""
 
 Introduction
 "
-最上階には実際、再び多くの形式哲学者が集まっています。
-彼らはあなた方を喜んで歓迎し、すぐに本題に入ります。
+最上階には実際, 再び多くの形式哲学者が集まっています。
+彼らはあなた方を喜んで歓迎し, すぐに本題に入ります。
 "
 open Set Function
 
@@ -18,7 +18,7 @@ Statement :
     Injective f := by
   Hint "
     **Robo**: `Injective` はあなたが期待するように定義されています: `∀ \{a b : U}, f a = f b → a = b`。
-    私を信用しないなら、`unfold`で簡単に確認できます。"
+    私を信用しないなら, `unfold`で簡単に確認できます。"
   Hint (hidden := true) "
     **Robo**:  `intro a b`から始めてみてはどうでしょう。
   "
@@ -36,4 +36,4 @@ Statement :
 NewDefinition Function.Injective
 TheoremTab "Function"
 
-Conclusion "形式哲学者たちは、あなた方の仕事をよくやったと評価しています。"
+Conclusion "形式哲学者たちは, あなた方の仕事をよくやったと評価しています。"

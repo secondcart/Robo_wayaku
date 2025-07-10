@@ -31,5 +31,5 @@ Statement : {2, 7} ⊆ {2} ∪ { n : ℕ | Odd n} := by
 TheoremTab "Set"
 
 Conclusion "
-**Mem**: はい、素晴らしい！でもあなたたちは早く覚えましたね！
+**Mem**: はい, 素晴らしい！でもあなたたちは早く覚えましたね！
 "

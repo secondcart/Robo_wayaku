@@ -3,13 +3,13 @@ import Game.Metadata
 World "Implis"
 Level 9
 
-Title "" -- "Genau dann, wenn"
+Title "Genau dann, wenn"
 
 Introduction
 "
-**Du**: Irgendwie fühlen sich diese `rw` an, als würde man von hinten durch den Bauch argumentieren.  Geht das nicht auch irgendwie geradeaus, oder denken alle hier um die Ecke?
+**あなた**: どうもこの`rw`は、後ろからお腹を突き破って議論しているような気がするんだ。まっすぐに進む方法はないのか、それともここにいるみんなは角を曲がって考えているのか？
 
-**Robo**:  Vielleicht würde dir `trans` besser gefallen.  Damit könntest du deine Kette von Äquivalenzen  $B \\iff A \\iff D \\iff C$ Schritt für Schritt abarbeiten: als erstes führst Du mit `trans A` den Zwischenschritt `B \\iff A` ein, dann mit `trans D` den nächsten Zwischenschritt.
+**ロボ**: たぶん`trans`の方がいいと思うよ。これを使えば、$B \\iff A \\iff D \\iff C$という同値の連鎖を一歩ずつ進められる：まず`trans A`で`B \\iff A`の中間ステップを導入し、次に`trans D`で次のステップに進むんだ。
 "
 
 Statement (A B C D : Prop) (h₁ : C ↔ D) (h₂ : A ↔ B) (h₃ : A ↔ D) : B ↔ C := by
@@ -22,9 +22,9 @@ Statement (A B C D : Prop) (h₁ : C ↔ D) (h₂ : A ↔ B) (h₃ : A ↔ D) : 
   assumption
 Conclusion
 "
-**Robo**: Und, war das besser?
+**ロボ**: どうだい、こっちの方が良かった？
 
-**Du**:  Weiß nicht.  Wir können jedenfalls weitermachen.
+**あなた**: わからない。とにかく先に進めるよ。
 "
 
 NewTactic trans

@@ -3,18 +3,14 @@ import Game.Levels.Robotswana.L03
 World "Robotswana"
 Level 4
 
-Title "" -- "Summe von Basiselementen"
+Title "Summe von Basiselementen"
 
-Introduction "Ihr kommt an eine Stelle, wo das Gras auf einer größeren, quadratischen
-Fläche heruntergetrampelt ist. Spuren führen kreuz und queer und in verschiedene
-Richtungen weg.
+Introduction "あなたたちは、より大きな正方形のエリアで草が踏み荒らされている場所に到着しました。跡はあちこちに、さまざまな方向へと続いています。
 
-Ein bisschen planlos sucht ihr die Stelle ab und findet verschiedenste Pergamentstücke.
-Die meisten sind leer oder unleserlich, aber eines kannst du entziffern."
+少し当てずっぽうにその場所を探すと、様々な羊皮紙の破片が見つかります。ほとんどは空白か判読不能ですが、1つだけ解読できるものがありました。"
 
 Conclusion "
-Du beschließt, einer besonders markanten Spur zu folgen. Robo zieht dir hinterher und schnappt
-sich beim gehen noch ein willkürliches Stück Pergament vom Boden.
+あなたは特に目立つ跡を追うことに決めました。ロボが後をついてきて、歩きながら地面から適当な羊皮紙の破片を拾います。
 "
 
 open Nat Matrix StdBasisMatrix -- BigOperators
@@ -28,22 +24,22 @@ TheoremDoc Matrix.matrix_eq_sum_ebasis as "matrix_eq_sum_ebasis" in "Matrix"
 
 Statement Matrix.matrix_eq_sum_ebasis {n : ℕ} (A : Mat[n,n][ℝ]) :
     A = ∑ i : Fin n, ∑ j : Fin n, (A i j) • E i j := by
-  Hint "**Du**: Das scheint einfach zu sagen, dass diese `E i j` ein Erzeugendensystem für den Raum der Matrizen bilden.
+  Hint "**あなた**: これは単にこれらの`E i j`が行列の空間の生成系をなすと言っているように見えます。
 
-    **Robo**: Da kannst du bestimmt gleich die Resultate anwenden, die wir schon gefunden haben!"
-  Hint (hidden := true) "**Robo**: Schau zuerst den Ausdruck `(A i j) • E i j` an. Unter Summen braucht man `simp_rw`."
+    **ロボ**: きっと既に見つけた結果をすぐに適用できるでしょう！"
+  Hint (hidden := true) "**ロボ**: まず式`(A i j) • E i j`を見てください。和の下では`simp_rw`が必要です。"
   Branch
     unfold E
-    Hint "**Robo**: Ja gut, du kannst auch einfach den Beweis vom ersten Pergament wiederholen.
-    Nur zu, Übung macht den Meister.
+    Hint "**ロボ**: そうですね、最初の羊皮紙の証明を単に繰り返すこともできます。
+    どうぞ、習うより慣れろです。
 
-    **Du**: Schon gut, ich hab kein mechanisches Hirn wie du."
+    **あなた**: 分かったよ、私はあなたのような機械的な頭脳を持っていないから。"
     simp
   simp [Matrix.smul_ebasis] -- Lvl 1
-  Hint "**Robo**: Ach ja!  So wie es jetzt hier steht, kenne ich die Aussage aus meiner Bibliothek.
-  Das ist genau `apply matrix_eq_sum_std_basis`.
+  Hint "**ロボ**: ああそうだ！今ここにあるように、この主張は私のライブラリから知っています。
+  これはまさに`apply matrix_eq_sum_std_basis`です。
 
-  **Du**: Super! Dann brauchen wir uns ja gar nicht damit aufhalten."
+  **あなた**: すごい！じゃあ私たちはこれに時間を費やす必要はないですね。"
   apply matrix_eq_sum_std_basis
 
 /-- Die generellere Version von `matrix_eq_sum_ebasis`. Siehe dort. -/

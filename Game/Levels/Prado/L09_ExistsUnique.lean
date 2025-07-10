@@ -6,31 +6,30 @@ Level 9
 
 Title ""
 
-Introduction"
-**Robo**:  Aber so schwer ist das auch nicht.  Hier, schau dir diese Aufgabe mal an.
+Introduction "
+**ロボ**: でもそんなに難しくないよ。ほら、この問題を見てみて。
 "
+
 
 namespace Nat
 
 Statement {a b : ℕ} (ha : 0 < a) (h : a ∣ b) : ∃! (m : ℕ), a * m = b := by
   Hint "
-  **Du**: Ich sehe schon – `∃! m, P(m)` ist also die Notation für „es gibt genau ein `m`, für das `P(m)` gilt“.
+  **あなた**: わかった - `∃! m, P(m)`は「P(m)が成り立つmがちょうど1つ存在する」という記法なんだね。
 
-  **Robo**: Genau.  Und das ist einfach definiert als „es existiert ein `m`,
-  sodass (1) `P(m)` gilt und (2) jedes andere Element `m'`, für das `P(m')` gilt, bereits gleich `m` ist.
-  Der erste Schritt ist also, ein geeignetes `m` zu finden, und dann `use _` zu verwenden."
+  **ロボ**: その通り。これは単に「(1) P(m)が成り立ち、(2) P(m')が成り立つ他の要素m'はすべてmと等しい」ようなmが存在すると定義されている。
+  最初のステップは適切なmを見つけて、`use _`を使うことだよ。"
   obtain ⟨w, hw⟩ := h
   use w
-  Hint "**Robo**: Tatsächlich ergibt `use` auf `∃!` angewendet immer ein bisschen Chaos.
-  Schick am besten immer gleich ein `simp` hinterher, dann wird es wieder lesbar."
+  Hint "**ロボ**: 実際、`use`を`∃!`に適用すると少し混乱が生じる。
+  読みやすくするために、すぐ後に`simp`を使うのがベストだよ。"
   simp
-  Hint "**Robo**: Jetzt hast du wie gesagt zwei Aussagen zu beweisen: (1) `{w}` erfüllt `a * {w} = b`,
-  (2) `{w}` ist das einzige Element mit dieser Eigenschaft."
+  Hint "**ロボ**: これで証明すべき2つの命題がある:(1) `{w}`が`a * {w} = b`を満たすこと、
+  (2) `{w}`がこの性質を持つ唯一の要素であること。"
   constructor
   · rw [hw]
   · Hint "
-    **Robo**:  Super.  Jetzt also zur Eindeutigkeit.  Ich glaube, da könnte das Lemma
-    `mul_eq_mul_left_iff` helfen:
+    **ロボ**: 素晴らしい。では一意性についてだ。この補題`mul_eq_mul_left_iff`が役立つと思う:
 
     ```
     a * b = a * c ↔ b = c ∨ a = 0

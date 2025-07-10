@@ -4,37 +4,34 @@ import Game.Metadata
 World "Spinoza"
 Level 2
 
-Title "" -- "Es reicht!"
+Title "Es reicht!"
 
 Introduction
 "
-**Benedictus**: Ihr hättet natürlich auch erst das Hauptresultat und dann das
-Zwischenresultat beweisen können. Das könnt Ihr ja mal an dieser Aufgabe probieren, die ist
-ganz ähnlich.
+**ベネディクトゥス**: もちろん、最初に主結果を証明してから中間結果を証明することもできたでしょう。この問題で試してみてください、とても似ていますよ。
 "
 
 Statement
     (A B : Prop) (h : A → ¬ B) (k₁ : A) (k₂ : B) : False := by
   Hint "
-    **Robo**: Ich weiß was er meint! Anstatt `have` kannst du auch `suffices`
-    verwenden. Das funktioniert genau gleich, außer, dass dann die beiden Beweisziele vertauscht sind.
+    **ロボ**: 彼の言っていることがわかります！ `have`の代わりに`suffices`を使うこともできます。
+    同じように機能しますが、2つの証明目標が入れ替わります。
 
-    **Du**: Also nach `suffices g : ¬B` muss ich dann zuerst zeigen, wie man mit `g` den Beweis
-    abschliesst, bevor ich `g` beweise?
+    **あなた**: つまり、`suffices g : ¬B`の後、まず`g`を使って証明を完了する方法を示し、
+    その後で`g`を証明するのですか？
 
-    **Robo**: Genau!"
+    **ロボ**: その通りです！"
   suffices g : ¬ B
-  Hint "**Robo**: Also hier beendest du den Beweis unter der Annahme `{g}` sei wahr."
+  Hint "**ロボ**: ここでは、`{g}`が真であると仮定して証明を完了します。"
   contradiction
-  Hint "**Robo**: Und hier beweist du das Zwischenresultat."
+  Hint "**ロボ**: そしてここで中間結果を証明します。"
   apply h
   assumption
 
 Conclusion
 "
-**Benedictus**: Genau so meinte ich das. Ob Ihr nun in Zukunft `have` und
-`suffices` verwendet, ist reine Geschmacksfrage. Hauptsache, Ihr wisst, wie Ihr
-entfernte Ziele in kleinen Schritte erreicht.
+**ベネディクトゥス**: まさにその通りです。今後`have`と`suffices`のどちらを使うかは
+完全に好みの問題です。重要なのは、遠い目標を小さなステップで達成する方法を知っていることです。
 "
 
 NewTactic «suffices»

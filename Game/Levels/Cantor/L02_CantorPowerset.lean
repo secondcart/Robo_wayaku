@@ -4,21 +4,21 @@ import Game.Levels.Cantor.L01_CantorPowerset
 World "Cantor"
 Level 2
 
-Title "" -- "Cantor's Diagonalargument"
+Title "Cantor's Diagonalargument"
 
 Introduction
 "
-**Cantor**:  Passt auf, die Überlegung geht eigentlich noch weiter!
+**カントール**: 注意してください、この議論は実はさらに続くのです！
 
-Er greift in seinen Zylinder, und holt alle möglichen Dinge heraus.
-Eine alte Zahnbürste, ein Kartenspiel, ein weißes Kaninchen …
-Schließlich kommt ein zerknüllter Zettel zum Vorschein.
+彼はシルクハットに手を伸ばし、あらゆるものを取り出します。
+古い歯ブラシ、トランプ、白いウサギ……
+ついに皺くちゃのメモ用紙が見つかりました。
 
-**Cantor**: Hier sind ja meine Notizen!  Tada!  Mein berühmtes Diagonalargument!
+**カントール**: ここに私のノートがあった！ほら！私の有名な対角線論法だ！
 
-Er faltet den Zettel auf, reißt vorsichtig die oberste Zeile ab,
-und lässt sie zu euch hinuntersegeln.
-Dann beugt er sich neugierig über den Bühnenrand, um zu sehen, was ihr macht.
+彼は紙を広げ、慎重に一番上の行を引き裂き、
+あなたの方へと舞い降りさせます。
+そして舞台の端から興味津々で覗き込み、あなたの反応を見守ります。
 "
 
 /-
@@ -39,32 +39,29 @@ Aber `¬` hat keine Fixpunkte.
 open Set Function
 
 Statement {A : Type} : ¬ ∃ f : A → Set A, Surjective f := by
-  Hint "**Du**: Das habe ich schon einmal gesehen!
-  Kurz:  „Die Potenzmenge ist stets mächtiger als die Menge selbst.“
-  War auch ein Widerspruchsbeweis, meine ich.
+  Hint "**あなた**: これは前に見たことがあります！
+  要するに「べき集合は常に元の集合より大きい」ということですね。
+  背理法だったと思います。
 
-  **Robo:** Ja, aber ich würde mit `push_neg` und `intro f` anfangen."
+  **ロボ**: はい、ですが`push_neg`と`intro f`から始めるのが良いでしょう。"
   push_neg
   intro f
   by_contra hf
-  Hint "**Cantor**:  Na, was meint ihr?  Gibt es vielleicht irgendeine Menge,
-  die nicht von `f` getroffen wird?"
-  Hint (hidden := true) "**Robo**:  Probier mal die Menge von gerade!
-  Du könntest sie erst einmal mit `let s := \{ a | a ∉ {f} a }` einführen."
+  Hint "**カントール**: さて、どう思いますか？おそらく`f`によってカバーされない集合があるのではないでしょうか？"
+  Hint (hidden := true) "**ロボ**: 先ほどの集合を試してみてください！
+  まず`let s := \{ a | a ∉ {f} a }`で導入できます。"
   let s := { a | a ∉ f a }
-  Hint "**Robo**:  Super!
-  Jetzt kannst du z.B. einfach mit `specialize {hf} {s}` weitermachen.
-  Und wenn du später `simp` anwendest,
-  kannst du mit `simp [{s}]` dafür sorgen, dass `simp` durch deine Definition hindurchsieht.
-  "
+  Hint "**ロボ**: 素晴らしい！
+  これで例えば`specialize {hf} {s}`と続けられます。
+  後で`simp`を使うときは`simp [{s}]`とすれば、`simp`が定義を見通してくれます。"
   specialize hf s
-  Hint "Cantor hüpft von einem Bein auf das andere."
+  Hint "カントールは片足からもう片足へと飛び跳ねています。"
   obtain ⟨a, ha⟩ := hf
-  Hint "**Cantor**:  Ja!
+  Hint "**カントール**: そうだ！
 
-  **Du**:  Robo, könnten wir jetzt nicht das Resultat von eben verwenden?
+  **あなた**: ロボ、今こそ先ほどの結果を使えるのでは？
 
-  **Robo**:  Sorry, ging alles so schnell!  Habe ich wohl vergessen, abzuspeichern."
+  **ロボ**: すみません、全てが早すぎました！保存するのを忘れたようです。"
   by_cases h : a ∈ f a
   · suffices hn : a ∉ f a
     · contradiction

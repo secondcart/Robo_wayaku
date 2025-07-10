@@ -3,30 +3,30 @@ import Game.Metadata
 World "Logo"
 Level 6
 
-Title "" -- "Not"
+Title "Not"
 
 Introduction
 "
-Der Schelm hat noch eine Schwester dabei.
+悪戯っ子にはもう一人姉妹がいるようだ。
 "
 
 Statement : ¬False := by
   Hint "
-    **Robo**: Dieses Zeichen `¬` bedeutet Negation. Also wenn eine Aussage `(A : Prop)`
-    wahr ist, dann ist `¬A` falsch, und umgekehrt.
+    **ロボ**: この記号`¬`は否定を意味します。つまり命題`(A : Prop)`が
+    真ならば、`¬A`は偽となり、その逆もまた然りです。
 
-    **Du**: Und `False` ist wahrscheinlich die Aussage, die immer falsch ist?
+    **あなた**: そして`False`はおそらく常に偽となる命題なのですか？
 
-    **Robo**: Ja, richtig.
+    **ロボ**: はい、その通りです。
 
-    **Du**: Ist das jetzt nicht doch wieder `decide`?
+    **あなた**: これは結局`decide`ではないのですか？
 
-    **Robo**: Probier mal!"
+    **ロボ**: 試してみてください！"
   decide
 
 Conclusion
 "
-Die Schwester lacht und eilt ihrem Bruder hinterher.
+姉妹は笑いながら兄の後を追いかけていった。
 "
 
 NewDefinition False Not

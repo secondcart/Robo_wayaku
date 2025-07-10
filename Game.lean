@@ -31,55 +31,29 @@ import Game.Levels.Piazza
 Title "Robo"
 Introduction
 "
-# Game Over oder QED?
+# ゲームオーバーそれともQED？
+コンピュータ支援証明が「本物の」数学とどう違うのか気になりますか？それならここがぴったりです！このゲームでは、証明アシスタントLean 4と数学ライブラリmathlibの使い方を学べます。例えば、帰納法を使った総和公式の証明、写像が全射であることと右逆元を持つことが同値であることの証明、自然数の列が非可算無限であることの証明、正方行列の空間におけるトレースの特徴付けなどを行います。
 
-Bist du neugierig, wie sich computer-unterstützte Beweisführung mit „echter“ Mathematik anfühlt?
-Dann bist du hier genau richtig!
-In diesem Spiel lernst du, mit dem Beweisassistenten Lean 4 und der Beweisbibliothek mathlib zu arbeiten.
-Du wirst unter anderem per Induktion Summenformeln beweisen,
-nachweisen, dass eine Abbildung genau dann surjektiv ist, wenn sie ein Rechtsinverses besitzt,
-zeigen, dass es überabzählbar viele Folgen natürlicher Zahlen gibt,
-und die Spur als Abbildung auf dem Raum der quadratischen Matrizen charakterisieren.
+インターフェースは簡略化されていますが、エディターモードを有効にすると、Leanの標準IDEであるVSCodeとほぼ同じ感覚で使えます。スマートフォンやタブレットでは、デフォルトのタイプライターモードのままで、画面キーボードの自動補完/修正機能（例えばSamsungキーボードの「スマート入力＞文字認識」）をオフにするのがおすすめです。
 
-Das Interface ist etwas vereinfacht, aber wenn du den *Editor-Modus* aktivierst, fühlt es sich
-fast genauso an wie in VSCode, der Standard-IDE für Lean.
-Auf einem Smartphone oder Tablet bleibst du besser im voreingestellten *Schreibmaschinen-Modus*,
-und schaltest alle autocompletion/correction-Features deiner Bildschirmtastatur aus
-(z.B. unter „intelligentes Tippen > Texterkennung“ auf Samsung-Tastatur).
+旅を始めるには、概要で最初の惑星Logoをクリックしてください。
 
-Klicke auf den ersten Planeten *Logo* in der Übersicht, um deine Reise zu starten.
+# ゲームの進行状況
+進行状況はブラウザのサイトデータとしてローカルに保存されます。これを削除すると進行状況が失われます！多くのブラウザではサイトデータとクッキーが一緒に削除されますが、メニューから進行状況をダウンロードして手動で保存することもできます。
 
-## Spielstand
+# ゲームルール
+真剣にプレイしたい場合は「Rules: regular」を選択してください。少し見て回りたいだけなら「Rules: relaxed」を選ぶと、前のレベルをクリアしていなくてもどのレベルでもプレイできます。
 
-Dein Spielstand wird lokal in deinem Browser als *site data* gespeichert.
-Solltest du diese löschen, verlierst du deinen Spielstand!
-Viele Browser löschen *site data* und *cookies* zusammen.
-Du kannst den Spielstand aber auch über das Menü herunterladen und manuell speichern.
-
-## Spielregeln
-
-Wenn du ernsthaft spielen möchtest, solltest du *Rules: regular* wählen.
-Wenn du dich nur ein bisschen umsehen möchtest, wähle *Rules: relaxed*
-  – dann kannst du jedes Level spielen, auch wenn du vorhergehende Levels noch nicht gelöst hast.
-
-## Neuigkeiten
-`[2025-03-28]` Der jüngste Planet im Formaloversum heißt Euklid.
-Außerdem gibt es jede Menge kleinerer Verbesserungen, besonders auf Babylon, Cantor und Saturn,
-und in der Dokumentation der Taktiken und Definitionen.
-Auf Babylon wird jetzt über Intervalle in ℕ und ℤ summiert, und nicht mehr über `Fin n`.
-Saturn endet nun mit einer polynomiellen Quadratsummenformel.
-
-`[2025-03-18]` Von Quantus hat sich der Planet Saturn abgespalten, Luna ist größer geworden, und auch Piazza wurde grundlegend überarbeitet.
-
-`[2025-02-20]` Die „Abbildungsplaneten“ sind fertig:  Vieta, Mono, Epo, Iso und Samarkand.
-
-`[2025-01-25]` Es gibt jetzt einen Planeten, um sich zu verabschieden:  Ciao.
-
-Hintergrundinformationen und Credits findest du im Menü unter *Game Info*.
+背景情報とクレジットは、メニューの「Game Info」で確認できます。
 "
 
 Info
 "
+このゲームは、以下のリポジトリを和訳したものである。(2025/07/09)
+[Robo](https://github.com/hhu-adam/Robo)
+
+ただし、準拠した和訳ではなく、多少日本のライトノベルっぽく訳している箇所がある。
+以下は、元のGame Infoをそのまま載せている。
 ## Projekt ADAM
 
 Dieses Lernspiel wurde im Rahmen des Projekts

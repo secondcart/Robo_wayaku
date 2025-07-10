@@ -5,22 +5,22 @@ Level 6
 
 Title ""
 
-Introduction "Sofort taucht das nächste Blatt auf.
-Es scheint, als hätten sie sich diesmal auf einen Kompromiss geeignet."
+Introduction "すぐに次の葉が現れます。
+今回は彼らが妥協点を見つけたようです。"
 
 open Nat
 
 Statement (i : ℕ): (-1 : ℤ)^i  + (-1 : ℤ)^(i+1) = 0 := by
   Hint (hidden := true) "
-    **Du**:  Ich glaube, ich würd gern eine Fallunterscheidung machen, ob `i` gerade oder ungerade ist.
+    **あなた**:  iが偶数か奇数かで場合分けしたいと思います。
 
-    **Robo**:  Dann mach das doch – zum Beispiel mit `by_cases h : Even i`.
+    **ロボット**:  それではやってみてください。例えば`by_cases h : Even i`で。
   "
   Branch
     by_cases h : Odd i
     swap  -- TODO: check whether this triggers in the correct moment
     Hint "
-        **Robo**:  Mit `odd_iff_not_even` kannst da `¬Odd` in `Even` verwandeln.
+      **ロボット**:  `odd_iff_not_even`を使えば、`¬Odd`を`Even`に変換できます。
       "
     rw [← even_iff_not_odd] at h
   by_cases h : Even i
@@ -33,7 +33,7 @@ Statement (i : ℕ): (-1 : ℤ)^i  + (-1 : ℤ)^(i+1) = 0 := by
       ring
     · assumption
   · Hint "
-      **Robo**:  Mit `odd_iff_not_even` kannst du `¬Even` in `Odd` verwandeln.
+      **ロボット**:  `odd_iff_not_even`を使えば、`¬Even`を`Odd`に変換できます。
     "
     rw [← odd_iff_not_even] at h
     rw [Odd.neg_pow]
@@ -56,6 +56,6 @@ TheoremDoc Nat.odd_iff_not_even as "odd_iff_not_even" in "ℕ"
 
 NewTheorem Nat.even_iff_not_odd Nat.odd_iff_not_even
 
-Conclusion "Diesmal habt ihr die Formalosophinnen offenbar beeindruckt.  Sie nicken anerkennend.
+Conclusion "今回はフォルマロソフィストたちを感心させたようです。彼らは感心して頷いています。
 
-Dann geht das Getuschel wieder los."
+そしてまた囁き声が聞こえてきます。"

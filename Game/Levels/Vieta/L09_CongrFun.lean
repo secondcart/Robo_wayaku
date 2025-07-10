@@ -14,14 +14,13 @@ open Function
 
 Statement (f g : ℤ → ℤ) (h : f = g) (x : ℤ) : f x = g x := by
   Hint "
-**Robo**: Und das ist ein Fall für `congr_fun`.
-    Hast du `h : f = g` als Annahme, kannst du sie mit mit `apply congr_fun at h` zu `h : ∀ x, f x = g x` umscheiben.
+**ロボ**: これは`congr_fun`のケースです。
+    `h : f = g`という仮定がある場合、`apply congr_fun at h`を使って`h : ∀ x, f x = g x`に書き換えることができます。
 
-**Du**: Aber könnte ich hier nicht auch einfacher `rw [h]` benutzen?
+**あなた**: でも、ここではもっと簡単に`rw [h]`を使うこともできるのでは？
 
-**Robo**: Ja gut, in diesem einem einfachen Beispiel schon. Wenn aber `f` ein komplizierterer
-Ausdruck ist und noch nicht exact so im Beweisziel steht, dann nicht.
-Probiers mal, wie ich es gerade gesagt habe.
+**ロボ**: はい、この単純な例では確かにそうです。しかし、`f`がより複雑な式で、証明目標に正確に現れていない場合は使えません。
+私が言った通りに試してみてください。
   "
   apply congr_fun at h
   Branch

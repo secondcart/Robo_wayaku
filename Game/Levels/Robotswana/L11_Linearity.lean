@@ -11,24 +11,21 @@ Title "" -- "Trace"
 
 Introduction
 "
-Als ihr mit etwas Abstand stehen bleibt, kommt Tracy auf euch zugelaufen und fängt an zu spielen. Belustigt gibt es euch verschiedenste
-Aufgaben und Terme, und ihr versucht, diese schnell genug zu kombinieren.
+少し離れて立っていると、トレーシーが走り寄ってきて遊び始めます。面白がりながら様々な課題や項を出し、あなたたちはそれらを十分な速さで組み合わせようとします。
 "
 
-Conclusion "Schließlich macht ihr euch auf den Rückweg.
-Ihr verlauft euch sofort, aber Tracy ist euch offenbar gefolgt und führt euch quer durch
-die Grasslandschaft zurück zu eurem Schiff."
+Conclusion "ついにあなたたちは帰路につきます。
+すぐに道に迷ってしまいますが、トレーシーがどうやらついてきていたようで、草原を横切って船まで案内してくれます。"
 
 open Matrix Fintype
 
 Statement {n : ℕ} {t : ℝ} (A : Matrix (Fin n) (Fin n) ℝ) :
     trace (A - t • 1) = trace A - t • n := by
-  Hint "**Du**: Da geht es gerade offensichtlich um Linearität der Spur von Matrizen."
+  Hint "**あなた**: これは明らかに行列のトレースの線形性についてですね。"
   rw [trace_sub]
   rw [trace_smul]
   rw [trace_one]
-  Hint "**Robo**: Dieser letzte Schritt ist `card_fin`. Das ginge natürlich auch alles
-  mit `simp`, wenn wir gerade nicht so viele Spaß am Spielen hätten."
+  Hint "**ロボ**: この最後のステップは`card_fin`です。もちろん、私たちが遊びを楽しんでいなければ`simp`でもできますよ。"
   rw [card_fin]
 
 /---/

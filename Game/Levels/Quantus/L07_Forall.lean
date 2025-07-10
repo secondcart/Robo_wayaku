@@ -3,16 +3,16 @@ import Game.Metadata
 World "Quantus"
 Level 7
 
-Title "" -- "Für alle"
+Title "Für alle"
 
-Introduction "Nach längerem Durcheinander findet folgende Aufgabe aus der Menge zu Euch."
+Introduction "長い混乱の後、群衆から次の課題があなた方のもとに届きます。"
 
 Statement : ∀ (x : ℕ), (Even x) → Odd (1 + x) := by
   Hint "
-    **Du**: Das `∀` heisst sicher \"für alle\".
+    **あなた**: この`∀`はきっと「すべてに対して」という意味だ。
 
-    **Robo**: Und man schreibt `\\forall`. Ein `∀ x, …` im Beweisziel kannst du wie eine
-    Implikation mit `intro x` angehen."
+    **ロボ**: そして`\\forall`と書きます。証明目標の`∀ x, …`は、
+    含意のように`intro x`で取り組むことができます。"
   intro x h
   unfold Even at h
   unfold Odd
@@ -25,7 +25,7 @@ NewDefinition Forall
 
 Conclusion
 "
-Wieder anerkennendes Nicken.
+再び認めるように頷く。
 
-Wieder Getuschel.
+再び囁き声。
 "

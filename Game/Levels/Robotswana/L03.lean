@@ -8,7 +8,7 @@ Title "" -- "Richtige Indizes"
 Introduction ""
 
 Conclusion "
-  **Du**: Jetzt bin ich aber neugierig, wer diese Zettel hier verloren oder weggeworfen hat. Komm, lass uns weitergehen.
+  **あなた**: でも、誰がここにメモを落としたり捨てたりしたのか気になってきたな。さあ、先に進もう。
 "
 
 open Nat Matrix
@@ -18,7 +18,7 @@ TheoremDoc Matrix.E.mul_same as "E.mul_same" in "Matrix"
 
 -- @[inherit_doc Matrix.StdBasisMatrix.mul_same]
 Statement Matrix.E.mul_same {n : ℕ} (i j k : Fin n) : E i j * E j k = E i k  := by
-  Hint "**Du**:  Sieht auch richtig aus."
+  Hint "**あなた**: これも正しそうだ。"
   unfold E
   simp
 

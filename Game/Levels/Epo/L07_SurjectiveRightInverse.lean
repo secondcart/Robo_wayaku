@@ -32,10 +32,10 @@ Statement surjective_iff_hasRightInverse {A B : Type} (f : A → B) :
 TheoremTab "Function"
 
 Conclusion "
-Ihr bekommt eine große Runde Applaus.
+皆さんには大きな拍手が送られます。
 
-Danach werdet ihr verabschiedet.
-Für den Rückweg könnt ihr leider keine Transportkapsel benutzen.
-Die funktionieren nämlich nur in eine Richtung.
-Zurück zum Raumschiff geht es also zu Fuß: erst die Treppen runter, dann draußen vom Bürohaus zum Schlafturm, und schließlich mit einem ganz gewöhnlichen Fahrstuhl nach oben.
+その後、お別れの挨拶があります。
+残念ながら帰り道は輸送カプセルを使えません。
+なぜならそれらは片方向にしか機能しないからです。
+宇宙船へ戻るには徒歩で行くことになります：まず階段を下り、オフィスビルから睡眠塔へ外に出て、最後に普通のエレベーターで上へ上がります。
 "

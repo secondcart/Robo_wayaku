@@ -3,11 +3,11 @@ import Game.Metadata
 World "Quantus"
 Level 8
 
-Title "" -- "PushNeg"
+Title "PushNeg"
 
 Introduction
 "
-**Robo**: Während wir warten, zeig ich dir vielleicht kurz, wie sich Negation mit Quantoren verträgt. Ich habe so ein Gefühl, dass wir das gleich brauchen werden.
+**ロボ**: 待っている間、量子と否定の関係について少し説明しましょう。すぐに必要になる気がします。
 "
 
 
@@ -16,29 +16,29 @@ open Function
 Statement {X : Type} (P : X → Prop) :
     ¬ (∃ x : X, P x) ↔ ∀ x : X, ¬ P x := by
   Hint "
-    **Du**: Was ist denn jetzt dieses `{P}`?
+    **あなた**: この`{P}`って何？
 
-    **Robo**: `{P}` ist ein „Prädikat“; eine Aussage über Objekte vom Typ `{X}`.
-              Zum Beispiel könnte `{X}` wieder der Typ der natürlichen Zahlen sein.
-              Und `{P} x` könnte die Aussage sein:
-              Die natürliche Zahl `x` ist gerade. Oder: `x` hat sieben Primfaktoren. Oder: `x`
-              ist Robo's Lieblingszahl. Oder …
+    **ロボ**: `{P}`は「述語」です。`{X}`型のオブジェクトに関する命題です。
+              例えば`{X}`が自然数の型だとしましょう。
+              そして`{P} x`は次のような命題かもしれません:
+              自然数`x`は偶数である。または: `x`は7つの素因数を持つ。または: `x`は
+              ロボのお気に入りの数字である。または…
 
-    **Du**: Schon gut, ich glaub ich habs verstanden. `{P}` ist sozusagen eine Abbildung, die
-    ein Element `x : {X}` nimmt und auf eine Aussage wirft.
+    **あなた**: もう大丈夫、わかった気がする。`{P}`は要するに、要素`x : {X}`を取って
+    命題を返す写像みたいなものだね。
 
-    **Robo**: Ja, sozusagen.
+    **ロボ**: そう、そんな感じです。
 
-    **Du**: Gut. Dann ist auch ziemlich klar, was hier die Aussage ist.
-            Und du wolltest mir jetzt verraten, wie ich das auf Leansch zeige?
+    **あなた**: よし。それならこの命題の意味もほぼ明らかだ。
+            で、今からLeanでこれを証明する方法を教えてくれるんだよね？
 
-    **Robo**: Genau. Was du brauchst, ist `push_neg`."
+    **ロボ**: その通り。必要なのは`push_neg`です。"
   Branch
     constructor
     intro h
     Hint (hidden := true) "
-      **Robo**: `push_neg` schiebt von links nach rechts. Du kannst es hier also nicht auf
-      das Beweisziel anwenden, wohl aber auf `{h}`."
+      **ロボ**: `push_neg`は左から右に作用します。ここではゴールには適用できませんが、
+      `{h}`には適用できます。"
     push_neg at h
     assumption
     intro h
@@ -52,14 +52,14 @@ DisabledTactic tauto
 
 Conclusion
 "
-**Robo**: Gut gemacht. Intern benutzt `push_neg` übrigens zwei Lemmas:
+**ロボ**: よくできました。内部的に`push_neg`は2つの補題を使っています:
 
  - `not_exists (P : X → Prop) : ¬ (∃ x, P x) ↔ ∀ x, (¬ P x)`
  - `not_forall (P : X → Prop) : ¬ (∀ x, P x) ↔ ∃ x, (¬ P x)`
 
-Das erste Lemma ist die Aussage, die du gerade gezeigt hast.
+最初の補題が、あなたが今証明した命題です。
 
-**Du**: Na toll. Ich habe die Aussage also gezeigt, indem ich sie benutzt habe …
+**あなた**: なるほど。つまり私はこの命題を、それを使いながら証明したわけだ…
 
-**Robo**: :-) Hauptsache, Du merkst dir `push_neg`.
+**ロボ**: :-) とにかく`push_neg`を覚えておいてください。
 "

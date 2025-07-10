@@ -7,23 +7,23 @@ Level 8
 Title ""
 
 Introduction
-"Um Guino bei Laune zu halten, fragt Robo vorsichtig,
-ob er euch nicht eine Aufgabe stellen möchte.
-Er gibt euch folgende Variation seiner vorherigen Aufgabe.
+"ギーノを機嫌よくさせるため、ロボは慎重に、
+課題を出してくれないかと尋ねます。
+彼は前回の課題のバリエーションを提示しました。
 "
 
 namespace Nat
 
 Statement : ∃ p : ℕ, Prime p ∧ p ∣ 67280421310721 := by
-  Hint "**Du** *(zu Robo)*:  Hast du eine Idee, was hier ein Primfaktor sein könnte?
+  Hint "**あなた** *(ロボに向かって)*: ここで素因数は何かわかる？
 
-  **Robo**: Nö.
+  **ロボ**: ううん。
 
-  Robo überlegt.
+  ロボは考え込む。
 
-  **Robo**:  Ist doch aber auch egal.  Er hat ja gar nicht nach einem konkreten Faktor gefragt,
-  sondern nur nach der Existenz irgendeines Primfaktors.  Aber das ist trivial.
-  Lass mich überlegen … ich glaube `exists_prime_and_dvd` ist die Aussage, die du hier brauchst.
+  **ロボ**: でも別にいいじゃん。具体的な因数を聞いてるわけじゃなくて、
+  ただ任意の素因数の存在を問うてるだけだし。これは自明だよ。
+  考えてみる…`exists_prime_and_dvd`が使える命題だと思う。
   "
   apply exists_prime_and_dvd
   simp
@@ -36,11 +36,11 @@ NewTheorem Nat.exists_prime_and_dvd
 TheoremTab "ℕ"
 
 Conclusion "
-  **Guino:** Na gut, lasst uns weitergehen.  Schaut mal, ist das nicht eine herrlich Treppe?
-  Wir gehen hoch!
+  **ギーノ**: まあいい、先に進もう。見て、この素敵な階段！
+  登っていこう！
 
-  **Du** *(zu Robo)*: Lass uns doch jetzt einmal probieren, die Aussage zu formlieren, die wir Guino zeigen wollen.
-  Es gibt genau eine gerade …
+  **あなた** *(ロボに向かって)*: ギーノに見せたい主張を今度は考えてみよう。
+  ちょうど1つの偶数が存在する…
 
-  **Robo**:  Halt!  „Genau eine“ hatten wir noch nicht.
+  **ロボ**: 待って！「ちょうど1つ」はまだ習ってないよ。
 "

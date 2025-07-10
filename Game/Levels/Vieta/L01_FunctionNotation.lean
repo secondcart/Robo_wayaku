@@ -3,25 +3,22 @@ import Game.Metadata
 World "Vieta"
 Level 1
 
-Title "" -- "Anonyme Funktionen"
+Title "Anonyme Funktionen"
 
-Introduction "**Vieta:** Kommt, ich zeig euch etwas …
+Introduction "**Vieta:** さあ、何か見せましょう…
 
-Er gibt dir ein Stück Papier.
+彼はあなたに紙切れを渡す。
 "
 
 Statement (f : ℤ → ℕ) (n : ℤ): f n ≥ 0 := by
-  Hint"**Du**: Sieht aus, als wäre `f` eine Abbildung von `ℤ` nach `ℕ`.
+  Hint "**あなた**: `f`は`ℤ`から`ℕ`への写像に見えますね。
 
-  **Robo**: Ja, genau.  Und `f n` ist die Notation für $f(n)$.  Aber auf Leansch lässt man
-  die Klammern weg.  Wenn du sie setzen möchtest,  musst du unbedingt Leerzeichen
-  um die Klammern setzen – so: `f (n)`.
+  **ロボ**: はい、その通りです。そして`f n`は$f(n)$の表記です。ただしLeanでは括弧を省略します。括弧を使いたい場合は、必ず括弧の周りにスペースを入れる必要があります。例えば`f (n)`のように。
 
-  **Du**: Okay, will ich mir merken.  Aber da die Abbildung hier nur Werte in ℕ annimmt,
-  ist ja eigentlich nichts zu zeigen."
+  **あなた**: わかりました、覚えておきます。でもここでの写像はℕの値しか取らないので、実際には示すことは何もないですね。"
   linarith  -- oder simp
 
-Conclusion"
-**Du**: Sag mal, war `→` nicht eben noch eine Implikation?
+Conclusion "
+**あなた**: ところで、`→`はさっきまで含意ではなかったですか？
 
-**Robo**: Ja, richtig. Die benuzten hier das gleiche Zeichen für beides."
+**ロボ**: はい、そうです。ここでは両方に同じ記号を使っています。"

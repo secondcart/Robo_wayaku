@@ -4,25 +4,22 @@ import Game.Metadata
 World "Vieta"
 Level 3
 
-Title "" -- "Anonyme Funktionen"
+Title "Anonyme Funktionen"
 
 Introduction
 "
-Wieder ein Pfeil.  Und noch eine Aufgabe.
+また矢印だ。そしてまた課題だ。
 "
 
 Statement : ∃ f : ℤ → ℤ, ∀ x, f x < x := by
   Hint (hidden := true) "
-    **Robo**: Wie immer gehst du ein `∃` mit `use …` an.  Oder du definierst dir erst einmal
-    mit `let f : ℤ → ℤ := fun …` eine Abbildung, die du benutzen möchtest, so, wie du es eben gerade gesehen hast.
-    Den Pfeil `↦` schreibst du übrigens als `\\maps` oder `\\mapsto`.
-    Aber du kannst auch stattdessen `=>` benutzen."
+    **ロボ**: いつものように、`∃`には`use …`でアプローチする。または、`let f : ℤ → ℤ := fun …`で、先ほど見たように使いたい写像を定義しても良い。
+    矢印`↦`は`\\maps`または`\\mapsto`で書く。代わりに`=>`を使っても良い。"
   let f : ℤ → ℤ := fun x ↦ x -1
-  Hint (strict := true) "**Robo**: Wenn du `{f}` richtig definiert hast, kannst du
-  dieses mit `use` brauchen, und die resultierende Ungleichung sollte einfach sein"
+  Hint (strict := true) "**ロボ**: `{f}`を正しく定義できたら、`use`で使える。結果の不等式は簡単になるはずだ"
   use f
   intro x
-  Hint (hidden := true) "**Du**: Zu was sich das wohl vereinfacht?"
+  Hint (hidden := true) "**あなた**: これはどう簡略化されるんだろう？"
   simp [f]
   -- linarith
 

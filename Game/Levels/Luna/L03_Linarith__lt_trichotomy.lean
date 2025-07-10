@@ -10,7 +10,7 @@ Title ""
 
 Introduction
 "
-**Lina**: Probierts doch mal hiermit!
+**リナ**: これで試してみて！
 "
 
 /--
@@ -26,9 +26,9 @@ TheoremDoc lt_trichotomy as "lt_trichotomy" in "≤"
 Statement lt_trichotomy: ∀ a b : ℝ, a < b ∨ a = b ∨ b < a := by
   intro a b
   Hint (strict := true)"
-    **Du**:  Fallunterscheidung ??
+    **あなた**: 場合分け？？
 
-    **Robo**:  Ja, könntest du versuchen. Zum Beispiel erst `by_cases h_leq : {a} ≤ {b}` und dann `by_cases h_lt : {a} < {b}`.
+    **ロボ**: はい、試してみてください。例えば最初に`by_cases h_leq : {a} ≤ {b}`、次に`by_cases h_lt : {a} < {b}`で。
   "
   by_cases h_leq : a ≤ b
   · by_cases h_lt : a < b
@@ -37,9 +37,9 @@ Statement lt_trichotomy: ∀ a b : ℝ, a < b ∨ a = b ∨ b < a := by
     · right
       left
       Hint "
-        **Du**:  Und jetzt??
+        **あなた**: で、どうする？
 
-        **Lina** (*triumphal*): `linarith`!
+        **リナ** (*勝利の表情*): `linarith`だよ！
         "
       linarith  -- WANT LINARITH in this exercise!
   · right
@@ -51,5 +51,5 @@ NewTactic linarith
 TheoremTab "≤"
 
 Conclusion "
-  **Lina**:  Ihr hättet übrigens auch einfach `apply lt_trichotomy` sagen können.
+  **リナ**: ところで、単に`apply lt_trichotomy`と言うこともできたんですよ。
 "

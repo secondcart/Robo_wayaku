@@ -3,11 +3,11 @@ import Game.Metadata
 World "Implis"
 Level 5
 
-Title "" -- "Implikation"
+Title "Implikation"
 
 Introduction
 "
-Die nächste Seite sieht ein bisschen komplizierter aus. Damit Ihr nicht die Übersicht verliert, fasst Robo sofort die verschiedenen Implikationen in einem Diagramm zusammen.
+次のページは少し複雑に見えます。混乱しないように、ロボがすぐにさまざまな含意を図式にまとめます。
   $$
   \\begin{CD}
        A  @>{f}>> B @<{g}<< C    \\\\
@@ -23,46 +23,46 @@ Statement
     (f : A → B) (g : C → B) (h : A → D) (i : B → E) (j : C → F) (k : E → D) (l : E → F)
     (m : G → D) (n : H → E) (p : F → I) (q : H → G) (r : H → I) : A → I := by
   Hint "
-    **Du**: Also ich muss einen Pfad von Implikationen $A \\Rightarrow I$ finden.
+    **あなた**: つまり、$A \\Rightarrow I$ の含意の経路を見つけなければならない。
 
-    **Robo**: Lass mich mal raten, wie wir anfangen … Wieder `intro`?"
+    **ロボ**: どう始めるか考えてみよう…また `intro` かな？"
 
   intro hyp
-  Hint (hidden := true) "**Robo**: Na wieder `apply`, was sonst."
+  Hint (hidden := true) "**ロボ**: やっぱり `apply` でしょ。"
   Branch
     apply r
-    Hint "**Robo**: Das sieht nach einer Sackgasse aus …"
+    Hint "**ロボ**: これは行き止まりみたいだ…"
   Branch
     apply p
     Branch
       apply j
-      Hint "**Robo**: Das sieht nicht gut aus."
+      Hint "**ロボ**: これは良くないね。"
     apply l
     Branch
       apply n
-      Hint "**Robo**: Nah, da stimmt doch was nicht …"
+      Hint "**ロボ**: うーん、何か間違ってる…"
     apply i
     Branch
       apply g
-      Hint "**Robo**: Halt! Falsch abgebogen."
+      Hint "**ロボ**: 待って！道を間違えたよ。"
     apply f
     assumption
   Branch
     apply h at hyp
-    Hint "**Robo**: Bist du dir sicher?"
+    Hint "**ロボ**: 本当にそれでいい？"
   apply f at hyp
   apply i at hyp
   Branch
     apply k at hyp
-    Hint "**Robo**: Ehm …"
+    Hint "**ロボ**: えっと…"
   apply l at hyp
   apply p at hyp
   assumption
 
 Conclusion
 "
-Der Operationsleiter bedankt sich wieder artig. Er drückt wieder auf ein paar Knöpfe,
-und mit einem lauten Ratteln springen mehrere Förderbänder gleichzeitig wieder an.
+作戦責任者は再び丁寧にお礼を言いました。彼は再びいくつかのボタンを押し、
+大きなガタンという音と共に、いくつかのコンベアが同時に再起動します。
 "
 
 DisabledTactic tauto

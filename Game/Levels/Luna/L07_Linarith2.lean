@@ -7,11 +7,11 @@ Title ""
 
 Introduction
 "
-**Lina**:  Genug von `omega`, jetzt bin ich wieder an der Reihe.
+**リナ**: `omega`はもう十分、今度は私の番よ。
 "
 
 Statement (x y : ℚ) (h₁ : 35/11 * y ≤ 35/2 - 22/21 * x) (h₂ : 8/9 * y ≤ x + 17/8) : y ≤ 34/7 := by
-  Hint "**Du**:  Das muss ich mir erst noch einmal untereinander schreiben.  Gegeben ist:
+  Hint "**あなた**: これはまず縦に書き直す必要があるな。与えられた条件は:
 
   $$
   \\begin\{aligned}
@@ -20,15 +20,15 @@ Statement (x y : ℚ) (h₁ : 35/11 * y ≤ 35/2 - 22/21 * x) (h₂ : 8/9 * y �
   \\end\{aligned}
   $$
 
-  Und wir sollen zeigen:
+  そして証明すべきは:
   $$
   y ≤ \\tfrac\{34}\{7}
   $$
 
-  Robo??
+  ロボ？？
 
-  Lina grinst.
+  リナがニヤリと笑う。
   "
   linarith
 
-Conclusion "**Du**: Nicht schlecht!"
+Conclusion "**あなた**: 悪くないね！"

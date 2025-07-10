@@ -7,8 +7,8 @@ Title "" -- "Teilmengen"
 
 Introduction
 "
-**Sub**:  So, so.  Nur eine Definition!
-Und wenn ihr nun mit solchen Inklusionen arbeiten sollt?
+**Sub**: さてさて。ただの定義ですね！
+では、このような包含関係で作業する場合どうすればいいのでしょうか？
 "
 
 open Set
@@ -16,13 +16,13 @@ open Set
 Statement {A B C : Set ℕ} (h₁ : A ⊆ B) (h₂ : B ⊆ C) : A ⊆ C := by
   -- Hint: do this for understanding the def!
   Hint "
-    **Du**:  Kann ich hier auch irgendwie mit `ext` argumentieren?
+    **あなた**: ここで`ext`を使って議論することはできますか？
 
-    **Robo**:  Nein, viel einfacher.  Gib dir einfach mit `intro a` ein beliebiges
-    Element aus `A` vor, und zeige, dass es in `C` liegt.
+    **ロボ**: いいえ、もっと簡単です。`intro a`でAの任意の要素を取り、
+    それがCに含まれることを示してください。
 
-    Aber vielleicht schreibst du vorher doch einmal alle Inklusionen mit
-    `rw [subset_iff] at *` aus, damit du siehst, was passiert.
+    ただし、まず`rw [subset_iff] at *`ですべての包含関係を展開して、
+    何が起こるか確認した方が良いかもしれません。
   "
   rw [subset_iff] at *
   -- tauto -- would work here

@@ -3,19 +3,18 @@ import Game.Metadata
 World "Implis"
 Level 7
 
-Title "" -- "Genau dann, wenn"
+Title "Genau dann, wenn"
 
 Introduction
 "
-**Operationsleiter**: Hier ist noch so etwas.
+**作戦責任者**: ここにもこんなものがあります。
 "
 
 Statement (A B : Prop) (h : A ↔ B) : B ↔ A := by
   Hint "
-    **Du**: Das ist ja nur verdreht.
+    **あなた**: これはただ逆になっただけだ。
 
-    **Robo**: Ich kenne ein Werkzeug dafür. Mit `symm` oder `symm at {h}` kannst du eines
-    der beiden umdrehen."
+    **ロボ**: それ用のツールを知っています。`symm` または `symm at {h}` を使えば、どちらかを反転できます。"
   Branch
     symm at h
     assumption
@@ -24,7 +23,7 @@ Statement (A B : Prop) (h : A ↔ B) : B ↔ A := by
 
 Conclusion
 "
-**Operationsleiter**: Das war ja symmpel. Das nächste Problem sieht aber schwieriger aus.
+**作戦責任者**: これは簡単でしたね。でも次の問題はもっと難しそうです。
 "
 
 NewTactic symm

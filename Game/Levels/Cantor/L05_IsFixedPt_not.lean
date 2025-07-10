@@ -9,21 +9,21 @@ Title ""
 Introduction ""
 
 Conclusion "
-  **Cantor**: Ihr kommt der Sache näher …
+  **カントール**: 君たちは真相に近づいている…
 
-   Die Spatzen sind – wenig überraschend – davon geflogen.
-   Also jongliert er wieder mit den Kakteen, und fährt dabei Einrad.
+   雀たちは——驚くことではないが——飛び去ってしまった。
+   彼は再びサボテンをジャグリングしながら、一輪車に乗り続けている。
 "
 
 open Function Set
 
 Statement : ¬ ∃ (P : Prop),  IsFixedPt (¬ .) P := by
-  Hint "**Du**: Was bedeutet das zweite `¬` hier?
+  Hint "**あなた**: ここで2つ目の`¬`はどういう意味ですか？
 
-  **Robo**:  Dasselbe wie das erste: logische Negation.
-  Die kannst du als Selbstabbildung der Menge `Prop` aller möglichen Aussagen auffassen.
-  Und diese Abbildung hat natürlich keine Fixpunkte,
-  denn eine Aussage kann doch nicht gleich ihrer Negation sein!
+  **ロボ**: 1つ目と同じです：論理否定です。
+  これは可能な命題すべての集合`Prop`の自己写像と見なせます。
+  そしてこの写像には当然ながら不動点はありません、
+  なぜなら命題がその否定と等しくなることはあり得ないからです！
   "
   Branch
     by_contra h

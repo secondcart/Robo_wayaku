@@ -18,39 +18,36 @@ Title "Quantus"
 
 Image "images/Quantus.png"
 
-Introduction "Auf Quantus erwartet Euch bereits eine große Ansammlung von Formalosopheninnen.
-Sie reden alle wild durcheinander und Ihr habt Probleme, Euch überhaupt Gehör zu verschaffen.
-Robo produziert schließlich ein lautes Gong-Geräusch, das sie kurzzeitig zur Ruhe bringt.
+Introduction "クアンタスでは、すでに大勢の形式哲学者たちが待ち構えています。
+彼らは皆が一斉に騒ぎ立て、あなたは声をかけることさえ難しい状況です。
+ロボがついに大きなゴングの音を鳴らし、一時的に静寂をもたらします。
 
-**Du**: Wir haben einen Brief für Eure Königin. Könntet Ihr uns zu Eurer Königin führen?
+**あなた**: 女王様への手紙を持ってきました。女王様のもとへ案内していただけませんか？
 
-**Alle** *(im Chor)*: Wir sind schon alle hier!
+**全員** *(合唱のように)*: 私たちはもう全員ここにいます！
 
-**Du**: Okay. Und wer von Euch ist die Königin?
+**あなた**: わかりました。では、どなたが女王様ですか？
 
-Nun herrscht betretenes Schweigen. Alle zucken mit den Schultern.
+すると気まずい沈黙が訪れます。全員が肩をすくめます。
 
-**Du**: Habt Ihr überhaupt eine Königin?
+**あなた**: そもそも女王様はいるんですか？
 
-**Alle** *(im Chor)*: Ja, ja. Wir haben eine Königin, wir haben eine Königin.
+**全員** *(合唱のように)*: はいはい。女王様はいます、女王様はいます。
 
-**Robo** *(zu dir)*: Ich fasse mal zusammen. Es existiert eine Königin, aber keiner weiß, wer
-sie ist …
+**ロボ** *(あなたに)*: 要約しましょう。女王は存在するが、誰もその正体を知らない…
 
-**Du**: Ist das nicht ein Widerspruch?
+**あなた**: それって矛盾してませんか？
 
-**Robo**: Fragst du, du als Mathematiker? Nein, das ist kein Widerspruch. Das ist einfach eine
-„reine Existenzaussage“.
+**ロボ**: 数学者である君が聞くこと？ いいえ、矛盾ではありません。これは単なる「純粋な存在命題」です。
 
-Du bist dir nicht ganz sicher, wie ernst er das meint.
+あなたは彼が本気で言っているのか少し不安になります。
 
-**Du**: Dann schlage ich vor, wir übergeben das Päckchen einfach an *alle* Bewohner. Dann haben
-wir es ja insbesondere der Königin übergeben.
+**あなた**: それなら、荷物は全住民に渡すことにしましょう。そうすれば女王様にも渡したことになりますから。
 
-**Du** *(in die Menge)*: Wir haben Euch ein Päckchen von Implis gebracht. Hier, das ist für Euch.
+**あなた** *(群衆に向かって)*: インプリスから皆さんへの荷物です。どうぞ、これが贈り物です。
 
-Robo wirft es in die Menge, und die Formalosophinnen reißen es auf.
-Tatsächlich befindet sich darin nur eine einziges Stück Papier.
-Nach wenigen Minuten liegt es wieder bei euch.
-Und die Formalosophinnen schauen alle neugirig, wie ihr damit umgeht.
+ロボが群衆に投げると、形式哲学者たちはそれを開封します。
+中には実際、たった1枚の紙きれしか入っていません。
+数分後、それは再びあなたたちの手元に戻ってきます。
+そして形式哲学者たちは皆、あなたたちがどう対応するか興味津々で見つめています。
 "

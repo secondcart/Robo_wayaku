@@ -5,28 +5,27 @@ import Game.Levels.Quantus
 World "Spinoza"
 Level 6
 
-Title "" -- "Contradiction"
+Title "Contradiction"
 
 Introduction
 "
-**Du**: Aber hätten wir die letzte Aufgabe nicht genauso gut per Widerspruch beweisen können?
+**あなた**: でも、前の問題は矛盾による証明でも同じように解けませんでしたか？
 
-**Benedictus**: Klar. Ich dachte nur, ein zweiter Widerspruchsbeweis wäre langweilig.
-Aber Ihr könnt die Aufgabe gern noch einmal probieren.
-Hier, ich gebe Sie Euch mit auf die Reise.
-Aber nun seht zu, dass Ihr weiterkommt!"
+**ベネディクトゥス**: もちろんです。ただ、二度目の矛盾証明は退屈だと思っただけです。
+ですが、この問題をもう一度試してみるのは自由ですよ。
+ほら、旅のお供にこれを差し上げましょう。
+さあ、先に進んでください！"
 
 open Nat
 
 Statement (n : ℕ) (h : Odd (n ^ 2)) : Odd n := by
   Hint "
-    Sobald Ihr Euch sicher vom Gravitationsfeld des Asteroiden befreit habt, beugt Ihr
-    Euch wieder über die Aufgabe.
+    小惑星の重力圏から無事に離脱したら、再び問題に取り掛かります。
 
-    **Robo**: Okay, also diesmal fangen wir mit `by_contra g` an!"
+    **ロボット**: よし、今回は `by_contra g` から始めよう！"
   by_contra g
-  Hint "**Robo**: Jetzt würde ich einen Widerspruch zu `Odd (n ^ 2)` führen."
-  Hint (hidden := true) "**Robo**: Also `suffices d : ¬ Odd (n ^ 2)`."
+  Hint "**ロボット**: 今度は `Odd (n ^ 2)` との矛盾を導きたいな。"
+  Hint (hidden := true) "**ロボット**: つまり `suffices d : ¬ Odd (n ^ 2)` だ。"
   suffices d : ¬ Odd (n ^ 2)
   contradiction
   rw [←even_iff_not_odd] at *
@@ -36,15 +35,15 @@ Statement (n : ℕ) (h : Odd (n ^ 2)) : Odd n := by
 DisabledTactic contrapose revert
 
 Conclusion "
-**Robo**: Bravo! Hier ein Überblick, was uns Benediktus gezeigt hat.
+**ロボット**: ブラボー！ベネディクトゥスが教えてくれたことをまとめましょう。
 
 
-| **Taktik**      | **Zweck**                                              |
+| **戦術**      | **目的**                                              |
 |:----------------|:-------------------------------------------------------|
-| `have`          | Zwischenresultat annehmen                              |
-| `suffices`      | Zwischenresultat annehmen                              |
-| `by_contra`     | Widerspruchsbeweis anfangen                            |
-| `contradiction` | Widerspruchsbeweis schließen                           |
-| `contrapose`    | Kontraposition                                         |
-| `revert`        | nützlich, um danach `contrapose` anzuwenden            |
+| `have`          | 中間結果を仮定する                              |
+| `suffices`      | 中間結果を仮定する                              |
+| `by_contra`     | 矛盾証明を開始する                            |
+| `contradiction` | 矛盾証明を終了する                           |
+| `contrapose`    | 対偶法                                         |
+| `revert`        | `contrapose` を適用する前に有用            |
 "

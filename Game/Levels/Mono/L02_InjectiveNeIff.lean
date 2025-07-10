@@ -10,10 +10,10 @@ Introduction ""
 open Function
 
 Statement (f : ℤ → ℤ  ) (hf : Injective f): f 1 ≠ f (-1) := by
-  Hint "**Robo**: Hier kannst du abkürzen, indem du statt der Definition von `Injective f` die äquivalente Beschreibung `a ≠ b → f a ≠ f b` von Injektivität benutzt.
-  In Leansch ist das Teil von `Injective.ne_iff`:  für injektive Abbildungen gilt `f a ≠ f b ↔ a ≠ b`."
+  Hint "**ロボ**: ここでは`Injective f`の定義を使う代わりに、単射性の等価な記述`a ≠ b → f a ≠ f b`を使うことで短縮できます。
+  Leanではこれは`Injective.ne_iff`の一部です: 単射写像に対して`f a ≠ f b ↔ a ≠ b`が成り立ちます。"
   rw [Injective.ne_iff]
-  Hint (hidden := true) "**Robo**: `decide`?"
+  Hint (hidden := true) "**ロボ**: `decide`?"
   decide
   assumption
 

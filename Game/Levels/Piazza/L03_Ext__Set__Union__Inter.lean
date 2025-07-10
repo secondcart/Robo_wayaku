@@ -7,48 +7,48 @@ Title ""
 
 Introduction
 "
-  **Set**:  Wenn das zu einfach war – kennt ihr diese Aussage?
+  **集合**: もしこれが簡単すぎたなら——この発言を知っていますか？
 "
 
 open Set
 
 Statement (A B C : Set ℕ) : A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C) := by
   Hint "
-    **Du**:  `A B C : Set ℕ` heißt hier genau was?
+    **あなた**:  `A B C : Set ℕ` ここでは正確には何を意味する？
 
-    **Robo**:  Das heißt einfach, dass `A`, `B` und `C` *Teilmengen* von `ℕ` sind.
+    **ロボ**:  それは単に、`A`、`B`、`C` が `ℕ` の*部分集合*であることを意味します。
 
-    **Du**:  `Set` bedeutet „subset“?
+    **あなた**:  `Set` は「部分集合」という意味？
 
-    **Robo**:  Wenn du so willst, ja.
+    **ロボ**:  そう言ってもいいでしょう、はい。
 
-    **Du**:  Dann *kenne* ich die Aussage wohl.
-    Aber keine Ahnung, wie ich die hier beweisen könnte.
+    **あなた**:  それなら、この主張は*知っている*かもしれません。
+    でも、どうやってここで証明できるかは全くわかりません。
 
-    **Ext**:  Kann ich dir sagen!  Da gibts ein Zauberwort, das heißt genau wie ich!!
+    **Ext**:  私が教えられます！魔法の言葉があります、それは私と全く同じ名前です！！
 
-    **Robo**:  Ach ja –
-    `ext x` ersetzt eine Mengengleichheit `A = B` durch `x ∈ A ↔ x ∈ B`."
+    **ロボ**:  ああ、そうですね——
+    `ext x` は集合の等式 `A = B` を `x ∈ A ↔ x ∈ B` に置き換えます。"
   ext x
-  Hint "**Robo**:  Und jetzt wieder `simp`."
+  Hint "**ロボ**:  そして今度も `simp` です。"
   simp -- simp only [mem_inter_iff, mem_union]
   Hint "
-    **Du**:  Was genau macht `simp` denn eigentlich?
+    **あなた**:  `simp` は実際には何をしているのですか？
 
-    **Robo**:  `simp` sucht nach allgemein bekannten Gleichungen und Äquivalenzen,
-    die gemeinhin als Vereinfachungen angesehen werden, und die gerade anwendbar wären.
-    Alle Vereinfachungen, die `simp` findet, wendet es an.
-    Gerade waren das beispielsweise Vereinfachungen der Form
+    **ロボ**:  `simp` は一般的に知られている等式や同値関係を探し、
+    一般的に簡略化と見なされ、現在適用可能なものを探します。
+    `simp` が見つけたすべての簡略化を適用します。
+    今まさに、例えば次の形式の簡略化がありました：
     ```
     {x} ∈ {A} ∩ {B} ↔ {x} ∈ {A} ∧ {x} ∈ {B}
     ```
-    und
+    そして
     ```
     {x} ∈ {B} ∪ {C} ↔ {x} ∈ {B} ∨ {x} ∈ {C}.
     ```
   "
   Hint (hidden := true)"
-    **Robo**:  Den Rest schafft bestimmt `tauto`.
+    **ロボ**:  残りはきっと `tauto` でできます。
   "
   tauto
 

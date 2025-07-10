@@ -19,27 +19,24 @@ Title "Luna"
 Image "images/MoonLuna.png"
 
 Introduction "
-Robo hat einen kleinen Mond entdeckt, auf den ihr jetzt zusteuert.
-Er hat eine ganz glatte Oberfläche, aber an einer Stelle hat die Oberfläche eine kleine
-Öffnung, von der eine Treppe ins Innnere führt. Ihr landet und steigt neugierig hinab.
+ロボは小さな月を発見し、そこへ向かっています。
+表面はとても滑らかですが、一部に小さな開口部があり、階段が内部へ続いています。
+着陸して好奇心から降りていくと、今まで見た中で最も整頓された住居にたどり着きます。
+小さな女の子が皆を迎えます。
 
-Unten angekommen findest du dich in der aufgeräumtesten Wohnung wieder, die du je gesehen hast.
-Ein kleines Mädchen begrüßt Euch.
+**リナ**: 私はリナ、ルナの唯一の住人よ。
 
-**Lina**: Ich bin Lina, die einzige Bewohnerin von Luna.
+彼女はロボを見ます。
 
-Dann sieht sie Robo.
+**リナ**: まあ、実際はここには2人いるんだけど…
 
-**Lina**: Naja, eigentlich sind wir hier auch zu zweit …
+振り返って何か叫ぶと、スマートエルフがやってきます。
 
-Sie dreht sich um und ruft etwas, da kommt ein Smart-Elf angefahren.
+**リナ**: これはリサよ！
 
-**Lina**: Das ist Ritha!
+ロボは明らかに彼女を可愛いと思っています。
 
-Robo findet sie offensichtlich süß.
-
-**Lina**: Aber jetzt steht mal hier nicht so unordentlich herum, bitte! Schuhe und Helme dort
-und dort verstauen, und dann stellt Euch auf die markierten Besucher-Standpunkte. Sonst komme
-ich hier noch ganz durcheinander.
+**リナ**: でも、こんなところで散らかって立たないで！靴とヘルメットはあそこに片付けて、
+それから訪問者用のマークされた場所に立ってね。じゃないと、私が混乱しちゃうわ。
 
 "

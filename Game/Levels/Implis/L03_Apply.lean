@@ -3,35 +3,35 @@ import Game.Metadata
 World "Implis"
 Level 3
 
-Title "" -- "Apply"
+Title "Apply"
 
 Introduction
 "
-Leider läuft das Telefonat nicht so gut. Er legt wieder auf und schüttelt mit dem Kopf.
+残念ながら電話での会話はうまくいっていません。彼はまた電話を切り、首を振ります。
 
-**Operationsleiter**: Der Kollege auf der anderen Seite des Mondes versteht kein `revert`. Oder
-er tut zumindest so. Habt Ihr noch eine andere Idee?
+**オペレーションマネージャー**: 月の反対側にいる同僚は`revert`を理解していません。あるいは
+少なくともそう装っています。他にアイデアはありますか？
 
-Er zieht eine Linie unter Euren Beweis, ergänzt ein durchgestrichenes ~`revert`~, und legt Euch
-das Blatt ein zweites Mal vor.
+彼はあなたの証明の下に線を引き、取り消し線付きの~`revert`~を追加し、
+その紙を再度あなたの前に差し出します。
 "
 
 Statement (A B : Prop) (h : A) (hAB : A → B) : B := by
   Hint "
-    **Robo**: Vielleicht wäre es ohnehin eleganter gewesen, die gegebene Implikation anzuwenden.
-    Probier doch mal `apply hAB at h`."
+    **ロボ**: おそらく、与えられた含意を適用する方がより洗練された方法だったでしょう。
+    `apply hAB at h`を試してみてください。"
   Branch
     apply hAB
     Hint "
-      **Robo**: Ich sagte `… at h`. Aber einfach nur `apply hAB` funktioniert offenbar auch.
-      Jetzt hast Du sozusagen `hAB` auf das Beweisziel `B` angewendet, und musst nur
-      noch `A` beweisen."
+      **ロボ**: 私は`… at h`と言いました。しかし、単に`apply hAB`だけでも機能するようです。
+      これで、`hAB`を証明目標`B`に適用し、あとは`A`を証明するだけです。
+    "
     assumption
   apply hAB at h
-  Hint "**Du**: Ja, das kommt mir jetzt auch natürlich vor."
+  Hint "**あなた**: はい、これも自然に感じます。"
   assumption
 
-Conclusion "Diesmal scheint das Telefonat erfolgreich zu verlaufen."
+Conclusion "今度は電話での会話がうまくいっているようです。"
 
 NewTactic apply
 DisabledTactic revert tauto

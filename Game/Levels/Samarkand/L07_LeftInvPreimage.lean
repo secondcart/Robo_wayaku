@@ -4,10 +4,10 @@ import Game.Levels.Samarkand.L06_PreimageNonempty
 World "Samarkand"
 Level 7
 
-Title "" -- "Preimage of the inverse"
+Title "Preimage of the inverse"
 
 Introduction "
-  **Arapuka**:  Jetzt habe ich aber noch eine wirklich schwierige Aufgabe.
+  **アラプカ**: さて、本当に難しい課題がまだ残っています。
 "
 
 open Function Set
@@ -16,7 +16,7 @@ open Function Set
 Statement  {A B : Type} {f : A → B} {g : B → A}
     (hL : LeftInverse g f) (S : Set A) :
     f '' S ⊆ g ⁻¹' S := by
-  Hint "**Du**:  Mal überlegen …∪"
+  Hint "**あなた**: 考えてみよう…∪"
   intro b hb
   obtain ⟨x, hx, e⟩ := hb
   Branch
@@ -32,5 +32,5 @@ Statement  {A B : Type} {f : A → B} {g : B → A}
   assumption
 
 Conclusion "
-  **Arapuka**:  Wow! Ihr seid wirklich großartig.
+  **アラプカ**: わあ！あなたたちは本当に素晴らしいです。
 "

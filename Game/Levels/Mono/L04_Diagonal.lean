@@ -15,30 +15,26 @@ open Function Nat
 Statement {A : Type} (n : ℕ) :
     let diag : A → Fin (n + 1) → A := fun a i ↦ a
     Injective (diag) := by
-  Hint "**Du**:  In der Definition von `diag` stehen wieder zwei Pfeile hintereinander.
-  Das muss ich erst mal im Kopf sortieren.
+  Hint "**あなた**: diagの定義には再び2つの矢印が連なっています。まず頭の中で整理する必要があります。
 
-  **Robo**:  Setz als erstes wieder Klammern:  `A → (Fin (n + 1) → A)`. Es ist also
-  `diag` eine Abbildung von `A` in die Menge `Fin (n + 1) → A`.
-  Nun ist `Fin (n+1)` die Menge $\\\{0,1,…,n\\}$, und `Fin (n + 1) → A` demnach die Menge der Abbildung von $\\\{0,1,…,n\\}$ nach $A$.
+  **ロボ**: 最初に括弧を付けましょう: `A → (Fin (n + 1) → A)`。つまりdiagはAから集合Fin (n + 1) → Aへの写像です。
+  `Fin (n+1)`は集合$\\\{0,1,…,n\\}$であり、`Fin (n + 1) → A`は$\\\{0,1,…,n\\}$から$A$への写像の集合です。
 
-  **Du**:  Mmh…  So eine Abbildung ist eigentlich nichts weiter als ein $(n+1)$-Tupel von Elementen aus $A$, oder?
+  **あなた**: ええと…そのような写像は実際にはAの要素の(n+1)タプルに他なりませんね？
 
-  **Robo**: Kann man so sehen.
+  **ロボ**: そう考えることもできます。
 
-  **Du**:  Okay.  Gegeben ist also eine Abbildung `diag` von $A$ nach $A^\{n+1}$.  Und zwar die Abbildung …  ah, ich sehe, warum sie `diag` heißt.
-  "
-  Hint (hidden := true) "**Du**:  Oder vielleicht doch nicht.  Kannst du das bitte nochmal aufdröseln?
+  **あなた**: わかりました。与えられているのはAから$A^\{n+1}$への写像diagです。そしてそれは…ああ、なぜこれがdiagと呼ばれるのかわかります。"
+  Hint (hidden := true) "**あなた**: それとも違うのでしょうか？もう一度分解してもらえますか？
 
-  **Robo**:  Die Abbildung `diag` schickt ein Element $a$ auf die Abbildung, die *jeden* Index $i \\in \\\{0,1,…,n\\}$ auf $a$ abbildet.
-  In deiner Interpretation ist das die Abbildung $a ↦ (a,…,a)$.
-  "
-  Hint (hidden := true) "**Robo**: Wenn du gar nicht weiter weißt, fang am besten mal mit `unfold Injective` an."
+  **ロボ**: 写像diagは要素aを、すべてのインデックス$i \\in \\\{0,1,…,n\\}$を$a$に写す写像に送ります。
+  あなたの解釈では、これはa ↦ (a,…,a)という写像です。"
+  Hint (hidden := true) "**ロボ**: どうしてもわからない時は、まず `unfold Injective` から始めるのが良いでしょう。"
   --unfold Injective
   Branch
     simp [diag]
     intro a b h
-    Hint (hidden := true) "**Robo**:  Du könntest die Abbildungen in `{h}` auf einem Element aus `Fin (n + 1)` auswerten. Vielleicht hilft `congr_fun` in irgendeiner Form?"
+    Hint (hidden := true) "**ロボ**: `{h}` の写像を `Fin (n + 1)` の要素で評価してみてはどうでしょうか？おそらく `congr_fun` が何らかの形で役立つかもしれません。"
     apply congr_fun at h
   --Branch
   --  apply HasLeftInverse.injective  -- not yet known!
@@ -46,6 +42,6 @@ Statement {A : Type} (n : ℕ) :
   --  use p
   --  tauto
   intro a₁ a₂ h
-  Hint (hidden := true) "**Robo**:  Erinner dich, dass deine “Tupel” `diag {a₁}` und `diag {a₂}` in Wahrheit zwei Abbildung `Fin (n + 1) → A` sind.
-  Du könntest sie auf einem Element aus `Fin (n + 1)` auswerten. Vielleicht hilft `congr_fun` in irgendeiner Form?"
+  Hint (hidden := true) "**ロボ**: あなたの「タプル」 `diag {a₁}` と `diag {a₂}` は実際には `Fin (n + 1) → A` の2つの写像であることを思い出してください。
+これらを `Fin (n + 1)` の要素で評価してみてはどうでしょうか？おそらく `congr_fun` が何らかの形で役立つかもしれません。"
   apply congr_fun h 0

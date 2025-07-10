@@ -3,40 +3,38 @@ import Game.Metadata
 World "Implis"
 Level 14
 
-Title "" -- "Zusammenfassung"
+Title "Zusammenfassung"
 
 Introduction
 "
-**Operationsleiter**: Ihr habt mir wirklich so geholfen! Hier ist das letzte Problem.
-Das habe ich von meinem Vorgänger geerbt. Er hat behauptet, wenn wir das lösen können,
-dann läuft hier wieder alles. Aber es sah mir immer viel zu schwierig aus, um es überhaupt
-zu versuchen. Wollt Ihr es einmal probieren?
+**オペレーションマネージャー**: 本当に助かりました！これが最後の問題です。
+前任者から引き継いだもので、これを解決できれば全てがうまくいくと言っていました。
+しかし私には難しすぎて挑戦する気にもなりませんでした。試してみますか？
 
-**Du**: Klar, zeig her! Robo, kannst du mir vielleicht auch noch einmal so eine nette
-Zusammenfassung anzeigen, was ich theoretisch in den letzten fünf Minuten gelernt habe?
+**あなた**: もちろん見せて！ロボ、ここまで5分間で学んだ理論的なことをまとめて表示してくれる？
 
-**Robo**: Hier ist die Übersicht:
+**ロボ**: 概要はこちらです：
 
-## Notationen / Begriffe
+## 表記/用語
 
-|     | Beschreibung                 |
-|:--- |:---------------------------- |
-| `→` | Implikation                  |
-| `↔` | genau-dann-wenn / Äquivalenz |
+|     | 説明                     |
+|:--- |:------------------------ |
+| `→` | 含意                     |
+| `↔` | 同値/必要十分条件        |
 
-## Taktiken
+## タクティク
 
-| Taktik           | Beispiel                                                          |
-|:---------------- |:----------------------------------------------------------------- |
-| `intro`          | holt linke Seite einer Implikations im Beweisziel in die Annahmen |
-| `revert`         | Umkehrung von `intro`                                             |
-| `apply`          | wendet Implikation “rückwärts” auf das Beweisziel an              |
-| `apply at`       | wendet Implikation “vorwärts” auf eine Annahme an                 |
-| `symm`           | ändert `A ↔ B` zu `B ↔ A`                                         |
-| `trans`          | ändert `A ↔ C` zu `A ↔ B` und `B ↔ C`                             |
-| `rw [h] `        | schreibt Beweisziel mithilfe der Äquivalenz `h` um                |
-| `rw [h] at h₁`   | schreibt Annahme `h₁` mithilfe der Äquivalenz `h` um              |
-| `by_cases h : P` | Fallunterscheidung zwischen `P` und `¬P`                          |
+| タクティク       | 例                                                          |
+|:--------------- |:---------------------------------------------------------- |
+| `intro`         | 証明目標の含意の左辺を仮定に取り込む                       |
+| `revert`        | `intro`の逆操作                                            |
+| `apply`         | 含意を証明目標に「逆向き」に適用                           |
+| `apply at`      | 含意を仮定に「順方向」に適用                               |
+| `symm`          | `A ↔ B`を`B ↔ A`に変更                                     |
+| `trans`         | `A ↔ C`を`A ↔ B`と`B ↔ C`に分割                           |
+| `rw [h] `       | 同値`h`を使って証明目標を書き換え                          |
+| `rw [h] at h₁`  | 同値`h`を使って仮定`h₁`を書き換え                          |
+| `by_cases h : P`| `P`と`¬P`で場合分け                                        |                      |
 "
 
 /-- Oft kann auch `tauto` diese Art von logischen Ausdrücken lösen. -/
@@ -48,12 +46,12 @@ TheoremDoc imp_iff_not_or as "imp_iff_not_or" in "Logic"
 set_option tactic.hygienic false
 
 Statement imp_iff_not_or {A B : Prop} : (A → B) ↔ ¬ A ∨ B := by
-  Hint "**Du** *(flüsternd)*: Ist das nicht die Definition von `→`?
+  Hint "**あなた** *(小声)*: これって`→`の定義じゃない？
 
-  **Robo** *(flüsternd)*: Könnte man so sehen. Aber auf Leansch ist das bloß eine Äquivalenz."
+  **ロボ** *(小声)*: そう見えるかも。でもLeanでは単なる同値です"
   constructor
   intro h
-  Hint (hidden := true) "**Robo**: Vielleicht kannst du wieder `by_cases` benutzen."
+  Hint (hidden := true) "**ロボ**: また`by_cases`が使えるかも"
   Branch
     by_cases A
 
@@ -64,14 +62,14 @@ Statement imp_iff_not_or {A B : Prop} : (A → B) ↔ ¬ A ∨ B := by
   assumption
   left
   assumption
-  Hint (hidden := true) "**Robo**: Na Implikationen gehst du immer mit `intro` an."
+  Hint (hidden := true) "**ロボ**: 含意はいつも`intro`で攻めるんだ"
   intro h
   intro ha
   Branch
     by_cases ha : A
   Branch
     by_cases A
-  Hint (hidden := true) "**Robo**: Ich würde mal die Annahme `h` mit `obtain` aufteilen."
+  Hint (hidden := true) "**ロボ**: 仮定`h`を`obtain`で分割してみたら？"
   obtain h | h :=  h
   contradiction
   assumption
@@ -81,20 +79,19 @@ DisabledTactic tauto
 NewTheorem imp_iff_or_not
 
 Conclusion "
-**Operationsleiter**: Das ist ja fantastisch! Tausend Dank! Dann will ich Euch auch gar
-nicht länger aufhalten.
-Ihr wollt bestimmt weiter zum Planeten Quantus, oder?
+**オペレーションマネージャー**: 素晴らしい！本当にありがとう！もうこれ以上引き止めません。
+クアンタス星へ向かうんでしょう？
 
-**Du**: Ehm, vielleicht …
+**あなた**: ええ、多分…
 
-**Operationsleiter**: Dann habe ich noch eine letzte Bitte. Ich habe hier noch ein Päckchen
-für die Königin von Quantus! Auch schon von meinem Vorgänger geerbt. Die Post will es
-nicht annehmen, weil ich die Adresse nicht weiß. Könntet Ihr es vielleicht zu ihr mitnehmen?
+**オペレーションマネージャー**: 最後にお願いがあります。クアンタスの女王様への小包が…
+これも前任者から引き継いだものです。住所が分からないので郵便局が引き取ってくれません。
+届けてもらえませんか？
 
-**Du**: Klar! Robo, halt mal.
+**あなた**: もちろん！ロボ、ちょっと。
 
-Robo nimmt das Päckchen und lässt es irgendwo in seinem Innern verschwinden.
-Der Operationsleiter sieht ihn entgeistert an.
+ロボは小包を受け取り、内部に消えさせた。
+オペレーションマネージャーは驚いた顔で見つめた。
 
-**Robo**: Keine Angst, ich verdaue nichts!
+**ロボ**: 心配ない、私は何も消化しません！
 "

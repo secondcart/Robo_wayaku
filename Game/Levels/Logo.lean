@@ -23,22 +23,20 @@ Title "Logo"
 Image "images/QueenOfLogic.png"
 
 Introduction "
-Durch eine unvorhergesehene und nicht-kanonische Singularität in der Raumzeit
-bist du aus Versehen in ein Paralleluniversum gestolpert. Wie es aussieht, gibt es kein zurück.
-Richte dich besser darauf ein, hier bleiben und dich zurechtzufinden zu müssen.
+予期せぬ非正則な時空の特異点によって、
+あなたは偶然並行宇宙に迷い込んでしまった。どうやら帰る方法はないようだ。
+ここに留まり、適応するしかないだろう。
 
-Wie es aussieht, gibt es hier viele nette kleine Planeten. Alle bewohnbar, und bis zu
-sieben Sonnenuntergänge täglich inklusive. Nur werden sie allesamt von Formalosophen bewohnt,
-seltsamen Wesen mit ausgefallenen mathematischen Obsessionen. Und dummerweise hat sich
-herumgesprochen, dass du in deinem früheren Universum Mathematiker warst. du wirst hier
-keine Ruhe finden, solange du nicht lernst, ihren unablässigen Wissensdurst zu stillen.
+ここには多くの小さな惑星がある。全て居住可能で、
+1日に最大7回の夕焼けも楽しめる。しかし、それらの惑星は全てフォルマロソフィストと呼ばれる
+奇妙な生物に支配されている。彼らは風変わりな数学的執着を持つ存在だ。
+そして不運なことに、あなたが以前の宇宙では数学者だったという噂が広まってしまった。
+彼らの尽きることない知識欲を満たさない限り、ここで安らぎを見つけることはできないだろう。
 
-Es gibt nur zwei Schwierigkeiten: Erstens haben die Formalosophen allem Anschein nach
-überhaupt kein tieferes mathematisches Verständnis, und zweitens kommunizieren Sie über Mathematik
-exklusiv in einem dir fremden Dialekt, den sie Leansch [liːnʃ] nennen.
+問題は2つある：第一に、フォルマロソフィストたちはどうやら深い数学的理解を全く持っていないようだ。
+第二に、彼らは数学について「リーンシュ」[liːnʃ]と呼ばれるあなたにとって未知の方言でしかコミュニケーションを取らない。
 
-Zum Glück hat Robo mit dir das Universum gewechselt.
-Robo, das ist dein kleiner SmartElf. Robo ist zwar auch nicht die mathematische Leuchte, die du Dir
-in dieser Situation gewünscht hättest, aber es scheint, er hat irgendwo Leansch gelernt.
-Und das ist Gold wert.
+幸い、ロボもあなたと一緒に宇宙を移動してきた。
+ロボとは、あなたの小さなスマートエルフのことだ。ロボもこの状況で望んでいたような数学の天才ではないが、
+どうやらどこかでリーンシュを学んだようだ。これは非常に貴重なことである。
 "

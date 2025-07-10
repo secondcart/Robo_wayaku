@@ -7,11 +7,10 @@ Level 7
 
 Title ""
 
-Introduction "
-  **Robo**:  Hier ist noch eine kleine Primzahl-Aufgabe.
-   Das Lemma `Prime.dvd_mul` sagt, dass eine Primzahl genau dann ein Produkt teilt,
-   wenn sie einen der Faktoren teilt.  Das musst du hier nur anwenden.
-   "
+Introduction  "
+  **ロボ**: ここにもう一つ小さな素数問題があります。
+  補題`Prime.dvd_mul`は、素数が積を割り切るのは、その素数のいずれかの因数を割り切るときだけだと言っています。ここではそれを適用するだけです。
+  "
 
 namespace Nat
 
@@ -25,4 +24,4 @@ NewTheorem Nat.Prime.dvd_mul
 
 TheoremTab "ℕ"
 
-Conclusion "**Du** Du stellst aber wirklich sehr einfache Aufgaben."
+Conclusion "**あなた**: 本当に非常に簡単な問題ばかり出しますね。"

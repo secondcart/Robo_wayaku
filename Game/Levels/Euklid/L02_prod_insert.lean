@@ -4,38 +4,38 @@ World "Euklid"
 Level 2
 Title ""
 
-Introduction "Ein Stückchen weiter den Gang entlang seht ihr wieder ein aufgeschlagenes Buch auf der Erde."
+Introduction "廊下を少し進むと、また地面に開いた本が見えます。"
 
 open Finset
 namespace Nat
 
 Statement (p : ℕ) (hp : Prime p) (A : Finset ℕ): (∃ a ∈ A, p ∣ a) → p ∣ ∏ a ∈ A, a := by
-  Hint "**Robo**: Diese Zeile sieht auch sehr vernünftig aus:
-  wenn ein Primfaktor einen Faktor `a` eines Produkts teilt, dann teilt er sicher auch das ganze Produkt.
+  Hint "**Robo**: この行も非常に理にかなっています:
+  素因数が積の因数`a`を割り切るなら、確かに積全体も割り切れます。
 
-  **Du**:  Bereits die erste „Beweiszeile“ ist aber nicht einmal im Ansatz lebsbar.
+  **あなた**: しかし最初の「証明行」でさえ、生きているとは言えません。
 
-  **Robo**:  Nein, ist sie nicht. Aber probieren wirs wieder selbst.
-  Wir fangen natürlich mit `intro` an.
+  **Robo**: いいえ、違います。でも自分で試してみましょう。
+  もちろん`intro`から始めます。
   "
   intro h
-  Hint "**Robo**:  Und jetzt zerlegen wir die Annahme `{h}` in ihre drei Bestandteile."
+  Hint "**Robo**: そして今、仮定`{h}`を3つの構成要素に分解します。"
   obtain ⟨a, ha, hpa⟩ := h
   Hint "
-    **Du**:  Vermutlich will ich jetzt den Faktor `{a}` irgendwie aus dem Produkt heraustrennen?
+    **あなた**: おそらく、因数`{a}`を何とかして積から分離したいのでしょうか？
 
-    **Robo**:  Ja, das müsste helfen.  Ich denke, du wirst so etwas brauchen wie `insert_erase`.
+    **Robo**: はい、それが役立つはずです。`insert_erase`のようなものが必要だと思います。
   "
   Hint (hidden := true) "
-    **Robo**:  Probier mal `rw [← insert_erase {ha}]`.
+    **Robo**: `rw [← insert_erase {ha}]`を試してみてください。
   "
   rw [← insert_erase ha]
   Hint "
-    **Robo**:  Und jetzt verwendest du `prod_insert`, und den Faktor tatsächlich herauszuziehen.
+    **Robo**: そして今、`prod_insert`を使用して、実際に因数を取り出します。
   "
   rw [prod_insert]
   Hint (hidden := true) "
-    **Robo**:  Der Rest sollte jetzt einfach sein.  Wir hatten ja schon `Prime.dvd_mul` bewiesen.
+    **Robo**: 残りは簡単なはずです。`Prime.dvd_mul`は既に証明済みです。
   "
   · rw [Prime.dvd_mul]
     · left

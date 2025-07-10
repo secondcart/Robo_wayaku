@@ -4,42 +4,43 @@ import Game.Metadata
 World "Logo"
 Level 1
 
-Title "" -- "Automatisierung"
+Title "Automatisierung"
 
 Introduction
 "
-Gerade seid Ihr auf Königin *Logisindes* Planeten. Sie kommt ohne Umschweife zum Punkt:
+ちょうどあなたは女王*ロジシンデ*の惑星にいます。彼女は前置きなしに本題に入ります:
 
-**Logisinde**: Werte Wesen aus fremden Welten, gestatten Sie eine Frage. Warum gilt …
+**ロジシンデ**: 異世界からの尊き客人よ、ひとつ質問をさせてください。なぜ…ということが成り立つのでしょう？
 
-Und sie kritzelt etwas auf ein Stück Papier: oben ein paar Annahmen, unten eine Schlussfolgerung.
-Dazwischen sollst du offenbar einen Beweis eintragen.
-Du siehst Robo hilflos an.
+そして彼女は紙切れに何かを走り書きします: 上部にいくつかの仮定、下部に結論。
+その間にあなたは証明を記入する必要があるようです。
+あなたはロボを困った様子で見ます。
 "
 
 /--  -/
 Statement (A B C : Prop) :
     ¬((¬B ∨ ¬ C) ∨ (A → B)) → (¬A ∨ B) ∧ ¬ (B ∧ C) := by
-  Hint "**Robo**: Das ist ganz einfach. Mit `{A} {B} {C} : Prop` meint sie:
-    `{A}`, `{B}` und `{C}` sind irgendwelche Aussagen (*propositions*).
-    Und mit `→` meint sie ⇒, also “impliziert”. Die anderen Symbole kennst du, oder?
+  Hint "
+  **ロボ**: これはとても簡単です。`{A} {B} {C} : Prop`とは彼女が言っているのは:
+    `{A}`, `{B}`, `{C}`は任意の命題(*propositions*)です。
+    そして`→`は⇒、つまり「ならば」を意味します。他の記号は知ってるよね？
 
-    **Du**: Ehhm, ja. Aber da muss ich jetzt trotzdem erst einmal überlegen.
+    **あなた**: えーと、はい。でもそれでもちょっと考えないと。
 
-    **Robo**: (flüsternd) Behaupte doch einfach, dass sei eine Tautologie.
+    **ロボ**: (小声で) ただこれは恒真式だと言っちゃえばいいよ。
 
-    **Du**: Ernsthaft?
+    **あなた**: 本当に？
 
-    **Robo**: Ja. Schreib einfach `tauto`.
+    **ロボ**: はい。ただ`tauto`と書くだけ。
 
-    **Robo**: Mach schon …"
+    **ロボ**: さあやってみて…"
   tauto
 
 Conclusion
 "
-**Logisinde**: (etwas konsterniert) Ja, das ist streng genommen richtig.
-Aber glaubt bloß nicht, dass Ihr damit auf *diesem* Planeten viel weiterkommt!
-Meine Untertanen verstehen `tauto` nicht. Da müsst Ihr Euch schon etwas mehr anstrengen.
+**ロジシンデ**: (少し当惑して) ええ、厳密には正しいです。
+でも*この*惑星ではそれでうまくいくと思わないでください！
+私の臣民は`tauto`を理解しません。もっと努力が必要ですよ。
 "
 
 NewDefinition «Prop»

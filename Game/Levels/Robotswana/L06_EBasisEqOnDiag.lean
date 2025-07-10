@@ -3,29 +3,29 @@ import Game.Levels.Robotswana.L05_EBasisDiagSum
 World "Robotswana"
 Level 6
 
-Title "" -- "Ein nihilierter Kommutator"
+Title "Ein nihilierter Kommutator"
 
 -- TODO: Intro & geschichte
 Introduction
 "
-Der Spur folgend kommt ihr an einem großen Baum. Im Schatten findet ihr ein regloses Etwas:
+足跡をたどると大きな木の前に到着しました。木陰で動かない何かを見つけます：
 
 $$
 [A, B] = AB - BA
 $$
 
-**Robo**:  Ach ja, ein Kommutator!
+**ロボ**: ああ、交換子だね！
 
-**Du**: Der sieht aber ziemlich nihiliert aus.  Ich glaube, der ist verdurstet.
+**あなた**: でもかなり無効化されているみたい。干からびてるんじゃない？
 
-**Robo**: Und schau, hier ist noch was in den Baum gekritzelt.
+**ロボ**: 見て、木に何か書き込まれているよ。
 "
 
-Conclusion "
-**Robo**: Ich glaube, die Annahme, dass Kommutatoren nihiliert werden, nehmen wir jetzt erst
-einmal mit.
 
-**Du**: Schön.  Sagte ich bereits, dass ich langsam Durst habe?
+Conclusion "
+**ロボ**: 交換子が無効化されるという仮定は、ひとまず受け入れることにしましょう。
+
+**あなた**: いいね。のどが渇いてきたって言ったっけ？
 "
 
 open Nat Matrix
@@ -36,26 +36,23 @@ TheoremDoc Matrix.eq_on_diag_ebasis as "eq_on_diag_ebasis" in "Matrix"
 Statement Matrix.eq_on_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[ℝ] ℝ}
     (h₁ : ∀ A B, f (A * B) = f (B * A))  :
     ∀ (i j : Fin n), f (E i i) = f (E j j) := by
-  Hint "**Du**: Mit anderen Worten: Wenn `f` Kommutatoren nihiliert, dann stimmen seine Werte
-  auf allen `E i i` überein. Stimmt das??
+  Hint "**あなた**: つまり、`f`が交換子を無効化するなら、すべての`E i i`での値は一致するってこと？合ってる？
 
-  **Robo**: Lass es uns herausfinden!"
+  **ロボ**: 確かめてみよう！"
   intro i j
   Branch
-    Hint "**Du**: Aber was soll ich denn mit unserer Annahme `{h₁}` anfangen!
-    Ich müsste überhaupt erst einmal eine Multiplikation haben.
+    Hint "**あなた**: でも仮定`{h₁}`をどう使えばいいの？まず行列積が必要だ。
 
-    **Robo**: Du müsstest ein Matrizenprodukt `A * B` finden, für das  `f (E i i) = f (A * B) = f (E j j)` gilt.
-    Dann könnstest du `trans f (A * B)` schreiben, um zwei Beweisziele – `f (E i i) = f (A * B)` und `f (A * B) = f (E j j)` – zu erhalten,
-  bei denen `{h₁}` vielleicht anwendbar ist."
-    Hint (hidden := true) "**Robo**: Hatten wir nicht `E i k = (E i j) * (E j k)` auf einem dieser Zettel?"
+    **ロボ**: `f (E i i) = f (A * B) = f (E j j)`となる行列積`A * B`を見つける必要があるね。
+    そうすれば`trans f (A * B)`と書いて、`f (E i i) = f (A * B)`と`f (A * B) = f (E j j)`の2つの証明目標に分けられる。
+    `{h₁}`が使えるかもしれない。"
+    Hint (hidden := true) "**ロボ**: `E i k = (E i j) * (E j k)`ってメモに書いてなかった？"
     trans f (E i j * E j i)
     · unfold E
       simp
-    · Hint (hidden := true) "**Robo**: Hast du das nicht alles gemacht, weil du `{h₁}` brauchen
-      wolltest?
+    · Hint (hidden := true) "**ロボ**: `{h₁}`を使いたかったからこれをやってたんじゃない？
 
-      **Du**: Ah ja, stimmt!"
+      **あなた**: あ、そうだった！"
       rw [h₁]
       unfold E
       simp

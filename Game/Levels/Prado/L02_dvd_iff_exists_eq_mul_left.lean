@@ -8,16 +8,15 @@ Title ""
 
 Introduction
 "
-**Du** *(flüsternd)*: Robo, meinst du, wir sollen es ihm sagen?
+**あなた** *(小声で)*: ロボ、彼に言った方がいいと思う？
 
-**Robo**: Dass `2` die einzige gerade Primzahl ist?
-Er wird es nicht glauben wollen, solange wir ihm keinen Beweis präsentieren.
+**ロボ**: `2`が唯一の偶数の素数だってこと？
+証明を見せないと信じてくれないだろうね。
 
-**Du**:  Und meinst du nicht, wir können das zeigen?  Du kennst doch die Sprache.
-Lass uns mal probieren.  Wie schreib ich zum Beispiel „`a` teilt `b`“?
+**あなた**: それって私たちでも示せるんじゃない？ あなたはその言語知ってるでしょ。
+試してみよう。例えば「`a`が`b`を割り切る」ってどう書くの？
 
-**Robo**: Na schön. Also  „`a` teilt `b`“ schreibst du als `a ∣ b`, wobei du den senkrechten Strich
-  als `\\|` oder `\\dvd` schreiben musst.  Probier zum Beispiel mal diese Aufgabe hier.
+**ロボ**: いいだろう。「`a`が`b`を割り切る」は`a ∣ b`と書くんだ。縦棒は`\\|`か`\\dvd`で書かないといけない。例えばこの問題を試してみて。
 "
 
 -- This is `Nat.dvd_add`, but currently that statement is not needed anywhere.
@@ -28,24 +27,22 @@ namespace Nat
 
 Statement {a b c : ℕ} (h : a ∣ b) (g : a ∣ c) : a ∣ b + c := by
   Hint "
-  **Robo**: Definiert ist `a ∣ b` natürlich als `∃ k, b = a * k`.
-  Am besten schreibst du das für den Anfang überall explizit aus:
+  **ロボ**: `a ∣ b`はもちろん`∃ k, b = a * k`と定義されている。
+  最初はどこでも明示的に書き出した方がいい:
   ```
   rw [dvd_iff_exists_eq_mul_left] at *
   ```
   "
   rw [dvd_iff_exists_eq_mul_left] at * -- optional
   Hint (hidden := true) "
-    **Du**:  Und jetzt mache ich mit `obtain` und `use` weiter?
+    **あなた**: それで次は`obtain`と`use`で進めるの？
 
-    **Robo**: Genau.  Als nächstes nimmst du die Annahmen mit `obtain ⟨x ,hx⟩ := _`
-  usw. auseinander."
+    **ロボ**: そうだよ。次は`obtain ⟨x ,hx⟩ := _`などで仮定を分解する"
   obtain ⟨x, h⟩ := h
   obtain ⟨y, g⟩ := g
-  Hint (hidden := true) "**Robo**: Jetzt musst du mit `use _` eine Zahl angeben, sodass
-  `{b} + {c} = {a} * _` gilt."
+  Hint (hidden := true) "**ロボ**: 今度は`use _`で`{b} + {c} = {a} * _`となるような数を指定するんだ"
   use x + y
-  Hint (hidden := true) "**Robo**: Mit ein bisschen umschreiben kann man sicher `ring` verwenden."
+  Hint (hidden := true) "**ロボ**: 少し書き換えれば`ring`が使えるはずだ"
   rw [h, g]
   Branch
     linarith  -- works here, but omega does not!
@@ -68,12 +65,11 @@ NewTheorem dvd_iff_exists_eq_mul_left
 
 TheoremTab "ℕ"
 
-Conclusion "**Guino**:  Was flüstert ihr denn da?
+Conclusion "**ギノ**: 何を囁いてるんだ？
 
-**Du**:  Ach, nichts.  Robo versucht mich nur daran zu erinnern, was genau eine Primzahl ist.
+**あなた**: ああ、別に。ロボが素数とは何かを思い出させようとしてるだけだよ。
 
-Guino schaut sich euern Beweis an.
+ギノがあなた方の証明を見ている。
 
-**Guino**: Nicht schlecht, nicht schlecht.  Aber lasst uns doch ein bisschen weitergehen.
-Das Museum ist zwar noch leer, aber fertig.  Und es ist wirklich gut geworden.  Schaut mal, hier entlang!
-"
+**ギノ**: 悪くない、悪くない。でももう少し進もう。
+博物館はまだ空いてるけど完成してる。本当に良くできてるんだ。ほら、こちらへ来て見て！"

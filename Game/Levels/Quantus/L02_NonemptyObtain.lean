@@ -8,31 +8,31 @@ Title ""
 
 Introduction
 "
-Auf der Rückseite steht folgendes.
+裏側には次のように書かれています。
 "
 
 Statement (A : Type) (h : Nonempty A) : ∃ a : A, a = a := by
   Hint "
-    **Du**: Was ist das denn jetzt?  `A` ist in „Typ“?
+    **あなた**: これは何ですか？ `A` は「型」？
 
-    **Robo** Du kannst dir `A` einfach als Menge vorstellen …
+    **ロボット** `A` は単に集合と考えてください…
 
-    **Du** … die laut Annahme `h` nicht leer ist?
+    **あなた** …仮定 `h` によると空ではない？
 
-    **Robo** Genau.
+    **ロボット** その通り。
 
-    **Du** Und zeigen soll ich, dass es ein Element in `A` gibt?
+    **あなた** そして、`A` に要素が存在することを示せばいい？
 
-    **Robo** Richtig.
+    **ロボット** 正解です。
 
-    **Du** Und folgt das nicht genau aus der Annahme?
+    **あなた** それは仮定から直接導かれるのでは？
 
-    **Robo** Das ist wieder so ein Annahme, die man mit `obtain` „zerlegen“ kann.
-    Probier mal `obtain ⟨a⟩ := h`.
+    **ロボット** これは `obtain` で「分解」できる仮定です。
+    `obtain ⟨a⟩ := h` を試してみてください。
   "
   obtain ⟨a⟩ := h
   use a
 
 NewDefinition Exists
 
-Conclusion "Ihr erhaltet einen bescheidenen Applaus.  Die Formalosophinnen tuscheln untereinander."
+Conclusion "控えめな拍手が送られます。形式哲学者たちはひそひそ話をしています。"

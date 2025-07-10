@@ -19,21 +19,19 @@ Title "Babylon"
 Image "images/Babylon.png"
 
 
-Introduction "Ihr erreicht einen Planet, auf dem unzählige Steinplatten zu bizzar hohen Türme
-gestapelt sind. Die ganze Landschaft wirkt wie ein grosses Puzzle, in dem jede Platte
-feinsäuberlich auf den darunterliegenden Platten aufbaut. Einige Türme sind so hoch, dass man ihre Spitze gar nicht erkennen kann. Bald trefft ihr auch den ersten Bewohner dieses Planeten an.
+Introduction "無数の石板が奇妙なほど高い塔に積み上げられた惑星に到着しました。この風景全体は大きなパズルのようで、各石板は下にある石板の上に注意深く積まれています。あまりに高い塔もあり、頂上は見えません。すぐにこの惑星の最初の住人に出会います。
 
-**Babylonier**: Willkommen auf *Babylon*!
+**バビロニア人**: *バビロン*へようこそ！
 
-**Du**: Oh …
+**あなた**: ああ…
 
-Dich beschleicht ein ungutes Gefühl.
+不安な気持ちがよぎります。
 
-**Du**: Seid ihr euch sicher, dass diese Türme stabil sind?
+**あなた**: これらの塔は本当に安定しているんですか？
 
-**Babylonier**: 100 Pro!
+**バビロニア人**: 100％！
 
-**Du**: Wie baut ihr denn diese Meisterwerke?
+**あなた**: どうやってこれらの傑作を建てるんですか？
 
-**Babylonier**: Ganz einfach! Ein Stein nach dem anderen.
+**バビロニア人**: 簡単だよ！石を一つずつ積み上げるだけ。
 "

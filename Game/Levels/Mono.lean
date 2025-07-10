@@ -16,33 +16,33 @@ Title "Mono"
 Image "images/Mono.png"
 
 Introduction "
-Auf dem nächsten Planeten stehen wieder zwei Hochhäuser nebeneinander.
-Wieder ist das eine schmal und hoch, das andere etwas breiter und niedriger.
-Und wieder sind sie durch ein Röhrensystem miteinander verbunden –
-es gibt wohl auch wieder irgendein Transportkapsel-System.
-Nach der Erfahrung auf Epo steuert ihr diesmal geradewegs das niedrigere Gebäude an und landet auf dem Dach.
+次の惑星には再び2つの高層ビルが並んで建っています。
+片方は細く高く、もう片方は少し幅広で低い建物です。
+そして再びそれらは配管システムで繋がっています──
+おそらくまた何らかの輸送カプセルシステムがあるのでしょう。
+エポでの経験を踏まえ、今回はまっすぐ低い方の建物を目指し、屋上に着陸しました。
 
-**Portier**:  Nicht doch, nicht doch.  Habt ihr nicht alle winken sehen?
-Das hier ist doch bloß unser Schlafhaus.  Wir sind tagsüber immer dort drüben, im Büroturm.
-Aber gut, nun seid ihr hier.  Willkommen erst einmal!
+**受付係**: いやいや、そうじゃありません。みんなが手を振っているのを見ませんでしたか？
+ここはただの宿泊棟です。私たちは昼間はいつも向こうのオフィスタワーにいます。
+まあいい、とにかくここに来たのですね。まずはようこそ！
 
-Ihr schüttelt jeder eine seiner vier Hände.
+あなたたちはそれぞれ彼の4本の手を握ります。
 
-**Portier**:  Immerhin habe ich so die Möglichkeit, euch gleich unser einzigartiges Nahverkehrssystem vorzustellen.
-Ihr kommt von Epo, nicht war?
-Böse Geschichten hört man von dort.
-Jeden zweiten Tag gibts einen Unfall.
-Die kriegen ihre Röhren einfach nicht sortiert.
-Wir sind seit Jahren unfallfrei!
+**受付係**: せっかくだから、私たちのユニークな交通システムを紹介させてください。
+あなたたちはエポから来たんですよね？
+そこからは悪い話ばかり聞きます。
+2日に1回は事故が起きているとか。
+彼らは配管をきちんと整理できていないのです。
+私たちは何年も無事故です！
 
-Ihr geht vier Stockwerke nach unten.
-Dort bekommt wieder jeder eine Kapsel zugewiesen,
-und ihr gleitet geräuschlos bergauf in den Büroturm.
-Wie der Antrieb funktioniert, bleibt ein Rätsel.
+4階下へ降ります。
+そこで再び各自にカプセルが割り当てられ、
+静かに上昇してオフィスタワーへと向かいます。
+どうやって動いているのかは謎のままです。
 
-**Robo**:  Oh.  Hier ist ja auch niemand!
+**ロボ**: あら。ここにも誰もいませんね！
 
-**Portier**:  Natürlich nicht.  Die sind alle ganz oben.
-Und nicht jedes Stockwerk lässt sich über eine Röhre erreichen.
-Aber wir sind schon fast da.  Nur noch zwei Treppen hinauf.
+**受付係**: もちろんです。みんな最上階にいます。
+そして全ての階が配管で行けるわけではありません。
+でももうすぐ着きますよ。あと2つ階段を上がるだけです。
 "

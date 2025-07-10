@@ -6,31 +6,30 @@ Level 6
 
 Title ""
 
-Introduction"
-**Du**:  Gut.  Und kannst du mir jetzt zeigen, wie man mit Primzahlen arbeitet?
+Introduction "
+**あなた**: よし。それで、素数をどう扱うか教えてくれる？
 
-**Robo**: Mal sehen, ob ich eine Aufgabe zu Primzahlen auf Lager habe … Diese hier vielleicht?"
+**ロボ**: 素数に関する課題があるか見てみよう…これなんかどうかな？"
 
 
 namespace Nat
 
 Statement (a p : ℕ) (hp : Prime p) (h : 2 ≤ a) (ha : a ∣ p) : a = p := by
   Hint "
-    **Robo**: Hier ist `(hp : Prime p)` natürlich die Annahme, dass `p` eine Primzahl ist.
-    Um mit dieser Annahme zu arbeiten, wendest du am besten immer `rw [prime_def] at hp` an."
+    **ロボ**: ここで`(hp : Prime p)`はもちろん`p`が素数であるという仮定だ。
+    この仮定を使うには、`rw [prime_def] at hp`とするのがベストだよ。"
   Branch
     unfold Prime at hp
-    Hint "**Robo**:  Nee, lieber nicht.  Du solltest `Prime` nicht unfolden!
-    Das macht alles nur schwieriger.  Benutze lieber wie ich gesagt hatte `rw [prime_def] at hp`."
+    Hint "**ロボ**: いや、それはやめた方がいい。`Prime`をunfoldしないで！
+    そうすると全てが難しくなるだけだ。私が言ったように`rw [prime_def] at hp`を使うんだ。"
   rw [prime_def] at hp
-  Hint "**Du**:  Aha.  Eine Primzahl ist also eine natürlich Zahl größergleich `2`, die nur durch
-`1` und sich selbst teilbar ist.  Das klingt vertraut."
+  Hint "**あなた**: なるほど。素数とは2以上の自然数で、1と自分自身でのみ割り切れる数なんだ。聞き覚えがあるな。"
   obtain ⟨hp₁, hp⟩ := hp
   Hint "
-    **Du**: Ich will `{hp}` jetzt bestimmt auf `{a}` anwenden, oder?
+    **あなた**: 今度は`{hp}`を`{a}`に適用したいんだよね？
 
-    **Robo**:  Dann sag doch `have hp' := {hp} {a}`.  Oder etwas eleganter:
-    `specialize {hp} {a}`.
+    **ロボ**: それなら`have hp' := {hp} {a}`と言えばいい。もしくはもっとエレガントに：
+    `specialize {hp} {a}`。
   "
   Branch
     -- Marcus' solution
@@ -49,8 +48,7 @@ Statement (a p : ℕ) (hp : Prime p) (h : 2 ≤ a) (ha : a ∣ p) : a = p := by
     -- Hint "**Robo**:  Statt `have` könntest du hier übrigens auch `specialize {hp} {a} {ha}` verwenden."
   specialize hp a ha
   obtain hp | hp := hp
-  · Hint (hidden := true) "**Robo**:  Probier mal `linarith`.  Das sollte den Widerspruch aufdecken, der sich aus
-    `{a} = 1` und `2 ≤ {a}` ergibt."
+  · Hint (hidden := true) "**ロボ**: `linarith`を試してみて。`{a} = 1`と`2 ≤ {a}`の矛盾を見つけてくれるはずだ。"
     linarith
   · assumption
 

@@ -19,18 +19,18 @@ namespace Function
 Statement injective_iff_hasLeftInverse {A B : Type} [hA : Nonempty A]  (f : A → B) :
   Injective f ↔ HasLeftInverse f := by
   Hint "
-    **Du**:  Ich seh schon.  Die Eposophen wollten gern bewiesen haben, dass eine Abbildung genau dann surjektive ist, wenn sie ein Rechtsinverses besitzt.
-    Und die hiesigen Monosophen wollen gern bewiesen haben, dass eine Abbildung genau dann injektiv ist, wenn sie in Linksinverses besitzt.
+    **あなた**: なるほど。エポソ派は、写像が全射であることと右逆元を持つことが同値であることを証明したかったのですね。
+    そしてここのモノソ派は、写像が単射であることと左逆元を持つことが同値であることを証明したかったのですね。
 
-    **Robo**: Ja, außer dass sie diese zusätzliche Voraussetzung `Nonempty A` brauchen.
+    **ロボ**: はい、ただし彼らはこの追加条件`Nonempty A`が必要な点が違います。
   "
   Hint (hidden := true) "
-      **Du**:  Ich sehe gerade nicht, wie ich ein Linksinverses konkret konstruieren kann.
+      **あなた**: 具体的に左逆元をどう構築すればいいか分かりません。
 
-      **Robo**:  Erinner dich an die Aussage, die wir eben gerade gezeigt hatten: ` ∀ b : B, ∃ a : A, …`
-      Wenn du die hier hättest, könntest du vermutlich mit `choose` das gesuchte Linksinverse wählen.
-      Nur hat diese Aussage dummerweise keinen Namen.
-      Vielleicht formulierest du sie noch einmal mit `have` selbst aus, und beweist sie auch noch einmal.
+      **ロボ**: 先ほど証明した命題を思い出してください: ` ∀ b : B, ∃ a : A, …`
+      これがあれば、おそらく`choose`を使って求められる左逆元を選択できます。
+      ただ残念ながらこの命題には名前がついていません。
+      おそらく`have`で再度定式化し、証明し直す必要があるでしょう。
     "
   constructor
   · intro hf
@@ -71,8 +71,8 @@ Statement injective_iff_hasLeftInverse {A B : Type} [hA : Nonempty A]  (f : A �
   · /- Injective f → HasLeftInverse f
        exactly L09_injOfHasLeftInv, now without hints-/
     Hint (hidden := true) "
-      **Robo**:  Das hatten wir doch auch schon gezeigt …  aber ich hatte vergessen, es abzuspeichern.
-      Erinnerst du dich an den Beweis?
+      **ロボ**: これは前に証明した内容ですね…しかし保存し忘れていました。
+      証明を覚えていますか？
     "
     intro hL
     intro a a' ha
@@ -83,7 +83,7 @@ Statement injective_iff_hasLeftInverse {A B : Type} [hA : Nonempty A]  (f : A �
     assumption
 
 Conclusion "
-Ihr bekommt wieder eine große Runde Applaus und werdet ihr verabschiedet.
-Wieder gibt es keine Transportkapseln für den Rückweg.
-Aber so weit ist es ja nun auch wieder nicht.
+再び大きな拍手を受けて、あなた方は見送られます。
+帰路のための輸送カプセルはまたしてもありません。
+しかし、それほど遠くもないでしょう。
 "

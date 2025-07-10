@@ -13,31 +13,30 @@ Title "Samarkand"
 Image "images/Samarkand.png"
 
 Introduction "
-In der Ferne taucht ein sehr bunter Planet auf.
-Als ihr näher kommt, seht ihr, dass große Teile seiner Oberfläche mit aufwendigen geometrischen Mustern verziert sind.
-Aber es gibt auch ein paar unverzierte Areale, ganz weiß.
-Ihr landet in einem dieser weißen Flecken.
+遠くに非常にカラフルな惑星が見えてきました。
+近づくと、その表面の大部分が精巧な幾何学模様で装飾されているのがわかります。
+しかし、装飾されていない真っ白な領域もいくつかあります。
+あなたはその白いエリアの一つに着陸しました。
 
+**あなた**: やあ、誰かいる？
 
-**Du**:  Huhu, ist hier jemand?
+惑星の表面は完璧な球体のようです。あらゆる方向に地平線が見えます。
+誰もいません。引き返そうとした時、何かに気が付きました。
 
-Die Planetenoberfläche gleicht einer perfekten Sphäre. Ihr seht in alle Richtungen Horizont.
-Es ist niemand zu sehen.  Ihr wollt schon wieder umdrehen, da entdeckst du etwas.
+**あなた**: ロボ、あそこを見て！惑星にこぶがあるよ！
 
-**Du**:  Robo, schau mal da hinten, da hat der Planet eine Beule!
+「こぶ」は小さなカメであることが判明しました。
+模様の端近くの色付きの地面に横たわっています。
+慎重に模様のある地面に足を踏み入れます。色は乾いているようです。
 
-Wie sich herausstellt, ist die „Beule“ eine kleine Schildkröte,
-die nahe der Musterkante auf farbigem Grund liegt.
-Vorsichtig betretet ihr die gemusterte Fläche.  Die Farbe scheint trocken zu sein.
+**アラプカ**: こんにちは、二人とも！近くに来てください！訪問者が来てくれて嬉しいです。
 
-**Arapuka**: Hallo ihr beiden, kommt ruhig näher!  Schön, dass ich auch einmal Besuch bekomme.
+**あなた**: こんなところで一人で何をしているの？
 
-**Du**:  Was machst du denn hier, so ganz allein?
+**アラプカ**: 大きな芸術作品を作っているんです。
+お腹の甲板が地面の模様を写し取るまでここに横たわっています。
+それから、模様がまだ完成していない場所まで歩いて行き、白い惑星表面に模様を転写するまで横たわります。
+時間がかかります。だから、お話し相手がいてくれると助かります。
 
-**Arapuka**:  Ich arbeitet an einem großen Kunstwerk.
-Ich liege hier solange, bis mein Bauchpanzer das Bodenmuster angenommen hat.
-Dann laufe ich hinüber zu der Stelle, wo dieses Stück Muster noch fehlt, und lege mich dort so lange nieder, bis ich das Muster auf die weiße Planetenoberfläche transferiert habe.
-Das dauert.  Ich kann also Gesellschaft gut gebrauchen.
-
-**Du**: Na prima.
+**あなた**: それはいいね。
 "

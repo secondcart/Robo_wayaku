@@ -12,26 +12,26 @@ Title "Epo"
 Image "images/Epo.png"
 
 Introduction "
-Auf dem Planeten, dem ihr euch nähert, sind zwei Gebäude zu erkennen: ein schmales Hochhaus
-und ein zweites Gebäude mit etwas weniger Etagen.
-Die Gebäude sind mit einem eigenartigen Röhrensystem miteinander verbunden.
-Oben auf dem Hochhaus erkennt ihr einen Landeplatz.  Den steuert ihr an.
+近づいている惑星には、2つの建物が見えます：細い高層ビルと、
+それより少し階数の少ない2つ目の建物です。
+建物同士は奇妙な配管システムでつながっています。
+高層ビルの上には着陸場があり、そこを目指します。
 
-Als ihr aussteigt, kommt ein Formalosoph auf euch zugelaufen.  Er winkt wild mit den Armen.
+降り立つと、フォルマロソフィストが走り寄ってきました。彼は腕を大きく振っています。
 
-**Portier**:  Nein, nicht doch, da unten werdet ihr erwartet.
+**受付係**：いえいえ、下でお待ちしていますよ。
 
-Er lässt die Arme sinken.
+彼は腕を下ろします。
 
-**Portier**:  Nun ja, egal.  Guten Tag, erst einmal!
-Ich bin hier nur der Hausmeister.
-Ihr werdet von einer großen Delegation erwartet, aber natürlich drüben, im Bürohaus.
-Das hier ist nur unser Schlafturm.  Kommt, ich bringe euch hinüber.  Es geht ganz schnell.
+**受付係**：まあ、いいでしょう。まずはこんにちは！
+私はただの管理人です。
+大勢の代表団がお待ちですが、もちろん向こうのオフィスビルです。
+こちらはただの宿泊棟です。さあ、連れて行きましょう。すぐですよ。
 
-Er führt euch eine Etage hinunter und bitte euch, in „Transportkapseln“ einzusteigen, jeder in eine.
+彼は1階下へ案内し、「輸送カプセル」に乗るよう促します。各自1つずつです。
 
-**Portier**:  Wir rutschen jetzt einfach mit diesen Kapseln hinüber.
-Keine Sorge, die Bahn ist frei!
-Wir haben hier zwar leider immer wieder Zusammenstöße, aber momentan ist die Luft rein.
-Alle anderen sind ja schon drüben!
+**受付係**：このカプセルで滑りながら向かいます。
+心配ありません、線路は空いています！
+残念ながら衝突事故が時々ありますが、今は大丈夫。
+他の皆さんはもう向こうにいますよ！
 "

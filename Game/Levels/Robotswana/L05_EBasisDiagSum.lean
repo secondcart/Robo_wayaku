@@ -3,22 +3,21 @@ import Game.Levels.Robotswana.L04_MatrixEqSum
 World "Robotswana"
 Level 5
 
-Title "" -- "Einheitsmatrix"
+Title "Einheitsmatrix"
 
 Introduction
 "
-**Du**: Zeig mal, was hast du da? Was zur Einheitsmatrix? Passend für unsere Sammlung?
+**あなた**: ちょっと見せて、何を持ってるの？単位行列？私たちのコレクションにぴったりじゃない？
 
-**Robo**: Ja – die `1` ganz rechts ist hier die Einheitsmatrix.
-  Ich glaube, du kannst gleich mit `matrix_eq_sum_ebasis` beginnen.
+**ロボ**: はい - 右端の`1`がここでは単位行列です。
+  `matrix_eq_sum_ebasis`から始められると思います。
 
-**Du**: Ich frage mich, ob wir noch wichtiges auf dem Platz zurückgelassen haben?
+**あなた**: 広場に重要なものを置き忘れてないか気になるな...
 
-**Robo**: Egal, jetzt sind wir schon ein gutes Stücken weiter. Probier jetzt hier einmal!
+**ロボ**: どうでもいいよ、もうずいぶん先に進んでる。ここで試してみて！
 "
 
-Conclusion "**Du**: Ich habe das Gefühl, wir sind jemandem auf der Spur, der sich für die
-die Diagonale von Matrizen interessiert.  Aber ich bekomme langsam Durst!"
+Conclusion "**あなた**: 行列の対角線に興味がある誰かの跡を追ってる気がする。でも喉が渇いてきた！"
 
 
 open Nat Matrix StdBasisMatrix
@@ -43,73 +42,72 @@ TheoremDoc Matrix.ebasis_diag_sum_eq_one as "ebasis_diag_sum_eq_one" in "Matrix"
 
 Statement Matrix.ebasis_diag_sum_eq_one {n : ℕ} : ∑ i : Fin n, E i i = 1 := by
   Hint (hidden := true) "
-    **Robo**:  Wie gesagt, ich denke, du kannst gleich mit `matrix_eq_sum_ebasis` anfangen,
-    angewendet auf die Einheitsmatrix `1` rechts vom Gleichheitszeigen.
-    Du willst also mit der Gleichung `matrix_eq_sum_ebasis 1` das Beweisziel `r`e`w`riten.
+    **ロボ**: 言った通り、`matrix_eq_sum_ebasis`から始められると思うよ、
+    等号の右側の単位行列`1`に適用して。
+    だから`matrix_eq_sum_ebasis 1`で目標を`r`e`w`riteしたいんだ。
   "
   Branch
     rw [matrix_eq_sum_std_basis 1]
-    Hint "**Robo**:  Nein, nicht `matrix_eq_sum_std_basis`, sondern `matrix_eq_sum_ebasis`."
+    Hint "**ロボ**: 違うよ、`matrix_eq_sum_std_basis`じゃなくて`matrix_eq_sum_ebasis`だよ。"
   rw [matrix_eq_sum_ebasis 1] -- Lvl 3
-  Hint "**Du**: Ich denke, die beiden Summen sind identisch, weil jeder Summand identisch ist."
+  Hint "**あなた**: 各項が同じだから、2つの和は同じだと思う。"
   Hint (hidden := true) "
-    **Robo**:  Dann solltest du vermutlich wieder `sum_congr` anwenden.
+    **ロボ**: それならまた`sum_congr`を使うべきかも。
   "
   apply sum_congr
   rfl
   intro i hi
-  Hint "**Du**: Und jetzt?
+  Hint "**あなた**: で、次は？
 
-  **Robo**: Mit `funext r s` könntest du dich auf den Eintrag der Matrix an der Stelle $(r,s)$ konzentrieren.
-  "
+  **ロボ**: `funext r s`で行列の$(r,s)$成分に注目できるよ。"
   funext r s
-  Hint "**Du**: `1` war hier die Einheitsmatrix, richtig?
+  Hint "**あなた**: ここでの`1`は単位行列だよね？
 
-  **Robo**: Ja.
+  **ロボ**: そうだよ。
 
-  **Du**:  Dann ist `1 {i} j` doch Null für alle `j ≠ {i}`.
-  Also verschwindet alle Summanden bis auf den Summanden für `j = {i}`.
+  **あなた**: なら`1 {i} j`は`j ≠ {i}`なら全部0だ。
+  だから`j = {i}`の項以外は消える。
 
-  **Robo**: Ist das so?   Dann lass mich mal überlegen …
-  Kannst du zuerst mal `have h : \{{i}} ⊆ univ` zeigen?"
+  **ロボ**: そうかな？考えさせて...
+  まず`have h : \{{i}} ⊆ univ`を証明できる？"
   have h : {i} ⊆ univ
   · simp
-  Hint "**Robo**: Sehr gut.  Jetzt kannst du nämlich `sum_subset` anwenden."
+  Hint "**ロボ**: 良かった。これで`sum_subset`が使えるよ。"
   rw [← sum_subset h]
-  · Hint "**Du**: Danke, das hilft! Dieser Schritt sollte einfach sein: Eine Summe über ein Element,
-    bei diesem ist `1 {i} {i}` wieder Eins, und `1 • _` vereinfacht sich auch!"
-    Hint (hidden := true) "**Robo**: `simp` kann man immer versuchen …"
+  · Hint "**あなた**: ありがとう、助かる！このステップは簡単だ: 1要素の和で、
+    `1 {i} {i}`は1で、`1 • _`も簡約される！"
+    Hint (hidden := true) "**ロボ**: `simp`はいつでも試せる..."
     simp
   · intro x h₁ h₂
     clear h₁ -- not needed
-    Hint "**Du**: Aber was mache ich hier? `{h₂}` sagt ja mehr oder weniger dass `{i} ≠ {x}` ist.
+    Hint "**あなた**: でもここはどうする？`{h₂}`はほぼ`{i} ≠ {x}`ってことだよね。
 
-    **Robo**: Ja, aber nicht ganz. Führ das doch mit `have h₃ : {i} ≠ {x}` ein und zeig das kurz!"
+    **ロボ**: そうだけど、完全には。`have h₃ : {i} ≠ {x}`を導入して簡単に示して！"
     -- TODO: There are other ways to get `i ≠ x`!
     Branch
       have h₃ : x ≠ i
-      Hint "**Robo**: Umgekehrt wäre es nützlicher, da
-      `1 {i} {x}` als `if {i} = {x} then _ else _` definiert ist!
+      Hint "**ロボ**: 逆の方が有用だよ、
+      `1 {i} {x}`は`if {i} = {x} then _ else _`で定義されてるから！
 
-      **Du**: Du hast recht, ich brauch gleich `{i} = {x}` oder `{i} ≠ {x}`. Lass mich das ändern."
+      **あなた**: その通り、すぐ`{i} = {x}`か`{i} ≠ {x}`が必要だ。変えよう。"
     have h₃ : i ≠ x
-    · Hint "**Du**: Als erstes würde ich mal schauen, ob sich `{h₂}` vereinfacht."
+    · Hint "**あなた**: まず`{h₂}`が簡約できるか見てみよう。"
       simp at h₂
       -- TODO : `tauto` already solves this.
-      Hint "**Du**: Hmm, jetzt ist das erstmal verdreht.
+      Hint "**あなた**: うーん、今は逆だ。
 
-      **Robo**: Erinnere dich an `symm`!
+      **ロボ**: `symm`を思い出して！
 
-      **Du**: Richtig, das brauchten wir ja schon bei diesem wilden Typen mit seinen Förderbändern."
+      **あなた**: そうだった、あのベルトコンベアの変な人の時も使ったね。"
       symm
       assumption
     Branch
       simp [h₃]
-    Hint "**Du**: Wie setze ich denn jetzt die Definition für `1 {i} {x}` ein?
+    Hint "**あなた**: `1 {i} {x}`の定義はどう入れる？
 
-    **Robo**: `Matrix.one_apply`!"
+    **ロボ**: `Matrix.one_apply`！"
     rw [Matrix.one_apply]
-    Hint "**Robo**: Und da das falsch ist, kannst du mit `rw` und `if_neg` weiterkommen."
+    Hint "**ロボ**: 間違ってるから、`rw`と`if_neg`で進めるよ。"
     rw [if_neg h₃]
     simp
 

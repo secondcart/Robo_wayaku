@@ -7,31 +7,31 @@ Title ""
 
 Introduction
 "
-**Benedictus**: Hier, schaut mal. Das habe ich für Euch vorbereitet.
+**ベネディクトゥス**: ほら、見てください。これはあなたのために準備したものです。
 "
 Statement (A B : Prop) (h : A → ¬ B) (k : A ∧ B) : False := by
-  Hint "**Du**: Also als erstes teile ich wohl mal das Und (`∧`) auf."
+  Hint "**あなた**: まずはこのAND（`∧`）を分解する必要がありそうですね。"
   obtain ⟨h₁, h₂⟩ := k
   Hint (strict := true) "
-    **Du**: Und jetzt …
+    **あなた**: そして今…
 
-    **Benedictus**: … solltest du dir ein passendes Zwischenresultat zurechtlegen.
+    **ベネディクトゥス**: …適切な中間結果を準備するべきです。
 
-    **Robo**: Ja! Probier mal wieder `have`.  Genauer: `have g : ¬ B`!"
+    **ロボ**: そうだ！また`have`を使ってみて！具体的には`have g : ¬ B`！"
   have g : ¬ B
   · Hint "
-      **Du**: Was? Jetzt hab ich einfach angenommen, dass sei richtig?
+      **あなた**: え？今これを正しいと仮定しただけ？
 
-      **Robo**: Nein, jetzt musst du das natürlich erst noch beweisen, bevor du es dann benutzen kannst."
-    Hint (hidden := true) "**Robo**: `apply` sollte helfen"
+      **ロボ**: いや、使う前にこれを証明する必要がありますよ。"
+    Hint (hidden := true) "**ロボ**: `apply`が役立つはず"
     apply h
     assumption
-  Hint "**Du**: Und wie war das nochmals wenn zwei Annahmen sich widersprechen?
+  Hint "**あなた**: そして、2つの仮定が矛盾する場合はどうするんでしたっけ？
 
-  **Robo**: `contradiction`."
+  **ロボ**: `contradiction`です。"
   contradiction
 
-Conclusion "**Benedictus**: Das sieht gut aus!"
+Conclusion "**ベネディクトゥス**: 良さそうですね！"
 
 --NewTactic «have»  -- now introduced very briefly in Implis
 DisabledTactic «suffices» tauto

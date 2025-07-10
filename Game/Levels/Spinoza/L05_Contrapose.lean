@@ -4,42 +4,38 @@ import Game.Levels.Quantus
 World "Spinoza"
 Level 5
 
-Title "" -- "Kontraposition"
+Title "Kontraposition"
 
 Introduction
 "
-**Benedictus**: Gut, hier ist die angekündigte Frage. Versucht mal einen *direkten*
-Beweis, ohne `by_contra`.
+**ベネディクトゥス**: では、約束していた問題です。`by_contra`を使わずに*直接*証明してみてください。
 "
 
 open Nat
 
 Statement (n : ℕ) (h : Odd (n ^ 2)): Odd n := by
   Hint "
-    **Robo**: Ich schlage vor, wir führen das auf das Lemma `even_square` zurück, das wir auf
-    Quantus schon gezeigt hatten. Hier steht ja im Grunde `Odd (n^2) → Odd n`. Und unter
-    Kontraposition ist das äquivalent zu `Even n → Even (n^2)`.
+    **ロボ**: `even_square`の補題に帰着させるのが良いと思います。これは基本的に`Odd (n^2) → Odd n`と言っています。
+    対偶を取ると`Even n → Even (n^2)`と同値になります。
 
-    **Du**: Richtig. Von hinten durch die Brust … Aber warte, im Moment steht da doch gar kein `→`.
+    **あなた**: その通り。回り道ですが...待って、今は`→`が入っていないですね。
 
-    **Robo**: Erinner dich an `revert`. Mit `revert {h}` kannst du die Annahme `{h}` als
-    Implikationsannahme ins Beweissziel schieben."
+    **ロボ**: `revert`を思い出してください。`revert {h}`で仮定`{h}`を証明目標の含意に戻せます。"
   revert h
   Hint "
-    **Du**: Und jetzt kann ich dieses Kontrapositionslemma anwenden? Wie hieß das noch einmal?
+    **あなた**: これで対偶法の補題が使えますか？名前は何でしたっけ？
 
-    **Robo**: Tatsächlich kannst auch einfach `contrapose` schreiben."
+    **ロボ**: 実際には単に`contrapose`と書けます。"
   contrapose
-  Hint (hidden := true) "**Robo**: Vielleicht hilft jetzt `even_iff_not_odd` weiter?"
+  Hint (hidden := true) "**ロボ**: 今は`even_iff_not_odd`が役立つかもしれません"
   rw [← even_iff_not_odd]
   rw [← even_iff_not_odd]
   Hint "
-    **Du**: Das sieht schon ganz gut aus. Jetzt kann ich tatsächlich das alte Lemma
-    `even_square` anwenden!"
+    **あなた**: 良さそうです。これで古い補題`even_square`が使えます！"
   apply even_square
 
 NewTactic contrapose
 DisabledTactic by_contra
 TheoremTab "ℕ"
 
-Conclusion "**Benedictus**: Hervorragend! Ich glaube, damit seid Ihr jetzt ganz gut gewappnet."
+Conclusion "**ベネディクトゥス**: 素晴らしい！これで十分に準備が整いましたね。"

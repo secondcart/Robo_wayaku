@@ -4,27 +4,26 @@ import Game.Metadata
 World "Logo"
 Level 14
 
-Title "" -- "Zusammenfassung"
+Title "Zusammenfassung"
 
 Introduction
 "
-Der letzte Untertan tritt vor. Ihr Anliegen ist etwas komplizierter als die vorherigen.
+最後の臣民が前に出てきます。彼女の訴えはこれまでのものより少し複雑です。
 
-**Robo** Wirf einfach alles drauf, was du gelernt hast.
-Hier, ich bin sogar so nett und zeig dir noch einmal die vier
-wichtigsten Taktiken für diese Situation an.
+**ロボ** 学んだことをすべて使ってみてください。
+ここで、この状況で最も重要な4つの戦術をもう一度示しておきますね。
 
-| (Übersicht) | Und (`∧`)                | Oder (`∨`)              |
+| (概要) | AND (`∧`)               | OR (`∨`)               |
 |:------------|:-------------------------|:------------------------|
-| Annahme     | `obtain ⟨h₁, h₂⟩ := h`   | `obtain h \\| h := h`   |
-| Goal        | `constructor`            | `left`/`right`          |
+| 前提     | `obtain ⟨h₁, h₂⟩ := h`   | `obtain h \\| h := h`   |
+| 目標        | `constructor`            | `left`/`right`          |
 "
 
 -- Note: The other direction would need arguing by cases.
 
 Statement (A B C : Prop) (h : A ∨ (B ∧ C)) : (A ∨ B) ∧ (A ∨ C) := by
   Hint (hidden := true)
-    "**Robo**: Ich würd zuerst die Annahme {h} mit `obtain ⟨⟩ := {h}` aufteilen."
+    "**ロボ**: まず前提 {h} を `obtain ⟨⟩ := {h}` で分割するといいよ"
   Branch
     constructor
     · obtain h' | h' := h
@@ -40,18 +39,17 @@ Statement (A B C : Prop) (h : A ∨ (B ∧ C)) : (A ∨ B) ∧ (A ∨ C) := by
         right
         assumption
   obtain h | h := h
-  Hint (hidden := true) "**Robo**: Jetzt kannst du das `∧` im Goal mit `constructor` angehen."
+  Hint (hidden := true) "**ロボ**: これでゴールの `∧` を `constructor` で処理できるよ"
   · constructor
     · left
       assumption
     · left
       assumption
   · Hint (hidden := true)
-      "**Robo**: Hier würde ich die Annahme {h} nochmals mit `obtain` aufteilen."
+      "**ロボ**: ここで前提 {h} をもう一度 `obtain` で分割するといいかも"
     Branch
       constructor
-      · Hint "**Robo**: Der Nachteil an der Reihenfolge ist, dass du jetzt in jedem Untergoal
-          `obtain ⟨⟩ := h` aufrufen musst."
+      · Hint "**ロボ**: この順序の欠点は、各サブゴールで `obtain ⟨⟩ := h` を呼ぶ必要があることだね"
         Branch
           right
           obtain ⟨h₁, _h₂⟩ := h
@@ -75,9 +73,9 @@ Statement (A B C : Prop) (h : A ∨ (B ∧ C)) : (A ∨ B) ∧ (A ∨ C) := by
 
 Conclusion
 "
-**Robo** Bravo! Jetzt aber nichts wie weg hier, bevor sich eine neue Schlange bildet!
+**ロボ** ブラボー！さあ、新しい列ができる前にここを離れよう！
 
-Königin *Logisinde* ist in der Zwischenzeit eingeschlafen, und ihr stehlt euch heimlich davon.
+女王 *ロジジンデ* はその間に眠りにつき、あなたたちはこっそりと逃げ出します。
 "
 
 DisabledTactic tauto

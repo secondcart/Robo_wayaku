@@ -3,40 +3,39 @@ import Game.Metadata
 World "Implis"
 Level 2
 
-Title "" -- "Revert"
+Title "Revert"
 
 Introduction
 "
-Der Operationsleiter holt aus einem Container einen Stapel Papier hervor.
+作戦責任者がコンテナから紙の山を取り出します。
 
-**Operationsleiter**: Hier hat sich echt einiges angesammelt. Wäre echt super, wenn Ihr mir
-noch ein bisschen helfen könntet.
+**作戦責任者**: ここには本当にたくさん溜まってしまいました。もしあなたが
+もう少し手伝ってくれると本当に助かります。
 
-Er übergibt Euch das oberste Blatt.
+彼はあなたに一番上の紙を渡します。
 "
 
 Statement (A B : Prop) (hA : A) (h : A → B) : B := by
   Hint "
-    **Operationsleiter**: Das ist von einem Kollegen.
+    **作戦責任者**: これは同僚からのものです。
 
-    **Robo**: Oh, das hab ich schon einmal irgendwo gelesen. Warte mal … Richtig! Das war
-    damals, als ich Wikipedia gecrawlt habe: `Der Modus ponens ist eine schon in der antiken
-    Logik geläufige Schlussfigur, die in vielen logischen …`
+    **ロボ**: あ、これはどこかで読んだことがあります。待って…そうだ！あの時、
+    私がWikipediaをクロールしていた時のことだ: `モーダスポネンスは古代ロジックで既に知られていた推論規則で、多くの論理的…`
 
-    **Du**: Robo! Gefragt ist ein Beweis und kein historischer Aufsatz! Oder komme ich hier
-    etwa mit `mopo` oder so etwas weiter?
+    **あなた**: ロボ！求められているのは証明であって歴史的な論文じゃない！それともここで
+    `mopo`とかそんなので進められると思ってるの？
 
-    **Robo**: Okay, nein, sorry. `mopo` gibt es nicht. Probier lieber `revert {hA}`."
+    **ロボ**: はい、いいえ、すみません。`mopo`はありません。代わりに`revert {hA}`を試してみてください。
+    "
   revert hA
   Hint "
-    **Du**: Aha. `revert` ist quasi `intro` rückwärts.
+    **あなた**: なるほど。`revert`は基本的に`intro`の逆ですね。
 
-    **Robo**: Genau. `intro` nimmt die Prämisse aus einer Implikation `{A} \\to {B}` im
-    Beweisziel und macht daraus eine Annahme. `revert` nimmt umgekehrt eine Annahme und
-    setzt sie als Implikationsprämisse vor das Beweisziel. Aber nun mach schon fertig."
+    **ロボ**: その通りです。`intro`は証明目標内の含意`{A} \\to {B}`から前提を取り出して仮定にします。`revert`は逆に仮定を取り出して含意の前提として証明目標の前に置きます。さあ、もう終わらせてください。
+  "
   assumption
 
-Conclusion "Der Operationsleiter nimmt erfreut Eure Lösung entgegen, und greift zum Telefon."
+Conclusion "作戦責任者は喜んであなたの解答を受け取り、電話に手を伸ばします。"
 
 NewTactic revert
 DisabledTactic tauto

@@ -3,41 +3,41 @@ import Game.Metadata
 World "Implis"
 Level 8
 
-Title "" -- "Genau dann, wenn"
+Title "Genau dann, wenn"
 
 Introduction
 "
-**Operationsleiter**: Hier, könnt ihr dazu auch was sagen?
+**オペレーションマネージャー**: ここで、これについて何か言えることはありますか？
 "
 
 Statement (A B C D : Prop) (h₁ : C ↔ D) (h₂ : A ↔ B) (h₃ : A ↔ D) : B ↔ C := by
   Hint "
-    **Du**: $B \\iff A \\iff D \\iff C$, die sind doch alle äquivalent…
+    **あなた**: $B \\iff A \\iff D \\iff C$、これらはすべて同値ですね…
 
-    **Robo**: Ja, aber du musst ihm helfen, die Äquivalenzen umzuschreiben. Mit `rw [h₁]` kannst
-    du `C` durch `D` ersetzen."
+    **ロボ**: はい、しかし彼が同値関係を書き換えるのを手伝う必要があります。`rw [h₁]`を使えば、
+    `C`を`D`に置き換えることができます。"
   rw [h₁]
   Hint "
-    **Du** Und wenn ich in die andere Richtung umschreiben möchte?
+     **あなた**: 逆方向に書き換えたい場合はどうすればいいですか？
 
-    **Robo**: Dann schreibst du ein `←` (`\\l`, also klein \"L\") vor den Namen, also `rw [← hₓ]`."
+    **ロボ**: その場合は名前の前に`←`（`\\l`、つまり小文字の「L」）を書きます。つまり`rw [← hₓ]`です。"
   Branch
     rw [← h₃]
     Hint "
-      **Du**: Ehm, das war verkehrt.
+      **あなた**: ええと、それは間違いでした。
 
-      **Robo**: Ja, anders herum wär's besser gewesen. Aber wenn du jetzt einfach weitermachst,
-      bis Du sowas wie `A ↔ A` erhältst, kann `rfl` das beweisen.
+      **ロボ**: はい、逆方向の方が良かったですね。しかし、今のまま進めて、
+      `A ↔ A`のような式を得たら、`rfl`で証明できます。
 
-      **Robo: Da fällt mir ein, `rw` wendet ohnehin auch versuchsweise `rfl` an.
-      Das heißt, du musst `rfl` nicht einmal ausschreiben."
+      **ロボ**: そういえば、`rw`は自動的に`rfl`も試みます。
+      つまり、`rfl`を明示的に書く必要はありません。"
     rw [h₂]
   rw [←h₂]
   assumption
 
 Conclusion
 "
-**Operationsleiter**: Wenn Ihr so weitermacht, dann kommen wir ja durch den ganzen Packen durch!
+**オペレーションマネージャー**: この調子で進めれば、この山を全部片付けられますね！
 "
 
 NewTactic rw

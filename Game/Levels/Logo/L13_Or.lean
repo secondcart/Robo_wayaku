@@ -3,97 +3,94 @@ import Game.Metadata
 World "Logo"
 Level 13
 
-Title "" -- "Oder"
+Title "Oder"
 
 Introduction
 "
-Der nächste bitte …
+次をお願いします…
 "
 
 /--  -/
 Statement (A B : Prop) (h : (A ∧ B) ∨ A) : A := by
-  Hint "**Robo** Schau mal, wenn du mit dem Finger eine Annahme berührst, zeigt es dir,
-wie die Klammern gesetzt sind. Irre…
+  Hint "**ロボ** ほら、仮定を指で触ると括弧の付け方が表示されるよ。すごいでしょ…
 
-**Du** Ah ich sehe, also `({A} ∧ {B}) ∨ {A}`!
+**あなた** ああ、なるほど `({A} ∧ {B}) ∨ {A}` ってことね！
 
-**Du** Ich glaube den ganzen Zircus hier langsam nicht mehr:
-Zuerst ein \"Und\" im Ziel, dann \"Und\" in der Annahme, dann \"Oder\" im Ziel und jetzt
-\"Oder\" in der Annahme, die haben sich doch abgesprochen!
+**あなた** この流れにはうんざりしてきたわ：
+最初は目標に「かつ」、次に仮定に「かつ」、その次は目標に「または」、
+そして今度は仮定に「または」… みんなで相談して決めてるみたい！
 
-**Robo** Lass ihnen doch ihren Spaß.
-Wir sind ja gleich hier fertig, und können zu einem interessanteren Planeten weiterfliegen.
+**ロボ** まあ楽しませてあげようよ。
+もうすぐ終わるし、もっと面白い惑星に行けるんだから。
 
-**Du** Also, wieder `obtain …`?
+**あなた** じゃあ、また `obtain …` を使うの？
 
-**Robo** Ja, aber diesmal nicht `obtain ⟨h₁, h₂⟩ := {h}`, sondern `obtain h | h := {h}`."
+**ロボ** そうだよ。でも今回は `obtain ⟨h₁, h₂⟩ := {h}` じゃなくて `obtain h | h := {h}` だよ"
   obtain h | h := h
-  · Hint "**Robo**
-    Jetzt musst du dein Ziel zweimal beweisen:
-    Einmal unter Annahme der linken Seite `{A} ∧ {B}`,
-    und einmal unter Annahme der rechten Seite `{A}`.
-    Hier haben nehmen wir an, die linke Seite
-    sei wahr."
-    Hint (hidden := true) " **Robo** Wie man mit einem Und in den Annahmen umgeht,
-    weißt du doch schon:
-    `obtain ⟨h₁, h₂⟩ := {h}`. Zur Erinnerung: Für die Klammern schreibst du `\\<>`."
+  · Hint "**ロボ**
+    今度は目標を2回証明する必要がある：
+    まず左側 `{A} ∧ {B}` を仮定した場合と、
+    右側 `{A}` を仮定した場合だ。
+    ここでは左側が真だと仮定している"
+    Hint (hidden := true) " **ロボ** 仮定中の「かつ」の扱い方は
+    もう知ってるよね：
+    `obtain ⟨h₁, h₂⟩ := {h}`。括弧は `\\<>` で書くんだったね"
     obtain ⟨h₁, _h₂⟩ := h
     assumption
-  · Hint (strict := true) "**Robo** Jetzt musst du dein Ziel noch unter der rechten Annahme
-    von `({A} ∧ {B}) ∨ {A}` zeigen, also angenommen, `{A}` sei wahr."
+  · Hint (strict := true) "**ロボ** 今度は `({A} ∧ {B}) ∨ {A}` の右側の仮定、
+    つまり `{A}` が真だとした場合の証明だよ"
     assumption
 
 Conclusion
-"**Du** Okay, das scheint ihn zufriedenzustellen. Nur noch eine Seele…
-Kannst du mir vorher noch einmal kurz alles Leansch zusammenfassen,
-das du mir bis hierher beigebracht hast?
+"**あなた** よし、これで彼は満足したみたい。あと1人だけ…
+ここまでに学んだLeanのことを簡単にまとめてくれない？
 
-Robo strahlt überglücklich. Noch *nie* warst du so auf ihn angewiesen.
+ロボは嬉しそうに輝いた。今までで*初めて*あなたが彼にこんなに頼ってきた。
 
-**Robo** Na klar, schau her!
+**ロボ** もちろん、見ててね！
 
-## Notationen / Begriffe
+## 表記法 / 用語
 
-|               | Beschreibung                                                             |
-|:--------------|:-------------------------------------------------------------------------|
-| *Goal*        | Was aktuell zu beweisen ist.                                             |
-| *Annahme*     | Objekte & Resultate, die man zur Verfügung hat.                          |
-| *Taktik*      | Befehl im Beweis. Entspricht einem Beweisschritt.                        |
-| `ℕ`           | Typ aller natürlichen Zahlen.                                            |
-| `0, 1, 2, …`  | Explizite natürliche Zahlen.                                             |
-| `=`           | Gleichheit.                                                              |
-| `≠`           | Ungleichheit. Abkürzung für `¬(·=·)`.                                    |
-| `Prop`        | Typ aller logischen Aussagen.                                            |
-| `True`        | Die logische Aussage `(True : Prop)` ist bedingungslos wahr.             |
-| `False`       | Die logische Aussage `(False : Prop)` ist bedingungslos falsch.          |
-| `¬`           | Logische Negierung.                                                      |
-| `∧`           | Logisch UND.                                                             |
-| `∨`           | Logisch ODER.                                                            |
-| `(n : ℕ)`     | Eine natürliche Zahl.                                                    |
-| `(A : Prop)`  | Eine logische Aussage.                                                   |
-| `(ha : A)`    | Ein Beweis, dass die logische Aussage `(A : Prop)` wahr ist.             |
-| `(h : A ∧ B)` | Eine Annahme, die den Namen `h` bekommen hat.                            |
+|               | 説明                                                                 |
+|:--------------|:---------------------------------------------------------------------|
+| *Goal*        | 現在証明すべきこと                                                  |
+| *仮定*        | 利用可能なオブジェクトや結果                                        |
+| *タクティク*  | 証明中のコマンド。証明ステップに相当                                 |
+| `ℕ`           | 自然数の型                                                          |
+| `0, 1, 2, …`  | 具体的な自然数                                                      |
+| `=`           | 等号                                                               |
+| `≠`           | 不等号。`¬(·=·)`の略記                                             |
+| `Prop`        | 論理命題の型                                                       |
+| `True`        | 無条件に真となる論理命題 `(True : Prop)`                           |
+| `False`       | 無条件に偽となる論理命題 `(False : Prop)`                          |
+| `¬`           | 論理否定                                                           |
+| `∧`           | 論理AND                                                            |
+| `∨`           | 論理OR                                                             |
+| `(n : ℕ)`     | 自然数                                                              |
+| `(A : Prop)`  | 論理命題                                                           |
+| `(ha : A)`    | 命題 `(A : Prop)` が真である証明                                   |
+| `(h : A ∧ B)` | 仮定で、名前が `h` と付けられたもの                                |
 
 
-## Taktiken
+## タクティク
 
-Die Worte, die du aktiv gebrauchen musst, heißen zusammengefasst `Taktiken`.
-Hier sind alle Taktiken, die wir auf diesem Planeten gebraucht haben:
+実際に使う必要のある言葉をまとめて `タクティク` と呼ぶ。
+この惑星で使ったタクティクをすべて紹介する：
 
-|    | Taktik                    | Beispiel                                           |
-|:---|:--------------------------|:---------------------------------------------------|
-| 1  | `rfl`                     | Beweist `A = A`.                                   |
-| 2  | `assumption`              | Sucht das Goal in den Annahmen.                    |
-| 3  | `contradiction`           | Sucht einen Widerspruch.                           |
-| 4  | `decide`                  | Versucht zu entscheiden, ob eine Aussage wahr ist. |
-| 5  | `constructor`             | Teilt ein UND im Goal auf.                         |
-| 6  | `left`/`right`            | Beweist eine Seite eines ODER im Goal.             |
-| 7ᵃ | `obtain ⟨h₁, h₂⟩ := h`    | Teilt ein UND in den Annahmen auf.                 |
-| 7ᵇ | `obtain h := h \\| h`     | Teilt ein ODER in den Annahmen in zwei Fälle auf.  |
+|    | タクティク                  | 例                                                 |
+|:---|:----------------------------|:---------------------------------------------------|
+| 1  | `rfl`                       | `A = A` を証明                                    |
+| 2  | `assumption`                | Goalを仮定から探す                                |
+| 3  | `contradiction`             | 矛盾を探す                                        |
+| 4  | `decide`                    | 命題の真偽を判定しようとする                      |
+| 5  | `constructor`               | Goal中のANDを分割                                 |
+| 6  | `left`/`right`              | Goal中のORの片側を証明                            |
+| 7ᵃ | `obtain ⟨h₁, h₂⟩ := h`      | 仮定中のANDを分割                                 |
+| 7ᵇ | `obtain h := h \\| h`       | 仮定中のORをケース分け                            |
 
-**Du** Woher weißt du das eigentlich alles?
+**あなた** どうしてこんなに詳しいの？
 
-**Robo** Keine Ahnung. War, glaube ich, vorinstalliert.
+**ロボ** さあね。多分最初から入ってたんだと思う
 "
 
 DisabledTactic tauto

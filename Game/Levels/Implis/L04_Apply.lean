@@ -3,43 +3,40 @@ import Game.Metadata
 World "Implis"
 Level 4
 
-Title "" -- "Implikation"
+Title "Implikation"
 
 Introduction
 "
-**Operationsleiter**: Das hier ist jetzt wieder ein lokales Problem.
+**作戦責任者**: これはまたローカルな問題になりました。
 "
 
 Statement (A B C : Prop) (f : A → B) (g : B → C) : A → C := by
   Hint "
-    **Du**: Ich soll Implikationen $A \\Rightarrow B \\Rightarrow C$ zu $A \\Rightarrow C$
-    kombinieren?
+    **あなた**: 含意 $A \\Rightarrow B \\Rightarrow C$ を $A \\Rightarrow C$ に結合する必要がある？
 
-    **Robo**: Vielleicht fängst du wieder mit `intro` an?"
+    **ロボ**: また `intro` から始めてみたら？"
   intro h
   Hint "
-    **Operationsleiter**: Also *ich* würde an dieser Stelle jetzt erst einmal
-    `have hB : B` festhalten.
+    **作戦責任者**: 私はこの時点でまず `have hB : B` と記録しておくね。
 
-    **Robo**:  Für meinen Geschmack ein bisschen überflüssig.
-    Aber gut, kann man machen.
+    **ロボ**: 私の好みから言うと少し余計だな。
+    まあ、やってもいいけど。
 
-    **Robo** *(zu dir)*: Los, probiers mal!
+    **ロボ** *(あなたへ)*: さあ、やってみて！
   "
   have hB : B := by
     Hint "
-    **Robo**: Jetzt kannst du also erst einmal `B` beweisen …
+    **ロボ**: まずは `B` を証明できるね…
   "
     apply f
     assumption
   Hint "
-    **Robo**: … und nachdem du das geschafft hast, hast du nun `{hB} : {B}` als
-    Annahme zur Verfügung.
+      **ロボ**: …それができたら、`{hB} : {B}` が仮定として使えるよ。
   "
   apply g
   assumption
 
-Conclusion "**Operationsleiter**: Ihr seid echt super!"
+Conclusion "**作戦責任者**: 君たちは本当にすごい！"
 
 NewTactic «have»  -- introduced here already so that Luna becomes independent of Spinoza
 DisabledTactic tauto

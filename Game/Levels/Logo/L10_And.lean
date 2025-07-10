@@ -3,47 +3,46 @@ import Game.Metadata
 World "Logo"
 Level 10
 
-Title "" -- "Und"
+Title "Und"
 
 Introduction
 "
-Der nächste Formalosoph in der Reihe hat seine Frage bereits mitgebracht.
-Er legt sie uns vor, setzt sich hin und häkelt.
+次に並んでいる形式哲学者が、すでに質問を用意して待っていました。
+彼はそれを私たちに提示し、座って編み物を始めます。
 "
 /--  -/
 Statement (A B : Prop) (hA : A) (hB : B) : A ∧ B := by
   Hint "
-    **Du**: Also, wir haben zwei Annahmen: `{A}` gilt, und `{B}` gilt auch. Und beweisen sollen wir
-    dass `{A} und {B}` gilt. Ich glaube, diese Formalospinner treiben mich noch zur Verzweiflung.
-    Kann ich nicht wieder `trivial` sagen?
+    **あなた**: ええと、私たちには2つの前提があります: `{A}`が成り立ち、`{B}`も成り立つ。そして証明すべきは
+    `{A} かつ {B}`が成り立つことです。この形式哲学者たちには本当にうんざりします。
+    また`trivial`と言うことはできないですか？
 
-    **Robo**: Nee, diesmal wird das nicht funktionieren.
-    Du musst das Beweisziel einfach in zwei Teile zerlegen. Probier mal `constructor`.
+    **ロボ**: いいえ、今回はそれではうまくいきません。
+    証明目標を2つの部分に分ける必要があります。`constructor`を試してみてください。
 
-    **Du**: Du meinst, `destructor`??
+    **あなた**: つまり、`destructor`??
 
-    **Robo**: Nein, `constructor`. Ich weiß, das ist verwirrend,
-    aber die nennen das hier so weil man die Aussage aus mehreren Teilen
-    konstruieren kann."
+    **ロボ**: いいえ、`constructor`です。混乱するのはわかりますが、
+    ここでは複数の部分から主張を構築できるのでこう呼ばれています。"
   constructor
   -- gleicher Hint wie unten!
   assumption
   Hint (hidden := true) "
-    **Robo**: Schau mal, das ist Zauberpapier.
-    Jetzt haben wir auf einmal zwei Beweisziele.
-    Hier ist dast Ziel `{B}`.
-    Ich glaube, du weißt schon, wie man die jeweils erreicht.
-    Die Ziele stehen ja jeweils in den *Annahmen*."
+     **ロボ**: 見てください、これは魔法の紙です。
+    突然、2つの証明目標ができました。
+    ここにあるのは`{B}`という目標です。
+    それぞれの目標を達成する方法はもうわかっていると思います。
+    目標はそれぞれ*仮定*の中に書かれています。"
   assumption
 
 Conclusion
 "
-**Robo**: Super!
+**ロボ**: 素晴らしい！
 
-Ihm scheinen diese Fragen inzwischen Spaß zu machen.
+彼はこれらの質問を楽しんでいるようです。
 
-**Robo**: Meinst du, dieser Hebel, an dem \"Editor mode\" steht, ist echt?
-Oder ist der nur gemalt? Probier mal!
+**ロボ**: 「編集モード」と書かれたこのレバーは本物だと思う？
+それともただの絵？試してみて！
 "
 
 NewDefinition And

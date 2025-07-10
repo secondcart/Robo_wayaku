@@ -3,26 +3,30 @@ import Game.Metadata
 World "Logo"
 Level 4
 
-Title "" -- "Logische Aussagen"
+Title "Logische Aussagen"
 
 Introduction
 "
-Ein dritter Untertan kommt mit folgendem Problem.
+3番目の家臣が次の問題を持ってやってきました。
 "
 
 Statement (A : Prop) (hA : A) : A := by
   Hint "
-    **Robo**: Hier bedeutet `{A} : Prop` wieder, dass `{A}` irgendeine Aussage ist.
-      Und `{hA}` ist ein Name für die Annahme, dass `{A}` wahr ist.
+    **ロボ**: ここで`{A} : Prop`は再び、`{A}`が何らかの命題であることを意味します。
+      そして`{hA}`は`{A}`が真であるという仮定の名前です。
 
-    **Du**: Und unter dieser Annahme sollen wir jetzt `{A}` beweisen?
+    **あなた**: そしてこの仮定の下で、今`{A}`を証明する必要があるのですか？
 
-    **Robo**: Ja. Da kommst du jetzt selbst drauf, wie das geht, oder?"
-  Hint (hidden := true) "**Robo**: Ist doch genau wie eben:
-    die Aussage, die zu beweisen ist, gehört selbst zu den Annahmen.
-    Also wird `assumption` auch wieder funktionieren."
+    **ロボ**: はい。どうすればいいか、もう自分でわかりますよね？"
+  Hint (hidden := true) "**ロボ**: 先ほどと全く同じです:
+    証明すべき命題自体が仮定の中に含まれています。
+    ですから、`assumption`が再び機能するでしょう。"
+  Hint (hidden := true) "**ロボ**: 以前と同じように、証明される文自体が仮定の一つなのです。
+  だから、`assumption`もまた機能する。"
   assumption
 
-Conclusion "**Untertan**: Das ging ja schnell. Super! Vielen Dank."
+Conclusion "
+**家臣**: あっという間でした。素晴らしい！どうもありがとう。
+"
 
 DisabledTactic tauto

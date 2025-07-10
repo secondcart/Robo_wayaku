@@ -6,13 +6,13 @@ Level 5
 Title ""
 
 Introduction
-"Eine weitere Frage erreicht euch.  Dieses stammt offenbar aus dem anderen Lager."
+"また別の質問が届きました。どうやらこれは敵陣営からのもののようです。"
 
 open Nat
 
 Statement (i : ℕ) (h : Odd i): (-1 : ℤ)^i  + 1 = 0 := by
   Hint "
-    **Robo**:  Ich glaube, hier kommst du mit `Odd.neg_pow` weiter.
+    **ロボ**: ここは`Odd.neg_pow`を使えば解けると思います。
   "
   rw [Odd.neg_pow]
   ring

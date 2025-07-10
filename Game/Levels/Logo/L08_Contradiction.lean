@@ -4,32 +4,32 @@ import Game.Metadata
 World "Logo"
 Level 8
 
-Title "" -- "Aus Falschem folgt vieles."
+Title "Aus Falschem folgt vieles."
 
 Introduction
 "
-Auftritt zweiter Querulant.
+2番目の反逆者の登場。
 "
 
 /--  -/
 Statement (n : ℕ) (h : n ≠ n) : n = 37 := by
   Hint "
-    **Du** Ist `{n} ≠ {n}` nicht auch ein Widerspruch?
+    **あなた**: `{n} ≠ {n}`も矛盾してるんじゃない？
 
-    **Robo**: Probiers mal!"
+    **ロボ**: 試してみて！"
   contradiction
 
 Conclusion
 "
-**Du**: Ja, scheint funktioniert zu haben.
+**あなた**: うん、うまくいったみたい。
 
-**Du**: Aber irgendwie kommt mir das immer noch ein wenig suspekt vor.
-Jetzt habe ich bewiesen, dass eine beliebige natürliche Zahl gleich 37 ist?
+**あなた**: でもまだちょっと怪しい気がする。
+任意の自然数が37に等しいことを証明しちゃった？
 
-**Robo**: Nein, nicht doch. Nur eine beliebige Zahl, die ungleich sich selbst ist, ist gleich 37.
-Und gleich 38, und gleich 39, …
+**ロボ**: いやいや、そうじゃない。自分自身と等しくない任意の数が37に等しいってこと。
+そして38にも、39にも、…
 
-**Du**: Okay, okay, verstehe.
+**あなた**: わかったわかった、理解したよ。
 "
 
 NewDefinition Ne

@@ -3,38 +3,32 @@ import Game.Metadata
 World "Spinoza"
 Level 3
 
-Title "" -- "Widerspruch"
+Title "Widerspruch"
 
-Introduction "**Benedictus**: Hier ist noch eine Variante."
+Introduction "**ベネディクトゥス**: ここに別のバリエーションがあります。"
 
 Statement (A B : Prop) (g : A → B) (b : ¬ B) : ¬ A := by
   Hint "
-    **Robo**: Ein `¬` im Goal heißt häufig, dass du einen Widerspruchsbeweis führen
-    möchtest.
+    **ロボ**: ゴールにある`¬`は、しばしば矛盾による証明を行いたいことを意味します。
 
-    **Du**: Und wie mache ich das? Mit `contradiction`?
+    **あなた**: どうやってやるの？`contradiction`を使う？
 
-    **Robo**: Mit `by_contra h` fängst du einen Widerspruchsbeweis an. Und mit `contradiction`
-    schließt du ihn ab."
+    **ロボ**: `by_contra h`で矛盾による証明を開始します。`contradiction`で終了します。"
   by_contra h
   Hint "
-    **Robo**: Jetzt hast du also eine Annahme `{h} : {A}`, und damit musst du einen
-    Widerspruch herleiten.
+    **ロボ**: 今、あなたは仮定`{h} : {A}`を持っています。これを使って矛盾を導く必要があります。
 
-    Du könntest zum Beispiel jetzt mit `suffices` sagten, welchen Widerspruch du gern herleiten
-    möchtest, etwa `suffices k : B`
-  "
+    例えば、`suffices`を使って導きたい矛盾を指定できます。`suffices k : B`のように。"
   suffices k : B
   Hint "
-    **Du**: Ah, und jetzt kann ich einfach sagen dass sich die Annahmen `{B}` und `¬{B}` sich
-    widersprechen."
+    **あなた**: ああ、今は単に仮定`{B}`と`¬{B}`が矛盾していると言えますね。"
   contradiction
   Hint "
-    **Robo**: Und jetzt musst du nur noch das Zwischenresultat herleiten, dass zu diesem
-    Widerspruch geführt hat."
+    **ロボ**: そして今、この矛盾に至る中間結果を導く必要があります。"
   apply g
   assumption
 
-Conclusion "**Benedictus**: Ich sehe schon, Ihr lernt schnell!"
+Conclusion "**ベネディクトゥス**: あなたの上達が早いのがわかります！"
+
 
 NewTactic by_contra

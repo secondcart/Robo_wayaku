@@ -6,13 +6,13 @@ Level 10
 Title ""
 
 Introduction "
-**Ritha** (*zu Lina*):  Bitte, lass mich doch auch noch eine Frage stellen …
+**リータ**（*リナに向かって*）：お願い、私にも一つ質問させて……
 
-**Lina**:  Okay, eine einzige …  Aber nicht wieder zu `omega`!
+**リナ**：わかった、一つだけね……でもまた`omega`はダメよ！
 
-Ritha macht große Augen und sieht Lina flehend an.
+リータは大きな目をして、リナに懇願するように見つめる。
 
-**Lina**:  Wenns *unbedingt* sein muss.  Aber mach schnell! Wir haben jetzt wirklich keine Zeit mehr!
+**リナ**：どうしても*絶対に*必要なのなら。でも急いで！もう本当に時間がないの！
 "
 
 
@@ -25,7 +25,7 @@ Statement Icc_subset_Icc_iff (a₁ b₁ a₂ b₂ : ℕ) :
 a₁ ≤ b₁ →  (Icc a₁ b₁ ⊆ Icc a₂ b₂ ↔ a₂ ≤ a₁ ∧ b₁ ≤ b₂) := by
   -- unfold Icc -- optional
   Hint (hidden := true) "
-    **Robo**: Vielleicht hilft hier mal wieder `subset_iff`.  Und wenn gar nichts geht, probier mal `simp`.
+    **ロボ**: ここではまた`subset_iff`が役立つかもしれません。どうしてもわからなかったら、`simp`を試してみて。
     "
   rw [subset_iff]
   simp
@@ -35,9 +35,9 @@ a₁ ≤ b₁ →  (Icc a₁ b₁ ⊆ Icc a₂ b₂ ↔ a₂ ≤ a₁ ∧ b₁ �
   · -- omega -- still fails here
     intro h
     Hint (hidden := true) "
-      **Robo**:  Die Annahme `{h}` musst du sicherlich irgendwie ausnutzen.
-      Du könnest `{h}` zum Beispiel auf die Ungleichung `a₁ ≤ b₁` oder auf `a₁ ≤ a₁` anwenden!
-      (Die Ungleichung `a₁ ≤ a₁` formulierst du am besten mit `have` aus.)
+      **ロボ**: 仮定`{h}`を何らかの形で利用する必要があります。
+      `{h}`を不等式`a₁ ≤ b₁`や`a₁ ≤ a₁`に適用してみてはどうでしょう！
+      （不等式`a₁ ≤ a₁`は`have`を使って表現するのがベストです）
     "
     apply h at h₁
     have : a₁ ≤ a₁ := by rfl  -- briefly introduced in Implies, so that Luna does not depend on Spinoza

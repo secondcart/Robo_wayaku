@@ -4,19 +4,19 @@ World "Euklid"
 Level 1
 Title ""
 
-Introduction "An der markierten Stelle steht folgendes:"
+Introduction "マークされた場所には次のように書かれています："
 
 open Finset
 namespace Nat
 
 Statement (A : Finset ℕ) (h : ∀ a ∈ A, Prime a) : 0 < (∏ a ∈ A, a) := by
-  Hint "**Du**:  Die Zeile ist tatsächlich lesbar.
-  `∏ a ∈ A, a` ist sicher Leansch für das Produkt über alle Zahlen aus `A`, oder?
+  Hint "**あなた**: この行は実際に読めます。
+  `∏ a ∈ A, a` は確かにLeanでAのすべての数値の積を表しているのでしょうか？
 
-  **Robo**:  Ja!  Und die nächste Zeile ergibt auch Sinn: `apply prod_pos`."
+  **ロボ**: はい！そして次の行も意味が通ります: `apply prod_pos`."
   apply prod_pos
-  Hint "**Robo**: Aber was danach kommt, ist wieder völliger Unsinn.
-  Die Aussage selbst stimmt aber, denke ich. Komm, das schaffen wir selbst."
+  Hint "**ロボ**: しかしその後は再び完全な無意味な内容です。
+  ただ、この主張自体は正しいと思います。さあ、私たち自身で解決しましょう。"
   intro a ha
   specialize h a ha
   rw [prime_def] at h

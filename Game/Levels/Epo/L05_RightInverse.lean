@@ -14,12 +14,12 @@ Statement :
     let f : ℤ × ℤ → ℤ × ℤ := fun (m, n) ↦ (m + n, m + 2 * n)
     HasRightInverse f := by
   Hint "
-  **Du**:  Hier soll ich vermutlich zeigen, dass ein Rechtsinverses zu `f` existiert?
+  **あなた**: ここではおそらく、`f`に対する右逆元が存在することを示す必要があるのでしょうか？
 
-  **Robo**:  Ja.  Du kannst also zunächst wieder mit `let g : ℤ × ℤ → ℤ × ℤ := fun (m, n) ↦ …` eine Abbildung angeben,
-  und sie dann mit `use g` verwenden.
+  **ロボ**: はい。ですから、まず`let g : ℤ × ℤ → ℤ × ℤ := fun (m, n) ↦ …`で写像を定義し、
+  それを`use g`で使用できます。
 
-  **Du**:  Gut.  Dann überlege ich also einmal, wie ein Rechtsinverses zu `f` aussehen könnte …"
+  **あなた**: わかりました。では、`f`の右逆元がどのようなものか考えてみましょう…"
   let g : ℤ × ℤ → ℤ × ℤ := fun (m, n) ↦ (2 * m - n, n - m)
   use g
   intro m

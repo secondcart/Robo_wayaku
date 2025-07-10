@@ -12,35 +12,34 @@ open Finset Nat
 
 Statement  (I : Finset ℕ) : ∑ i ∈ I, ((-1 : ℤ)^i + 1) = 2*card { i ∈ I | Even i} := by
   Hint "
-    **Du**:  Hier ist jetzt zu zeigen, dass
+    **あなた**: ここで示すべきことは
     $$
     \\sum_\{i \\in I} \\left( (-1)^i + 1 \\right)
     $$
-    dasselbe ist wie zweimal die Anzahl der geraden Zahlen in $I$.  Richtig?
+    がI内の偶数の数の2倍に等しいということですよね？
 
-    **Robo**:  Richtig.
+    **ロボ**: その通りです。
 
-    **Du**:  Und das ist so, weil … der Ausdruck in der Summe für ungerade $i$ verschwindet,
-    und für gerade $i$ gleich $2$ ist. Mmmm …
+    **あなた**: そしてそれは...和の中の式が奇数iでは0になり、
+    偶数iでは2になるからです。うーん...
 
-    **Robo**:  Mach doch wieder mit `trans` ein paar Zwischenschritte.  Zurerst willst du die Summe auf die Menge
-    der geraden Indizes einschränken, also auf:
+    **ロボ**: `trans`を使って中間ステップを作りましょう。まず和を偶数インデックスの集合に制限します：
     ```
     ∑ i ∈ \{ i ∈ I | Even i}, ((-1)^i + 1)
     ```
-    Und danach willst du vermutlich
+    その後、おそらく
     ```
     ∑ i ∈ \{ i ∈ I | Even i}, 2
     ```
-    als Zwischenschritt verwenden.
+    を中間ステップとして使いたいのでしょう。
   "
   trans ∑ i ∈ { i ∈ I | Even i}, ((-1)^i + 1)
   · Branch
       rw [sum_subset]
       Hint "
-        **Robo**:  Das sieht irgendwie falsch aus …
-        Vielleicht solltest du `sum_subset` lieber rückwarts anwenden.
-        Oder vor diesem Schritt mit `symm` die Gleichung umdrehen.
+        **ロボ**: これは何か間違っているようです...
+        `sum_subset`を逆に適用した方が良いかもしれません。
+        またはこのステップの前に`symm`で等式を反転させてください。
         "
     symm
     apply sum_subset
@@ -55,7 +54,7 @@ Statement  (I : Finset ℕ) : ∑ i ∈ I, ((-1 : ℤ)^i + 1) = 2*card { i ∈ I
   · trans ∑ i ∈ { i ∈ I | Even i}, 2
     have : ∀ i ∈ { i ∈ I | Even i}, (-1 : ℤ)^i + 1 = 2 := by
       Hint (hidden := true ) "
-        **Robo**:  Dazu hatten wir doch schon mal etwas gesehen, zum Beispiel `Even.neg_pow` und `Odd.neg_pow`.
+        **ロボ**: これについては以前`Even.neg_pow`と`Odd.neg_pow`を見たことがありますね。
       "
       intro i hi
       simp at hi
@@ -64,13 +63,13 @@ Statement  (I : Finset ℕ) : ∑ i ∈ I, ((-1 : ℤ)^i + 1) = 2*card { i ∈ I
       ring
       assumption
     Hint (hidden :=true) "
-      **Robo**: Das sieht gut aus. Jetzt bist du so weit, dass du wieter `sum_congr` verwenden kannst.
+      **ロボ**: 良さそうです。これで`sum_congr`を使える段階です。
     "
     apply sum_congr   -- introduced above
     · simp
     · assumption
     Hint (hidden := true) "
-      **Robo**: Probier mal wieder `simp`.
+      **ロボ**: もう一度`simp`を試してみてください。
     "
     simp
     ring
@@ -78,5 +77,5 @@ Statement  (I : Finset ℕ) : ∑ i ∈ I, ((-1 : ℤ)^i + 1) = 2*card { i ∈ I
 TheoremTab "∑ Π"
 
 Conclusion "
-  **Babylonier**:  Das habt ihr gut gemacht.
+  **バビロニア人**: よくできました。
 "

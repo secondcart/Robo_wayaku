@@ -10,39 +10,37 @@ Introduction ""
 open Function Nat
 
 Statement : HasLeftInverse succ  := by
-  Hint "**Du**: Behauptet wird offenbar, dass die Abbildung `n ↦ n + 1` ein Linksinverses besitzt.
-  Ich gebe also einfach die Abbildung `n ↦ n - 1` an … außer, dass das für `n = 0` nicht funktioniert.
+  Hint "**あなた**: どうやら、写像 `n ↦ n + 1` が左逆元を持つと主張されているようです。
+  そこで、単純に `n ↦ n - 1` という写像を考えればいいのですが… `n = 0` の場合はうまくいきません。
 
-  **Robo**:  Du könntest ja mit `if … then … else` eine Fallunterscheidung machen.
-  Aber tatsächlich brauchst du das gar nicht.  In Leansch liegt auch `0 - 1` in `ℕ`.
+  **ロボ**: `if … then … else` を使って場合分けしてもいいけど、実際にはそれすら必要ありません。Leanでは `0 - 1` も `ℕ` に属します。
 
-  **Du**: Was … ??!
+  **あなた**: え…！？
 
-  **Robo**:  Ja.  Das ist einfach wieder als `0` definiert.
-  "
+  **ロボ**: はい。これは単純に `0` と定義されています。"
   Branch
     use (fun n ↦ if 0 < n then n - 1 else 0)
-    Hint "**Robo**: Das sieht gut aus.  Aber glaub mir, die Verzweigung ist ganz unnötig.
-    Du könnest auch einfach `n ↦ n - 1` verwenden.  Probiers mal!"
+    Hint "**ロボ**: 良さそうですね。でも、この分岐は全く不要です。
+    単に `n ↦ n - 1` を使っても大丈夫ですよ。試してみて！"
   Branch
     use (fun n ↦ if 0 < n then n - 1 else 0)
     unfold LeftInverse
-    Hint "**Robo**: Das sieht gut aus.  Aber glaub mir, die Verzweigung ist ganz unnötig.
-    Du könnest auch einfach `n ↦ n - 1` verwenden.  Probiers mal!"
+    Hint "**ロボ**: 良さそうですね。でも、この分岐は全く不要です。
+    単に `n ↦ n - 1` を使っても大丈夫ですよ。試してみて！"
   Branch
     let g := (fun n ↦ if 0 < n then n - 1 else 0)
-    Hint "**Robo**: Das sieht gut aus.  Aber glaub mir, die Verzweigung ist ganz unnötig.
-    Du könnest auch einfach `n ↦ n - 1` verwenden.  Probiers mal!"
+    Hint "**ロボ**: 良さそうですね。でも、この分岐は全く不要です。
+    単に `n ↦ n - 1` を使っても大丈夫ですよ。試してみて！"
   use (fun n ↦ n - 1)
   simp [LeftInverse]
 
 
 Conclusion "
-  **Du**:  Ich bin immer noch schockiert.
-  Ich dachte, wir machen hier Mathematik.
-  Wieso sollte denn `0 - 1` wieder `0` sein??
+  **あなた**: まだショックを受けています。
+  ここでは数学をやっていると思っていたのに、
+  なぜ `0 - 1` が `0` になるんですか？
 
-  **Robo**:  Reine Ansichtssache.  Du stellst dir `n ↦ n - 1` vor als eine Abbildung, die nur auf den positive natürlichen Zahlen definiert ist.
-  In Leansch ist `n ↦ n - 1` eben eine Abbildung, die auf allen natürlichen Zahlen definiert ist, und sie schickt `0` auf `0`.
-  Warum nicht.  Anwenden wird man diese Abbildung am Ende eh nur auf positive Zahlen, und auf denen stimmt deine Interpretation ja glücklicherweise mit der leanschen Interpretation überein.
+  **ロボ**: 見方の問題です。あなたは `n ↦ n - 1` を正の自然数でのみ定義された写像と考えています。
+  Leanでは `n ↦ n - 1` は全ての自然数で定義された写像で、`0` を `0` に送ります。
+  なぜでしょう。結局この写像は正の数にしか適用されないので、あなたの解釈とLeanの解釈は幸いにも一致しています。
 "

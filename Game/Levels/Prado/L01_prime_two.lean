@@ -5,9 +5,9 @@ Level 1
 
 Title ""
 
-Introduction"**Robo**:  Ja, ja.  Wissen wir.
+Introduction "**ロボ**: はは、そうだね。私たちは知っている。
 
-Er formuliert die Aussage schnell in Leansch und hält sie dir hin.
+彼は素早くLeanの言語で声明を書き上げ、あなたに差し出した。
 "
 
 /---/
@@ -16,20 +16,20 @@ TheoremDoc Nat.prime_two as "prime_two" in "ℕ"
 namespace Nat
 
 Statement prime_two : Prime 2 := by
-  Hint "**Robo** *(flüsternd)*:  Das ist ganz einfach.  Weil `2` eine konkrete Zahl ist
-  und es einen Algorithmus gibt, um zu entscheiden, ob eine Zahl prim ist, kannst du einfach `decide` verwenden!"
+  Hint "**ロボ** *(囁きながら)*: これはとても簡単だよ。`2`は具体的な数字で、
+  素数かどうかを判定するアルゴリズムがあるから、`decide`を使うだけでいいんだ！"
   decide
 
 TheoremTab "ℕ"
 
 Conclusion "
-**Du**:  In der Tat.  Wissen wir.  Und was gibt es noch für Exponate?
+**あなた**: 確かに。私たちは知っている。他にどんな展示物があるの？
 
-Guino  wird etwas verlegen.
+グイノは少し照れくさそうになる。
 
-**Guino**:  Nun, wie gesagt, wir haben gerade erst geöffnet.
-Und wir hatten uns entschieden, zunächst nur die allerschönsten Primzahlen auszustellen:
-die geraden. Momentan ist die `2` unser einziges Exponat.
-Aber wir arbeiten mit Hochdruck daran, weitere gerade Primzahlen für unsere Dauerausstellung zu finden."
+**グイノ**: ええ、そうですね、私たちはオープンしたばかりで。
+そして最初は最も美しい素数だけを展示することにしたんです：
+偶数です。現在、`2`が私たちの唯一の展示物です。
+でも、常設展示のためにさらに他の偶数の素数を見つけるべく全力で取り組んでいます。"
 
 NewDefinition Nat.Prime

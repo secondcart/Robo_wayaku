@@ -3,31 +3,29 @@ import Game.Metadata
 World "Logo"
 Level 5
 
-Title "" -- "True or False"
+Title "True or False" -- "True or False"
 
 Introduction
 "
-Der nächste Untertan in der Reihe ist ein Schelm.
+次の順番の家臣は悪戯好きだ。
 "
 
 Statement : True := by
   Hint "
-    **Robo**: Dieses `True` ist eine spezielle Aussage, nämlich die Aussage, die immer und
-    bedingungslos wahr ist.
+    **ロボ**: この`True`は特別な命題で、常に無条件に真となる命題です。
 
-    **Du**: Und was genau ist dann zu beweisen?
+    **あなた**: では、具体的に何を証明すればいいのですか？
 
-    **Robo**: Ich glaube, nichts. Probier mal `decide`."
+    **ロボ**: おそらく何もありません。`decide`を試してみてください。"
   decide
 
 Conclusion
 "
-**Schelm**: Wollte nur mal sehen, dass Ihr nicht auf den Kopf gefallen seid …
+**悪戯好き**: あなたがまともな方かどうか確かめたかっただけです…
 
-**Du** *(zu Robo)*: Können wir nicht einfach immer dieses `decide` verwenden?
+**あなた** *(ロボに向かって)*: この`decide`をいつも使えないのですか？
 
-**Robo**: Nein, `decide` funktioniert nur in speziellen Situationen, in denen es einen
-einfachen Algorithmus gibt, der entscheidet, ob die Aussage wahr ist.
+**ロボ**: いいえ、`decide`は特別な状況、つまり命題が真かどうかを決定する簡単なアルゴリズムがある場合にのみ機能します。
 "
 
 NewDefinition True False

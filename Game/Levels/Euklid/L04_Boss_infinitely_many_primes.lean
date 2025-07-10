@@ -4,35 +4,34 @@ World "Euklid"
 Level 4
 Title ""
 
-Introduction "Nach einer Weile hört ihr Papierrascheln.
-Noch dreimal um die Ecke, und ihr findet ihr euch in einem Büro wieder.
-„Euklid, Bibliotheksdirektor“ steht an der Tür.
+Introduction "しばらくすると、紙をめくる音が聞こえてきました。
+角を3回曲がると、あなたはオフィスにたどり着きます。
+ドアには「ユークリッド、図書館長」と書かれています。
 
-**Euklid**:
-Guten Tag!  Das ist ja schön, das sich auch einmal ein paar Besucher hierher verirren.
-Wenn ich gewusst hätte, *was* für eine Bibliothek das hier ist,
-hätte ich den Posten als Direktor nie angenommen.
+**ユークリッド**:
+こんにちは！ 訪問者が来てくれるなんて嬉しいですね。
+もしここが*どんな*図書館か知っていたら、
+私は館長の職を受けなかったでしょう。
 
-**Du**:  Was für eine Bibliothek hätten Sie denn gern?
+**あなた**: どんな図書館が理想だったのですか？
 
-**Euklid**:  Man hat mir versprochen, hier „unter anderem“ Leansche Varianten
-der Schriften meines berühmten Vorfahren zu finden.  Der stammte übringens auch
-aus *Ihrem* Universum.  Und nun suche ich schon seit Jahren, im Katalog und in den Büchern selbst,
-und finde nur kleinste Bruchstücke.
+**ユークリッド**: ここには「特に」私の有名な祖先の著作の
+Lean版があると約束されました。彼はちなみに*あなたの*宇宙から来たのです。
+そして私は何年もカタログや本自体を探していますが、
+ほんの小さな断片しか見つかりません。
 
-Schauen Sie, hier habe ich jetzt schließlich selbst angefangen,
-eines seiner Ergebnisse zu formulieren.  Vielleicht können Sie mir ja helfen?
-"
+見てください、私はついに自分で彼の結果の一つを
+定式化し始めました。手伝ってくれませんか？"
 
 open Finset
 namespace Nat
 
 Statement : ¬ Set.Finite { p : ℕ | Prime p} := by
-  Hint "**Robo**: Klar, das machen wir.
-  Ist doch ein typischer Widerspruchsbeweis:
-  Wenn es nur endlich viele Primzahlen gibt, dann ist das Produkt
-  aller Primzahlen plus Eins durch keine Primzahl teilbar.
-  Andererseits gilt: `exists_prime_and_dvd`.  Widerspruch.
+  Hint "**ロボ**: もちろん、やりましょう。
+  これは典型的な背理法の証明です:
+  もし素数が有限個しかないなら、全ての素数の積に1を足した数は
+  どの素数でも割り切れません。
+  一方、`exists_prime_and_dvd`が成り立ちます。矛盾です。
   "
   by_contra hf
   -- notation to make equations human-readable:
@@ -86,6 +85,6 @@ Statement : ¬ Set.Finite { p : ℕ | Prime p} := by
   specialize h_no_prime_divides p hp
   contradiction
 
-Conclusion "Euklid ist begeistert und tanzt im Kreis.
-Er möchte euch fast nicht gehen lassen.
-Ihr versprecht, in Kontakt zu bleiben."
+Conclusion "ユークリッドは興奮して円陣を組んで踊ります。
+彼はあなたたちを行かせたくないようです。
+あなたたちは連絡を取り合うことを約束します。"

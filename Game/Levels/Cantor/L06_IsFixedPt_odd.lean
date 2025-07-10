@@ -9,9 +9,8 @@ Title ""
 Introduction ""
 
 Conclusion "
-  Cantor sagt wieder etwas, aber ihr seid zu sehr mit den Aufgaben beschäftigt.
-  Ihr bemerkt noch nicht einmal, dass er inzwischen angefangen hat,
-  mit dem Einrad zu fliegen.
+  カントールはまた何か言っていますが、あなた方は問題に夢中です。
+  彼が一輪車で飛び始めたことさえ気づいていません。
 "
 
 open Function Set
@@ -19,11 +18,10 @@ open Function Set
 Statement {f : ℝ → ℝ} (h_odd : ∀ x, f (-x) = - f x) (x : ℝ) :
     IsFixedPt f x ↔ IsFixedPt f (- x) := by
   Hint "
-    **Du**:  So etwas ähnliches habe ich schon einmal gesehen
-    – die Annahme sagt, dass `f` eine „ungerade Funktion ist“.
+    **あなた**: 似たようなものを見たことがあります
+    ― この仮定は`f`が「奇関数」であることを示しています。
 
-    **Robo**: Dann mal los.  Ich denke, du wirst hier nichts brauchen,
-    was wir nicht schon gesehen haben.
+    **ロボット**: では始めましょう。これまでに見たことのないものは必要ないと思います。
     "
   constructor
   · intro h

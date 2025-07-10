@@ -3,31 +3,29 @@ import Game.Metadata
 World "Implis"
 Level 10
 
-Title "" -- "Genau dann wenn"
+Title "Genau dann wenn"
 
 Introduction
 "
-**Operationsleiter**: Das hier ist wieder für meinen beschränkten Kollegen. Ich glaube,
-`rw` mag der auch nicht. Geht das trotzdem?
+**作戦責任者**: これはまた私の理解の遅れた同僚のためです。彼は`rw`も好きではないようです。それでもできますか？
 "
 
 Statement (A B C : Prop) (h : A ↔ B) (g : B → C) : A → C := by
   Hint "
-    **Du**: Naja ich kann wohl immerhin mal mit `intro` anfangen …
+    **あなた**: まあ、とりあえず`intro`から始められるかな…
 
-    **Robo**: … und dann schauen wir weiter!"
+    **ロボ**: …そしてその後どうなるか見てみましょう！"
   intro hA
   Hint "
-    **Robo**: Also eine Implikation wendet man mit `apply` an …
+    **ロボ**: つまり、含意は`apply`で適用できます…
 
-    **Du**: Weiß ich doch! Aber `{h}` ist keine Implikation, sondern eine Äquivalenz.
-    Da würde ich doch eigentlich `rw [← {h}]` sagen wollen.
+    **あなた**: 知ってるよ！でも`{h}`は含意ではなく同値です。
+    本当は`rw [← {h}]`と言いたいところです。
 
-    **Robo**: Die Richtung `{A} → {B}` von `{h}` heißt `{h}.mp`. Du kannst sie
-    mit `apply ({h}.mp) at …` anwenden."
+    **ロボ**: `{h}`の`{A} → {B}`方向は`{h}.mp`と呼ばれます。`apply ({h}.mp) at …`で適用できます。"
   Branch
     apply g
-    Hint "**Robo**: So kannst Du natürlich auch anfangen."
+    Hint "**ロボ**: もちろん、このように始めることもできます。"
     apply h.mp
     assumption
   apply h.mp at hA
@@ -35,11 +33,11 @@ Statement (A B C : Prop) (h : A ↔ B) (g : B → C) : A → C := by
   assumption
 
 Conclusion "
-**Operationsleiter**: Okay, super. Das müsste passen.
+**作戦責任者**: はい、素晴らしい。これでうまくいくはずです。
 
-Er telefoniert wieder.
+彼はまた電話しています。
 
-**Operationsleiter**: Bingo!
+**作戦責任者**: ビンゴ！
 "
 
 DisabledTactic tauto rw

@@ -3,26 +3,25 @@ import Game.Metadata
 World "Implis"
 Level 12
 
-Title "" -- "by_cases"
+Title "by_cases"
 
 Introduction
 "
-Beim nächsten Problem stutzt der Operationsleiter.
+次の問題に取り組んでいると、作戦責任者は考え込んだ。
 
-**Operationsleiter**: Ehrlich gesagt weiß ich gar nicht, wo dieses Blatt herkommt. Das ist
-gar nicht von mir. Sieht aber irgendwie interessant aus.
+**作戦責任者**: 正直なところ、この書類がどこから来たのか分からない。私のものではないんだが、
+なんだか面白そうだ。
 "
 
 Statement (A : Prop) : ¬A ∨ A := by
   Hint (strict := true) "
-    **Du**: Naja, eine der beiden Aussagen `A` oder `¬A` wird schon wahr sein.
+    **あなた**: まあ、`A`か`¬A`のどちらかは真になるでしょう。
 
-    **Robo**: Klarer Fall für eine Fallunterscheidung, würde ich sagen. Probier
-    mal `by_cases h : A`."
+    **ロボ**: これは場合分けの典型的なケースだね。`by_cases h : A`を試してみて。"
   by_cases h : A
   Hint "
-    **Robo**: Siehst du, jetzt hat der Beweis zwei Teile. Im ersten Teil nimmst
-    du an, dass `A` wahr ist. Im zweiten nimmst du an, dass `A` falsch ist."
+    **ロボ**: ほら、証明が2つの部分に分かれたでしょう。最初の部分では`A`が真だと仮定して、
+    2番目の部分では`A`が偽だと仮定するんだ。"
   right
   assumption
   left
@@ -30,7 +29,7 @@ Statement (A : Prop) : ¬A ∨ A := by
 
 Conclusion
 "
-Der Operationsleiter nickt zustimmend.
+作戦責任者は納得して頷いた。
 "
 
 NewTactic by_cases

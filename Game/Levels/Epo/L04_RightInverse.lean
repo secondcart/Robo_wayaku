@@ -14,12 +14,12 @@ open Function
 Statement {A B : Type} {f : A -> B} {g : B -> A} :
     RightInverse g f ↔ f ∘ g = id := by
   Hint "
-  **Du**:  Jetzt muss ich mich wohl doch ein bisschen durch die Definitionen hangeln?
+  **あなた**: そろそろ定義を少しずつ確認していく必要がありそうですね？
 
-  **Robo**: Sieht so aus."
+  **ロボ**: そのようです。"
   Hint (hidden := true) "
-  **Robo:**:  Ich würde tatsächlich wieder mit `constructor` anfangen.
-  Und dann die üblichen Verdächtigen wie `comp_apply`, `congr_fun` usw. nutzen."
+  **ロボ**: 実際、また`constructor`から始めるのが良いでしょう。
+  そして`comp_apply`、`congr_fun`などお馴染みのものを使うと良いです。"
   constructor
   · intro h
     funext x
@@ -34,9 +34,9 @@ Statement {A B : Type} {f : A -> B} {g : B -> A} :
     intro h
     intro x
     Hint (hidden := true) "
-    **Robo**:  Du könntest mit `apply congr_fun at h` oder `rw [← comp_apply (f:= f)]`.
-    (`rw [← comp_apply]` ohne `(f:=f)` funktioniert hier nicht
-    – du musst explizit angeben, welchen Wert die Variable `f` in der Aussage von `comp_apply` haben soll."
+    **ロボ**: `apply congr_fun at h` または `rw [← comp_apply (f:= f)]`を使ってみてはどうでしょう。
+    (`rw [← comp_apply]`だけではここでは機能しません
+    - `comp_apply`の命題において変数`f`がどの値を持つかを明示的に指定する必要があります。"
     Branch
       rw [← comp_apply (f:= f)]
       rw [h]

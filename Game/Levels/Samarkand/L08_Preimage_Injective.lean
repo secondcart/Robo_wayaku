@@ -3,10 +3,10 @@ import Game.Levels.Samarkand.L07_LeftInvPreimage
 World "Samarkand"
 Level 8
 
-Title "" -- "Preimage of surjective is injective"
+Title "Preimage of surjective is injective"
 
 Introduction "
-  **Arapuka**:  Könnt ihr mir vielleicht sogar mit dieser Vermutung weiterhelfen?
+  **アラプカ**: この予想について、さらに助けてもらえるでしょうか？
 "
 
 open Function
@@ -18,12 +18,12 @@ namespace Set
 
 Statement preimage_injective {A B : Type} {f : A → B} : Injective (preimage f) ↔ Surjective f := by
   Hint "
-    **Robo**:  Eine Abbildung ist genau dann surjektiv, wenn die induzierte Abbildung `preimage f`, die eine Teilmenge auf das Urbild unter dieser Teilmenge wirft, injektiv ist?
-    Stimmt das überhaupt?
+    **ロボ**: 写像が全射であることと、部分集合をその部分集合の下での原像に送る誘導写像`preimage f`が単射であることは同値ですか？
+    これは本当に正しいのでしょうか？
 
-    **Du**: Ich glaube, ja.  Das habe ich schonmal gesehen.
+    **あなた**: そうだと思います。以前見たことがあります。
 
-    **Robo**:  Na dann, los!
+    **ロボ**: それでは、始めましょう！
   "
   constructor
   · Branch
@@ -64,20 +64,20 @@ Statement preimage_injective {A B : Type} {f : A → B} : Injective (preimage f)
     assumption
 
 Conclusion "
-  **Arapuka**:  Fantastisch!  Ich bin so aufgeregt, ich möchte am liebsten in die Luft springen.
-  Aber das geht natürlich nicht.  Dann ist das Muster futsch.
+  **アラプカ**: 素晴らしい！ 興奮して飛び上がりたい気分です。
+  しかしもちろんそれはできません。そうするとパターンが台無しになってしまいます。
 
-  **Robo**:  Wie lange hast du denn noch?
+  **ロボ**: あとどれくらい時間があるのですか？
 
-  **Arapuka**:  Hier noch drei Jahre, 22 Tage, 7 Stunden und 35 Minuten.
+  **アラプカ**: ここにあと3年と22日7時間35分です。
 
-  **Robo**:  Ohh …
+  **ロボ**: ああ…
 
-  **Du**:  Und woher weißt du, wo genau du danach hingehen musst, damit das Muster passt?
+  **あなた**: そして、パターンが合うようにその後どこに行けばいいのか、どうやって知るのですか？
 
-  **Arapuka**:  Ah!
+  **アラプカ**: ああ！
 
-  Über Arapukas Gesicht breitet sich ein großes Lächeln aus.
+  アラプカの顔に大きな笑みが広がります。
 
-  **Arapuka**:  Das ist eben die Kunst!
+  **アラプカ**: それがまさに芸術なのです！
 "

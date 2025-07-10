@@ -1,602 +1,352 @@
 import GameServer.Commands
 
 /--
-Mit `apply` wendest du eine Implikation `hAB : A → B` an:
+`apply`を使用すると、含意`hAB : A → B`を適用できます：
 
-| vorher | Taktik           | nachher |
-|:------------ |:---------------- |:-------- |
-| `⊢ B`        | `apply hAB`      | `⊢ A`    |
-| `h : A `     | `apply hAB at h` | `h : B`  |
+| 前          | タクティク       | 後                  |
+|:------------|:----------------|:-------------------|
+| `⊢ B`       | `apply hAB`     | `⊢ A`              |
+| `h : A`     | `apply hAB at h`| `h : B`            |
 
-In beiden Fällen kann die Implikation `hAB` wahlweise
-als Annahme gegeben oder ein bereits bekanntes Lemma sein.
+どちらの場合も、含意`hAB`は仮定として与えられるか、既知の補題として使用できます。
 -/
 TacticDoc apply
 
 /--
-Die Taktik `assumption` schließt den Beweis, wenn eine der Annahmen genau dem Beweisziel entspricht.
+タクティク`assumption`は、仮定の1つが証明目標と完全に一致する場合に証明を完了します。
 -/
 TacticDoc assumption
 
 /--
-Die Taktik `by_cases h : P` beginnt eine Fallunterscheidung, ob `P` wahr oder falsch ist.
-Zum Beispiel unterscheidet `by cases h : a = b` die Fälle `a = b` und `a ≠ b`.
+タクティク`by_cases h : P`は、`P`が真か偽かの場合分けを開始します。
+例えば、`by_cases h : a = b`は`a = b`と`a ≠ b`の場合に分けます。
 
-Das Beweisziel wird hierzu dupliziert, und
-in der ersten „Kopie“ wird die Annahme `(h : P)` hinzugefügt,
-in der zweiten „Kopie“ die Annahme `(h : ¬P)`.
+証明目標は複製され、最初の「コピー」には仮定`(h : P)`が追加され、
+2番目の「コピー」には仮定`(h : ¬P)`が追加されます。
 -/
 TacticDoc by_cases
 
 /--
-Die Taktik `by_contra h` leitet einen Widerspruchsbeweis ein.
-Ist `P` dein aktuelles Beweisziel, so generiert `by_contra h` eine neue Annahme `(h : ¬ P)`
-und setzt das Beweisziel auf `False`.
+タクティク`by_contra h`は矛盾による証明を開始します。
+現在の証明目標が`P`の場合、`by_contra h`は新しい仮定`(h : ¬P)`を生成し、
+証明目標を`False`に設定します。
 
-## Freunde und Verwandte
-
-* Am Ende eines Widerspruchsbeweises steht gewöhnlich `contradiction`:
-diese Taktik schließt den Beweis, wenn sie zwei offensichtlich widersprüchliche Annahmen findet.
-* Ist das Beweisziel von der Form `A → B`, kannst du mit `contrapose`
-einen Beweis durch Kontraposition beginnen.
+## 関連タクティク
+* 矛盾証明の最後には通常`contradiction`が使用されます：
+  このタクティクは、明らかに矛盾する2つの仮定を見つけた場合に証明を完了します。
+* 証明目標が`A → B`の形式の場合、`contrapose`を使用して対偶による証明を開始できます。
 -/
 TacticDoc by_contra
 
+/--
+`change t`は証明目標を`t`に変更します。前提として、`t`と古い証明目標が定義的に等しい必要があります。
+これは特に、タクティクが証明目標が実際に必要な項と定義的に等しいことを認識しない場合に役立ちます。
 
-/-
-`change t` ändert das Beweisziel zu `t`. Voraussetzung ist, dass `t` und das alte Beweisziel
-definitionsgleich sind.
-Dies ist insbesonder hilfreich, wenn eine Taktik nicht merkt,
-dass das Beweisziel definitionsgleich  ist zu einem
-Term, der eigentlich gebraucht würde.
-
-## Beispiel
-
-Aktuelle Beweislage:
+## 例
+現在の証明状況：
 ```
 b: ℝ
 ⊢ 1 • b = b
 ```
-wobei die Skalarmultiplikation als `fun (a : ℚ) (r : ℝ) => ↑a * r` definiert war.
-Hier kannst du mit `change (1 : ℚ) * b = b` das Beweisziel umschreiben und anschließend mit Lemmas
-über die Multiplikation beweisen.
--
-TacticDoc change
+スカラー乗算が`fun (a : ℚ) (r : ℝ) => ↑a * r`と定義されている場合、
+`change (1 : ℚ) * b = b`で証明目標を書き換え、その後乗算に関する補題で証明できます。
 -/
+TacticDoc change
 
 /--
-Eine Annahme der Form
-```
-h : ∃ (b : B), P b
-```
-kannst du mit
-`choose b hb using h` in die Bestandteile `b : A` und `hb : P b`
-zerlegen.
+`h : ∃ (b : B), P b`の形式の仮定は、
+`choose b hb using h`で`b : A`と`hb : P b`に分解できます。
 
-Allgemeiner kannst du `choose` verwenden, um Elemente mit dem Auswahlaxiom zu wählen:
-aus einer Annahme der Form
-```
-h : ∀ (a : A), ∃ (b : B), P a b
-```
-extrahiert `choose f hf using h`
-eine Abbildung `f : A → B` und die Annahme `hf : ∀ (a : A), P a (f a)`.
-
-(Hier ist `P : A → (B → Prop)` ein Prädikat, das von zwei Variablen `a` und `b` abhängt.)
+より一般的に、`choose`を使用して選択公理で要素を選択できます：
+`h : ∀ (a : A), ∃ (b : B), P a b`の形式の仮定から、
+`choose f hf using h`は写像`f : A → B`と仮定`hf : ∀ (a : A), P a (f a)`を抽出します。
 -/
 TacticDoc choose
 
-
 /--
-Die Taktik `constructor` teilt ein Beweisziel in seine Bestandteile auf:
+タクティク`constructor`は証明目標を構成要素に分割します：
 
-| vorher | nachher                |
-|:------------ |:----------------------- |
-| `⊢ A ∧ B`    | `⊢ A` und `⊢ B`         |
-| `⊢ A ↔ B`    | `⊢ A → B` und `⊢ B → A` |
+| 前          | 後                  |
+|:------------|:-------------------|
+| `⊢ A ∧ B`   | `⊢ A`と`⊢ B`       |
+| `⊢ A ↔ B`   | `⊢ A → B`と`⊢ B → A` |
 
-## Freunde und Verwandte
-
-* Eine *Annahme* zerlegst du mit `obtain` in ihre Bestandteile.
-* Möchtest du `A ∨ B` beweisen, musst du dich mit `left` bzw. `right` für eine Seite entscheiden.
+## 関連タクティク
+* 仮定は`obtain`で構成要素に分解できます。
+* `A ∨ B`を証明するには、`left`または`right`でどちらかを選択する必要があります。
 -/
 TacticDoc constructor
 
 /--
-Die Taktik `contradiction` schließt den Beweis, wenn sie einen Widerspruch in den Annahmen findet.
-Ein solcher Widerspruch kann zum Beispiel folgendermaßen aussehen:
+タクティク`contradiction`は、仮定に矛盾がある場合に証明を完了します。
+矛盾は例えば以下のように見えます：
 
 * `h : n ≠ n`
-* `h : A` und `h' : ¬A`
+* `h : A`と`h' : ¬A`
 * `h : False`
 
-## Freunde und Verwandte
-
-Normalerweise wird `contradiction` benutzt, um einen Widerspruchsbeweis zu
-schließen, der mit `by_contra` eröffnet wurde.
+## 関連タクティク
+通常、`contradiction`は`by_contra`で開始された矛盾証明を完了するために使用されます。
 -/
 TacticDoc contradiction
 
 /--
-Die Taktik `contrapose` ändert ein Beweisziel der Form `A → B` zu `¬B → ¬A` und leitet somit
-einen Beweis durch Kontraposition ein.
+タクティク`contrapose`は`A → B`の形式の証明目標を`¬B → ¬A`に変更し、
+対偶による証明を開始します。
 
-## Freunde und Verwandte
-
-Die Taktik `revert h` kann nützlich sein, um eine Annahme als Implikationsprämisse zu schreiben,
- bevor du `contrapose` verwendest.
+## 関連タクティク
+`revert h`は`contrapose`を使用する前に仮定を含意の前提として記述するのに役立ちます。
 -/
 TacticDoc contrapose
 
-/-
-Die Taktik `exact h` schließt das Beweisziel, wenn der Term `h` mit dem Beweisziel übereinstimmt.
--
-TacticDoc exact
+/--
+タクティク`exact h`は、項`h`が証明目標と一致する場合に証明を完了します。
 -/
+TacticDoc exact
 
 /--
-Zwei Teilmengen einer gegebenen Menge sind gleich, wenn sie dieselben Elemente besitzen.
-Steht im Beweisziel
-```
-A = B
-```
-für zwei Teilmengen von `T` (also für `A B : Set T`),
-so überführt `ext x` das Beweisziel in die Äquivalenz
-```
-x ∈ A ↔ x ∈ B
-```
+与えられた集合の2つの部分集合は、同じ要素を持つ場合に等しいです。
+証明目標に`A = B`（`A B : Set T`）がある場合、
+`ext x`は証明目標を`x ∈ A ↔ x ∈ B`に変換します。
 -/
 TacticDoc ext
 
-/-
-`fin_cases i` führt eine Fallunterscheidung, wenn `i` ein endlicher Typ ist.
+/--
+`fin_cases i`は、`i`が有限型の場合に場合分けを実行します。
 
-## Details
-`fin_cases i` ist insbesondere nützlich für `(i : Fin n)`, zum Beispiel als Index in
-endlich dimensionalen Vektorräumen.
-
-In diesem Fall bewirkt `fin_cases i`, dass du komponentenweise arbeitest.
--
-TacticDoc fin_cases
+## 詳細
+`fin_cases i`は特に`(i : Fin n)`に対して有用で、
+有限次元ベクトル空間のインデックスとして使用できます。
 -/
+TacticDoc fin_cases
 
 /--
-Zwei Abbildungen mit demselben Werte- und Definitionsbereich sind gleich,
-wenn sie auf allen Elementen des Definitionsbereichs dieselben Werte annehmen.
-Ein Beweisziel der Form
-```
-f = g
-```
-für Abbildungen `f g : X → Y` wird durch `funext x`
-in die Gleichung
-```
-f x = g x
-```
-überführt.
+同じ値域と定義域を持つ2つの関数は、
+定義域のすべての要素で同じ値を取る場合に等しいです。
+`f = g`（`f g : X → Y`）の形式の証明目標は、
+`funext x`で`f x = g x`に変換されます。
 -/
 TacticDoc funext
 
 /--
-Mit `generalize` kannst du ein Beweisziel verallgemeinern
-– in der Hoffnung, dass ein höherer Abstraktionsgrad einen einfacheren Beweis erlaubt.
-Genauer ersetzt `generalize h : a = b` alle Vorkommen von `a` im Beweisziel durch `b`
-(und ergänzt die Annahme `h : a = b`).
+`generalize`は証明目標を一般化できます。
+例えば、`generalize h : a = b`は証明目標のすべての`a`を`b`に置き換えます。
 
-## Beispiel
-
-Ein Ziel der Form
-```
-Even x ∨ ¬Even x
-```
-lässt sich mit
-```
-generalize h : (Even x) = A
-```
-in
-```
-A ∨ ¬A
-```
-überführen (und dann einfach mit `tauto` beweisen).
+## 例
+`Even x ∨ ¬Even x`の目標は、
+`generalize h : (Even x) = A`で`A ∨ ¬A`に変換できます。
 -/
 TacticDoc generalize
 
 /--
-Mit `have h : P` führst du ein Zwischenresultat ein.
-Anschließend musst du zuerst dieses Zwischenresultat beweisen,
-bevor du den eigentlichen Beweis fortsetzen kannst.
+`have h : P`は中間結果を導入します。
+その後、この中間結果を証明してからメインの証明を続行します。
 
-## Freunde und Verwandte
-`suffices h : P` funktioniert genauso, außer dass du zunächst den Hauptweise forsetzen kannst und
-erst ganz am Ende dein Zwischenresultat beweisen musst.
+## 関連タクティク
+`suffices h : P`も同様ですが、まずメインの証明を続行し、
+最後に中間結果を証明します。
 -/
 TacticDoc «have»
-/-
- `let h : Prop := A ∧ B` ist verwandt mit `have`, mit dem Unterschied, dass man mit `let`
-  eine temporäre Definition einführt.
--/
 
 /--
-Mit `if … then … else` kannst du Abbildungen mit zwei Definitionszweigen definieren.
+`if … then … else`を使用して、2つの定義分岐を持つ関数を定義できます。
 
-Zum Beispiel definiert `fun x ↦ if 0 ≤ x then x else -x` die Betragsfunktion.
-
-## Freunde und Verwandte
-
-* Hast du `h : A` als Annahme zur Verfügung, kannst du mit
-`rw [if_pos h]` den Ausdruck `if A then B else C` zu `B` reduzieren.
-* Hast du `h : ¬ A` als Annahme zur Verfügung, kannst du analog mit
-`rw [if_neg h]` den Ausdruck `if A then B else C` zu `C` reduzieren.
+## 関連タクティク
+* `h : A`がある場合、`rw [if_pos h]`で`if A then B else C`を`B`に簡約できます。
+* `h : ¬ A`がある場合、`rw [if_neg h]`で`if A then B else C`を`C`に簡約できます。
 -/
 TacticDoc «if»
 
 /--
-Die Taktik `induction n` führt einen Induktionsbeweis über `n`.
-Mit `induction n with d dh` kannst du Namen für die Induktionsvariable (hier: `d`)
-und die Induktionsannahme (hier: `hd`) vorgeben.
-Die Taktik ersetzt also das ursprüngliche Beweisziel durch zwei neue Beweisziele:
-* einen Induktionsanfang, in dem `n = 0` gesetzt wird, und
-* einen Induktionsschritt, in dem dir die Induktionsannahme `hd` zur Verfügung steht.
+タクティク`induction n`は`n`に関する帰納法による証明を実行します。
+`induction n with d hd`で帰納変数（`d`）と帰納仮定（`hd`）に名前を付けられます。
 
-## Modifikationen in diesem Spiel
-
-Außerhalb dieses Spiels heißt `induction` `induction'`,
-`0` wird zunächst als `Nat.zero` and `d + 1` als `Nat.succ d` geschrieben.
-Diese Terme sind jeweils definitionsgleich, müssen aber gelegentlich mit
-`zero_eq` und `Nat.succ_eq_add_one` explizit umgeschrieben werden.
+## ゲーム内の変更
+ゲーム外では、`induction`は`induction'`と呼ばれ、
+`0`は`Nat.zero`、`d + 1`は`Nat.succ d`と書かれます。
 -/
 TacticDoc induction
-/- richtige `induction`-Syntax:
-```
-induction n with
-| zero =>
-  sorry
-| succ m m_ih =>
-  sorry
-```
-Da diese sich über mehrere Zeilen erstreckt, wird sie im Spiel nicht eingeführt.
-
-Hifreiche Resultate
-
-* `Nat.succ_eq_add_one`: schreibt `n.succ = n + 1` um.
-* `Nat.zero_eq`: schreibt `Nat.zero = 0` um.
-
-Beide sind definitionsgleich, aber manche Taktiken können nicht damit umgehen
-
-* `obtain ⟨⟩ := n` ist sehr ähnlich zu `induction n`. Der Unterschied ist, dass bei
-`obtain` keine Induktionshypothese im Fall `n + 1` zur Verfügung steht.
--/
-
 
 /--
-Die Taktik `intro` wird für Beweisziele Form `A → B` oder `∀ x, P x` verwendet.
+タクティク`intro`は`A → B`または`∀ x, P x`の証明目標に使用されます。
 
-Ist dein Beweisziel `A → B`, erhältst du mit `intro h` die Annahme `h : A`, und musst dann
-`B` beweisen.
-Ist dein Beweisziel `∀ x, P x`, gibst du dir mit `intro x` ein beliebiges `x` vor und musst dann `P x` beweisen.
+| 前          | タクティク     | 後                  |
+|:------------|:-------------|:-------------------|
+| `⊢ A → B`   | `intro h`    | `h : A`, `⊢ B`     |
+| `⊢ ∀ x, P x`| `intro x hx` | `x : X`, `hx : P x`|
 
-| vorher | Taktik       | nachher                     |
-|:------------ |:------------ |:---------------------------- |
-| `⊢ A → B`    | `intro h`    | `h : A`, `⊢ B`               |
-| `⊢  x, P x`  | `intro x hx` | `x : X`, `hx : P x`, `⊢ P x` |
-
-
-## Freunde und Verwandte
-
-Die Taktik `revert h` macht das genaue Gegenteil von `intro h`.
+## 関連タクティク
+`revert h`は`intro h`の逆を行います。
 -/
 TacticDoc intro
 
 /--
-Wenn das Beweisziel von der Form `A ∨ B` ist, entscheidest du dich mit `left`, die linke Seite zu zeigen.
+証明目標が`A ∨ B`の場合、`left`で左側を示すことを選択します。
 
-## Freunde und Verwandte
-
-Mit `right` entscheidest du dich entsprechend für die rechte Seite.
+## 関連タクティク
+`right`で右側を選択できます。
 -/
 TacticDoc left
 
-/-- Die Taktik `let` führt eine temporäre Definition ein, zum Beispiel
-`let x : ℕ := 5 ^ 2`.
-
-Hast du erst einmal mit `let x := …` ein `x` definiert, kannst du die Definition später mit `simp only [x]` einsetzen.
+/--
+タクティク`let`は一時的な定義を導入します。
+例えば、`let x : ℕ := 5 ^ 2`です。
 -/
 TacticDoc «let»
--- * `have x : ℕ := 5 ^ 2` führt ebenfalls eine neue natürliche Zahle `x` ein, aber
---  Lean vergisst sofort, wie die Zahl definiert war. D.h. `x = 25` wäre dann nicht
---  beweisbar. Mit `let x : ℕ := 5 ^ 2` ist `x = 25` durch `rfl` beweisbar.
---
--- * `set x : ℕ := 5 ^ 2` macht das Gleiche wie `let`, aber versucht auch `x` im Beweisziel überall einzusetzen wo `5 ^ 2` steht.
--- we decided not to introduce `set`
-
-/-
-`set f := _` funktioniert wie `let` aber versucht auch `f` im Beweisziel überall einzusetzen.
--
-TacticDoc set
--/
 
 /--
-Die Taktik `linarith` kann zeigen, dass eine lineare Gleichung oder Ungleichung aus gegebenen Gleichungen oder Ungleichungen folgt.
-Sie ist recht flexibel, und funktioniert genauso gut in ℕ wie in ℝ.
-Die (Un)Gleichungen müssen aber einzeln gegeben sein, nicht logisch verknüpft.
-Eine Annahme der Form
-```
-h : m ≤ x → n < x
-```
-muss beispielsweise erst mit
-```
-rw [imp_iff_or_not] at h
-```
-zu
-```
-h : n < x ∨ ¬m ≤ x
-```
-umgeschrieben werden, damit `linarith` damit etwas anfangen kann.
+タクティク`linarith`は、与えられた等式や不等式から線形の等式や不等式が導かれることを示せます。
 -/
 TacticDoc linarith
 
 /--
-Die Taktik `omega` kann zeigen, dass eine lineare Gleichung oder Ungleichung in `ℕ` oder `ℤ`
-aus gegebenen Gleichungen oder Ungleichungen folgt.
-Sie kommt, anders als `linarith`, auch mit logischen Verknüpfungen von (Un)Gleichungen zurecht.
+タクティク`omega`は、`ℕ`または`ℤ`における線形の等式や不等式が、
+与えられた等式や不等式から導かれることを示せます。
 -/
 TacticDoc omega
 
--- Dafür kann  `linarith` z.B. für `x y a b : ℕ` wie `ring` zeigen: `x * a + y * a = (x + y) * a` zeigen,
--- siehe Prado level 2; `omega` kann das nicht.
-
 /--
-Die Taktik `push_neg` schiebt Negation an Quantoren vorbei:
+タクティク`push_neg`は否定を量化子の前に移動します：
 
-| vorher       | nachher      |
-|:------------ |:-------------|
-| `¬∀ x, P x`  | `∃ x, ¬P x`  |
-| `¬∃ x, P x`  | `∀ x, ¬P x`  |
+| 前          | 後              |
+|:------------|:---------------|
+| `¬∀ x, P x` | `∃ x, ¬P x`    |
+| `¬∃ x, P x` | `∀ x, ¬P x`    |
 
-Bei geschachtelten Ausdrücken schiebt sie die Negation `¬` soweit nach rechts wie möglich.
-Zum Beispiel wird aus dem Beweisziel
-```
-  ¬ ∀ ε, ∃ δ, ∀ y, | x - y | < δ → | f x - f y | < ε
-```
-mit `push_neg`
-```
-  ∃ ε, ∀ δ, ∃ y, ¬ (| x - y | < δ → | f x - f y | < ε)
-```
-
-## Freunde und Verwandte
-
-Die beiden Lemmas `not_forall` und `not_exists` können mit `rw` einzeln angewendet werden.
+## 関連タクティク
+`not_forall`と`not_exists`は`rw`で個別に適用できます。
 -/
 TacticDoc push_neg
 
 /--
-Die Taktik `obtain` teilt eine Annahme in ihre Einzelteile auf.
+タクティク`obtain`は仮定を構成要素に分解します。
 
-| vorher       | Taktik                 | nachher                                   |
-|:------------------ |:---------------------- |:------------------------------------------ |
-| `h : A ∧ B`        | `obtain ⟨h₁, h₂⟩ := h` | `h₁ : A` und `h₂ : B`                      |
-| `h : A ↔ B`        | `obtain ⟨h₁, h₂⟩ := h` | `h₁ : A → B` und `h₂ : B → A`              |
-| `h : Nonempty X`   | `obtain ⟨x⟩ := h`      | `x : X`                                    |
-| `h : ∃ x : X, P x` | `obtain ⟨x, hx⟩ := h`  | `x : X` und `hx : P x`                     |
-| `h : A ∨ B`        | `obtain h \| h := h`   | ein Ziel mit `h : A`, ein Ziel mit `h : B` |
-
-Die Klammern in den ersten vier Beispielen tippst du als `\<` bzw. `\>`.
-Hier ist `⟨_, _⟩` der *anonyme Konstruktor*.
-Du kannst ihn dir ungefähr so vorstellen wie die Tupel-Notation in
-„eine abelsche Gruppe ist ein Tupel $(G, 0, +)$ derart, dass …“.
+| 前                | タクティク               | 後                          |
+|:------------------|:-----------------------|:---------------------------|
+| `h : A ∧ B`       | `obtain ⟨h₁, h₂⟩ := h` | `h₁ : A`, `h₂ : B`          |
+| `h : A ↔ B`       | `obtain ⟨h₁, h₂⟩ := h` | `h₁ : A → B`, `h₂ : B → A`  |
+| `h : Nonempty X`  | `obtain ⟨x⟩ := h`      | `x : X`                     |
+| `h : ∃ x : X, P x`| `obtain ⟨x, hx⟩ := h`  | `x : X`, `hx : P x`         |
+| `h : A ∨ B`       | `obtain h \| h := h`   | `h : A`または`h : B`の目標  |
 -/
 TacticDoc obtain
---
--- * Die Wildcard `obtain ⟨⟩ := h` entscheidet selbständig, welcher Fall vorliegt und
---   benennt die entehenden Annahmen.
---
--- * Für `n : ℕ` hat `obtain ⟨⟩ := n` einen ähnlichen Effekt wie `induction n` mit dem Unterschied,
---   dass im Fall `n + 1` keine Induktionshypothese zur Verfügung steht.
-
-/-
-`refine' { .. }` wird benötigt um eine Struktur (z.B. ein $R$-Modul) im Taktikmodus in einzelne
-Beweisziels aufzuteilen. Danach hat man ein Beweisziel pro Strukturfeld.
-
-(*Bemerkung*: Es gibt in Lean verschiedenste bessere Varianten dies zu erreichen,
-z.B. \"Term Modus\" oder \"anonyme Konstruktoren\", aber für den Zweck des Spieles bleiben wir
-bei dieser Syntax.)
--
-TacticDoc refine'
--/
 
 /--
-Die Taktik `revert h` fügt die Annahme `h` als Implikationsprämisse ins Beweisziel ein:
-aus `h : A` und `⊢ B` wird `⊢ A → B`.
+`refine' { .. }`は構造体（例：$R$-加群）をタクティクモードで個々の証明目標に分割するために必要です。
+-/
+TacticDoc refine'
 
-## Freunde und Verwandte
+/--
+タクティク`revert h`は仮定`h`を含意の前提として証明目標に追加します。
 
-Die Taktik `intro h` macht das genaue Gegenteil von `revert h`.
+## 関連タクティク
+`intro h`は`revert h`の逆を行います。
 -/
 TacticDoc revert
 
-
 /--
-Die Taktik `rfl` beweist `X = X`.  Genauer schließt `rfl` jedes Beweisziel der Form `A = B`,
-in dem `A` und `B` definitionsgleich sind.
+タクティク`rfl`は`X = X`を証明します。正確には、`A`と`B`が定義的に等しい場合に`A = B`を証明します。
 -/
 TacticDoc rfl
--- rfl beweist auch 1 + 1 = 2 in ℕ, denn intern sind beide Seiten `0.succ.succ`.
 
 /--
-Wenn das Beweisziel von der Form `A ∨ B` ist, entscheidest du dich mit `right`, die rechte Seite zu zeigen.
+証明目標が`A ∨ B`の場合、`right`で右側を示すことを選択します。
 
-## Freunde und Verwandte
-
-Mit `left` entscheidest du dich entsprechend für die linke Seite.
+## 関連タクティク
+`left`で左側を選択できます。
 -/
 TacticDoc right
 
 /--
-Die Taktik `ring` beweist Gleichungen mit den Operationen `+, -, *, ^` in Halbringen,
-also insbesondere in ℕ, ℤ, ℚ, ℝ, …   Sie funktioniert besonders gut in kommutativen Ringen.
+タクティク`ring`は`+, -, *, ^`の操作を含む等式を半環（特にℕ, ℤ, ℚ, ℝ）で証明します。
 -/
 TacticDoc ring
--- `ring` braucht Typen `R` mit Instanzen `Ring R` oder `Semiring R`.
--- Die Taktik ist besonders auf kommutative Ringe (`CommRing R`) ausgelegt.
 
 /--
-Hast du eine Gleichung `h : X = Y` oder eine Äquivalenz `h : X ↔ Y` als Annahme oder als Lemma gegeben,
-so kannst du mit `rw [h]` alle Vorkommen von `X` im Beweisziel durch `Y` ersetzen.
+等式`h : X = Y`または同値`h : X ↔ Y`がある場合、`rw [h]`で証明目標の`X`を`Y`に置き換えられます。
 
-## Varianten
-
-* `rw [←h]` wendet `h` rückwärts an, ersetzt also alle `Y` durch `X`.
-* `rw [h, g, ←f]` wendet `h`, `g` und (rückwärts) `f` an.
-* `rw [h] at h₂` führt die Ersetzungen in der Annahme `h₂` durch, nicht im Beweisziel
-* `nth_rw`: Besitzt `h` Argumente, z.B. `n` in
-   ```
-   h : ∀ n, 2*n = f n
-   ```
-   oder in
-   ```
-   h (n : ℕ) : 2*n = f n
-   ```
-   so sucht `rw [h]` im Beweisziel von links nach rechts nach einem passenden Ausdruck,
-   und ersetzt dann *alle* Vorkommen *des ersten* Ausdrucks, den die Taktik findet.
-   Mit `nth_rw k [h]` kannst du stattdessen alle Vorkommen des `k`-ten Ausdrucks ersetzen.
-
-  | vorher    | Taktik       | nachher        |
-  |:----------------- |:-------------- |:----------------- |
-  | `2*a + 2*b > 2*a` | `rw [h]`       | `f a + 2*b > f a` |
-  |                   | `nth_rw 2 [h]` | `2*a + f b > 2*a` |
+## バリエーション
+* `rw [←h]`は`h`を逆に適用し、`Y`を`X`に置き換えます。
+* `rw [h] at h₂`は仮定`h₂`で置換を行います。
+* `nth_rw k [h]`は`k`番目の出現を置換します。
 -/
 TacticDoc rw
 
 /--
-Die Taktik `simp` versucht eine große Zahl an Lemmas anzuwenden, um einen gegebenen Ausdruck zu vereinfachen.
-(Technisch handelt es sich um alle Lemmas in `mathlib`, die durch `@[simp]` gekennzeichnet sind.)
+タクティク`simp`は多くの補題を適用して式を簡約します。
 
-## Varianten
-
-* `simp [h]` benutzt zum Vereinfachen zusätzlich die Voraussetzung `h` oder das Lemma `h`
-* `simp [F]` benutzt zusätzliche die Definition von `F`
-* `simp only [h,f,g]` benutzt ausschließlich die Voraussetzungen/Lemmas/Definitionen `h`, `f` und `g`
-* `simp?` zeigt dir an, welche Lemmas verwendet wurden
+## バリエーション
+* `simp [h]`は追加で仮定`h`を使用します。
+* `simp only [h,f,g]`は`h`, `f`, `g`のみを使用します。
 -/
 TacticDoc simp
 
-/-
-`simp_rw [h₁, h₂, h₃]` versucht wie `rw` jedes Lemma der Reihe nach zu Umschreiben zu verwenden,
-verwendet aber jedes Lemma so oft es kann.
-
-## Details
-
-Es bestehen aber drei grosse Unterschiede zu `rw`:
-
-* `simp_rw` wendet jedes Lemma so oft an wie es nur kann.
-* `simp_rw` kann besser unter Quantoren umschreiben als `rw`.
-* `simp_rw` führt nach jedem Schritt ein `simp only []` aus und vereinfacht dadurch grundlegendste
-  Sachen.
--
-TacticDoc simp_rw
+/--
+`simp_rw [h₁, h₂, h₃]`は各補題を可能な限り適用しますが、`rw`よりも量化子の下でうまく機能します。
 -/
+TacticDoc simp_rw
 
-/-- `specialize h a₁ a₂` ist äquivalent zu `have h := h a₁ a₂`: die Taktik ersetzt eine Annahme
-`h : ∀ m₁ m₂, P m₁ m₂` durch den Spezialfall `h : P a₁ a₂`.
-
-Falls du mehrmals spezialisieren möchtest, solltest du statt `specialize`
-`have` verwenden, da `specialize h …` die alte Annahme `h` überschreibt.
-Aus obiger Annahme `h` erhältst du beispielsweise mit
-```
-have ha := h a₁ a₂
-have hb := h b₁ b₂
-```
-die folgenden drei Annahmen:
-```
-h : ∀ m₁ m₂, P m₁ m₂
-ha : P a₁ a₂
-hb : P b₁ b₂
-```
+/--
+`specialize h a₁ a₂`は`have h := h a₁ a₂`と同等です：仮定`h : ∀ m₁ m₂, P m₁ m₂`を`h : P a₁ a₂`に置き換えます。
 -/
 TacticDoc specialize
 
-
 /--
-Mit `suffices h : P` leitest du einen Beweisabschnitt ein, in dem du zeigst,
-dass das gewünschte Beweisziel aus `P` folgt.
-Danach beweist du `P`.
+`suffices h : P`は、証明目標が`P`から導かれることを示す証明セクションを開始します。
+その後、`P`を証明します。
 
-## Freunde und Verwandte
-`have h : P` funktioniert genauso, außer dass du zunächst `P` beweisen musst und erst dann
-den Hauptbeweis fortsetzen kannst.
+## 関連タクティク
+`have h : P`も同様ですが、まず`P`を証明してからメインの証明を続行します。
 -/
 TacticDoc «suffices»
 
-
 /--
-Mit `symm` (für „symmetry“) vertauschst du die Seiten einer Gleichung (`=`) oder Äquivalenz (`↔`) im Beweisziel.
+タクティク`symm`は証明目標の等式（`=`）または同値（`↔`）の両側を交換します。
 
-## Varianten
-* `symm at h` operiert auf der Annahme `h` statt auf dem Beweisziel
-* `h.symm` ist das Ergebnis von `symm at h`, und kann wie `h` verwendet werden
-
-Jede der drei folgenden Taktiken bzw. Taktiksequenzen hat also denselben Effekt:
-* `rw [←h]`
-* ```
-  symm at h
-  rw [h]
-  ```
-* `rw [h.symm]`
+## バリエーション
+* `symm at h`は仮定`h`で操作します。
+* `h.symm`は`symm at h`の結果です。
 -/
 TacticDoc symm
 
 /--
-Mit `trans` fügst du in eine Gleichung oder Äquivalenz einen Zwischenschritt ein.
+タクティク`trans`は等式または同値に中間ステップを挿入します。
 
-| vorher | Taktik    | nachher                |
-|:------------ |:--------- |:----------------------- |
-| `⊢ A = C`    | `trans B` | `⊢ A = B` und `⊢ B = C` |
-| `⊢ A ↔ C`    | `trans B` | `⊢ A ↔ B` und `⊢ B ↔ C` |
-
-Da du die Taktik mehrmals wiederholen kannst, ist sie geeignet,
-um Schritt für Schritt eine „Rechnung“ `A = B₁ = B₂ = B₃ … = C` durchzuführen.
-
-(Außerhalb vom Spiel ist allerdings die mehrzeilige Taktik `calc` besser für derartige Rechnungen geeignet.)
+| 前          | 後                  |
+|:------------|:-------------------|
+| `⊢ A = C`   | `⊢ A = B`と`⊢ B = C`|
+| `⊢ A ↔ C`   | `⊢ A ↔ B`と`⊢ B ↔ C`|
 -/
 TacticDoc trans
 
 /--
-Mit `decide` kannst du Aussagen beweisen, die mit einem einfachen Algorithmus
-entscheidbar sind.  Dazu gehören insbesondere `True` und Aussagen über konkrete Zahlen wie:
+タクティク`decide`は単純なアルゴリズムで決定可能な命題を証明します。
+例えば：
 - `Even 4`
 - `2 ≤ 5`
 - `4 ≠ 6`
 - `Prime 7`
 -/
 TacticDoc decide
--- Konkret sucht `decide` für eine Aussage `P`  nach einer Instanz `Decidable P`
--- welche dann evaluiert entweder wahr oder falsch rausgibt.
 
 /--
-Mit `unfold F` kannst du die Definition `F` im Beweisziel ausschreiben.
-Mit `unfold F at h` machst du das Gleiche, aber in der Annahme `h`.
+`unfold F`は証明目標で定義`F`を展開します。
+`unfold F at h`は仮定`h`で同じことを行います。
 
-Zwar sind Beweisziel oder Annahme vor und nach `unfold` definitionsgleich,
-aber viele Taktiken (z.B. `push_neg` oder `rw`) operieren auf einer syntaktischen Ebene,
-sie „sehen nicht durch Definitionen hindurch“.
-
-## Freunde und Verwandte
-
-Die Taktiken `unfold F` und `simp only [F]` machen praktisch das Gleiche.
+## 関連タクティク
+`unfold F`と`simp only [F]`はほぼ同じです。
 -/
 TacticDoc unfold
--- * `change _` ist eine andere Taktik (nicht im Spiel), die das aktuelle Beweisziel in einen definitionsgleichen Ausdruck
---  umschreibt. Diese Taktik braucht man auch manchmal um zu hacken, wenn Lean Mühe hat, etwas zu verstehen.
 
 /--
-Wenn das Beweisziel von der Form `∃x, P x` ist, kannst du mit `use n` ein konkretes Element angeben,
-für das du `P x` beweisen möchtest.
+証明目標が`∃x, P x`の場合、`use n`で具体的な要素を指定できます。
 -/
 TacticDoc use
 
 /--
-Die Taktik `tauto` beweist logische Tautologien.
+タクティク`tauto`は論理的同語反復を証明します。
 
-# Freunde und Verwandte
-
-Manchmal muss das Beweisziel zuerst mit `generalize` abstrahiert werden, damit `tauto`  die Tautologie erkennt.
+## 関連タクティク
+場合によっては、`generalize`で証明目標を抽象化する必要があります。
 -/
 TacticDoc tauto

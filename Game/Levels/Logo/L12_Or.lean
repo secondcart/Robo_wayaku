@@ -3,33 +3,31 @@ import Game.Metadata
 World "Logo"
 Level 12
 
-Title "" -- "Oder"
+Title "Oder"
 
 Introduction
 "
-Der nächste bitte …
+次の方どうぞ…
 "
 
 Statement (A B : Prop) (hA : A) : A ∨ (¬ B) := by
   Hint "
-    **Du** Muss ich jetzt wieder das Beweisziel de-konstruieren?
+    **あなた** また証明目標を分解しなきゃいけないの？
 
-    **Robo** Nein, viel einfacher. Wenn du eine Oder-Aussage beweisen sollst, musst du dich
-    einfach entscheiden, ob du die linke oder rechte Seite beweisen willst.
+    **ロボ** いいえ、もっと簡単です。ORの命題を証明するときは、左側か右側のどちらかを証明すればいいんです。
 
-    **Du** Und wie erkläre ich meinem Formalosophen, welche Seite ich gern beweisen würde?
-    Ich will natürlich `{A}` beweisen!
+    **あなた** それで、フォルマロソフにどっちを証明したいかどう説明すれば？もちろん`{A}`を証明したいんだけど！
 
-    **Robo** Mit `left` bzw. `right`. Ist doch logisch, oder?"
+    **ロボ** `left`か`right`で。道理でしょ？"
   Branch
     right
-    Hint "**Robo** Wusste gar nicht, dass du eine Links-Rechts-Schwäche hast. Probier's nochmal."
+    Hint "**ロボ** 左右が苦手だなんて知らなかったわ。もう一度試してみて。"
   left
   assumption
 
 Conclusion
 "
-Auch dieser Formalosoph zieht zufrieden von dannen.
+このフォルマロソフも満足して去っていきました。
 "
 
 NewDefinition Or

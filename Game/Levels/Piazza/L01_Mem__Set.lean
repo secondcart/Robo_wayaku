@@ -8,16 +8,16 @@ Title ""
 
 Introduction
 "
-**Fin**:  Ja, klar.  Das hier zum Beispiel.
+**Fin**:  ええ、もちろん。例えばこれなんかどうでしょう。
 "
 
 open Set
 
 Statement : 1 ∈ ({1, 6, 4} : Set ℕ) := by
   Hint "
-    **Du**:  Verstehe ich das richtig?
+    **あなた**: これで合ってる？
 
-    **Robo**: Vermute schon.  Sieht ziemlich *tauto*logisch aus, nicht?
+    **ロボ**: たぶんね。かなり*トートロジー*的に見えるでしょ？
     "
   tauto
 
@@ -25,7 +25,7 @@ NewDefinition Mem Set
 TheoremTab "Set"
 
 Conclusion "
-**Set**:  Ihr kennt euch also auch schon ein bisschen mit Mengen aus?
+**セット**: 君たちも集合論に少し詳しいんだね？
 
-**Robo**:  Naja, ein *bisschen*.
+**ロボ**: まあ、*ちょっと*ね。
 "

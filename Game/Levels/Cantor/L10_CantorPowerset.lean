@@ -8,18 +8,16 @@ Title ""
 
 Introduction
 "
-**Cantor**: Und jetzt nehmt ihr dieses schöne Diagonalargument und zeigt noch einmal,
-dass es keine surjektiven Abbildungen `A → Set A` gibt!
-Ihr müsst nur `Set A` auffassen als `A → Prop`!
+**カントール**: さあ、この美しい対角線論法を使って、`A → Set A`の全射写像が存在しないことをもう一度示してみよう！
+`Set A`を`A → Prop`と解釈するだけだ！
 
-**Du**: Was?
+**あなた**: え？
 
-**Robo**:  Eine Teilmenge `S : Set A` kann man mit der Abbildung
-`A → Prop` identifizieren, die `a : A` auf die Aussage `a ∈ S` wirft.
-Für Formalosophen ist das dasselbe.
+**ロボ**: 部分集合`S : Set A`は、`a : A`を`a ∈ S`という命題に写す`A → Prop`の写像と同一視できます。
+形式主義者にとっては同じものです。
 "
 Conclusion "
-  **Du**:  Ich weiß nicht, ob das wirklich einfacher war …
+  **あなた**: これが本当に簡単だったのかどうかわかりません…
 "
 
 open Set Function
@@ -29,31 +27,29 @@ Statement {A : Type} : ¬ ∃ f : A → Set A, Surjective f := by
     by_contra h
     obtain ⟨f, hf⟩ := h
     Hint (hidden := true) "
-    **Du**: Also hier jetzt `cantor_diagonal` verwenden?
+    **あなた**: ここで`cantor_diagonal`を使うの？
 
-    **Robo**: Vermutlich, zum Beispiel mit `apply cantor_diagonal at {hf}`.
+    **ロボ**: おそらくね、例えば`apply cantor_diagonal at {hf}`とかで。
     "
   push_neg
   intro f
   by_contra hf
   Hint (hidden := true) "
-    **Du**: Also hier jetzt `cantor_diagonal` verwenden?
+    **あなた**: ここで`cantor_diagonal`を使うの？
 
-    **Robo**: Vermutlich, zum Beispiel mit `apply cantor_diagonal at {hf}`.
+    **ロボ**: おそらくね、例えば`apply cantor_diagonal at {hf}`とかで。
   "
   Branch
     clear hf
     let _C := { a | a ∉ f a }
-    Hint "**Cantor**: Nein, nein! Wir wollten doch
-      mein schönes Theorem `cantor_diagonal` verwenden!"
+    Hint "**カントール**: いやいや！私の美しい定理`cantor_diagonal`を使うんだよ！"
   Branch
     specialize hf { a | a ∉ f a }
-    Hint "**Cantor**: Nein, nein! Wir wollten doch
-      mein schönes Theorem `cantor_diagonal` verwenden!"
+    Hint "**カントール**: いやいや！私の美しい定理`cantor_diagonal`を使うんだよ！"
   apply cantor_diagonal at hf  -- L09
   -- now see L05
   Hint (hidden := true) (strict := true) "
-  **Cantor**: Hatte ihr euch nicht schon überlegt, dass `¬ .` keine Fixpunkte hat?"
+  **カントール**: `¬ .`には不動点がないことはもう考えたんじゃないのかい？"
   specialize hf (¬ .) -- or specialize h Not -- or specializa h (fun A ↦ ¬ A)
   obtain ⟨a, hA⟩ := hf
   unfold fixedPoints IsFixedPt at hA

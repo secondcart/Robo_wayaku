@@ -21,16 +21,16 @@ Title "Cantor"
 Image "images/Cantor.png"
 
 Introduction "
-Ihr seid neben einem großen Zelt gelandet.  Vielleicht ein Zirkuszelt?
-Drinnen ist es recht dunkel.  Nur eine Bühne ist hell erleuchtet.
-Darauf steht ein Herr, der wie eine Mischung aus Professor und Magier aussieht,
-hält einen Monolog und führt anscheinend irgendetwas vor.
+あなたたちは大きなテントの横に着陸しました。おそらくサーカスのテントでしょう？
+中はかなり暗いです。舞台だけが明るく照らされています。
+その上には教授と魔術師を混ぜたような見た目の男性が立っており、
+独白をしながら何かを披露しているようです。
 
-Im Halbdunkel vor der Bühne stehen Stühle in langen Reihen.
-Ihr habt das Zelt offenbar direkt an einem Ende der ersten Reihe betreten.
-Das andere Ende könnt ihr gar nicht erkennen, so lang ist die Reihe.
-Und dahinter kommen viele weitere Reihen – auch in diese Richtung könnt ihr kein Ende erkennen.
-Aber alle Sitze sind leer.
+舞台前の薄暗がりには、長い列になった椅子が並んでいます。
+どうやらあなたたちはテントの端にある最初の列に直接入ったようです。
+反対側の端は見えません。列がとても長いからです。
+そしてその後ろにはさらに多くの列が続いています。この方向にも終わりが見えません。
+しかし全ての席は空いています。
 
-Ihr setzt auch also irgendwo in die erste Reihe, seht zur Bühne und spitzt die Ohren.
+あなたたちはどこか最初の列に座り、舞台を見て耳を澄ませます。
 "

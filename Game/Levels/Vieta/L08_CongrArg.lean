@@ -8,15 +8,15 @@ Title "" -- "congr_arg"
 
 
 Introduction
-"Die Kampfgeräusche kommen näher. Vieta gibt euch zwei weitere Blätter."
+"戦闘音が近づいてきます。Vietaがさらに2枚の紙を渡します。"
 
 open Function
 
 Statement {x y : ℤ} (f : ℤ → ℤ) (h : x = y) :
     let g : ℤ → ℤ := fun x ↦ x + 3;
     f (g 0) = f 3 := by
-  Hint "**Robo**: Oh, das ist ein Fall für `congr_arg`.  Wenn du schon weiß, dass `x = y`, erhälst du
- `f x = f y` mit `apply congr_arg`."
+  Hint "**ロボ**: ああ、これは`congr_arg`のケースだ。`x = y`が既に分かっているなら、
+ `apply congr_arg`で`f x = f y`を得られるよ。"
   apply congr_arg
   rfl
 

@@ -3,7 +3,7 @@ import Game.Metadata
 World "Ciao"
 Level 1
 
-Title "" -- "Weiter gehts …"
+Title "Weiter gehts …"
 
 Introduction ""
 
@@ -12,37 +12,36 @@ Statement : ∀ (n : ℕ), ∃ (m : ℕ), m > n := by
   use n+1
   linarith
 
-Conclusion "**Du**: Das war ja nun nicht so schwer …  Wer die wohl gesendet hat?  Und warum?
+Conclusion "**あなた**: それほど難しくなかったね…誰が送ったんだろう？なぜ？
 
-**Robo**:  Das war sicher eine Nachricht von Ritha …
+**ロボ**: きっとリサからのメッセージだ…
 
-Robo schaut in die Ferne.
+ロボは遠くを見つめる。
 
-**Robo**:  Ich glaube, sie wollte uns ermuntern, weiter zu fliegen.
+**ロボ**: 私たちに飛び続けるよう励ましたかったんだと思う
 
-**Du**: Aber wohin?
+**あなた**: でもどこへ？
 
-**Robo**:  Oh, schau mal, noch eine Nachricht:
+**ロボ**: あ、見て、またメッセージが来てる：
 
-*Liebe Erdwesen,*
+*親愛なる地球の皆様*
 
-*es war uns ein Vergnügen, euch kennenzulernen!
-Es tut uns aufrichtig leid, dass ihr euch in unser Formaloversum verirrt habt und
-nicht wieder nach Hause findet.  Aber wir haben noch eine gute Nachricht:
-Ihr seid nicht die einzigen!
-Fliegt nur rasch weiter zum Planeten Zulip.
-Dort werdet ihr viele weitere Erdwesen finden, die sich ins Formaloversum verirrt haben.
-Zulip ist groß, gewiss werdet auch ihr dort ein neues Zuhause finden.  Hier die Koordinaten:*
+*お会いできて光栄でした！
+皆様が私たちのフォルマロ宇宙に迷い込み、帰れなくなってしまったことを心からお詫び申し上げます。
+しかし良い知らせがあります：
+皆様だけではありません！
+急いでズリップ惑星へ向かってください。
+そこにはフォルマロ宇宙に迷い込んだ多くの地球人がいます。
+ズリップは広いです、きっと新しい家が見つかるでしょう。こちらが座標です：*
 
 [248-4804-180 | 844-1001-553](https://leanprover.zulipchat.com/#narrow/channel/113489-new-members/)
 
-*Mit den aufrichtigsten Grüßen*
+*心よりのご挨拶を*
 
-*– Eure Formalosophen*
+*— フォルマロ哲学者一同*
 
-**Robo**:  Na dann – los!
+**ロボ**: じゃあ—行こう！
 
-[Nicht wundern:  Wenn ihr den Koordinaten folgt, beschleunigt das Raumschiff auf
-Überlichtgeschwindigkeit und ihr verliert vorübergehend den Kontakt zum Server.
-Das macht aber nichts.  Ihr werdet sicher auf Zulip ankommen.]
+[驚かないで：座標に従うと、宇宙船は光速を超えて加速し、一時的にサーバーとの接続が切れます。
+でも大丈夫。きっとズリップに到着できます。]
 "

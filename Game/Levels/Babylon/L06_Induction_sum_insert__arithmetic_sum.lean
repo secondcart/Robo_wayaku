@@ -8,14 +8,14 @@ Title "" -- "Arithmetische Summe"
 
 Introduction
 "
-**Babylonier**: Kommt, ich zeig euch mal einen unserer schönsten Türme!
+**バビロン人**: さあ、私たちの最も美しい塔の一つをお見せしましょう！
 
-Der Weg führt steil bergan.  Der Turm, der euch oben auf dem Berg erwartet, ist tatsächlich sehr imposant.
+道は険しい山道を登っていきます。山頂で待つ塔は、実に壮大なものです。
 
-**Robo**: Das muss der bekannte *Gaußsche Turm von Babylon* sein!
-Über den hab ich schon einmal etwas gelesen.
+**ロボ**: これは有名な『バビロンのガウス塔』に違いありません！
+それについて一度読んだことがあります。
 
-**Babylonier**: Richtig. Gauß war ein Babylonier!
+**バビロン人**: その通り。ガウスはバビロン人でした！
 "
 
 open Finset
@@ -30,43 +30,43 @@ TheoremDoc arithmetic_sum as "arithmetic_sum" in "∑ Π"
 
 Statement arithmetic_sum (n : ℕ) :
      (∑ i ∈ Icc 0 n , i : ℚ) = 1/2  * n * (n + 1) := by
-  Hint "**Du**: Diese Summe habe ich auch schon einmal gesehen.
+  Hint "**あなた**: この和は以前見たことがあります。
     $$
     \\sum_\{i = 0}^n i = \\tfrac\{1}\{2} \\cdot n \\cdot (n + 1)
     $$
 
-  Gabs da nicht diese Geschichte mit dem kleinem Gauß, der da ein ganz einfaches Argument für hatte?
+  ガウス少年がとても簡単な証明をしたという話ではありませんでしたか？
 
-  **Robo**: Mit Geschichte kenn ich mich nicht aus.  Ich würde einfach eine Induktion über `n` machen.
-  Das wäre auf Leansch: `induction n with d hd`!
+  **ロボ**: 歴史の話はわかりません。私は単に`n`についての帰納法を使うでしょう。
+  それはLeanでは`induction n with d hd`です！
 
-  **Du**:  Warum `with …`?
+  **あなた**: なぜ`with …`が必要なのですか？
 
-  **Robo**:  Der Zusatz ist natürlich optional.
-  Du kannst damit Namen für Induktionsvariable (`d`) und -hypothese (`hd`) vorgeben."
+  **ロボ**: もちろんこの追加はオプションです。
+  これで帰納変数(`d`)と帰納仮説(`hd`)の名前を指定できます。"
   induction n with d hd
-  Hint "**Du**: Zuerst der Induktionsanfang …
+  Hint "**あなた**: まず帰納法の基底ケース…
 
-  **Robo**: Diesen kannst du oft mit `simp` abkürzen!"
+  **ロボ**: これはしばしば`simp`で簡略化できます！"
   simp
-  Hint "**Robo**: Jetzt willst du das Interval $[0, {d}+1]$, über das summiert wird, aufspalten in $[0,{d}]$ und ${d}+1$.
-    Dazu könntest du das Lemma `insert_Icc_eq_Icc_add_one_right` verwenden, das wir schon gesehen hatten.
+  Hint "**ロボ**: 今、和を取る区間$[0, {d}+1]$を$[0,{d}]$と${d}+1$に分割したいですね。
+    そのためには、以前見た`insert_Icc_eq_Icc_add_one_right`という補題が使えます。
   "
   rw [← insert_Icc_eq_Icc_add_one_right]
-  Hint "**Robo**:  Genau!  Und jetzt spaltet dir `sum_insert` die Summe genau so auf, wie du das haben möchtest:
-  also eine Summe über $[0,{d}]$ und dann noch einen zusätzlichen Summanden für ${d}+1$.
-  Probiers mal: `rw [sum_insert]`
+  Hint "**ロボ**: そうです！そして今、`sum_insert`が和をあなたが望むように正確に分割します：
+  $[0,{d}]$の和と、${d}+1$の追加項です。
+  試してみてください：`rw [sum_insert]`
   "
   rw [sum_insert]
   Hint (hidden := true)
-  "**Du**: Und wie wende ich jetzt die Induktionshypothese an?
+  "**あなた**: そして今、帰納仮説をどのように適用すればよいですか？
 
-  **Robo**: Mit `rw`, wie jede andere Annahme auch."
+  **ロボ**: 他の仮定と同じように`rw`で使えます。"
   rw [hd]
   Hint "
-    **Du**: Der Rest sollte jetzt einfach nur Rechnerei sein.
+    **あなた**: 残りは単なる計算のはずです。
 
-    **Robo**:  Stimmt.  Irgendeine Kombination von `simp` und `ring` sollte das schaffen.
+    **ロボ**: その通りです。`simp`と`ring`の組み合わせで解決できるはずです。
   "
   simp
   ring

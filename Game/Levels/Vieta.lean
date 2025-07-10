@@ -15,24 +15,24 @@ Title "Vieta"
 Image "images/Vieta.png"
 
 Introduction "
-Hallo, ist da wer?  Ihr seid in einer Heide-Landschaft gelandet.
-Weit und breit ist niemand zu sehen.
+こんにちは、誰かいますか？ あなたは荒野の風景に降り立ったようです。
+見渡す限り誰もいません。
 
-Plötzlich zischt ein Pfeil direkt über deinen Kopf.
+突然、矢があなたの頭の上をかすめて飛びます。
 
-**Du**: Deckung!
+**あなた**: 伏せ！
 
-Ihr werft euch flach auf den Boden.  Ihr wollt schon zurück zum Raumschiff robben, da
-tritt hinter einem verdorrten Baum ein Mann hervor, der freundlich winkt.
-Ihr robbt also zu ihm.
+あなたたちは地面にぺたりと伏せます。宇宙船に戻ろうと這い始めたその時、
+枯れた木の陰から手を振る優しそうな男が現れます。
+あなたたちは彼の方へ這って近づきます。
 
-**Vieta**: Nur nicht so schüchtern, meine Damen und Herren! Vieta, mein Name. Willkommen!
-Steht ruhig auf, die Luft ist rein.
+**Vieta**: どうか遠慮しないでください、皆さん！私の名前はVietaです。ようこそ！
+立ち上がってください、危険はありません。
 
-Ihr erhebt euch vorsichtig, da zischt schon wieder dicht neben euch ein Pfeil vorbei.
+あなたたちが慎重に立ち上がると、またすぐ横を矢がかすめていきます。
 
-**Du**:  Wie halten Sie es hier aus?
+**あなた**: ここでどうやって暮らしているんですか？
 
-**Vieta**:  Nun, ich habe gelernt, immer zur richtigen Zeit an der richtigen Stelle zu stehen.
-Macht euch keine Sorgen.
+**Vieta**: ええ、私はちょうど良い時にちょうど良い場所に立つことを学びました。
+心配しないでください。
 "

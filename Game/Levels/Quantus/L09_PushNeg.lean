@@ -3,51 +3,51 @@ import Game.Metadata
 World "Quantus"
 Level 9
 
-Title "" -- "PushNeg"
+Title "PushNeg"
 
 Introduction
 "
-Nach langem Hin und Her haben sich die Formalosophinnen endlich auf folgende Frage geeignet.
+長い議論の末、フォルマロソフィストたちはついに以下の問題に合意しました。
 "
 
 open Nat
 
 Statement : ¬ ∃ (n : ℕ), ∀ (k : ℕ) , Odd (n + k) := by
-  Hint "**Du**: Oha. Ganz links ein `¬`. Was du nicht sagst …"
+  Hint "**あなた**: おや。一番左に`¬`がありますね。驚きました…"
   Branch
     unfold Odd
     Hint "
-      **Robo**: Dieser Lösungsweg scheint mir etwas zu schwierig.
-      Ich würde nochmal zurückgehen und `Odd` behalten,
-      damit man schlussendlich `even_iff_not_odd` brauchen kann!"
+      **ロボ**: この解法は少し難しすぎるようです。
+      `Odd`を保持したままにして、
+      最終的に`even_iff_not_odd`を使えるようにした方が良いでしょう！"
   push_neg
   intro n
   Branch
     unfold Odd
     Hint "
-      **Robo**: Dieser Lösungsweg scheint mir etwas zu schwierig.
-      Ich würde nochmal zurückgehen und `Odd` behalten,
-      damit man schlussendlich `even_iff_not_odd` brauchen kann!"
+      **ロボ**: この解法は少し難しすぎるようです。
+      `Odd`を保持したままにして、
+      最終的に`even_iff_not_odd`を使えるようにした方が良いでしょう！"
   Hint "
-    **Robo**: Jetzt brauchst du eine Zahl mit `use`, und danach vermutlich das
-    Lemma `even_iff_not_odd` brauchen.
+    **ロボ**: ここで`use`を使って数値を指定し、その後おそらく
+    補題`even_iff_not_odd`を使う必要があります。
 
-    **Du**: Könnte ich jetzt schon `even_iff_not_odd` anwenden?
+    **あなた**: 今すぐ`even_iff_not_odd`を適用できますか？
 
-    **Robo**: Nein, `rw` kann nicht innerhalb von Quantoren umschreiben.
+    **ロボ**: いいえ、`rw`は量化子内で書き換えできません。
 
-    **Du**: Aber wie würde ich das machen?
+    **あなた**: ではどうすればいいのですか？
 
-    **Robo**: Zeig ich dir später, nicht hier vor großem Publikum.
-    Ich würde jetzt lieber mit `use` eine richtige Zahl angeben, und danach umschreiben."
+    **ロボ**: それは後で教えます、大勢の前ではやりません。
+    今は`use`で適切な数値を指定してから書き換えることをお勧めします。"
   Branch
     use n + 2
-    Hint "**Robo**: Gute Wahl! Jetzt kannst du `even_iff_not_odd` verwenden."
+    Hint "**ロボ**: 良い選択です！これで`even_iff_not_odd`が使えます。"
   Branch
     use n + 4
-    Hint "**Robo**: Gute Wahl! Jetzt kannst du `even_iff_not_odd` verwenden."
+    Hint "**ロボ**: 良い選択です！これで`even_iff_not_odd`が使えます。"
   use n
-  Hint "**Robo**: Gute Wahl! Jetzt kannst du `even_iff_not_odd` verwenden."
+  Hint "**ロボ**: 良い選択です！これで`even_iff_not_odd`が使えます。"
   rw [← even_iff_not_odd]
   Branch
     tauto
@@ -65,14 +65,14 @@ NewTheorem not_exists Classical.not_forall
 
 Conclusion
 "
-Die Formalosophinnen sind ganz begeistert.
-Nachdem sich der Beifall gelegt hat, hast du auch einmal eine Frage.
+フォルマロソフィストたちは大興奮です。
+拍手が収まった後、あなたも一度質問しました。
 
-**Du**: Kann uns hier irgendjemand vielleicht ein bisschen Orientierung im Formaloversum geben?
+**あなた**: 誰かフォルマロ宇宙での方向付けを少し手伝ってくれませんか？
 
-**Alle**: Ja, ja.
+**全員**: はい、はい。
 
-**Du**: Wer denn?
+**あなた**: 誰が？
 
-Die Frage war wieder zu konkret. Betretenes Schweigen.
+質問がまた具体的すぎました。気まずい沈黙。
 "

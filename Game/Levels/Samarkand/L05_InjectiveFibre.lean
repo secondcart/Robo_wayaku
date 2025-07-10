@@ -3,10 +3,10 @@ import Game.Levels.Samarkand.L04_SurjectiveImagePreimage
 World "Samarkand"
 Level 5
 
-Title "" -- "Range of Injective"
+Title "Range of Injective"
 
 Introduction "
-  **Arapuka**:  Ich habe auch noch eine Frage zu injektiven Abbildungen.
+  **アラプカ**: 私にも単射写像について質問があります。
 "
 
 open Set
@@ -21,9 +21,9 @@ namespace Function
 Statement Injective.exists_unique_of_mem_range {A B : Type} {f : A → B} (hf : Injective f)
     {b : B} (hb : b ∈ range f) :
     ∃! a, f a = b := by
-  Hint "**Du**:  Bei `∃! a` konstruiere ich mir zunächst das Element `a`, das ich verwenden möchte …
+  Hint "**あなた**: `∃! a` でまず使用したい要素 `a` を構築します…
 
-  **Robo**: … und dann wendest du `use a` und `simp` an.  Genau.
+  **ロボ**: …そして `use a` と `simp` を適用します。その通りです。
   "
   obtain ⟨a, ha⟩ := hb
   use a
@@ -35,5 +35,5 @@ Statement Injective.exists_unique_of_mem_range {A B : Type} {f : A → B} (hf : 
     rw [ha',ha]
 
 Conclusion "
-  Arapuka liegt immer noch ganz regungslos, aber sie sieht glücklich aus.
+  アラプカはまだじっと動かずにいますが、幸せそうに見えます。
 "

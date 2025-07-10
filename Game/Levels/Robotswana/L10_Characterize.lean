@@ -7,32 +7,31 @@ Title "" -- "Trace"
 
 Introduction
 "
-Ihr schleicht euch langsam an.
+ゆっくりと忍び寄る。
 
-**Du** (**flüsternd**): Ich glaube, du hattest Recht.  Diese Zettel sind eine Art Steckbrief!
-Und sie beschreiben dieses Wesen hier eindeutig!
+**あなた**（小声で）: 君の言う通りだったみたい。これらのメモは一種の特徴リストだ！
+そしてこれは明らかにここの生き物を説明している！
 
-**Robo**: Wie meinst du das?
+**ロボ**: どういう意味？
 
-**Du**: Schau doch, seine Größe, seine Vorliebe für Kommutatoren, und all die anderen Sachen,
-damit kann es eindeutig identifiziert werden!
+**あなた**: 見てよ、その大きさ、交換子への好み、その他の全ての特徴、
+これで明確に識別できる！
 
-**Robo**: Das musst du mir genauer erklären.
+**ロボ**: もっと詳しく説明してくれ。
 
-**Du**:  Ich versuch's mal. Gibt es in Leansch einen Namen für die Spur?
+**あなた**: やってみるよ。Leanには跡(trace)の名前がある？
 
-**Robo**: Ja klar, die heißt natürlich `trace`.  Manche Formalosophen nennen sie auch liebevoll Tracy.
+**ロボ**: ああもちろん、`trace`って呼ばれてるよ。一部の形式主義者はTracyって愛称で呼んでる。
 
-Du nimmst einen der Pergamentfetzen und schreibst auf die Rückseite.
+あなたは羊皮紙の切れ端を一枚取り、裏側に書き始める。
 "
 
 Conclusion "
-**Robo**: Tatsache. Du hattest Recht.
+**ロボ**: その通りだ。君の言う通りだった。
 
-Ihr beobachtet voller Entzücken dieses offenbar einzigartige Wesen auf diesem Planeten.
+あなたたちはこの惑星で明らかに唯一無二のこの生き物を観察し、満足げに見つめる。
 
-Als ihr näher kommt, scheint euch Tracy zu bemerken.  Aber es scheint dadurch keinesfalls gestört
-zu sein.
+近づくと、Tracyが気づいたようだ。しかし特に邪魔されている様子はない。
 "
 
 open Nat Matrix StdBasisMatrix Finset
@@ -43,45 +42,44 @@ TheoremDoc Matrix.trace_eq as "trace_eq" in "Matrix"
 Statement Matrix.trace_eq {n : ℕ} (f : Matrix (Fin n) (Fin n) ℝ →ₗ[ℝ] ℝ)
     (h₁ : ∀ A B, f (A * B) = f (B * A)) (h₂ : f 1 = n) :
     trace = f := by
-  Hint "**Du**:  Hier sind noch einmal alle Eigenschaften zusammengefasst.
+  Hint "**あなた**: ここに全ての性質がまとめられているよ。
 
-    **Robo**:  Und du behauptest, nur Tracy hat diese Eigenschaften?
+    **ロボ**: そして君は、Tracyだけがこれらの性質を持つと言うのかい？
 
-    **Du**: Ja.  Ich glaube, das ist so.  Jedes `f`, dass diese Eigenschaften hat, verhält sich auf allen Matrizen genauso wie Tracy.  Und deshalb *ist* es Tracy!"
+    **あなた**: そうだよ。そう信じてる。どんな`f`でもこれらの性質を持てば、全ての行列でTracyと同じように振る舞う。だからそれはTracyなんだ！"
   Hint (hidden := true) "
-    **Robo**: `ext`!"
+    **ロボ**: `ext`!"
   ext A
-  Hint "**Du**: Und jetzt schreiben wir `f {A}` als Summe von Basiselementen."
+  Hint "**あなた**: そして今、`f {A}`を基底要素の和として書こう。"
   rw [eq_sum_apply_diag_ebasis] -- Lvl 7
   Hint "
-    **Du**: `induction n`?
+    **あなた**: `induction n`?
 
-    **Robo**: Probiers!
+    **ロボ**: 試してみて！
     "
   induction n with d hd
-  · Hint (hidden := true) "**Robo**: Ich hab im Kopf mal `simp` ausprobiert. Probier es auch mal."
+  · Hint (hidden := true) "**ロボ**: 頭の中で`simp`を試したよ。君も試してみて。"
     simp
   · clear hd
-    Hint "**Du**: Wir hatten doch eben festgestellt, dass `f (E i i) = 1` gilt!
+    Hint "**あなた**: さっき`f (E i i) = 1`ってわかったよね！
 
-      **Robo**: Nachschlagen kann ich gut! Das war `one_on_diag_ebasis`."
+      **ロボ**: 調べるのは得意だよ！`one_on_diag_ebasis`だった。"
     Hint (hidden := true) "
-      **Robo**: `one_on_diag_ebasis` braucht hier eine Reihe von Annahmen.
-      Die Annahme `{d} + 1 > 0` solltest du am besten erst einmal mit `have` festhalten.
+      **ロボ**: `one_on_diag_ebasis`にはいくつかの前提が必要だ。
+      `{d} + 1 > 0`という前提をまず`have`で確認しておくといいよ。
       "
     --simp at h₂
     have : d + 1 > 0 := by
       omega
     Hint (hidden := true) "
-      **Robo**:  Denk daran, dass du die Gleichung `one_on_diag_ebasis` auch `simp` mitgeben kannst!
+      **ロボ**: `one_on_diag_ebasis`の等式も`simp`で使えるよ！
     "
     simp [one_on_diag_ebasis this h₁ h₂] -- Lvl 8
-    Hint (hidden := true) "**Robo**: Die beiden Seiten sind per Definition gleich!"
+    Hint (hidden := true) "**ロボ**: 両辺は定義的に等しいよ！"
     rfl
-  Hint "**Du**: Wo kommt denn dieses Beweisziel jetzt noch her?
+  Hint "**あなた**: この証明目標はどこから来たんだっけ？
 
-  **Robo**: Ganz am Anfang bei `rw [eq_sum_apply_diag_ebasis]` hast du vermutlich dieses Argument
-  ausgelassen.  Jetzt kannst du es noch nachholen."
+  **ロボ**: 最初の`rw [eq_sum_apply_diag_ebasis]`でこの引数を省略したんだよ。今ならまだ追いつける。"
   assumption
 
 /--

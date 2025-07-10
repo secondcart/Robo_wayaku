@@ -7,17 +7,17 @@ Title ""
 
 Introduction
 "
-  **Mem:** Findet ihr diese Aussage auch wieder verwirrend?
+  **Mem:** この発言もまた混乱させられると思いませんか？
 "
 namespace Set
 
 Statement : { n : ℕ | Even n } ∩ { n : ℕ | Odd n } = ∅ := by
   Hint "
-    **Du**: Nein, `∅` kenne ich.
+    **あなた**: いいえ、`∅`は知っています。
 
-    **Robo**: Um ganz sicher zu gehen, dass du das richtig verstehst,
-    könntest du auch mit `rw [eq_empty_iff_forall_not_mem]` anfangen.
-    Oder mit `simp [eq_empty_iff_forall_not_mem]`, falls du schnell fertig werden möchtest.
+    **ロボ**: あなたが正しく理解していることを完全に確認するために、
+    `rw [eq_empty_iff_forall_not_mem]`で始めることもできます。
+    または、早く終わらせたい場合は`simp [eq_empty_iff_forall_not_mem]`を使うこともできます。
   "
   /- Want `eq_empty_iff_forall_not_mem` to be introduced here,
      because it is needed in SAMARKAND!

@@ -4,11 +4,11 @@ import Game.Metadata
 World "Vieta"
 Level 7
 
-Title "" -- "Verzweigung"
+Title "Verzweigung"
 
 Introduction "
-Ihr hört aus der Ferne Kampfgeräusche.  Vieta scheint nach wie vor nicht beunruhigt.
-Er gibt euch noch eine Aufgabe.
+遠くから戦闘音が聞こえてきます。Vietaは相変わらず動じていないようです。
+彼はあなたにさらなる課題を与えます。
 "
 
 open Function Set Nat
@@ -16,19 +16,19 @@ open Function Set Nat
 Statement {A : Type} (f : ℕ → A) :
     ∃ g : ℤ → A, ∀ n : ℕ, (f n = g n) := by
   Hint "
-    **Robo**:  Hier brauchst du wahrscheinlich `toNat`:  ist `n : ℤ` eine ganze Zahl,
-       ist `n.toNat : ℕ` dieselbe Zahl, aber aufgefasst als natürliche Zahl.
+    **Robo**: おそらくここでは`toNat`が必要でしょう: `n : ℤ`が整数の場合、
+       `n.toNat : ℕ`は同じ数ですが、自然数として扱われます。
 
-    **Du**:  Wie?  Was ist denn dann z.B. `(-1).toNat`??
+    **あなた**: え？例えば`(-1).toNat`は何になるの？
 
-    **Robo**:  Keine Ahnung.  Was ich meinte, ist natürlich:  *falls `n ≥ 0` ist*,
-               dann ist `n.toNat` immer noch „dieselbe“ Zahl.
+    **Robo**: 分かりません。私が言いたかったのは、*`n ≥ 0`の場合*、
+               `n.toNat`は依然として「同じ」数だということです。
     "
-  Hint (hidden := true) "**Robo**: Du könntest eine stückweise Funktion mit `if 0 ≤ n then ... else ...`
-  definieren."
+  Hint (hidden := true) "**Robo**: `if 0 ≤ n then ... else ...`を使って区分的に関数を
+  定義できます。"
   let g : ℤ → A := fun n ↦ if (0 ≤ n) then f n.toNat else f 0
-  Hint (strict := true) "**Robo**: Jetzt kannst du dein `g` mit `use` einsetzen und
-  sehen, ob deine Definition gut war."
+  Hint (strict := true) "**Robo**: これで`use`を使って`g`を適用し、
+  あなたの定義が良かったか確認できます。"
   use g
   intro n
   simp [g] -- TODO: There's a tiny bit magic in this step.

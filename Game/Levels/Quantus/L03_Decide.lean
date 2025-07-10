@@ -8,39 +8,36 @@ Title "" -- ""
 
 Introduction
 "
-Offenbar versuchen sich die Formalosophinnen auf ein weiteres Problem zu einigen, dass sie euch präsentieren könnten.
-Nach einer Weile kristallisieren sich zwei Lager heraus.
-Ihr hört abwechselnd die Rufe „Even“ und „Odd“. Deshalb zeigt dir Robo
-vorsichtshalber schon einmal die entsprechende Definition:
+どうやらフォルマロソフィストたちは、あなたたちに提示できる別の問題について合意しようとしているようです。
+しばらくすると、二つの陣営がはっきりしてきました。
+「偶数」と「奇数」という交互の叫び声が聞こえます。ロボは念のため、対応する定義を先に示しています：
 
 ```
 def Even (n : ℕ) : Prop := ∃ r, n = r + r
 ```
 
-Bevor er zu `Odd` weitergehen kann,
-taucht von irgendwo aus der Menge folgendes Papier auf:
+彼が`Odd`について話そうとする前に、
+どこからともなく群衆の中から次の紙切れが現れました：
 "
 
 Statement : Even 42 := by
   Hint "
-    **Robo**: Moment! Dafür brauchst du die Definition gar nicht!
+    **ロボ**: 待って！そのためには定義すら必要ないよ！
 
-    **Du**: Das ist ja irgendwie trivial…
+    **あなた**: これはどういうわけか自明だな…
 
-    **Robo**: Erinnerst du dich? `decide` kann alle Aufgaben lösen, bei denen es einen
-    einfachen Algorithmus gibt um die Wahrheit zu bestimmen.
-    Aussagen zu konkreten Zahlen fallen meistens in diese Kategorie!
+    **ロボ**: 覚えてる？`decide`は、真偽を決定する簡単なアルゴリズムがある問題ならすべて解けるんだ。
+    具体的な数についての命題は大抵このカテゴリに入るよ！
   "
   decide
 
 Conclusion
 "
-**Du**: Was kann denn `decide` noch alles?
+**あなた**: `decide`は他に何ができるの？
 
-**Robo**: Konkret hat hier jemand einen ausführbaren
-Algorithmus angegeben, wie entschieden werden
-soll, ob `Even 42` wahr oder falsch ist. Wenn `decide` also so einen Algorithmus kennt,
-dann kann es die Aufgabe lösen.
+**ロボ**: 具体的には、誰かが`Even 42`が真か偽かを決定する方法について
+実行可能なアルゴリズムを指定しました。`decide`がそのようなアルゴリズムを知っていれば、
+問題を解決できるわけです。
 "
 
 OnlyTactic decide

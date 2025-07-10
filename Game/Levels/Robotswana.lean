@@ -16,8 +16,7 @@ Title "Robotswana"
 Image "images/Robotswana.png"
 
 Introduction "
-Ihr landet auf einem warmen Planeten, und tretet auf eine weite Graslandschaft hinaus.
+あなたたちは暖かい惑星に着陸し、広大な草原に足を踏み入れました。
 
-Nach etwas Umschauen entdeckt Robo Spuren, die von eurem Landeplatz wegführen, zwischen
- vereinzelten Bäumen hindurch. Ihr beratet kurz und beschließt, den Spuren zu folgen.
+少し周りを見回すと、ロボが残した足跡が着陸地点から離れていくのを発見しました。それはまばらな木々の間を通り抜けています。短い相談の後、あなたたちはその足跡を追うことに決めました。
 "

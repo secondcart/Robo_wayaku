@@ -6,7 +6,7 @@ Level 12
 Title ""
 
 Introduction "
-  **Fin**:  Richtig.   Und jetzt lege ich meine Pistazie wieder zurück.
+  **終了**: 正解です。では、ピスタチオを元の場所に戻します。
 "
 
 open Set

@@ -13,17 +13,17 @@ Title "Saturn"
 
 Image "images/Planets/Planet_Orange.png"
 
-Introduction "Diesen Planeten wolltet ihr eigentlich gar nicht ansteuern.
-Aber ihr wart mit den Gedanken nicht ganz bei der Sache.
-Und man darf in Universen nicht unaufmerksam sein, erst recht nicht, wenn man sich nicht auskennt.
-Nun seid ihr bereits zu nah herangeflogen, die Gravitation ist zu stark, und euer regenerativer Antrieb ist gerade im Regenerationsmodus.
+Introduction "実はこの惑星には行きたくなかったのです。
+しかし、あなたは気が散っていました。
+宇宙では注意を怠ってはいけません、特に不慣れな場所では尚更です。
+もう近づきすぎていて、重力が強すぎます。再生可能な推進装置も現在は再生モード中です。
 
-**Du**:  Was ist das denn für eine orange Soße auf diesem Planeten?
+**あなた**: この惑星のオレンジ色の液体は何だ？
 
-**Robo**:  Sieht eher giftig aus.  Oder heiß.
+**ロボ**: 毒々しいですね。あるいは熱いのかも。
 
-**Du**:  Oder beides.  Ich will da wirklich nicht landen!
+**あなた**: あるいは両方か。本当に着陸したくない！
 
-**Robo**:  Ja, ja, ich gebe mir ja schon alle Mühe.  Und schau mal, wie viel Müll hier bereits orbitet!
-Das beste, was wir momentan tun können, ist mit dem Strom zu fliegen.
+**ロボ**: はいはい、最善を尽くしています。見てください、軌道上にどれだけのゴミが浮かんでいることか！
+今できる最善のことは、流れに身を任せることです。
 "

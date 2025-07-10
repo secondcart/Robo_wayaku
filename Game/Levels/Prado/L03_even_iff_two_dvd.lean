@@ -8,9 +8,8 @@ Level 3
 Title ""
 
 Introduction
-"Während ihr Guino durch das Museum folgt, gibt dir Robo weitere Aufgaben.
+"ギノを博物館で追いかけながら、ロボがさらに課題を出してきます。
 "
-
 /---/
 TheoremDoc Nat.even_iff_two_dvd as "even_iff_two_dvd" in "ℕ"
 
@@ -18,7 +17,7 @@ namespace Nat
 
 Statement even_iff_two_dvd {a : ℕ} : Even a ↔ 2 ∣ a := by
   Hint (hidden := true) "
-    **Robo**:  Fang doch noch einmal mit `rw [dvd_iff_exists_eq_mul_left]` an!
+    **ロボ**: まずは`rw [dvd_iff_exists_eq_mul_left]`から始めてみよう！
   "
   Branch
     unfold Even

@@ -12,25 +12,25 @@ Title "Iso"
 Image "images/Iso.png"
 
 Introduction "
-**Du**:  Schau mal, noch ein Planet mit zwei Hochhäusern!
+**あなた**: 見て、また高さが同じ2つのビルがある惑星だ！
 
-**Robo**: Ja, aber die hier sind gleich hoch.  Jetzt weiß ich gar nicht mehr, wo ich landen soll.
+**ロボ**: そうだね。でもどちらに着陸すればいいかわからなくなっちゃった。
 
-**Du**:  Links winken Leute!
+**あなた**: 左側で人々が手を振っているよ！
 
-Also landet ihr links.
-Da Empfang ist aber eher verhalten.
+というわけで左側に着陸しました。
+しかし歓迎はあまり熱心ではありませんでした。
 
-**Isosoph**:  Guten Tag!
-Das ist aber nicht die feine Art, hier mitten in der Menge zu landen!
-Dort drüben hatten wir doch extra einen Landeplatz markiert!
+**イソソフ**: こんにちは！
+こんな人混みの中に着陸するなんてマナーがなっていません！
+あそこに特別に着陸地点をマークしていたのに！
 
-**Robo**:  Entschluldigung!  Ich hatte die Symbolik nicht erkannt.
+**ロボ**: すみません！記号の意味がわかりませんでした。
 
-**Isosoph**: Ist ja nochmal gut gegangen!
-Wir hatten schon gehört, dass ihr ein bisschen anders seid.
-Wir zeigen euch trotzdem unser geniales Transportsystem – das fortschrittlichste Nahverkehrssystem im ganzen Formaloversum!
+**イソソフ**: まあ無事でよかった！
+あなたたちが少し変わっているとは聞いていました。
+それでも私たちの素晴らしい交通システムを見せてあげましょう - フォルマロバース全体で最も先進的な公共交通システムです！
 
-Wie sich heraussstellt, ist einer der besonders fortschrittlichen Aspekte, dass man die Transportkapseln auf diesem Planeten in beide Richtungen verwenden kann.
-Ihr düst ein paar Mal hin und her.
+実際、特に先進的な点の1つは、この惑星では輸送カプセルを双方向に使用できることです。
+あなたたちは何度か行ったり来たりします。
 "

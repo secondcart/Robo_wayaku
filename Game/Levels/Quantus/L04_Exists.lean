@@ -3,24 +3,24 @@ import Game.Metadata
 World "Quantus"
 Level 4
 
-Title "" -- "Gerade/Ungerade"
+Title "Gerade/Ungerade"
 
 Introduction
 "
-Die Rufe „Even“ und „Odd“ aus der Menge sind noch lange nicht verstummt, deshalb
-zeigt dir Robo nochmals die Definitionen:
+群衆からの「偶数」「奇数」の叫び声はまだ消えていません。そのため、
+ロボは再度定義を示してくれます：
 
 ```
 def Even (n : ℕ) : Prop := ∃ r, n = r + r
 ```
 
-und
+そして
 
 ```
 def Odd (n : ℕ) : Prop := ∃ r, n = 2 * r + 1
 ```
 
-Damit erhaltet ihr auch ein weiteres Blatt:
+これであなたたちはさらに1枚の紙を受け取ります。
 "
 
 open Nat
@@ -30,59 +30,55 @@ TheoremDoc Nat.even_square as "even_square" in "ℕ"
 
 Statement Nat.even_square (n : ℕ) (h : Even n) : Even (n ^ 2) := by
   Hint "
-    **Robo**: Wie du oben siehst, ist `Even {n}` dadurch definiert,
-    dass ein `r` existiert so dass `r + r = {n}` ist. Am besten
-    öffnest du diese Definition mit `unfold Even at *` einmal.
-    Dann siehst du besser, was los ist.
+    **ロボ**: 上で見たように、`Even {n}`は`r`が存在して`r + r = {n}`となることで定義されています。
+    この定義を`unfold Even at *`で開くとわかりやすいでしょう。
 
-    **Du**: Was ist mit `decide`?
+    **あなた**: `decide`では？
 
-    **Robo**: `decide` wird nicht funktionieren, da `{n}` keine konkrete sondern
-    eine beliebige Zahl ist. Da musst du schon etwas Arbeit leisten!"
+    **ロボ**: `decide`は機能しません。`{n}`は具体的な数値ではなく任意の数だからです。
+    ここでは実際に作業が必要です！"
   Branch
     unfold Even
     Hint "
-      Robo**: Am besten machst du auch noch `unfold Even at h`, damit du verstehst, was los ist."
+      ロボ**: `unfold Even at h`も行うと状況がより明確になります。"
   unfold Even at *
   Branch
     clear h -- we do that so the hint gets displayed regardless of the presence of additional hyps.
     use n^2/2
-    Hint "Ein verwirrtes murmeln geht durch die Menge.
+    Hint "群衆から困惑したつぶやきが聞こえる。
 
-    **Du**: Warte mal, wieso ist `{n} ^ 2 / 2` überhaupt wieder eine natürliche Zahl?
+    **あなた**: 待って、なぜ`{n} ^ 2 / 2`が自然数になるの？
 
-    **Robo**: Division auf `ℕ` wird in Lean immer abgerundet. Für `{n} = 1` steht da also
+    **ロボ**: Leanでのℕ上の除算は常に切り捨てられます。`{n} = 1`の場合、
 
     ```
     1 ^ 2 = (1 ^ 2) / 2 + (1 ^ 2) / 2
     ```
 
-    was ausgerechnet `1 = 1 / 2 + 1 / 2 = 0 + 0` ist, du bist also auf dem Holzweg!
-    "
+    これは計算すると`1 = 1 / 2 + 1 / 2 = 0 + 0`となり、間違っています！"
   Hint "
-    **Du**: Also von `{h}` weiß ich jetzt, dass ein `s` existiert, so dass `s + s = {n}` …
+    **あなた**: `{h}`から、`s`が存在して`s + s = {n}`となることがわかった...
 
-    **Robo**: Mit `choose s hs using {h}` kannst du dieses `s` tatsächlich einführen."
+    **ロボ**: `choose s hs using {h}`で実際にこの`s`を導入できます。"
   choose s hs using h
   Hint "
-    **Du**: Und jetzt muss ich eine passende Zahl `r` finden, so dass `n ^ 2 = r + r`?
+    **あなた**: 今度は`n ^ 2 = r + r`となる適切な数`r`を見つける必要がある？
 
-    **Robo**: Genau. Wenn du willst, kannst du dir diese Zahl erst einmal mit
-    `let r := …`  zurechtlegen."
+    **ロボ**: その通りです。必要なら`let r := …`でこの数を準備できます。"
   Branch
     rw [hs]
-    Hint "**Robo**: Das geht auch, jetzt musst du der wirlich eine Zahl überlegen."
+    Hint "**ロボ**: それも可能ですが、実際に数を考える必要があります。"
   let r := 2 * s^2
   Hint "
-    **Robo**:  Die Zahl sieht gut aus!  Und jetzt sagst du einfach `use r`.
-    Du hättest natürlich auch gleich `use 2 * s^2` sagen können.
+    **ロボ**: この数は良さそうです！あとは`use r`と言うだけです。
+    最初から`use 2 * s^2`と言っても構いません。
   "
   use r
   Hint (hidden := true) "
-    **Du**: Ah, und jetzt `ring`!
+    **あなた**: あ、そして`ring`！
 
-    **Robo**: Aber zuerst musst du noch mit
-    `rw` `n` durch `{s} + {s}` ersetzen, da `ring` das sonst nicht weiß."
+    **ロボ**: ただし先に`rw`で`n`を`{s} + {s}`に置き換える必要があります。
+    `ring`だけではわからないからです。"
   rw [hs]
   ring
 
@@ -95,4 +91,4 @@ NewHiddenTactic «using»
 
 NewDefinition Even Odd
 
-Conclusion "Applaus!"
+Conclusion "拍手！"

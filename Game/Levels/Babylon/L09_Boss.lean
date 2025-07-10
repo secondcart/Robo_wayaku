@@ -8,9 +8,8 @@ Title ""
 
 Introduction
 "
-Ihr seid noch nicht weit gegangen, da kommt hinter einem Turm plötzlich ein besonders großer Babylonier hervor,
-stellt sich euch in den Weg, schaut euch finster an und fordert in tiefer Stimme einen Beweis der
-folgenden Gleichung.
+まだ遠くまで進んでいないところで、塔の後ろから突然特に大きなバビロニア人が現れ、
+道を塞ぎ、険しい顔で睨みつけながら、次の等式の証明を低い声で要求してきます。
 "
 
 open Finset
@@ -20,7 +19,7 @@ open Robo.NN.Finset -- temporary solution to make correct version of `insert_Icc
 
 
 Statement (m : ℕ) : (∑ i ∈ Icc 0 m, (i : ℚ) ^3) = (∑ i ∈  Icc 0 m, i : ℚ)^2 := by
-  Hint "**Du**: Naja. Das wird schon klappen … "
+  Hint "**あなた**: まあ、きっとうまくいくでしょう…"
   induction m with n n_ih
   · simp
   · rw [← insert_Icc_eq_Icc_add_one_right]
@@ -28,7 +27,7 @@ Statement (m : ℕ) : (∑ i ∈ Icc 0 m, (i : ℚ) ^3) = (∑ i ∈  Icc 0 m, i
       · simp
         rw [n_ih]
         Hint (hidden := true) "
-          **Robo**:  Denk daran, dass wir schon `arithmetic_sum` bewiesen hatten.
+          **ロボ**: `arithmetic_sum`は既に証明済みだということを覚えておいてください。
         "
         rw [arithmetic_sum]
         simp
@@ -38,7 +37,7 @@ Statement (m : ℕ) : (∑ i ∈ Icc 0 m, (i : ℚ) ^3) = (∑ i ∈  Icc 0 m, i
 
 TheoremTab "∑ Π"
 
-Conclusion "Der Babylonier denkt ganz lange nach, und ihr bekommt das Gefühl, dass er gar nie
-aggressiv war, sondern nur eine sehr tiefe Stimme hat.
+Conclusion "バビロニア人は長い間考え込み、あなたは彼が決して攻撃的ではなかったこと、
+ただ非常に低い声を持っていただけだと感じ始めます。
 
-Mit einem kleinen Erdbeben setzt er sich hin und winkt euch dankend zu."
+小さな地震と共に彼は座り込み、感謝の意を込めて手を振ります。"

@@ -5,8 +5,8 @@ Level 3
 Title ""
 
 Introduction "
-  Ihr müsst ein ganzes Stück laufen, um das nächste aufgeschlagene Buch zu finden.
-  Robo hat angefangen, einen roten Faden auszurollen, damit ihr den Weg zurückfindent.
+  次の開いた本を見つけるには、かなり歩かなければなりません。
+  ロボは、帰り道がわかるように赤い糸を巻き始めました。
 "
 
 open Finset
@@ -14,44 +14,44 @@ namespace Nat
 
 Statement (hf : Set.Finite { p : ℕ | Prime p}) : ∃ (a : ℕ), a > 0 ∧ ∀ (p : ℕ), Prime p → p ∣ a := by
   -- tauto -- If we don't insist a > 0, tauto solves this!
-  Hint "**Robo**: Oho!  Das sieht ja ganz interessant aus:
-  Wenn wir annehmen, dass es nur endlich viele Primzahlen gibt,
-  dann gibt es auch eine positive natürliche Zahl, die von jeder Primzahl geteilt wird.
+  Hint "**ロボ**: おお！これは面白そうですね：
+  素数が有限個しかないと仮定すると、
+  すべての素数で割り切れる正の自然数が存在することになります。
 
-  **Du**:  Ja, klingt ein wenig absurd, aber richtig.  Und der Beweis?  Als erste Zeile steht hier
-  `let all_primes := hf.toFinset`.  Ist das in irgendeiner Form sinnvoll?
+  **あなた**: はい、少しばかげているように聞こえますが正しいです。証明は？最初の行に
+  `let all_primes := hf.toFinset`とあります。これは何か意味がありますか？
 
-  **Robo**:  Sehr sinnvoll sogar!
-  Um die Aussage zu zeigen, will man ja sicherlich das Produkt über alle Primzahlen betrachten.
-  Und damit das überhaupt syntaktisch möglich ist, musst du diese Menge aller Primzahlen
-  als `Finset` betrachten.  Die erste Zeile macht genau das:  sie benutzt die Annahme `hf`,
-  um aus `\{ p : ℕ | Prime p} : Set ℕ` eine endliche Teilmenge `\{ p : ℕ | Prime p} : Finset ℕ`
-  zu machen.
+  **ロボ**: 非常に意味があります！
+  この主張を示すためには、すべての素数の積を考える必要があります。
+  そしてこれを構文的に可能にするためには、すべての素数の集合を
+  `Finset`として扱う必要があります。最初の行はまさにそれを行います：仮定`hf`を使って
+  `\{ p : ℕ | Prime p} : Set ℕ`から有限部分集合`\{ p : ℕ | Prime p} : Finset ℕ`
+  を作ります。
 
-  **Du**:  Okay, ich probier das mal.
+  **あなた**: わかりました、試してみます。
   "
   let all_primes := hf.toFinset
   Hint "
-    **Du**:  Und die nächste Zeile?
+    **あなた**: 次の行は？
 
     `all_primes.bubblewrap = blister cong foo`
 
-    Ist die auch noch sinnvoll?
+    これも意味がありますか？
 
-    **Robo**:  Nein, die ist wieder hochgradiger Schwachsinn.
-    Wie gesagt, du willst jetzt sicherlich das Produkt aller dieser Zahlen benutzen.
-    Das Produktzeichen schreibst du als `\\prod`."
+    **ロボ**: いいえ、これはまた非常にナンセンスです。
+  先ほど言ったように、これらの数の積を使いたいでしょう。
+  積記号は`\\prod`と書きます。"
   use ∏ p ∈ all_primes, p
   Hint "
-    **Robo**:  Bravo.
+    **ロボ**: ブラボー。
 
-    **Du**:  Hatten wir nicht eben schon ein paar Sachen gezeigt, die jetzt ziemlich nützlich wäre.
+    **あなた**: 今非常に役立ついくつかのことを以前示したのでは？
 
-    **Robo**: Ups.  Ja, hatten wir, aber habe ich leider nicht abgespeichert.
-    Musst du leider noch einmal rekonstruieren, wie die Argumente gingen.
+    **ロボ**: おっと。はい、しましたが、残念ながら保存していませんでした。
+  議論がどのように進んだかをもう一度再構築する必要があります。
     "
   constructor
-  · Hint "**Robo**:  Hier sollte `Finset.prod_pos` wieder weiterhelfen."
+  · Hint "**ロボ**: ここでは`Finset.prod_pos`が再び役立つでしょう。"
     apply Finset.prod_pos
     intro p
     simp [all_primes]
@@ -62,8 +62,8 @@ Statement (hf : Set.Finite { p : ℕ | Prime p}) : ∃ (a : ℕ), a > 0 ∧ ∀ 
     -- previous lemma would be useful now, but want to practise!
     have hp' : p ∈ all_primes := by
       Hint (hidden := true) "
-        **Robo**: Wenn `simp` hier nicht funktioniert, musst du `simp` vielleicht
-        die Definition von `all_primes` mit auf den Weg geben.  Also `simp [all_primes]`.
+        **ロボ**: ここで`simp`が機能しない場合、`simp`に
+        `all_primes`の定義を教える必要があるかもしれません。つまり`simp [all_primes]`です。
         "
       simp [all_primes]
       assumption
@@ -82,11 +82,11 @@ NewTheorem Set.Finite.toFinset
 NewDefinition Set.Finite
 
 Conclusion "
-  Ihr schlagt einen Gang ein, indem gleich mehere Bücher auf dem Boden liegen.
-  Aber keines ist aufgeschlagen.
-  An der nächsten Kreuzung zweigt wieder einen Gang ab mit mehreren Büchern auf dem Boden.
+  床にいくつかの本が置かれている通路に入ります。
+  しかしどれも開かれていません。
+  次の交差点で、再び床に本が置かれた別の通路が分かれています。
 
-  **Du**:  Ist das vielleicht eine Spur?
+  **あなた**: これはたぶん手がかりですか？
 
-  **Robo**: Folgen wir ihr!
+  **ロボ**: それを追いましょう！
  "

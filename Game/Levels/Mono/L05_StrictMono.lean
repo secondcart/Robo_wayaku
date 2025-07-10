@@ -13,29 +13,29 @@ Statement :
     let f := fun (n : ℤ) ↦ n^3 + (n + 3)
     Injective f := by
   Hint "
-    **Du**: Hmm, das ist etwas schwieriger…
+    **あなた**: うーん、これは少し難しいですね…
 
-    **Robo**: Ich habe gerade auch keine gute Idee.
+    **ロボ**: 私も今は良いアイデアが浮かびません。
 
-    Da hört ihr jemanden aus der Menge flüstern: `StrictMono` …
+    すると観衆の中から誰かが囁きます: `StrictMono`…
 
-    **Robo**:  Ah, ja.  Es gibt da dieses Lemma `StrictMono.injective`:
-    jede strikt monotone Abbildung ist injektiv.
-    Und es gibt auch jede Menge Lemmas, mit denen man zeigen kann, dass Abbildungen monoton sind.
-    Zum Beispiel:
+    **ロボ**: ああ、そうですね。`StrictMono.injective`という補題があります:
+    厳密単調な写像はすべて単射です。
+    そして写像が単調であることを示すための補題もたくさんあります。
+    例えば:
 
-    `StrictMono.add`  – die Summe zweier strikt monotoner Abbildungen ist wieder strikt monoton
+    `StrictMono.add` - 2つの厳密単調写像の和は再び厳密単調です
 
-    `Odd.strictMono_pow` – für ungerades `n` ist `x ↦ x ^ n` strikt monoton
+    `Odd.strictMono_pow` - 奇数の`n`に対して`x ↦ x ^ n`は厳密単調です
 
-     Wollen wir es damit einmal versuchen?"
-  Hint (hidden := true) "**Robo**: `apply` ist, wonach du suchst."
+    これで試してみましょうか？"
+  Hint (hidden := true) "**ロボ**: `apply`が使えますよ"
   Branch
     intro a b
-    Hint "**Robo**: Ich glaube, dieser Weg ist zu steinig. Fang lieber nochmals von vorne an!"
+    Hint "**ロボ**: この方法は難しすぎるようです。最初からやり直した方が良さそうです！"
   Branch
     intro a b h
-    Hint "**Robo**: Ich glaube, dieser Weg ist zu steinig. Fang lieber nochmals von vorne an!"
+    Hint "**ロボ**: この方法は難しすぎるようです。最初からやり直した方が良さそうです！"
   apply StrictMono.injective
   apply StrictMono.add
   · Branch
@@ -44,13 +44,13 @@ Statement :
       --exact Odd.strictMono_pow h_odd
       exact h_odd.strictMono_pow
     apply Odd.strictMono_pow
-    Hint (hidden := true) "**Du**: `Odd 3`. Ist das nicht eine Trivialität? Warte mal!"
+    Hint (hidden := true) "**あなた**: `Odd 3`。これは自明じゃないですか？ちょっと待って！"
     decide
-  · Hint "**Du**: Ha! Und dieser Teil geht jetzt vermutlich wieder ganz elementar."
+  · Hint "**あなた**: はっ！そしてこの部分はおそらくまた初等的に解けるでしょう"
     Hint (hidden := true) "
-      **Du**: Oder …?
+      **あなた**: それとも…？
 
-      **Robo**: Doch, doch. Schau mal mit `unfold` in die Definition von `StrictMono` hinein.
+      **ロボ**: いえいえ、できますよ。`unfold`で`StrictMono`の定義を覗いてみてください
     "
     intro a b
     simp

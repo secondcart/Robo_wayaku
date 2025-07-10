@@ -7,68 +7,67 @@ Title ""
 
 Introduction
 "
-  Ihr wandert weiter von Turm zu Turm.  Schließlich bleibst du an einem Turm stehen,
-  der dir seltsam vorkommt.  Nachdem ihr einmal um ihn herumgelaufen seid, weißt du auch, warum:
-  Es fehlt ein Eingang.  Immerhin findet ihr eine Bodenplatte mit folgender Inschrift.
+  あなたは塔から塔へとさらに歩き続けます。ついに、奇妙に感じる塔の前で立ち止まりました。一周してみると、その理由がわかります：
+  入口がありません。しかし、次のような碑文が刻まれた床板を見つけました。
 "
 
 open Finset
 
 Statement  (n : ℕ) (hn : 3 ≤ n) : ∑ i ∈ Icc 0 n, (i^3 - 3 * i^2 + 2*i : ℤ ) = ∑ i ∈ Icc 3 n, (i^3 - 3*i^2 + 2*i : ℤ) := by
-  Hint "**Du**: Mal langsam.  Zu zeigen ist:
+  Hint "**あなた**: ゆっくりいこう。示すべきは：
 
   $$
   \\sum_\{i=0}^\{n} (i^3 - 3 i^2 + 2 i)  = \\sum_\{i=3}^\{n} (i^3 - 3 i^2 + 2i)
   $$
 
-  Vermutlich ist der Ausdruck in der Summe einfach $0$ für die ersten drei Werte von $i$ … ja, genau.
-  Und wie formulier ich das jetzt?
+  おそらく、和の中の式は最初の3つのiの値に対して単に0になる…そう、その通りだ。
+  では、これをどう表現すればいい？
 
-  **Robo**: Du könntest `sum_subset` verwenden: ist `I₁ ⊆ I₂`,
-  und verschwindet der Ausdruck in der Summe auf allen Element von `I₁`, die nicht in `I₂` liegen,
-  so ist die Summe über `I₁` gleich der Summe über `I₂`.
+  **ロボ**: `sum_subset`を使うといいよ：`I₁ ⊆ I₂`で、
+  和の中の式が`I₁`の要素で`I₂`に含まれないすべての要素に対して0になるなら、
+  `I₁`の和は`I₂`の和に等しい。
   "
   Branch
     apply sum_subset
-    Hint "**Robo**:  Nein, das sieht falschherum aus."
-    Hint (hidden := true) "**Robo**:  Vertausch erst einmal mit `symm` die beiden Seiten der Gleichung."
+    Hint "**ロボ**: いや、それは逆に見えるね。"
+    Hint (hidden := true) "**ロボ**: まず`symm`で等式の両辺を入れ替えて。"
   symm
-  Hint (hidden := true) "**Robo**:  Gut.  Und jetzt `apply sum_subset`."
+  Hint (hidden := true) "**ロボ**: いいね。そして`apply sum_subset`。"
   apply sum_subset
   Hint "
-    **Robo**:  Hier kannst du bestimmt `Icc_subset_Icc_iff` gut gebrauchen.
+    **ロボ**: ここでは`Icc_subset_Icc_iff`が役立つはずだよ。
   "
   · rw [Icc_subset_Icc_iff] -- introduced in PIAZZA
     · omega
     · assumption
   · -- showing that x = 0 or 1 or 2:  see Luna L??
     Hint "
-      **Robo**: Super!  Jetzt musst du nur noch zeigen, was du vorhin gesagt hattest:
-      Der Ausdruck unter der Summe ist für die ersten drei Indizes Null."
+      **ロボ**: 素晴らしい！あとはさっき言ったことを示すだけ：
+      和の下の式は最初の3つのインデックスで0になる。"
     Hint (hidden := true)"
-      **Robo**: Ich schlage vor, du führst erst einmal alle Annahmen ein, bis da nur noch
+      **ロボ**: まずすべての仮定を導入して、
       ```
          i ^ 3 - 3 * i ^ 2 + 2 * i = 0
       ```
-      als Beweisziel steht.
+      が証明目標になるまで進めることを提案するよ。
     "
     Branch
       simp
       intro i h0 h3
-      Hint "**Robo**:  Aus den Annahmen muss ja irgendwie folgen ${i}=0$ oder ${i}=1$ oder ${i}=2$.
-    Vielleicht formulierst du das mit `have` explizit aus."
+      Hint "**ロボ**: 仮定から${i}=0$または${i}=1$または${i}=2$が導かれるはず。
+    おそらく`have`で明示的に表現してみて。"
     intro i h0 h3
-    Hint "**Robo**:  Aus den Annahmen muss ja irgendwie folgen ${i}=0$ oder ${i}=1$ oder ${i}=2$.
-    Vielleicht formulierst du das mit `have` explizit aus."
+    Hint "**ロボ**: 仮定から${i}=0$または${i}=1$または${i}=2$が導かれるはず。
+    `have`で明示的に表現してみて。"
     have h : i = 0 ∨ i = 1 ∨ i = 2 := by
       Hint (hidden := true) "
-        **Robo**:  Irgendeine Kombination von `simp` und `omega` wird das schon lösen.
-        Hat doch auf Luna auch geklappt.
+        **ロボ**: 何らかの`simp`と`omega`の組み合わせで解決するはず。
+        ルナでもうまくいったよ。
       "
       simp at h0 h3
       omega
     Hint (hidden := true) "
-      **Robo**:  Die Annahme {h} kannst du ja jetzt mit `obtain h | h | h  := {h}` in die drei Fälle aufteilen.
+      **ロボ**: 仮定{h}を`obtain h | h | h  := {h}`で3つのケースに分けられるよ。
     "
     obtain h | h | h  := h
     · rw [h]

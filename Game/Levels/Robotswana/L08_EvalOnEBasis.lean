@@ -5,27 +5,27 @@ import Game.Levels.Robotswana.L07_EBasisZeroOffDiag
 World "Robotswana"
 Level 8
 
-Title "" -- "Die Summe der Summe der Summe"
+Title "Die Summe der Summe der Summe"
 
 Introduction
 "
-Ihr findet nochmals einen Hinweis, aber in der Eile verliert ihr die Fährte.
-Du bist inzwischen sehr durstig.
-Während Robo die nähere Umgebung absucht, setzt du dich erschöpft hin und
-starrst unter der warmen Sonne etwas beduselt auf den Pergamentfetzen.
+再び手がかりを見つけましたが、急いでいるうちに道を見失いました。
+あなたは今、とても喉が渇いています。
+ロボが周辺を探している間、あなたは疲れ果てて座り込み、
+暖かい日差しの中で少しぼんやりと羊皮紙の切れ端を眺めています。
 "
 
-Conclusion "**Du**: Na endlich.
+Conclusion "**あなた**: やっとだ。
 
-Robo reicht dir eine Flasche Wasser.
+ロボがあなたに水の入ったボトルを手渡す。
 
-**Du**: Wo hast du die denn auf einmal her?
+**あなた**: いったいどこから手に入れたの？
 
-**Robo**: Trick 17.
+**ロボ**: トリック17だよ。
 
-**Du**:  Und hast du die Fährte wiedergefunden?
+**あなた**: それで、道は見つかった？
 
-**Robo**:  Ja, komm mit! Da hinten hab ich etwas gesehen."
+**ロボ**: ああ、ついてきて！あそこに何か見えたんだ。"
 
 open Nat Matrix StdBasisMatrix Finset
 
@@ -36,9 +36,9 @@ Statement Matrix.eq_sum_apply_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[�
     (h₁ : ∀ A B, f (A * B) = f (B * A))
     (A : Mat[n,n][ℝ]) :
     f A = ∑ i : Fin n, (A i i) * f (E i i) := by
-  Hint "**Du**: Was das wohl jetzt soll …?
+  Hint "**あなた**: これはいったい…？
 
-  Du kritzelst einen bisschen herum.
+  あなたは少し落書きをする。
 
   $$
   \\begin\{aligned}
@@ -49,65 +49,58 @@ Statement Matrix.eq_sum_apply_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[�
   \\end\{aligned}
   $$
 
-  **Du**: Ja, so könnte das gehen.  Ich schreibe `A` als Summe von Basismatrizen,
-  nutze dann die Linearität, und zuletzt, dass `f` auf den `E i j` mit `i ≠ j` verschwindet.
+  **あなた**: そうか、こうすればいいんだ。`A`を基底行列の和として書き、
+  線形性を利用し、最後に`f`が`i ≠ j`の`E i j`で消えることを使う。
 
-  Vermutlich sollte ich also als erstes das `A` in `f A` als Summe von Basismatrizen
-  schreiben, nicht aber das andere `A` weiter hinten.
+  おそらく最初に`f A`の`A`を基底行列の和として書くべきだ。
 
-  **Robo** (*aus der Ferne*): `nth_rw 1 [ ... ]`! Funktioniert wie `rw`."
-  Hint (hidden := true) "**Du** (*schreiend*): Was meinst du damit?
+  **ロボ** (*遠くから*): `nth_rw 1 [ ... ]`！`rw`のように使えるよ。"
+  Hint (hidden := true) "**あなた** (*叫びながら*): どういうこと？
 
-  **Robo** (*ebenfalls schreiend*): Na, du willst bestimmt `matrix_eq_sum_ebasis A` anwenden, aber mit `nth_rw 1` und nicht mit `rw`.
-  `rw [matrix_eq_sum_ebasis A]` würde beide `A`s ersetzen."
+  **ロボ** (*同じく叫びながら*): `matrix_eq_sum_ebasis A`を使いたいんだろうけど、`rw`じゃなくて`nth_rw 1`で。"
   Branch
       rw [matrix_eq_sum_ebasis A]
-      Hint "**Du**: Hmm, `rw` ist tatsächlich eine schlechte Idee.
-      Das sieht zu kompliziert aus. Lass es mich doch mit `nth_rw` versuchen."
+      Hint "**あなた**: `rw`は良くないな。複雑すぎる。`nth_rw`で試してみよう。"
   nth_rw 1 [matrix_eq_sum_ebasis A] -- Lvl 3
-  Hint "**Du** (*in Gedanken*): Jetzt Linearität nutzen… Und ja nicht an Wasser denken…
-    Auf Babylon gabs genug Wasser… Woran war ich nochmals?"
-  Hint "**Robo** (*von irgendwo*): Das klingt nach `map_sum`.  Glaub nicht, dass wir
-  das auf Babylon gesehen haben, das fantasierst du. Aber `simp` kennt dieses Lemma bestimmt."
+  Hint "**あなた** (*心の中で*): 線形性を使う…そして水のことを考えないように…バビロンには十分な水があった…何をしてたんだっけ？"
+  Hint "**ロボ** (*どこからか*): `map_sum`みたいだね。バビロンでは見なかったと思うけど、想像してるんだろう。でも`simp`はこの補題を知ってるはず。"
   Branch
     simp
   rw [map_sum] -- simp knows this
-  Hint "**Du**: Ah ja, im Zweifelsfall vereinfachen."
+  Hint "**あなた**: ああ、迷ったら簡略化だ。"
   simp
-  Hint "**Robo**: Wie weit bist du jetzt?
+  Hint "**ロボ**: 今どこまで進んだ？
 
-  **Du**: Ich muss noch irgendwie einbringen, dass `f` auf den `E i j` mit `i≠j` verschwindet.
+  **あなた**: `i≠j`の`E i j`で`f`が消えることをどうにかして入れないと。
 
-  **Robo**: Mach doch folgenden Zwischenschritt:
+  **ロボ**: 次の中間ステップをやってみて:
 
   `trans ∑ i, ∑ j, if i = j then (A i j) * f (E i j) else 0`"
   trans ∑ i, ∑ j, if i = j then (A i j) * f (E i j) else 0
-  · Hint "**Robo**: Summe gleich Summe … das gehst du mit `apply congr_arg`, `ext` an."
+  · Hint "**ロボ**: 和は和と等しい…`apply congr_arg`, `ext`で攻めるんだ。"
     apply congr_arg
     ext i
-    Hint (hidden := true) "**Du**: Vielleicht gleich nocheinmal?"
+    Hint (hidden := true) "**あなた**: もう一度やる？"
     apply congr_arg
     ext j
-    Hint "**Du**: Und jetzt Fallunterscheidung zu `{i} = {j}`…"
-    Hint (hidden := true) "**Robo**: `by_cases` war das, genau!"
+    Hint "**あなた**: そして`{i} = {j}`で場合分け…"
+    Hint (hidden := true) "**ロボ**: `by_cases`だよ、そう！"
     by_cases h₂ : i = j
-    · Hint "**Robo**: Hier ist `if_pos {h₂}` nützlich."
+    · Hint "**ロボ**: ここは`if_pos {h₂}`が役立つ。"
       rw [if_pos h₂]
-    · Hint "**Robo**: …und hier `if_neg {h₂}`.
+    · Hint "**ロボ**: …そしてここは`if_neg {h₂}`。
 
-      **Du**: Weiß ich doch."
+      **あなた**: 知ってるよ。"
       rw [if_neg h₂]
-      Hint "**Du**: `f (E i j)` ist doch Null, hatten wir doch schon gesehen!"
-      Hint (hidden := true) "**Robo**: Und das hieß `zero_on_offDiag_ebasis`."
+      Hint "**あなた**: `f (E i j)`はゼロだよね、前に見た！"
+      Hint (hidden := true) "**ロボ**: それは`zero_on_offDiag_ebasis`だった。"
       rw [zero_on_offDiag_ebasis]
       · simp
       · assumption
       · assumption
-  · Hint "**Du**: Und ich dachte schon das wär's.
+  · Hint  "**あなた**: もう終わりかと思った。
 
-    **Robo**: Fast, da ist noch die zweite Hälfte des `trans`-Befehls oben. Diese Hälfte
-    ist ganz einfach.
-    "
+    **ロボ**: ほぼ、`trans`コマンドの後半が残ってる。これは簡単だ。"
     simp
 
 -- TODO: Where to introduce it? It is for additive `f : A →+ B`, so Babylon might not be ideal

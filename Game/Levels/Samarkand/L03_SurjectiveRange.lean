@@ -4,7 +4,7 @@ import Game.Levels.Samarkand.L02_ImageMap
 World "Samarkand"
 Level 3
 
-Title "" -- "Range of Surjection"
+Title "Range of Surjection"
 
 
 Introduction ""
@@ -13,13 +13,13 @@ open Function Set
 
 Statement {A B : Type} {f : A → B} : Surjective f ↔ range f = univ := by
   Hint "
-    **Robo**:  Hier ist `range f` die gesamte Bildmenge von `f`:
+    **ロボ**: ここで`range f`は`f`の全画像集合です:
     ```
       range f = \{f a | a : A}
               = \{  b | ∃ a, f a = b}
     ```
-    Das ist also im wesentlichen eine andere Schreibweise für `f '' univ`.
-    Um damit zu arbeiten, ist `mem_range` ganz nützlich:
+    これは基本的に`f '' univ`の別の書き方です。
+    これを使うには`mem_range`が便利です:
     ```
     x ∈ range f ↔ ∃ a, f a = b
     ```
@@ -34,14 +34,14 @@ Statement {A B : Type} {f : A → B} : Surjective f ↔ range f = univ := by
   example : range f = f '' univ := by
     simp   -- (rfl fails)
   -/
-  Hint (hidden := true)  "**Robo**: Ich würde mal mit `consturctor` anfangen."
+  Hint (hidden := true)  "**ロボ**: `consturctor`から始めてみましょう。"
   Branch
     symm
     apply eq_univ_iff_forall  -- will be introduced in PIAZZA (TODO)
   constructor
   · intro hf
     Hint (hidden := true) "
-      **Robo**: Ist nicht wieder eine Gleichheit von Mengen zu zeigen? Also `ext`.
+      **ロボ**: また集合の等式を示す必要がありますね？つまり`ext`です。
       "
     ext b
     Branch
@@ -67,12 +67,12 @@ TheoremDoc Set.mem_range as "mem_range" in "Function"
 NewTheorem Set.mem_range
 
 Conclusion "
-  **Arapuka**:  Auch schön.
+  **アラプカ**: これもきれいですね。
 
-  **Robo**:  Hast du eigentlich den ganzen Planeten hier bemalt?
+  **ロボ**: ところで、あなたはこの惑星全体を絵で埋め尽くしたんですか？
 
-  **Arapuka**:  Nein.  Das ist eine Aufgabe für Generationen.
-  Die ersten Musterelement hat mein Urururur…opa geprägt.
-  Ich weiß gar nicht genau, wie viele Generationen ich zurückgehen muss.
-  Und erst recht nicht, woher das Urmuster kam.
+  **アラプカ**: いいえ。これは世代を超えた課題です。
+  最初の模様要素は私の高祖祖父が刻みました。
+  実際に何世代遡ればいいのか正確には分かりません。
+  ましてや、原初の模様がどこから来たのかなどなおさらです。
 "

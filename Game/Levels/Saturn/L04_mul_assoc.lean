@@ -5,29 +5,28 @@ Level 4
 
 Title ""
 
-Introduction "Noch ein Funkspruch."
+Introduction "また無線信号が届いた。"
 
 namespace MvPolynomial
 
 Statement (a b c : MvPolynomial (Fin 4) ℕ ) : a * b * c = a * (b * c) := by
-  Hint "**Robo** Hier könntest du `mul_assoc` verwenden.  Oder *wieder* `ring` …"
+  Hint "**ロボ** ここでは `mul_assoc` を使うといいよ。あるいは *また* `ring` でも…"
   ring
 
 Conclusion "
-  Wieder ein 👍.
+  またまた 👍 だ。
 
-  **Du**: Aber warte mal, diesmal waren die Koeffizienten doch in `ℕ`!
-  Das ist doch gar kein Ring, und auch Polynome mit Koeffizienten in `ℕ` bilden keinen Ring.
+  **あなた**: でも待って、今回は係数が `ℕ` だったよね！
+  これは環じゃないし、`ℕ` を係数とする多項式も環を成さないよ。
 
-  **Robo**: Mag sein.  Aber `ring` funktioniert sogar für sogenannte Halbringe.
+  **ロボ**: そうかもね。でも `ring` は半環と呼ばれるものでも使えるんだ。
 
-  **Du**: So so …
+  **あなた**: へえ…
 
-  Der anonyme möchte Funker wissen, ob ihr bereit seid für das End Game,
-  oder ob ihr lieber noch ein paar Runden um seinen Planeten kreisen wollt.
+  匿名のファンカーは、エンドゲームの準備ができているか、
+  それとも彼の惑星を何周か回りたいか知りたがっている。
 
-  „Bereit” funkt Robo zurück.
-
+  「準備OK」とロボが返信した。
 "
 
 NewTactic ring

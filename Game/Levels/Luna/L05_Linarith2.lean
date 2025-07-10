@@ -9,31 +9,31 @@ Level 5
 Title ""
 
 Introduction "
-  **Lina:** Nochmal dieselbe Frage, aber jetzt in ℝ!
+  **リナ:** 同じ質問をもう一度、今度はℝで！
 "
 
 Statement (l m n x : ℝ) (h₁ : l ≤ m) (h₂ : m ≤ n) : l ≤ x ∧ x ≤ n → ¬ (m ≤ x ∧ x ≤ n) → x ≤ m := by
   Hint "
-    **Du** (*zu Robo*):  Hier komme ich weder mit `omega` noch mit `linarith` weiter.
+    **あなた** (*ロボへ*): ここでは`omega`も`linarith`も使えません。
 
-    **Robo**:  Ich glaube, du musst `linarith` nur etwas auf die Sprünge helfen.
-    Lös am besten erst einmal ganz kanonisch die beiden Implikationen mit `intro` auf.
+    **ロボ**: `linarith`に少し手助けが必要なようです。
+    まずは標準的に、2つの含意を`intro`で解きましょう。
   "
   intro hn hx
   Hint "
-    **Robo**:  Und jetzt machst du die Annahme `{hx}` ein bisschen lesbarer.
-    Probier vielleicht einmal `push_neg at {hx}`?
+    **ロボ**: そして、仮定`{hx}`をもう少し読みやすくします。
+    `push_neg at {hx}`を試してみては？
   "
   push_neg at hx
   Hint "
-    **Robo**:  Mmm … `{hx} : m ≤ x → n < x` sieht immer noch suboptimal aus.
-    Aber wir wissen ja, was `→` bedeutet – probier mal ein `rw` mit `imp_iff_or_not`!
+    **ロボ**: うーん… `{hx} : m ≤ x → n < x`はまだ最適ではありません。
+    しかし、`→`の意味はわかっていますね。`imp_iff_or_not`で`rw`してみましょう！
   "
   --linarith (config := {splitNe := true, splitHypotheses := true}) -- fails
   rw [imp_iff_or_not] at hx
   Hint "
-    **Robo**:  Okay.  Das ist besser. Und jetzt kannst du `{hx}` noch mit `obtain` in die
-    beiden Bestandteile aufspalten.
+    **ロボ**: よし。これで良くなりました。そして、`{hx}`を`obtain`で
+    2つの部分に分割できます。
   "
   --linarith (config := {splitNe := true, splitHypotheses := true}) -- fails
   obtain hx | hx := hx

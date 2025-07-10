@@ -9,15 +9,15 @@ Title "Ciao"
 Image "images/Robo/Spacecraft.png"
 
 Introduction "
-**Du**:  Kann es sein, dass wir jetzt alle Planeten in dieser Ecke dieses Universums besucht haben?
+**あなた**: この宇宙のこの辺りの惑星は全部訪れたんじゃないかな？
 
-**Robo**:  Ja, sieht so aus.
+**ロボ**: そうみたいだね。
 
-**Du**:  Was machen wir jetzt?
+**あなた**: これからどうする？
 
-**Robo:** Keine Ahnung.
+**ロボ**: さあ、わからないな。
 
-Nach einer Weile …
+しばらくして…
 
-**Robo:** Du, schau mal, hier ist eine Nachricht reingekommen.
+**ロボ**: ねえ、見て。メッセージが届いてるよ。
 "

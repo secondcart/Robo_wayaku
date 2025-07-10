@@ -9,30 +9,30 @@ Title "Euklid"
 Image "images/Librarian.png"
 
 Introduction "
-  **Robo**:  Dieser Planet sieht aus wie ein Labyrinth.
+**ロボ**: この惑星は迷路のように見えます。
 
-  **Du**:  Oder wie eine Irrgarten.
+**あなた**: それとも迷宮みたいですね。
 
-  Ihr fliegt langsam näher.
+ゆっくりと近づいていきます。
 
-  **Robo**:  Das ist ein Bibliothek!
-  Die schauen wir uns auf jeden Fall genauer an.
-  Aber ich weiß gar nicht, wo ich landen soll.
+**ロボ**: これは図書館だ！
+絶対に詳しく見てみよう。
+でもどこに着陸すればいいかわからない。
 
-  **Du**: Dort vielleicht?  Sieht aus wie ein kleiner Lesesaal.  Schaffst du das?
+**あなた**: あそこはどう？小さな閲覧室みたい。できる？
 
-  Robo schafft das.  Ihr steigt aus und seht euch um.
+ロボはなんとか着陸に成功。降りて周りを見回す。
 
-  Die Regale sind meterhoch, und alle dicht gefüllt mit Büchern in dicken Einbänden.
-  Du ziehst wahllos eines heraus, blätterst eine Seite auf, und liest folgendes:
+棚は何メートルも高く、すべて分厚い装丁の本でぎっしり詰まっている。
+無作為に一冊取り出し、ページを開くと次のような文章が目に入る：
 
-  `∆≚′⬙₇⼀⢦⽪⅓⫕⽭₠∘⑯⫂⢐♜⍇⮉⊟⎧ⶤ⒍≧⊟☸⩋⇪Ⓟ⩙▥ⵀ⮟⪳⃎━⿩❐⠡ⴝ⸑⇏⮉⃣◹⪆⾗⼰┰⛦≇⺝␜ⴊ⬟⾌◊⁋Ⰽⱇⷄ⤟₾⽬⟯Ⳗ⧭⊸⵹⾚℡⾄⢏⨊♂⼭⠻ⴲΩ⮆♔⡌⎧≎⬌⍙┈✟⽉ₗ✜≞ …`
+`∆≚′⬙₇⼀⢦⽪⅓⫕⽭₠∘⑯⫂⢐♜⍇⮉⊟⎧ⶤ⒍≧⊟☸⩋⇪Ⓟ⩙▥ⵀ⮟⪳⃎━⿩❐⠡ⴝ⸑⇏⮉⃣◹⪆⾗⼰┰⛦≇⺝␜ⴊ⬟⾌◊⁋Ⰽⱇⷄ⤟₾⽬⟯Ⳗ⧭⊸⵹⾚℡⾄⢏⨊♂⼭⠻ⴲΩ⮆♔⡌⎧≎⬌⍙┈✟⽉ₗ✜≞ …`
 
-  **Du**:  Robo, hast du eine Idee, was das ist?
+**あなた**: ロボ、これが何かわかる？
 
-  **Robo**:  Ich glaube, Dschibberisch ist der Fachausdruck.  Also nein, keine Ahnung.
+**ロボ**: 専門用語で「デジベリッシュ」って言うんだと思う。だから、わからない。
 
-  Ihr schaut euch noch ein paar andere Bücher an, aber überall steht ähnlicher Zeichensalat.
-  Auch bei den Büchern auf den Gängen sieht es nicht besser aus.
-  Da entdeckt ihr ein Buch, das aufgeschlagen auf der Erde liegt.
+他の本もいくつか見てみるが、どこも似たような文字の羅列。
+廊下にある本も状況は変わらない。
+そんな中、地面に開いたまま置かれている一冊の本を見つける。
 "

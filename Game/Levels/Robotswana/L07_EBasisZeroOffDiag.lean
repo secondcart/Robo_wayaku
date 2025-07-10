@@ -3,18 +3,17 @@ import Game.Levels.Robotswana.L06_EBasisEqOnDiag
 World "Robotswana"
 Level 7
 
-Title "" -- "Desinteresse"
+Title "Desinteresse"
 
 Introduction
 "
-Gleich neben dem Baum findest du noch eine Notiz, in der groß `E i j` durchgestrichen ist.
+木のすぐ横に、大きく`E i j`と書かれたメモが線で消されているのを見つけました。
 
-**Du**: Soll wohl heißen: `E i j` mit i ≠ j interessieren uns nicht.
+**あなた**: つまり、i ≠ jの場合の`E i j`は興味がないということでしょう。
 
 "
 
-Conclusion "Die Spuren wirken mittlerweile viel frischer und ihr folgt ihnen schneller und
-unvorsichtiger als zuvor."
+Conclusion "足跡はますます新鮮に見え、あなたは以前よりも速く、そして無防備にそれらを追いかけています。"
 
 open Nat Matrix StdBasisMatrix
 
@@ -34,29 +33,29 @@ Statement Matrix.zero_on_offDiag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[ℝ]
     -- match the first goal and proof state
     -- of an incorrect attempt further below!
   Branch
-    Hint "**Robo**: Wie könnten wir denn hier `{h₁}` verwenden?
+    Hint "**ロボ**: ここで`{h₁}`をどう使えるでしょうか？
 
-    **Du**: Wie wär's, wenn wir diesmal `E i j` als Produkt `E i j * E j j` schreiben?
+    **あなた**: 今回は`E i j`を積`E i j * E j j`と書いてみたらどうでしょう？
 
-    **Robo**:  Wieso gerade so?
+    **ロボ**: なぜそうするのですか？
 
-    **Du**: Wenn ich in diesem Produkt die Faktoren vertausche, erhalte ich Null!  Hatten wir doch auch schon, `E.mul_of_ne` oder so etwas."
-    Hint (hidden := true) "**Robo*: Wie du meinst. Dann probier doch am besten `trans f (E i j * E j j)`."
+    **あなた**: この積で因子を入れ替えるとゼロになります！`E.mul_of_ne`のようなものでしたよね。"
+    Hint (hidden := true) "**ロボ**: そうですか。では`trans f (E i j * E j j)`を試してみてください。"
     trans f (E i j * E j j)
-    · Hint (hidden := true) "**Du**: Ehm, das sehe ich einfach von der Definition.
+    · Hint (hidden := true) "**あなた**: ええと、これは定義から明らかです。
 
-      **Robo**: Vergiss nicht `unfold E`, oder sag `simp`, dass es die Definition von `E` benutzen soll (`simp [E]`)."
+      **ロボ**: `unfold E`を忘れずに、または`E`の定義を使用するように`simp`に伝えてください(`simp [E]`)。"
       simp [E]
-    · Hint "**Robo**: Und hier wolltest du jetzt kommutieren?
+    · Hint "**ロボ**: ここで可換にしたいのですか？
 
-      **Du**: Genau!"
+      **あなた**: その通りです！"
       Branch
         rw [E.mul_of_ne] -- (***)
         -- Would ideally like to already trigger a warning here, but
         -- first goal and proof state are identical to first proof
         -- reached in a correct solution (see (***) in first Branch above)
         simp
-        Hint "**Robo**:  Oh. Das sieht falsch aus."
+        Hint "**ロボ**: おや。これは間違っているようです。"
       rw [h₁]
       rw [E.mul_of_ne] -- Lvl 2
       · simp

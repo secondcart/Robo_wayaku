@@ -7,8 +7,8 @@ Level 4
 Title ""
 
 Introduction
-"Guino wirkt inzwischen ein wenig irritiert, dass ihr gar keinen Augen für sein tolles Museum habt.
-Er fühlt sich ignoriert. Um eure Aufmerksamkeit zu bekommen, gibt er euch folgende Aufgabe.
+"ギノは、あなたたちが彼の素晴らしい博物館に全く目を向けていないことに、少し困惑している様子です。
+彼は無視されていると感じています。あなたたちの注意を引くために、彼は次の課題を出します。
 "
 
 namespace Nat

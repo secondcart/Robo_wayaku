@@ -24,24 +24,20 @@ Image "images/Implication.png"
 
 Introduction
 "
-Zurück im Raumschiff macht ihr euch auf den Weg zu einem benachbarten Planeten, der ebenfalls
-bewohnt zu sein scheinen.
+宇宙船に戻り、あなたは近くの惑星へと向かいます。そこにも生命が存在するようです。
 
-**Du**: Ich habe immer noch das Gefühl, dass ich die Aufgabe von Königin *Logisinde*
-ohne `tauto` nicht hätte lösen können.
-Kamen in der Aufgabe nicht auch Implikationen vor?
+**あなた**: ロジシンデ女王からの課題を`tauto`なしで解けなかった気がする。
+あの課題には含意も含まれていたよね？
 
-**Robo**: Vielleicht haben wir ja auf dem Planeten *Implis*, den wir gerade ansteuern,
-Gelegenheit, noch etwas dazuzulernen. Festhalten bitte …
+**ロボ**: 今向かっている惑星「インプリス」で、さらに学ぶ機会があるかもしれません。しっかりつかまってください…
 
-Und damit leitet Robo den Landeanflug ein.
+そう言うと、ロボは着陸態勢に入りました。
 
-Implis scheint ein riesiger Tagebau zu sein.
-Überall verlaufen Förderbänder, kreuz und quer, aber die meisten stehen still.
-Ein schüchterner Operationsleiter erwartet Euch bereits.
+インプリスは巨大な露天掘りのようで、至る所にベルトコンベアが走っていますが、ほとんどが止まっています。
+恥ずかしそうな作業責任者がすでに待ち構えていました。
 
-**Operationsleiter**: Ihr kommt mir gerade recht! Ich habe schon gehört. Echte Mathematiker!
-Wisst Ihr, wir fördern hier Wahrheitswerte. Und dabei muss man höllisch aufpassen.
-Ein Fehler, und alles bricht zusammen. Aber ich bin sehr vorsichtig. Ich sage immer:
-Lieber Stillstand als Untergang!
+**作業責任者**: ちょうど良かった！聞いていますよ。本物の数学者ですね！
+ここでは真理値を採掘しています。そして非常に注意が必要です。
+ひとつ間違えれば、すべてが崩れます。でも私はとても慎重です。いつも言っています：
+停止してもいい、崩壊するよりはましだ！
 "

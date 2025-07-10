@@ -13,22 +13,22 @@ open Function Set
 -- Presumably needs hints!!
 Statement {A B : Type} [hA : Nonempty A] (f : A → B ) : ∀ b : B, ∃ a : A, f a = b ∨ ¬ ∃ a' : A , f a' = b   := by
   Hint "
-    **Du**:  Sind wir jetzt zurück auf Quantus?  Jedenfalls:  Es gibt ein `a` oder es gibt kein `a`, das sieht aus nach einer Tautologie.
+    **Du**:  私たちは今クァンタスに戻ったの？とにかく：`a`が存在するか、存在しないかのどちらかで、これはトートロジーのように見える。
 
-    **Robo**:  Langsam!  Du musst die implizite Klammerung beachten. Ich schreib dir das mal mit mehr Klammern aus:
+    **Robo**:  ゆっくり！暗黙の括弧に注意する必要がある。もっと括弧を付けて書き直してみよう：
     ```
     ∀ b : B, ∃ a : A,
        ( f a = b   ∨   ¬ ∃ a' : A , f a' = b )
     ```
   "
   Hint (hidden := true) "
-    **Robo**:  Vielleicht nimmst du dir als erstes mal mit `obtain` irgendein Element aus `A` her.
-    Du weißt ja, dass es eins gibt.
+    **Robo**:  まず最初に`obtain`を使って`A`から何か要素を取得してみては？
+    要素が存在することはわかっているからね。
   "
   obtain ⟨a₀⟩ := hA
   intro b
   Hint (hidden := true) "
-    **Robo**:  Nun ja, du könntest mit `by_cases` eine Fallunterscheidung machen, ob denn nun `{b}` ein Urbild besitzt oder nicht.
+    **Robo**:  さて、`by_cases`を使って`{b}`が原像を持つかどうかで場合分けしてみたらどうかな。
   "
   by_cases hb : ∃ a' : A, f a' = b
   · obtain ⟨a,ha⟩ := hb

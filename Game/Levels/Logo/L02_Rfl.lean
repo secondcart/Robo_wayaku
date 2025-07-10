@@ -3,28 +3,27 @@ import Game.Metadata
 World "Logo"
 Level 2
 
-Title "" -- "Aller Anfang ist... ein Einzeiler?"
+Title "Aller Anfang ist... ein Einzeiler?"
 
 Introduction
 "
-In der Zwischenzeit hat bereits sich eine lange Schlange Untertanen gebildet, die gern ihren
-Fragen stellen würden. Logisinde winkt den ersten nach vorn. Er räuspert sich.
+その間に、質問をしたい臣下たちの長い列がすでにできていました。ロジシンデが最初の者を手招きします。彼は咳払いをします。
 
-**Untertan**: Warum ist $42 = 42$?
+**臣下**: なぜ`42 = 42`なのですか？
 
-Du schaust ihn fassungslos an.
-Er schreibt es dir wieder auf.
+あなたは呆然とした表情で彼を見ます。
+彼は再びそれを書き留めます。
 "
 
 Statement :
   42 = 42 := by
-  Hint "**Robo**: Ist doch klar. Du musst ihn einfach daran erinnern,
-    dass Gleichheit *reflexiv* ist. Probier mal `rfl`."
+  Hint "**ロボ**: それは明らかです。等式が*反射的*であることを思い出させればいいのです。`rfl`を試してみてください。
+    "
   rfl
 
 Conclusion
 "
-**Untertan**: Ah, richtig. Ja, Sie haben ja so recht. Das vergesse ich immer. Rfl, rfl, rfl …
+**臣下**: ああ、その通りです。はい、まったく正しいです。私はいつもそれを忘れてしまいます。`rfl`、`rfl`、`rfl`…
 "
 
 NewDefinition Eq

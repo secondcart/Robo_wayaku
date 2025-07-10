@@ -6,27 +6,27 @@ Level 11
 Title ""
 
 Introduction "
-**Mem**:  Hey, Fin, wachst machst Du denn da?
+**Mem**: ねえ、Fin、何してるの？
 
-Fin ist der kleinste in der Runde und hat bislang nichts gesagt.
-Und jetzt hat er anscheinend gerade vom Stand nebenan eine Pistazie geklaut.
+Finはグループで一番小さく、今まで何も話していませんでした。
+そして今、隣の屋台からピスタチオを盗んだようです。
 
-**Fin**:  Ist doch nur eine kleine Übung.
+**Fin**: ただの小さな練習だよ。
 
-**Mem**: Was für eine Übung?
+**Mem**: どんな練習？
 
-Fin erklärt sich folgendermaßen.
+Finは次のように説明します。
 "
 
 open Set
 
 Statement (A : Finset ℕ) (a : ℕ) : Finset.erase A a = A \ {a} := by
   Hint "
-    **Du**:  Was bedeutet denn hier jetzt `Finset`?
+    **あなた**: ここでの`Finset`ってどういう意味？
 
-    **Robo**:  Das bedeutet, dass `A` zu den *endlichen* Teilmengen von ℕ gehört.
-    Macht aber für die Frage eigentlich keinen Unterschied.
-    Links steht `A` ohne `a`, rechts steht auch `A` ohne `a`.
+    **Robo**: これは`A`がℕの*有限*部分集合に属することを意味します。
+    でも質問には実は関係ありません。
+    左側には`a`のない`A`、右側にも`a`のない`A`があります。
     "
   ext
   simp

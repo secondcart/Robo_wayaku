@@ -18,24 +18,24 @@ Title "Piazza"
 Image "images/SetTheory.png"
 
 Introduction "
-Wie es aussieht, seid ihr auf einem Handelsplaneten gelandet.
-Überall stehen Händler, die ihre Waren feilbieten.
-Ihr beäugt neugierig ein paar Stände.
-Manches sieht vertraut und essbar aus, vieles nicht.
-Aber alles ist fein säuberlich sotiert.
-Es gibt Körbe mit Blaubeeren (?), Kisten mit roten Gewächsen, die euch an Tomaten erinnern,
-offene Säcke mit kleinen, rosa Sternchen, usw.
+どうやら、あなたたちは交易惑星に着陸したようです。
+至る所に商人が立ち、商品を売りさばいています。
+あなたたちは好奇心でいくつかの屋台を眺めます。
+見慣れた食べ物もあれば、そうでないものもたくさんあります。
+しかし、すべてがきちんと分類されています。
+ブルーベリー(？)の入った籠、トマトを連想させる赤い植物の入った箱、
+小さなピンクの星形が入った開いた袋などがあります。
 
-Ein paar Kinder – oder jedenfalls ein paar recht kleine Formalosophen, die sich wie Kinder zu verhalten – laufen euch fast über die Füße.
-Robo springt zurück, da bemerken sie euch und bleiben stehen.  Sie stellen sich als „Fin“, „Ext“, „Mem“, „Set“ und „Sub“ vor, und wirken neugierig.
+何人かの子供たち――少なくとも子供のように振る舞う非常に小さなフォルマロソフィストたち――があなたの足を踏みそうになります。
+ロボが後ずさりすると、彼らはあなたに気づき立ち止まります。彼らは「フィン」「エクスト」「メム」「セット」「サブ」と名乗り、好奇心旺盛そうです。
 
-**Fin**:  Was macht ihr denn hier?
+**フィン**: ここで何してるの？
 
-**Du**:  Ehm … wir wollten uns nur mal ein bisschen umschauen.
+**あなた**: ええと…ちょっと見て回ろうと思って。
 
-**Set**: Wir sind hier, um etwas Mengentheorie zu lernen.  Unsere Eltern haben uns hier ausgesetzt.
+**セット**: 私たちは集合論を学ぶためにここに来ました。親が私たちをここに置いていったんです。
 
-**Ext**:  Zu Schulungszwecken, sozusagen.
+**エクスト**: 教育目的ってことですね、まあ。
 
-**Du**:  Und, habt ihr schon etwas gelernt?
+**あなた**: で、もう何か学んだことはある？
 "

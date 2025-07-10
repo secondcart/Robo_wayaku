@@ -4,20 +4,20 @@ open Set
 
 World "Samarkand"
 Level 2
-Title "" -- "Bild/Urbild"
+Title "Bild/Urbild"
 
-Introduction "Arapuka diktiert euch noch eine Aufgabe."
+Introduction "アラプカがもう一つ課題を出しています。"
 
 Statement {A B C : Type} (f : A → B) (g : B → C) : image (g ∘ f) = (image g) ∘ (image f) := by
   Hint "
-    **Du**:  Aha!  Ich kann also auch einfach `image` schreiben, wenn ich mir diese Fliegendreck-Schreibweise mit `''` nicht mag?
+    **あなた**: ああ！つまり、この''のような煩わしい記法が嫌なら、単に`image`と書いてもいいんだ？
 
-    **Robo**:  Nein, schau mal genauer hin.   Hier ist `image f` eine Abbildung.
-    Es ist natürlich genau die Abbildung, die eine Teilmenge von `A` auf die entsprechende Bildmenge in `B` wirft, also
+    **ロボ**: いいえ、よく見てください。ここでの`image f`は写像です。
+    これはもちろん、Aの部分集合をBの対応する像集合に送る写像で、
     ```
     image f = fun S ↦ f '' S
     ```
-    Du kannst also `image f` durch `f ''` ausdrücken, aber nicht umgekehrt.
+    つまり`image f`は`f ''`で表現できますが、逆はできません。
   "
 /-
 This is literally true:
@@ -25,25 +25,25 @@ example : image f = fun S ↦ f '' S := by
   rfl
 --/
   Hint (hidden := true) "
-    **Robo**:  Zu zeigen ist die Übereinstimmung von zwei Abbildungen.  Erinnerst du dich an `funext`?
+    **ロボ**: 2つの写像の一致を示す必要があります。`funext`を覚えていますか？
   "
   Branch
     funext
     Hint "
-      **Robo**:  Oh, nein.  Das sieht zu kompliziert aus.  Schreib mal lieber explizit `funext S`.
+      **ロボ**: ああ、いや。これは複雑すぎます。明示的に`funext S`と書いた方がいいです。
       "
   funext S
   Hint (hidden := true) "
-    **Robo**:  Jetzt ist die Gleichheit von zwei Mengen zu zeigen – `ext` heißt das Zauberwort.
+    **ロボ**: 今度は2つの集合の等価性を示す必要があります - `ext`が魔法の言葉です。
     "
   ext c
   Hint (hidden := true) "
-    **Robo**:  Das kann man bestimmt leicht vereinfachen …
+    **ロボ**: これはきっと簡単に簡略化できるでしょう…
   "
   simp
 
 NewDefinition Set.image Set.preimage
 
 Conclusion "
-  **Arapuka**:  Hübsch, hübsch.
+  **アラプカ**: 素敵、素敵。
 "

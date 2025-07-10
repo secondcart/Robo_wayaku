@@ -7,16 +7,16 @@ Title ""
 
 Introduction
 "
-**Ext**:  Ich mag *diese* Gleichung.
+**Ext**: 私は*この*方程式が好きです。
 "
 
 open Set
 
 Statement (A B : Set ℕ) :
     univ \ (A ∩ B) = (univ \ A) ∪ (univ \ B) ∪ (A \ B) := by
-  Hint (hidden := true) "**Robo**: Diesmal kannst du einfach wieder `ext` verwenden."
+  Hint (hidden := true) "**ロボ**: 今回はまた単純に`ext`を使えばいいよ。"
   ext i
-  Hint (hidden := true) "**Robo**: Und jetzt natürlich wieder `simp`."
+  Hint (hidden := true) "**ロボ**: そしてもちろん今度も`simp`だ。"
   simp
   tauto
 
@@ -24,14 +24,13 @@ NewDefinition SDiff
 TheoremTab "Set"
 
 Conclusion "
-  **Du** *(zu Robo)*:  Warum heißt ext eigentlich ext?
+  **あなた** *(ロボに向かって)*: どうしてextってextって言うの？
 
-  **Robo**:  Woher soll ich wissen, woher der Junge seinen Namen hat??
+  **ロボ**: 少年がどこから名前を取ったかなんて、私に分かるわけないでしょう？
 
-  **Du**: Nein, ich meine dieses `ext` hier!
+  **あなた**: いや、ここの`ext`のことだよ！
 
-  **Robo**: Ach so. Das Prinzip, dass zwei Mengen genau dann gleich sind,
-  wenn sie dieselben Elemente besitzen, nennen Logiker *extensionality*.
-  Und daraus haben die Formalosophen wohl *ext* gemacht, weil es ihnen sonst zu lang war.
-
+  **ロボ**: ああそう。2つの集合が同じ要素を持つとき、そしてそのときに限り等しいという原理を、
+  論理学者は*外延性*と呼んでいます。そして形式哲学者たちはおそらく、
+  長すぎるからって*ext*にしたんでしょうね。
 "

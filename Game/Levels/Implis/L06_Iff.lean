@@ -3,42 +3,36 @@ import Game.Metadata
 World "Implis"
 Level 6
 
-Title "" -- "Genau dann, wenn"
+Title "Genau dann, wenn"
 
 Introduction
 "
-**Operationsleiter**: Wir hatten auch mal ein paar Förderbänder, die in beide Richtungen laufen
-konnten. Die hatte ich vorsichtshalber alle abgestellt, weil in den neusten Handbüchern von
-solchen Doppelbändern abgeraten wird. Aber vielleicht sind sie ja unter bestimmten
-Voraussetzungen doch sicher? Was meint Ihr zu diesem Fall?
+**オペレーションマネージャー**: 私たちは以前、両方向に動くことができるいくつかのコンベアベルトを持っていました。最新のマニュアルではこのようなダブルベルトは推奨されていないため、念のためすべて停止させていました。しかし特定の条件下では安全かもしれませんね？この件についてどう思いますか？
 "
 
 Statement (A B : Prop) (mp : A → B) (mpr : B → A) : A ↔ B := by
   Hint "
-    **Robo**: `A ↔ B` ist natürlich Leansch für $A \\iff B$, also genau-dann-wenn.
-    Die Aussage `A ↔ B` besteht also aus zwei Teilen; sie ist als `⟨A → B, B → A⟩` definiert.
+    **ロボ**: `A ↔ B` はもちろんLeanでの $A \\iff B$、つまり「ちょうどそのとき」を表します。
+    この命題 `A ↔ B` は2つの部分から成り立ち、`⟨A → B, B → A⟩` と定義されます。
 
-    **Du**: Also ganz ähnlich wie das UND, `A ∧ B`?
+    **あなた**: つまりANDの `A ∧ B` とよく似ているんですね？
 
-    **Robo**: Genau. Entsprechend kannst du auch hier mit `constructor` anfangen."
+    **ロボ**: その通りです。したがって、ここでも `constructor` から始めることができます。"
   constructor
-  Hint "**Du**: Ah, und die beiden Teile habe ich schon in den Annahmen."
+  Hint "**あなた**: ああ、そしてその2つの部分はすでに前提条件にありますね。"
   assumption
   assumption
 
 Conclusion
 "
-**Operationsleiter**: Okay, das leuchtet mir ein.
+**オペレーションマネージャー**: わかりました、納得です。
 
-**Robo** *(zu dir)*: Übrigens, so wie bei `(h : A ∧ B)` die beiden
-Teile `h.left` und `h.right` heißen,
-heißen bei `(h : A ↔ B)` die beiden Teile `h.mp` und `h.mpr`.
+**ロボ** *(あなたに向かって)*: ところで、`(h : A ∧ B)` の2つの部分が `h.left` と `h.right` と呼ばれるように、
+`(h : A ↔ B)` の2つの部分は `h.mp` と `h.mpr` と呼ばれます。
 
-**Du**: Also `h.mp` ist `A → B`? Wieso `mp`?
+**あなた**: つまり `h.mp` は `A → B` ですか？なぜ `mp` なんですか？
 
-**Robo**: `mp` steht für Modus Ponens. Der Modus ponens ist eine schon in der antiken
-Logik geläufige Schlussfigur, die in vielen logischen Systemen … Ach nee, das wolltest
-du ja nicht hören. Das \"r\" in `mpr` steht für \"reverse\", weil's die Rückrichtung ist.
+**ロボ**: `mp` はモーダスポネンスを表します。モーダスポネンスは古代論理学で既に知られていた推論規則で、多くの論理システムで...あ、いえ、それは聞きたくなかったですよね。「mpr」の「r」は「reverse」を意味し、逆方向だからです。
 "
 
 NewDefinition Iff

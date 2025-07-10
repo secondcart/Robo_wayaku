@@ -7,19 +7,17 @@ import Mathlib.Data.Real.Basic
 World "Robotswana"
 Level 1
 
-Title "" -- "Standardbasis"
+Title "Standardbasis"
 
 Introduction
 "
-Den Spuren folgend, findet ihr ein Stück Pergament, auf dem zuoberst
-eine Notiz steht.
+足跡をたどると、羊皮紙の一片が見つかりました。上部にはメモが書かれています。
 
 ```
 E i j := stdBasisMatrix i j (1 : ℝ)
 ```
 
-Darunter ein bisschen wildes Gekritzel, das aber deutlich mit einer klaren
-Zeile angefangen hat:
+その下には少し乱暴な走り書きがありますが、最初の行ははっきりと書かれています:
 "
 
 open Nat Matrix
@@ -41,51 +39,50 @@ TheoremDoc Matrix.smul_ebasis as "smul_ebasis" in "Matrix"
 
 Statement Matrix.smul_ebasis {n : ℕ} (A : Mat[n,n][ℝ]) (i j) :
     A i j • E i j = stdBasisMatrix i j (A i j) := by
-  Hint "**Du**: Welches Wesen auch immer hier Spuren hinterlassen hat – mir scheint, es mag Matrizen.
-  Jedenfalls sieht `Mat[{n},{n}]` stark nach $({n} \\times {n})$-Matrizen aus.
-  Ich weiß nur nicht mehr, was `Fin {n}` ist.
+  Hint "**あなた**: ここに足跡を残した存在が何であれ、行列が好きなようです。
+  とにかく、`Mat[{n},{n}]`は$({n} \\times {n})$行列のように見えます。
+  ただ、`Fin {n}`が何か思い出せません。
 
-  **Robo**: `Fin {n}` war die Menge $\\\{0,...,n-1\\}$.
-  Die Zeilen- und Spaltenindizes fangen hier also bei $0$ an und nicht bei $1$.
-  Und `stdBasisMatrix i j a` kenne ich zufällig.
-  Das ist die Matrix, die an der Position `(i, j)` den Eintrag `a` hat und sonst überall Null ist.
+  **ロボ**: `Fin {n}`は集合$\\\{0,...,n-1\\}$です。
+  行と列のインデックスはここでは1ではなく0から始まります。
+  そして`stdBasisMatrix i j a`は偶然知っています。
+  これは位置`(i, j)`に要素`a`があり、他はすべて0の行列です。
 
-  **Du**: Und die `E`s sind dann einfach eine Abkürzung für den Fall `a = 1`?
+  **あなた**: そして`E`は`a = 1`の場合の略記ですか？
 
-  **Robo**: So sieht's aus. Und `A i j` ist einfach der Eintrag der Matrix `A` an der Position `(i, j)`.
+  **ロボ**: その通りです。`A i j`は単に行列`A`の位置`(i, j)`の要素です。
 
-  **Du**: Ah, verstehe. Da steht also kein Produkt von Matrizen, sondern nur eine Skalarmultiplikation. Etwas in der Art von …
+  **あなた**: ああ、分かりました。つまりこれは行列の積ではなく、スカラー倍なのですね。こんな感じで...
 
-  Du kritzelst auf das Papier:
+  あなたは紙に走り書きします:
 
   $$
   A_\{i,j} \\cdot
   \\begin\{pmatrix}
-  0 & 0 & 0\\\\
-  1 & 0 & 0 \\\\
+  0 & 0 & 0\\
+  1 & 0 & 0 \\
   0 & 0 & 0
   \\end\{pmatrix}
   =
   \\begin\{pmatrix}
-  0 & 0 & 0\\\\
-  A_\{i,j} & 0 & 0 \\\\
+  0 & 0 & 0\\
+  A_\{i,j} & 0 & 0 \\
   0 & 0 & 0
   \\end\{pmatrix}
   $$
 
-  **Du**: Dann ist das ja mal wieder… …offensichtlich!?
+  **あなた**: それならこれはまた...自明ですね！？
 
-  **Robo**: Ja. Ich denke, wenn du mit `unfold E` anfängst, geht der Rest wie von selbst.
+  **ロボ**: はい。`unfold E`から始めれば、残りは自然に進むと思います。
   "
   unfold E
   simp
 
-Conclusion "**Du**: Und was machen wir jetzt mit dieser „Erkenntnis“?
+Conclusion "**あなた**: そしてこの「発見」をどうするつもりですか？
 
-**Robo**: Keine Ahnung.  Ich speichere das jedenfalls mal als `Matrix.smul_ebasis` ab, falls wir es nochmals
-brauchen.
+**ロボ**: 分かりません。とりあえず`Matrix.smul_ebasis`として保存しておきましょう、また必要になるかもしれません。
 
-Damit folgt ihr weiter der Spur.
+こうしてあなたたちは足跡をさらに追っていきます。
 "
 NewDefinition Matrix.E
 

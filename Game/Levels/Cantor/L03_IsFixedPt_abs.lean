@@ -8,24 +8,24 @@ Title ""
 
 Introduction
 "
-**Du**: Jetzt habe ich aber noch nicht erkannt, was daran „diagonal“ ist.
+**あなた**: でも、これがどう「対角線的」なのかまだ理解できていません。
 
-**Cantor**: Nein?  Na dann pass auf!  Wir machen das jetzt noch einmal  l a n g s a m.
+**カントール**: そうですか？では、ゆっくりと説明しましょう。
 
-Er wühlt wieder in seinem Zylinder.  Ein Kompass.  Eine Violine. Eine Dose Schnupftabak.
+彼は再びシルクハットの中を探ります。コンパス。バイオリン。嗅ぎタバコの缶。
 
-**Cantor**:  Ach nein, wir machen das anders.
+**カントール**: いや、違う方法でやりましょう。
 
-Er greift noch einmal tief in seinen Zylinder hinein,
-und holt einen ganzen Stapel Papier heraus. Den wirft er euch zu.
-Ihr seht euch die Zettel nacheinander an.
+彼はもう一度深くシルクハットに手を伸ばし、
+紙の束を取り出します。それをあなたに投げます。
+あなたはそれらの紙を一枚ずつ見ていきます。
 "
 
 Conclusion "
-  **Cantor**:  Gut gemacht!
+  **カントール**: よくできました！
 
-  Er hat angefangen mit ein paar Kakteen zu jonglieren,
-  aber offenbar verfolgt er dennoch irgendwie, was ihr macht.
+  彼はいくつかのサボテンでジャグリングを始めましたが、
+  どうやらあなたの行動を追っているようです。
 "
 
 open Function Set
@@ -34,27 +34,27 @@ Statement : ∀ (x : ℝ), IsFixedPt (fun (x : ℝ) ↦ |x|) x ↔ 0 ≤ x := by
 -- The function here is simply called `abs` in mathlib,
 -- but let's not introduced too much additional notation
 -- when it's only needed once.
-  Hint "**Robo**: Also `|x|` ist einfach der übliche Betrag der reellen Zahl `x`.
-  Und was `IsFixedPt` bedeutet findest du vermutlich mit `unfold` heraus."
+  Hint "**ロボ**: `|x|`は単に実数`x`の通常の絶対値です。
+  `IsFixedPt`の意味は`unfold`で調べられるでしょう。"
   unfold IsFixedPt
-  Hint "**Du**:  Ähm …
+  Hint "**あなた**: えっと…
 
-  **Robo**:  `IsFixedPt` soll vermutlich “is fixed point” heißen.
-  Jedenfalls bedeutet `IsFixedPt f x` offenbar gerade `f x = x`.
+  **ロボ**: `IsFixedPt`はおそらく「固定点である」という意味でしょう。
+  いずれにせよ、`IsFixedPt f x`は明らかに`f x = x`を意味します。
   "
   intro x
   constructor
-  Hint "**Robo**:  So weit, so gut."
+  Hint "**ロボ**: ここまでは順調です。"
   · intro h
     rw [← h]
     --Branch
     --  positivity
     clear h
-    Hint "**Robo**: `simp` kann man immer mal probieren."
+    Hint "**ロボ**: `simp`を試してみましょう。"
     simp -- only [abs_nonneg]
   · intro h
     -- rw [abs_of_nonneg h]
-    Hint (hidden := true) "**Robo**: `simp` kann man immer mal probieren."
+    Hint (hidden := true) "**ロボ**: `simp`を試してみましょう。"
     simp
     assumption
 

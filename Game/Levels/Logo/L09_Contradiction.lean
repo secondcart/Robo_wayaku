@@ -4,26 +4,26 @@ import Game.Metadata
 World "Logo"
 Level 9
 
-Title "" -- "Aus Falschem folgt vieles."
+Title "Aus Falschem folgt vieles."
 
 Introduction
 "
-Auftritt dritter Querulant.
+三番目の苦情者の登場。
 "
 
 /--  -/
 Statement (n : ℕ) (h : n = 10) (g : n ≠ 10) : n = 42 := by
   Hint "
-    **Du** Wieder ein Widerspruch in den Annahmen?
+    **あなた** また仮定の中に矛盾があるの？
 
-    **Robo**: Ich sehe, du hast langsam den Dreh raus."
+    **ロボ**: だんだんコツがわかってきたみたいだね"
   contradiction
 
 Conclusion
 "
-**Robo**: Gut gemacht. Bei dieser Frage ist auch ein bisschen offensichtlicher,
-worin der Widerspruch besteht: Die Annahme `n ≠ 10` ist genau die Negation von `n = 10`.
-Man muss `≠` immer als `¬(· = ·)` lesen.
+**ロボ**: よくできました。この問題では、矛盾がどこにあるのか少し明白でしたね:
+仮定 `n ≠ 10` は `n = 10` の否定そのものです。
+`≠` は常に `¬(· = ·)` と読む必要があります。
 "
 
 DisabledTactic tauto

@@ -6,18 +6,18 @@ Level 1
 Title ""
 
 Introduction "
-Die Fahrt ist tatsächlich kurz und schmerzlos.
-Und euch wird tatsächlich ein großen Empfang bereitet.
-Nachdem sich die erste Aufregung gelegt hat, werdet ihr aber auch hier mit Aufgaben konfrontiert."
+移動は実際に短く、苦痛もありません。
+そして実際に盛大な歓迎が準備されています。
+最初の興奮が収まった後、ここでも課題に直面することになります。"
 
 open Function
 
 Statement :
     let f := fun (n : ℤ) ↦ n + 1
     Surjective f := by
-  Hint "**Du**: Vermute ich richtig, dass die Definition von `Surjective f` ist: `∀ y, (∃ x, f x = y)`?
+  Hint "**あなた**: `Surjective f`の定義は`∀ y, (∃ x, f x = y)`だと推測していますが、正しいでしょうか？
 
-  **Robo**: Glaub schon.  Du könntest ja mal mit `unfold Surjective` hineinsehen. Musst da aber auch nicht."
+  **ロボット**: そうだと思います。`unfold Surjective`で中身を見ることができます。必ずしも必要ではありませんが。"
   unfold Surjective
   intro y
   use y-1

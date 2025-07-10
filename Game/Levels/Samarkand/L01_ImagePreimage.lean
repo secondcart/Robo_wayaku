@@ -9,10 +9,10 @@ Title "" -- "Bild/Urbild"
 
 
 Introduction "
-**Arapuka**:  Es gibt da auch ein paar Dinge, über die ich schon lange nachdenke.
-Vielleicht könnte ihr mir ja helfen.  Zum Beispiel: …
+**アラプカ**: 私が長い間考えていることがいくつかあります。
+もしかしたらあなたたちが助けてくれるかもしれません。例えば：…
 
-Sie diktiert euch eine Aussage. Robo schreibt sie auf.
+彼女はあなたたちに命題を口述します。ロボがそれを書き留めます。
 "
 
 /---/
@@ -23,18 +23,18 @@ namespace Set
 Statement image_preimage_subset {A B : Type} (f : A → B) (T : Set B) :
     f '' (f ⁻¹' T) ⊆ T := by
   Hint "
-    **Robo**:  Die Notation hier muss ich dir, glaube ich, erklären.
-    Gegeben ist offenbar eine Abbildung `f : A → B`.
-    Für eine Teilmenge `S` von `A` ist
+    **ロボ**: ここの記法について説明する必要があると思います。
+    明らかに写像 `f : A → B` が与えられています。
+    部分集合 `S` の `A` に対する
     ```
     f '' S = \{f a | a ∈ S}
            = \{b | ∃ a ∈ S, f a = b}
     ```
-    ihr Bild unter `f`.  Und für eine Teilmenge `T` von `B` ist
+    は `f` による像です。そして部分集合 `T` の `B` に対する
     ```
     f ⁻¹' T = \{ a | f a ∈ T}
     ```
-    ihr Urbild unter `f`."
+    は `f` による原像です。"
 /- This is literally true:
 example : f '' S = { f a | a ∈ S} := by
   rfl
@@ -43,13 +43,13 @@ example : f ⁻¹' T = { a | f a ∈ T} := by
   rfl
 --/
   Hint (hidden := true) "
-    **Robo:** Um eine Inklusion zu zeigen, nimmst du dir ein Element aus der linken Seite und zeigst, dass es in der rechten liegt.
-    Also fang doch mal mit `intro b` an.
+    **ロボ:** 包含関係を示すには、左辺から要素を取り出し、右辺にあることを示します。
+    まず `intro b` から始めてみましょう。
     "
   intro b
   intro hb
   Hint (hidden := true) "
-    **Robo**:  Um die Annahme `{hb}` in einen elementareren Ausdruck zu überführen, könntest du `simp` anwenden.
+    **ロボ**: 仮定 `{hb}` をより基本的な式に変換するには、`simp` を適用できます。
   "
   simp at hb
   obtain ⟨a, ha₁, ha₂⟩ := hb
@@ -58,4 +58,4 @@ example : f ⁻¹' T = { a | f a ∈ T} := by
 
 NewDefinition Set.fimage Set.fpreimage
 
-Conclusion "**Arapuka**: Schön."
+Conclusion "**アラプカ**: 素晴らしい。"

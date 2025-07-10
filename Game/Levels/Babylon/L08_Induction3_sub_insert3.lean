@@ -13,17 +13,17 @@ Title ""
 
 Introduction
 "
-Aus reiner Neugierde schaust du dir noch einen Nachbarsturm näher an.
+純粋な好奇心から、あなたは別の隣の塔をさらに詳しく見ています。
 "
 
 Statement (n : ℕ) : (∑ i ∈ Icc 0 n, (2 * i + 1)) = (n + 1)^ 2 := by
   Hint "
-    **Du**:  Hier also eine Summe nur über ungeraden Zahlen.
+    **あなた**: ここでは奇数のみの和ですね。
     $$
     \\sum_\{i = 0}^n (2i + 1) = n^2
     $$
 
-    **Robo**: Das funktioniert doch genau gleich wie zuvor.
+    **ロボ**: 前回と全く同じように解けますよ。
     "
   induction n with d hd
   · simp
@@ -37,12 +37,12 @@ Statement (n : ℕ) : (∑ i ∈ Icc 0 n, (2 * i + 1)) = (n + 1)^ 2 := by
 TheoremTab "∑ Π"
 
 Conclusion "
-  **Babylonier**:  Und?  Gefällt es euch hier?
+  **バビロニア人**: どうですか？ ここは気に入りましたか？
 
-  **Robo**:  Ja, sehr.  Das ist wirklich alles beeindruckend, was ihr hier aufgebaut habt.
-  Aber wir wollen euch nicht länger aufhalten.
+  **ロボ**: はい、とても。ここに築かれたものは全て本当に印象的です。
+  しかし、これ以上あなた方の時間を奪いたくありません。
 
-  **Du**:  Ich denke auch, wir sollten langsam wieder aufbrechen.
+  **あなた**: そろそろ出発した方がいいと思います。
 
-  Ihr verabschiedet euch und macht euch auf den Weg zurück zum Raumschiff.
+  あなた方は別れの挨拶をし、宇宙船へと戻る道を歩き始めます。
 "

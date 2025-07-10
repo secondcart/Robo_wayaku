@@ -10,24 +10,23 @@ Title ""
 
 Introduction
 "
-**Lina**: Außerdem muss man zum Beispiel wissen, dass `0 < n` oder `n < 0` für ganze Zahlen nichts anderes
-bedeutet als `n ≠ 0`.
+**リナ**: 例えば、整数において`0 < n`や`n < 0`は`n ≠ 0`と同じ意味だということを知っておく必要があります。
 "
 
 Statement (n : ℤ) : 0 < n ∨ n < 0 ↔ n ≠ 0 := by
-  Hint "**Ritha** *(flüsternd)*: Probiert mal `omega`!"
+  Hint "**リタ** *(小声で)*: `omega`を試してみて！"
   omega
 
 NewTactic omega
 
 TheoremTab "ℕ"
 
-Conclusion "Lina rollt die Augen.
+Conclusion "リナは目を回す。
 
-**Lina**: Ritha ist ein großer Fan von `omega`.  Dabei ist `omega` ziemlich impotent.
-Sobald man die ganzen Zahlen verlässt, kann `omega` gar nichts mehr.
+**リナ**: リタは`omega`の大ファンなの。でも`omega`は結構無力なのよ。
+整数の範囲を超えたら、`omega`は何もできなくなっちゃう。
 
-**Ritha**:  Selber impotent!
+**リタ**: あなたこそ無力よ！
 
-Ritha macht eine unanständige Grimasse.
+リタは下品な顔をする。
 "

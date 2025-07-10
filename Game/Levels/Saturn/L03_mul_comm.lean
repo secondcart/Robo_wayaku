@@ -5,28 +5,27 @@ Level 3
 
 Title ""
 
-Introduction "Noch ein Funkspruch."
+Introduction "また無線信号が届いた。"
 
 namespace MvPolynomial
 Statement (P : MvPolynomial (Fin 2) ℚ) : (X 0) * P = P * (X 0) := by
   Hint "
-    **Du**:  Nanu, was ist denn `P` hier für ein Tier?
+    **あなた**: あれ、ここでの`P`って何者？
 
-    **Robo**: `P` ist ein “multivariates Polynom”, wobei die Variablen mit `Fin 2`
-    durchnummeriert sind und die Koeffizienten in `ℚ` liegen.
+    **ロボ**: `P`は「多変数多項式」で、変数は`Fin 2`で番号付けされ、係数は`ℚ`に属します。
 
-    **Du**:  Und was ist `Fin 2`?
+    **あなた**: `Fin 2`って何？
 
-    **Robo**:  Die Standardmenge mit zwei Elementen – $\\\{0,1\\}$.  Die Variablen heißen also `X 0` und `X 1`.
+    **ロボ**: 2つの要素を持つ標準集合——$\\\{0,1\\}$です。変数は`X 0`と`X 1`と呼ばれます。
 
-    **Du**:  Spielt hier aber eigentlich alles keine Rolle, oder?  Der Polynomring ist doch kommutativ!
+    **あなた**: でも実際は関係ないよね？多項式環は可換だし！
 
-    **Robo**: So ist es.
+    **ロボ**: その通りです。
   "
   ring
 
 Conclusion "
-  Wieder ein 👍.
+また👍をもらいました。
 "
 NewTactic ring
 

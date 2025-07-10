@@ -14,29 +14,29 @@ open Function
 Statement :
     let f : ℕ → ℕ := fun n ↦ if Even n then n^2 else n+1;
     ¬ Injective (f + f) := by
-  Hint "**Du**:  Also, die gegebene Abbildung hat die folgende Form:
+  Hint "**Du**: 与えられた関数は以下の形式です:
   $$
   f(n) = \\begin\{cases}
-    n^2 & \\text\{falls } n \\text\{ gerade} \\\\
-    n+1 & \\text\{andernfalls.}
+    n^2 & \\text\{nが偶数の場合} \\\\
+    n+1 & \\text\{それ以外の場合}
   \\end\{cases}
   $$
-  Und was ist `f + f`?
+  そして`f + f`とは何ですか？
 
-  **Robo**: Das ist die Abbildung `ℕ → ℕ`, die an jeder Stelle den doppelten Wert von `f` annimmt.
+  **Robo**: これは`ℕ → ℕ`の関数で、各点で`f`の2倍の値を取ります。
   "
   Hint (hidden := true) "
-  **Robo**: Vielleicht öffnest du zuerst mal `Injective` mit `unfold`. Dann steht da `¬ ∀` …"
+  **Robo**: まず`Injective`を`unfold`で展開してみましょう。すると`¬ ∀`…と表示されます"
   unfold Injective
-  Hint (hidden := true) (strict := true) "**Robo**: Erinnerst du dich an `push_neg`?"
+  Hint (hidden := true) (strict := true) "**Robo**: `push_neg`を覚えていますか？"
   push_neg
   Hint (hidden := true)"
-    **Du** Jetzt muss ich einfach ein Gegenbeispiel nennen, oder?
+    **Du** つまり反例を挙げればいいんですよね？
 
-    **Robo** Genau! Welche beiden Zahlen möchtest du denn verwenden?"
+    **Robo** その通り！どの2つの数字を使いますか？"
   use 2
   use 3
-  Hint (hidden := true) "**Robo**:  Das ist hier alles so konkret, vielleicht reicht `decide`."
+  Hint (hidden := true) "**Robo**: ここでは具体的な値なので、`decide`で解決できるかもしれません"
   decide
 
 TheoremTab "Function"

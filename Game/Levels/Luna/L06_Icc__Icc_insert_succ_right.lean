@@ -8,7 +8,7 @@ Level 6
 Title ""
 
 Introduction
-"**Ritha**:  Kann ich auch mal?  Hier."
+"**リサ**: 私もやってみていい？ほら。"
 
 open Finset
 namespace Robo.ZZ.Finset
@@ -19,25 +19,23 @@ TheoremDoc Robo.ZZ.Finset.insert_Icc_eq_Icc_add_one_right as "insert_Icc_eq_Icc_
 Statement insert_Icc_eq_Icc_add_one_right {a b : ℤ} (h : a ≤ b + 1) :
   insert (b + 1) (Icc a b) = Icc a (b + 1) := by
   Hint "
-    **Du**:  Was ist denn `Icc`?
+    **あなた**: Iccって何？
 
-    **Ritha**:  Na das **I**ntervall, das links **c**losed und rechts **c**losed, also abgeschlossen ist.
+    **リサ**: 左閉右閉の**閉**区間よ。
 
-    **Robo**:  Du würdest `Icc a b` vermutlich als $[a, b]$ schreiben,
-     oder als $\\\{a, a + 1, \\dots, b\\}$, weil wir ja hier wieder in den natürlichen Zahlen sind.
-     Zu zeigen ist also:
-
+    **ロボ**: ℕでは`Icc a b`を[a, b]や$\\\{a, a+1,\\dots,b\\}$と書くでしょう。
+    示すべきは：
      $$
      [a, b] ∪ \\\{ b + 1 \\} = [a, b + 1]
      $$
      "
-  Hint (hidden := true) "**Robo:** Gleichheit von Mengen ruft nach `ext`."
+  Hint (hidden := true) "**ロボ:** 集合の等式は`ext`で。"
   ext x
   Hint "
-    **Robo:**  Schieß mal gleich noch ein `simp` hinterher.
+    **ロボ:** すぐに`simp`も使いましょう。
   "
   simp
-  Hint "Ritha macht wieder irgendwelche Zeichen."
+  Hint "リサがまた何か書いている。"
   omega
 
 

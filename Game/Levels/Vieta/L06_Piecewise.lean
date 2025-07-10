@@ -4,20 +4,20 @@ import Game.Metadata
 World "Vieta"
 Level 6
 
-Title "" -- "Stückweise Definition"
+Title "Stückweise Definition"
 
 Introduction
 "
-**Vieta**:  Wir sollten doch noch mal ein Stück laufen.  Hier entlang!
+**Vieta**:  もう少し歩きましょう。こちらへ！
 
-Er eilt davon, und ihr folgt, so schnell ihr könnt.
-Als ihr den Ort erreicht, an dem er schließlich stehen bleibt, bist du völlig außer Puste.
-Vieta lacht.
+彼は急ぎ足で去り、あなたはできるだけ速く追いかけます。
+彼が最終的に立ち止まった場所に到着した時、あなたは完全に息切れしています。
+Vietaは笑います。
 
-**Vieta**:  Reine Vorsichtsnahme!  Ich muss ja auf meine Besucher achtgeben.
-So viel Besuch bekomme ich nicht!
+**Vieta**:  これは予防措置です！訪問者の面倒を見なければなりませんから。
+こんなに訪問者が来ることは滅多にないんです！
 
-Er reicht euch das nächste Blatt.
+彼は次の紙をあなたに手渡します。
 "
 
 open Set Function
@@ -27,41 +27,38 @@ Statement :
     let g : ℚ → ℚ := fun x ↦ if 0 ≤ x then 2*x else 0
     f ∘ g = g ∘ f := by
   Hint "
-    **Robo**: Jetzt haben wir zwei Abbildungen, eine davon mit stückweiser Definition.
+    **Robo**: 今私たちは2つの写像を持っています、そのうち1つは区分的な定義です。
 
-    **Du**: Also, ich soll zeigen, dass die beiden vertauschbar sind?
+    **あなた**: つまり、これらが交換可能であることを示せばいいのですか？
 
-    **Robo**: Genau, am besten wählst du mit `funext x` ein beliebiges Element aus, und zeigst das
-    dann für dieses."
+    **Robo**: その通りです。`funext x`を使って任意の要素を選び、それを示すのがベストです。"
   funext x
   Hint "
-    **Du**: Ah und jetzt kann ich erst einmal `(g ∘ f) {x}` zu `g (f {x})` umschreiben?
+    **あなた**: ああ、まず`(g ∘ f) {x}`を`g (f {x})`と書き換えられるのですか？
 
-    **Robo**: Mit `simp` klappt das."
+    **Robo**: `simp`でできます。"
   simp -- or simp [f, g]
   -- TODO: add `(defeq := _)` so that this triggers for `simp [f, g]` too
   Hint (strict := true) "
-    **Robo**: Jetzt kannst du nämlich eine Fallunterscheidung
-    machen, `by_cases h : 0 ≤ {x}`.
+    **Robo**: これで場合分けができます、`by_cases h : 0 ≤ {x}`。
 
-    **Du**: Damit krieg ich die Fälle `0 ≤ {x}` und `0 > {x}`?
+    **あなた**: これで`0 ≤ {x}`と`0 > {x}`の場合が得られますか？
 
-    **Robo**: Genau! Oder präziser `0 ≤ {x}` und `¬(0 ≤ {x})`. Das ist nicht ganz das gleiche,
-    und man könnte mit dem Lemma `not_le` zwischen `¬(0 ≤ {x})` und `0 > {x}` wechseln."
+    **Robo**: はい！正確には`0 ≤ {x}`と`¬(0 ≤ {x})`です。これは完全に同じではなく、
+    `not_le`という補題を使って`¬(0 ≤ {x})`と`0 > {x}`を切り替えられます。"
   by_cases h : 0 ≤ x
-  · Hint "**Du**: Jetzt muss ich wohl doch mal die Definitionen benutzen.
+  · Hint "**あなた**: 定義を使う必要がありそうですね。
 
-    **Robo**: Dann benutz sie mal `simp [f, g]`!"
+    **Robo**: では`simp [f, g]`を使ってください！"
     simp [f, g]
     Hint "
-      **Robo**: Jetzt hast du `rw [if_pos {h}]` zur Verfügung, um das if-then-else zu
-      reduzieren."
+      **Robo**: これで`rw [if_pos {h}]`を使ってif-then-elseを簡約できます。"
     rw [if_pos h, if_pos h]
     ring
-  · Hint (hidden := true) "**Robo**: Nochmals `simp [f, g]`."
+  · Hint (hidden := true) "**Robo**: もう一度`simp [f, g]`を。"
     simp [f, g]
-    Hint "**Du**: Ah, und die Verneinung von `if_pos` ist sicher …"
-    Hint (hidden := true) "**Robo**: `if_neg`, genau!"
+    Hint "**あなた**: ああ、`if_pos`の否定はきっと..."
+    Hint (hidden := true) "**Robo**: `if_neg`です、その通り！"
     rw [if_neg h, if_neg h]
 
 Conclusion ""

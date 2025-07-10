@@ -8,13 +8,13 @@ Title "" -- "let"
 
 Introduction
 "
-**Vieta**:  Jetzt müssen wir mal ein Stück hier rüber gehen.
+**Vieta**: さあ、ここを少し移動しなければなりません。
 
-Er schiebt euch vorsichtig ein paar Meter weiter.  Einen Moment später gehen an dem Ort,
-an dem ihr eben gestanden habt, drei Pfeile nieder und bleiben im Boden stecken.
+彼は慎重にあなた方を数メートル先へと押しやる。その瞬間、あなた方が今立っていた場所に3本の矢が降り注ぎ、地面に突き刺さる。
 
-**Vieta**: Ganz ruhig, ich kenne mich hier aus.  Hier, ich habe noch mehr für euch.
+**Vieta**: 落ち着いて、私はこの辺りに詳しいんです。ほら、あなた方のためにまだ持っていますよ。
 "
+
 
 open Function
 
@@ -22,34 +22,32 @@ Statement (x : ℤ) :
     let f : ℤ → ℤ := fun x ↦ x + 5
     ∃ (g : ℤ → ℤ), (g ∘ f) x = x + 2 := by
   Hint "
-    **Du**: Ist `g ∘ {f}` Komposition von Abbildungen?
+    **あなた**: `g ∘ {f}` は写像の合成ですか？
 
-    **Robo**: Richtig! Das schreibt man mit `\\comp`.
+    **ロボ**: 正解です！それは`\\comp`で書きます。
 
-    **Du** Und hier könnte ich also wieder
-    `let g : ℤ → ℤ := fun x ↦ _` definieren?
+    **あなた** ではここでまた
+    `let g : ℤ → ℤ := fun x ↦ _`と定義できますか？
 
-    **Robo**:  Ja, oder sogar  direkt `use fun (x : ℤ) ↦ _`?"
+    **ロボ**: はい、または直接`use fun (x : ℤ) ↦ _`も使えますよ？"
   Branch
     let g : ℤ → ℤ := fun x ↦ x - 3
-    Hint "**Robo**: Jetzt kannst du diese mit `use {g}` benutzen."
+    Hint "**ロボ**: これで`use {g}`を使ってください。"
     use g
     Hint "
-    **Robo**: `({g} ∘ {f}) x` ist per Definition `{g} ({f} x)`. `simp` würde dieses
-    Lemma auch kennen, aber mach das hier mal direkt mit `rw [comp_apply]`."
+    **ロボ**: `({g} ∘ {f}) x`は定義により`{g} ({f} x)`です。`simp`もこの
+    補題を知っていますが、ここでは直接`rw [comp_apply]`を使ってみてください。"
     Hint "
-    **Robo**: `ring` sieht durch lokale Definitionen wie
-    `{f}` und `{g}` hindurch,
-    du kannst es also direkt benutzen."
+    **ロボ**: `ring`は`{f}`や`{g}`のようなローカル定義を
+    見通せるので、直接使えます。"
   use fun (x : ℤ) ↦ x - 3
   Hint "
-  **Robo**: `(g ∘ {f}) x` ist per Definition `g ({f} x)`. `simp` würde dieses
-  Lemma auch kennen, aber mach das hier mal direkt mit `rw [comp_apply]`."
+  **ロボ**: `(g ∘ {f}) x`は定義により`g ({f} x)`です。`simp`もこの
+  補題を知っていますが、ここでは直接`rw [comp_apply]`を使ってみてください。"
   rw [comp_apply]
   Hint "
-  **Robo**: `ring` sieht durch lokale Definitionen wie
-  `{f}` hindurch,
-  du kannst es also direkt benutzen."
+  **ロボ**: `ring`は`{f}`のようなローカル定義を
+  見通せるので、直接使えます。"
   ring
 
 /--

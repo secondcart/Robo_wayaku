@@ -14,11 +14,11 @@ open Function Nat
 
 Statement {A B : Type} (f : ℕ → A → B) : ¬ Surjective f ↔ ∃ g : A → B, ∀ n, g ≠ f n := by
   Hint "
-  **Du**:  `ℕ → A → B` … wie lese ich diese zwei Pfeile hintereinander?
+  **あなた**: `ℕ → A → B`…この連続した矢印はどう読むのですか？
 
-  **Robo**: Du liest das als `ℕ → (A → B)` – eine Abbildung von den natürlichen Zahlen `ℕ` in die Menge `A → B` der Abbildungen von A nach B.  Das wird übringens auch klar, wenn du weiterliest, was du hier zeigen solltst."
+  **ロボ**: これは`ℕ → (A → B)`と読みます。自然数`ℕ`からAからBへの写像の集合`A → B`への写像です。これは、あなたがここで示すべきことを読み進めると明らかになります。"
   Hint (hidden := true) "
-  **Robo**: Du könnstest mit `constructor` anfangen, oder du fängst an mit `unfold Surjective` und schaust dann, ob dich `push_neg` weiterbringt."
+  **ロボ**: `constructor`で始めるか、`unfold Surjective`で始めてから`push_neg`が役立つかどうか確認すると良いでしょう。"
   Branch
     constructor
     · intro h
@@ -28,8 +28,8 @@ Statement {A B : Type} (f : ℕ → A → B) : ¬ Surjective f ↔ ∃ g : A →
       use w
       intro n
       Hint "
-      **Robo**: Hilft dir vielleicht `ne_comm` weiter?
-      Die Aussage von `ne_comm` ist `a ≠ b ↔ b ≠ a`."
+      **ロボ**: `ne_comm`が役立つかもしれません。
+      `ne_comm`の主張は`a ≠ b ↔ b ≠ a`です。"
       rw [ne_comm]
       apply hw
     · intro ⟨g, hg⟩
@@ -41,12 +41,12 @@ Statement {A B : Type} (f : ℕ → A → B) : ¬ Surjective f ↔ ∃ g : A →
   unfold Surjective
   push_neg
   Hint "
-  **Robo**: Hilft dir vielleicht `ne_comm` weiter?
-  Die Aussage von `ne_comm` ist `a ≠ b ↔ b ≠ a`.
+  **ロボ**: `ne_comm`が役立つかもしれません。
+  `ne_comm`の主張は`a ≠ b ↔ b ≠ a`です。
   "
   Hint (hidden := true) "
-  **Robo**: Wegen der vielen Quantoren funktioniert `rw [ne_comm]` hier nicht.
-  Probier stattdessen mal `simp [ne_comm]`.
+  **ロボ**: 多くの量化子があるため、ここでは`rw [ne_comm]`は機能しません。
+  代わりに`simp [ne_comm]`を試してみてください。
   "
   simp [ne_comm]
 

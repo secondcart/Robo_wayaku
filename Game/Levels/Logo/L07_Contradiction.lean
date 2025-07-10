@@ -3,39 +3,38 @@ import Game.Metadata
 World "Logo"
 Level 7
 
-Title "" -- "Aus Falschem folgt vieles."
+Title "Aus Falschem folgt vieles."
 
 Introduction
 "
-Als nächstes kommen drei Querulanten. Der erste hat folgendes Problem:
+次に3人の難癖つけがやってきます。最初の者は次の問題を抱えています:
 "
 
 Statement (A : Prop) (h : False) : A := by
-  Hint "**Du** Wenn ich das jetzt richtig lese, ist `{A}` eine Aussage,
-    und wir haben außerdem eine Annahme names `{h}`, die besagt …
+  Hint "**あなた**: これを正しく読むと、`{A}`は命題で、
+    さらに`{h}`という仮定があります。それは…
 
-    **Robo**: … die besagt, dass `False` gilt.
+    **ロボ**: …`False`が成り立つと言っています。
 
-    **Du**: Ich dachte, `False` gilt nie?
+    **あなた**: `False`は決して成り立たないんじゃないですか？
 
-    **Robo**: Ja, genau. Die Annahme ist `False`, also falsch.
-    Und aus einer falschen Annahme kann man bekanntlich alles beweisen!
-    Insbesondere die gesuchte Aussage `{A}`.
+    **ロボ**: はい、その通りです。この仮定は`False`、つまり偽です。
+    偽の仮定からは、どんなことでも証明できるのはご存知でしょう！
+    特に求められている命題`{A}`もです。
 
-    **Du**: Und wie erkläre ich das jetzt diesem Formalosophen?
+    **あなた**: で、どうやってこの形式主義者に説明すればいいの？
 
-    **Robo**: Ich glaube, du musst ihn darauf hinweisen, dass zwischen der allgemeingültigen
-    Annahme `True` und seiner Annahme `False` ein Widerspruch besteht. Probier mal `contradiction`."
+    **ロボ**: 一般的に成り立つ仮定`True`と彼の仮定`False`の間に矛盾があることを指摘する必要があると思います。`contradiction`を試してみてください。"
   contradiction
 
 Conclusion
 "
-Der erste Querulant ist offenbar zufrieden.
+最初の難癖つけはどうやら満足したようです。
 
-**Du**: War das jetzt ein Widerspruchsbeweis?
+**あなた**: これは背理法だったの？
 
-**Robo**: Nein, nein, ein Widerspruchsbeweis sieht anders aus. Das Argument hier war:
- wir haben eine `contradiction` in unserem Annahmen, also folgt jede beliebige Aussage.
+**ロボ**: いえいえ、背理法はもっと違うものです。ここでの論点は:
+ 仮定の中に`contradiction`があるので、どんな命題でも導かれるということです。
 "
 
 NewTactic contradiction

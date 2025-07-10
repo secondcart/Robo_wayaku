@@ -7,7 +7,7 @@ Title ""
 
 Introduction
 "
-  **Sub:** Ich habe auch schon etwas gelernt:
+  **Sub:** 私もすでにいくつか学びました:
 "
 namespace Set
 
@@ -15,26 +15,26 @@ namespace Set
 
 Statement : { n : ℕ | Even n} ∪ { n : ℕ | Odd n} = univ := by
   Hint "
-    **Du**:  Was ist denn `univ`?
+    **Du**:  `univ`って何ですか？
 
-    **Robo**:  `univ` ist die maximale Teilmenge:  alle natürlichen Zahlen.
+    **Robo**:  `univ`は最大部分集合です：すべての自然数を含みます。
 
-    **Du**:  Also einfach `ℕ`?
+    **Du**:  つまり単に`ℕ`ですか？
 
-    **Robo**:  Jein. `univ : Set ℕ` ist “ganz ℕ”, aber aufgefasst als *Teilmenge* von `ℕ`.
+    **Robo**:  はい、でも違います。`univ : Set ℕ`は「ℕ全体」ですが、ℕの部分集合として扱われます。
 
-    Ext, Fin, Set, Sub und Mem sehen euch groß an.
+    Ext、Fin、Set、Sub、Memがあなたを見つめています。
 
-    **Set**:  Das kann man doch gar nicht verwechseln!  Hier *ist* eine Blaubeere,
-    das hier ist der *Korb mit allen Blaubeeren*, und die Beere *liegt in* diesem Korb.
+    **Set**:  これは混同するはずがないでしょう！ここにブルーベリーがあります、
+    これは全てのブルーベリーが入ったかごで、このベリーはかごの中にあります。
 
-    **Mem**:  Und genauso *ist* 5 eine natürlich Zahl (`5 : ℕ`),
-     `univ : Set ℕ` ist die *Menge aller natürlicher Zahlen*, und `5` *liegt in* dieser Menge (`5 ∈ univ`).
-     Was ist daran verwirrend?
+    **Mem**:  同様に、5は自然数です(`5 : ℕ`)、
+    `univ : Set ℕ`は全ての自然数の集合で、`5`はこの集合に含まれます(`5 ∈ univ`)。
+    何が混乱するのでしょうか？
 
-    **Robo** (*zu dir*):  Zerbrich dir nicht den Kopf darüber.
-    Ich schlage vor, du fängst hier einfach mal mit `rw [eq_univ_iff_forall]` an,
-    dann siehst du genau, was gefragt ist.
+    **Robo** (*あなたに*): 頭を悩ませないでください。
+    ここではまず`rw [eq_univ_iff_forall]`から始めることをお勧めします、
+    そうすれば求められていることが明確にわかります。
     "
   /-
   `ext` also works, but WANT to introduce
@@ -48,17 +48,17 @@ Statement : { n : ℕ | Even n} ∪ { n : ℕ | Odd n} = univ := by
   -/
   rw [eq_univ_iff_forall]
   Hint "
-    **Robo**: Und jetzt `simp`.  Du hättest sogar direkt `simp [eq_univ_iff_forall]` nehmen können.
+    **Robo**: そして今度は`simp`です。最初から`simp [eq_univ_iff_forall]`とすることもできました。
     "
   simp
   intro x
   Hint "
-    **Du**: Und jetzt `by_cases h : Even n`?
+    **Du**: 次は`by_cases h : Even n`ですか？
 
-    **Robo**: Ja, das würde zum Ziel führen.
-    Aber eigentlich ist `Even x ∨ ¬Even x` ja eine Tautologie.
-    Damit `tauto` sie erkennt, musst du sie nur entsprechend abstrahieren.
-    Das ginge hier zum Beispiel mit:
+    **Robo**: はい、それでゴールに到達できます。
+    しかし実際には`Even x ∨ ¬Even x`はトートロジーです。
+    `tauto`に認識させるためには、適切に抽象化する必要があります。
+    ここでは例えば以下のようにできます:
     ```
     generalize h : (Even x) = A
     ```

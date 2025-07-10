@@ -7,11 +7,11 @@ Level 10
 Title ""
 
 Introduction
-"Inzwischen seid ihr auf der Dachterasse angekommen.
-Aber Guino hat es inzwischen aufgegeben, alle architektonischen Details zu erklären.
-Die Aussicht ist nicht schlecht.
+"ようやく屋上テラスに到着しました。
+しかしギノはすでに建築の詳細を説明するのを諦めています。
+景色は悪くありません。
 
-**Robo** *(zu dir)*:  Ich glaube, wir sind so weit.
+**ロボ** *(あなたに)*: そろそろ準備ができたと思う。
 "
 
 namespace Nat
@@ -22,8 +22,8 @@ Statement : ∃! (p : ℕ), Nat.Prime p ∧ Even p := by
   constructor
   · decide
   · intro p hp h
-    Hint (hidden := true) "**Robo**:
-    Schau noch einmal genau durch die Aussagen, die wir schon gezeigt hatten."
+    Hint (hidden := true) "**ロボ**:
+    もう一度、これまでに証明した命題をよく見てみよう。"
     rw [even_iff_two_dvd] at h
     rw [prime_def] at hp
     obtain ⟨h2, hprime ⟩ := hp
@@ -36,10 +36,9 @@ Statement : ∃! (p : ℕ), Nat.Prime p ∧ Even p := by
 TheoremTab "ℕ"
 
 Conclusion "
-**Du**: Juchhu!  Und wer sagt es ihm jetzt?
+**あなた**: やったー！ でも誰が彼に報告する？
 
-**Robo**:  Vielleicht lassen wir es lieber.  Ich habe das Gefühl,
-ihm gefällt ohnehin sein Museum so leer wie es ist am besten.
+**ロボ**: やめておいた方がいいかも。どうやら彼は、
+博物館がこのまま空っぽなのが一番気に入っているみたいだ。
 
-Ihr bedankt euch also artig für die Führung, zeigt euch tief beeindruckt
-von der hiesigen Eisbaukunst, und fliegt weiter."
+あなたたちは丁寧にガイドツアーにお礼を言い、この地の氷の芸術に深く感銘を受けた様子を見せて、さらに飛び立っていきました。"

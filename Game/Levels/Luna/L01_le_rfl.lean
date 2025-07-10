@@ -10,20 +10,19 @@ Title ""
 
 Introduction
 "
-Du fühlst dich ein wenig überfahren, aber versuchst trotzdem, ein Gespräch zu beginnen.
+少し圧倒された気分ですが、それでも会話を始めようと試みます。
 
-**Du**: Ist gut, wir bemühen uns, nichts durcheinander zu bringen. Ist es sehr schwer,
-hier Ordnung zu halten?
+**あなた**: 大丈夫です、私たちは混乱を起こさないよう努めています。ここで秩序を保つのはとても大変ですか？
 
-**Lina**: Man muss zum Beispiel wissen, dass `n ≤ n` ist.
+**リナ**: 例えば、`n ≤ n` であることを知っておく必要があります。
 "
 
 Statement (n : ℕ) : n ≤ n := by
-  Hint "**Robo**: `rfl`?"
+  Hint "**ロボ**: `rfl`でどう？"
   rfl
 
 Conclusion "
-  **Lina**:  Zugegeben, das war ein triviales Beispiel.
+  **リナ**: 認めますが、これは些細な例でした。
 "
 
 

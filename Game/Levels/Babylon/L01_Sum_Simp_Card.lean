@@ -7,28 +7,27 @@ Title ""
 
 Introduction
 "
-**Babylonier**: Jeder Turm hat eine Inschrift. Da könnt ihr noch einmal genau nachlesen,
-warum er steht. Hier zum Beispiel.
+**バビロニア人**: 各塔には碑文があります。そこに、なぜその塔が建てられたのかを詳しく読むことができます。例えば、ここにあります。
 "
 
 open Nat Finset
 Statement (I : Finset ℕ) : (∑ i ∈ I, 1) = card I := by
   Hint "
-    **Du**: Oh das ist ganz schön viel neues … mal sehen …
+    **あなた**: ああ、これは本当にたくさんの新しいことだ…見てみよう…
 
-    Das sieht aus wie $( \\sum_\{i\\in I} 1)$ ist gleich …
+    これは $( \\sum_\{i\\in I} 1)$ が…に等しいように見えます。
 
-    **Robo**: … der Anzahl der Element in $I$, also der Kardinalität von $I$.
+    **ロボ**: …$I$の要素の数、つまり$I$のカーディナリティです。
 
-    **Babylonier**: Und, könnt ihr das beweisen?
+    **バビロニア人**: そして、これを証明できますか？
 
-    **Robo** *(zu Dir)*: Ich würde als erstes `simp` versuchen.
-    Das ist wirklich eine starke Taktik, die viele Terme vereinfacht."
+    **ロボ** *(あなたに向かって)*: 最初に`simp`を試してみることをお勧めします。
+    これは本当に強力な戦術で、多くの項を単純化します。"
   simp
 
 TheoremTab "∑ Π"
 
-Conclusion "**Babylonier**: Seht gut, das passt!"
+Conclusion "**バビロニア人**: よくできました、これで合っています！"
 
 NewDefinition Finset.card
 

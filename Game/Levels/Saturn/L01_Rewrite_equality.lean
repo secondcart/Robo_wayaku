@@ -5,27 +5,26 @@ Level 1
 
 Title ""
 
-Introduction "Plötzlich erreicht euch ein Funkspruch."
+Introduction "突然、無線通信が届いた。"
 
 Statement (a b c d : ℝ) (h₁ : c = d) (h₂ : a = b) (h₃ : a = d) : b = c := by
-  Hint "**Du**: Ich habe das Gefühl, das habe ich schon einmal gesehen.
+  Hint "**あなた**: これ、前に見たことがあるような気がする。
 
-  **Robo**:  Ja!  Das sieht so ähnlich aus wie eine Aufgabe, die wir auf *Implis*
-  schon gelöst hatten.
-  Nur, das hier jetzt Gleichheiten von Zahlen statt Genau-Dann-Wenn-Aussagen stehen!
-  Aber das macht im Grunde gar keinen Unterschied.
-  Du kannst `=` und `↔` mit `rw` praktisch gleich behandeln."
+  **ロボ**: そうだね！これは*Implis*で解いた問題に似ているよ。
+  ただ、今回は「ならば」の代わりに数値の等式があるだけだ！
+  でも根本的には何も変わらない。
+  `=`と`↔`は`rw`でほぼ同じように扱えるよ。"
 
-  Hint (hidden := true) "**Du**: Also auch `rw [hₓ]` und `rw [← hₓ]`?
+  Hint (hidden := true) "**あなた**: つまり`rw [hₓ]`や`rw [← hₓ]`も使える？
 
-  **Robo**: Probiers doch einfach."
+  **ロボ**: 試してみたらどうかな。"
   rw [h₁]
-  Hint (hidden := true) "**Du**: Wie war das nochmals mit rückwärts umschreiben?
+  Hint (hidden := true) "**あなた**: 逆向きの書き換えはどうするんだっけ？
 
-  **Robo**: `←` ist `\\l`. Und dann `rw [← hₓ]`"
+  **ロボ**: `←`は`\\l`だよ。そして`rw [← hₓ]`と書くんだ"
   rw [←h₂]
   assumption
 
 Conclusion "
-  Es kommt ein 👍 zurück.
+  👍が返ってきた。
   "

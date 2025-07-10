@@ -8,21 +8,21 @@ Title ""
 
 Introduction
 "
-Cantor landet, steigt vom Rad, kommt wieder zur Bühnenkante und reibt sich die Hände.
+カントールは着地し、自転車から降り、再び舞台の端に来て手を擦り合わせる。
 
-**Cantor**: Ihr kommt der Sache jetzt näher!
-Wenn ihr genau hinseht, habt ihr eine Abbildung vor euch,
-die auf einem Produkt `A × A` definiert ist!
-Und im Produkt gibt es eine Diagonale!
+**カントール**: 君たちは今、核心に近づいている！
+よく見れば、君たちの目の前には
+積集合 `A × A` 上で定義された写像がある！
+そして積集合には対角線がある！
 "
 
 Conclusion
 "
-  **Cantor**:  Sehr schön!
+  **カントール**: とても素晴らしい！
 
-  Er klatscht.
+  彼は拍手する。
 
-  **Du**:  Also ich verstehe gerade gar nichts mehr.
+  **あなた**: ええと、今は何も理解できなくなってしまいました。
 "
 
 open Function Set
@@ -31,30 +31,30 @@ Statement {A Y : Type} {f : A → A → Y} {s : Y → Y}
      {a : A} (ha : f a = fun a' ↦ s (f a' a')) :
     IsFixedPt s (f a a) := by
   Hint "
-    **Du** *(zu Robo)*: Siehst du hier ein Produkt?
+    **あなた** *(ロボに向かって)*: ここに積集合が見える？
 
-    **Robo**:  Ja, klar.  Erinner dich, wo bei `f` die Klammern stehen: `A → (A → Y)`.
-    Eine Abbildung von `A` zur Menge der Abbildungen von `A →  Y` ist doch dasselbe
-    wie eine Abbildung von `A × A` nach `Y`.
+    **ロボ**: ああ、もちろん。`f`の括弧の位置を思い出して: `A → (A → Y)`。
+    `A`から`A → Y`への写像の集合への写像は、
+    `A × A`から`Y`への写像と同じだよ。
 
-    Du runzelst die Stirn.
+    あなたは眉をひそめる。
 
-    **Robo**: Doch doch, das hatte wir uns auf Epo schon einmal überlegt!
-    Du kannst `{f} {a} {a}` entweder als `{f} {a}` angewendet auf `{a}` oder als
-    `{f}` angewendet auf `({a},{a})` interpretieren.
+    **ロボ**: いやいや、これはエポで既に考えたことだよ！
+    `{f} {a} {a}`は、`{f} {a}`を`{a}`に適用したものと解釈できるし、
+    `{f}`を`({a},{a})`に適用したものとも解釈できる。
 
-    **Cantor**:  Ganz genau!  Und das Element `({a},{a})` liegt auf der Diagonale!
+    **カントール**: その通り！そして要素`({a},{a})`は対角線上にある！
 
-    **Robo**: Die Annahme `{ha}` ist andereseits so formuliert,
-    dass die Interpretation von `f` als Abbildung `A → (A → Y)` naheliegender ist.
+    **ロボ**: 一方、仮定`{ha}`は、
+    `f`を`A → (A → Y)`として解釈する方が自然な形で書かれている。
     "
   unfold IsFixedPt
   Branch
     rw [ha]
-    Hint "**Robo**:
-      Jetzt hast du im wesentlichen beide Vorkommen von `f a a` durch `s f a a` ersetzt.
-      Damit drehst du dich im Kreis.  Wahrscheinlich willst du nur das zweite Vorkommen
-      von `f a a` im Beweisziel umschreiben.  Das machst du mit `nth_rw 2 [{ha}]`.
+    Hint "**ロボ**:
+      今、君は基本的に`f a a`の両方を`s f a a`で置き換えた。
+      これでは堂々巡りだ。おそらく証明目標の2番目の`f a a`だけを
+      書き換えたいのだろう。それは`nth_rw 2 [{ha}]`でできる。
     "
     simp
   Branch

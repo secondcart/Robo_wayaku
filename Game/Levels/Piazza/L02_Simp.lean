@@ -8,18 +8,18 @@ Title ""
 
 Introduction
 "
-**Mem**:  Wie wärs denn hiermit?
+**Mem**: これでどうかな？
 "
 
 open Set
 
 Statement : 9 ∈ {n : ℕ | Odd n} := by
   Hint "
-    **Robo**:  Ich glaube, am einfachsten kommst du hier mit `simp` weiter.
+    **Robo**: ここは`simp`を使うのが一番簡単だと思うよ。
   "
   simp
   Hint (hidden := true) "
-    **Robo**:  Erinner dich an `decide`.
+    **Robo**: `decide`を思い出して。
   "
   decide
 

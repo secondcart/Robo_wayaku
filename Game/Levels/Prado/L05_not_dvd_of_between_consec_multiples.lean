@@ -8,9 +8,9 @@ Level 5
 Title ""
 
 Introduction
-"**Du** *(zu Robo)*:  Gib mir mal wieder etwas Interessanteres!
+"**あなた** *(ロボに向かって)*: もっと面白いものをちょうだい！
 
-**Robo**:  Wie wäre es hiermit?
+**ロボ**: これはどうかな？
 "
 
 /---/
@@ -19,11 +19,11 @@ TheoremDoc Nat.not_dvd_of_between_consec_multiples as "not_dvd_of_between_consec
 namespace Nat
 Statement not_dvd_of_between_consec_multiples {m n k : ℕ} (h1 : n * k < m) (h2 : m < n * (k + 1)) : ¬n ∣ m := by
   Hint "
-  **Du**: `by_contra`?
+  **あなた**: `by_contra`を使う？
 
-  **Robo**:  Das könnte funktionieren.
-  Und wahrscheinlich wirst du das Lemma `lt_of_mul_lt_mul_left` brauchen.
-  Für `a b c : ℕ` zieht es aus der Annahme `a * b < a * c` den Schluss `b < c`.
+  **ロボ**: それでいけるかもしれないね。
+  おそらく`lt_of_mul_lt_mul_left`という補題が必要になるだろう。
+  `a b c : ℕ`に対して、仮定`a * b < a * c`から`b < c`を導くものだ。
   "
   by_contra h_dvd
   obtain ⟨a, ha⟩ := h_dvd

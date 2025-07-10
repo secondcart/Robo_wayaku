@@ -6,24 +6,23 @@ Level 3
 Title ""
 
 Introduction
-"Als nächstes kommt ihr an einen leeren Bauplatz, auf dem sich schon lange nichts getan zu haben scheint.
-Auf dem Bauschild steht:"
+"次に、長い間何も行われていないように見える空き建築現場に到着します。
+看板には次のように書かれています："
 
 open Finset
 
 Statement (I : Finset ℤ) (h : ∀ i ∈ I, (i-1)*i*(i+1) = 0): ∑ i ∈ I, (i-1)*i*(i+1)  = 0  := by
   Hint "
-    **Du**: Die Annahme sieht wie eine verklausulierte Variante von $I \\subseteq \\\{-1,0,1\\}$ aus.
-    Das kann ja so oder so keine große Summe werden.
+    **あなた**: この仮定は$I \\subseteq \\\{-1,0,1\\}$の複雑なバリエーションのように見えます。
+    どうせ大きな合計にはならないでしょう。
 
-    **Robo**: Nein.  Aber wir brauchen wohl einen Zwischenschritt, um das angegebene Ergebnis zu erhalten.
-    Ich schlage vor: `trans ∑ i ∈ I, 0`.  Das Summezeichen schreibst du als `\\sum`.
+    **ロボット**: いいえ。しかし、指定された結果を得るためには中間ステップが必要です。
+    `trans ∑ i ∈ I, 0`と書くことを提案します。合計記号は`\\sum`と書きます。
     "
   trans ∑ i ∈ I, 0
   Hint "
-    **Robo**:  Genau. Jetzt kannst du nämlich `apply sum_congr` schreiben
-    – zwei Summen sind insbesondere dann gleich, wenn über dieselbe Indexmenge summiert wird und
-      auch die Ausdrücke, über die summiert wird, übereinstimmen.
+    **ロボット**: その通りです。これで`apply sum_congr`と書くことができます
+    - 特に、同じインデックス集合に対して合計が行われ、合計される式も一致する場合、2つの合計は等しくなります。
   "
   apply sum_congr
   rfl

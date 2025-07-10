@@ -3,64 +3,61 @@ import Game.Metadata
 World "Quantus"
 Level 10
 
-Title "" -- "Drinker's Paradox"
+Title "Drinker's Paradox"
 
 Introduction
 "
-**Du**: Könnt ihr eigentlich immer nur im Chor oder durcheinander reden?
+**あなた**: あなたたちはいつも合唱で話すか、バラバラに話すことしかできないの？
 
-Wieder herrscht längeres Schweigen. Dann auf einmal:
+再び長い沈黙が続く。そして突然：
 
-**Alle**: Es gibt unter uns eine Person, wenn die redet, dann reden alle!
+**全員**: 私たちの中には一人、その人が話すと全員が話し出す人物がいる！
 
-Du kratzt Dich am Kopf.
+あなたは頭を掻く。
 
-**Robo**: Ist doch klar. Das ist auf jedem bewohnten Planeten so!
+**ロボ**: 当然だよ。これは有人惑星ならどこでも同じさ！
 
-**Du**: Was??
+**あなた**: え？
 
-**Robo**: Das ist eine Version vom Drinker's Paradox! Kennst du das nicht? Dann lies
-das am besten Mal in deiner Handbibliothek nach! *In jeder Bar gibt es eine Person mit
-der Eigenschaft, dass alle trinken, wenn sie trinkt.* Genauer gesagt: in jeder nicht-leeren Bar.
+**ロボ**: これは「飲み手のパラドックス」のバージョンだよ！知らないの？なら手元のライブラリで調べてみたら！*どのバーにも、その人が飲むと全員が飲むという性質を持つ人物がいる*。正確には：空でないバーならね。
 
-**Du**: Glaube ich nicht.
+**あなた**: 信じられない。
 
-**Robo**: Glaube ich schon. Ich glaube sogar, du kannst das beweisen. Hier, probier mal!
+**ロボ**: 私は信じるよ。むしろ、君が証明できるとさえ思ってる。ほら、試してみて！
 "
 
 Statement {People : Type} [h_nonempty : Nonempty People] (isDrinking : People → Prop) :
     ∃ (x : People), isDrinking x → ∀ (y : People), isDrinking y := by
   Hint "
-    **Du**: Also, `{isDrinking}` ist wieder so ein Prädikat …
-    Wenn `p` eine Person ist, ist `{isDrinking} p` eine Aussage,
-    die wahr oder falsch ist. Soweit so gut.
+    **あなた**: つまり、`{isDrinking}`はまた述語ってこと…
+    `p`が人物なら、`{isDrinking} p`は真か偽の命題だ。
+    まあそうだよね。
     "
   Hint (hidden := true) "
-    **Du**: Und wie fang ich jetzt an?
+    **あなた**: で、どう始めれば？
 
-    **Robo**: Ich sagte doch, schau am besten Mal in deine Handbibliothek.
-    Wenn ich mich richtige erinnere, hilft eine Fallunterscheidung, ob die Aussage
-    `∀ (y : {People}), {isDrinking} y` wahr oder falsch ist.
+    **ロボ**: 言った通り、手元のライブラリを見るのが一番だよ。
+    正しければ、場合分けが役立つと思う。`∀ (y : {People}), {isDrinking} y`が真か偽かでね。
     "
-  Hint (hidden := true) "**Robo**: Schau mal `by_cases` an."
+  Hint (hidden := true) "**ロボ**: `by_cases`を見てみて。"
   by_cases h : ∀ y, isDrinking y
   · Hint (hidden := true) "
-      **Du**: Und wen nehm ich jetzt?
+      **あなた**: で、誰を選べば？
 
-      **Robo**: Ist das nicht egal? Aus der Annahme `h_nonempty` weißt du, dass es jemanden gibt."
+      **ロボ**: 関係ないんじゃない？仮定`h_nonempty`から誰かいることはわかってる。"
     obtain ⟨someone⟩ := h_nonempty
     use someone
     intro
     assumption
-  · Hint (hidden := true) "**Robo**: Du könntest hier mit `push_neg at {h}` weitermachen."
+  · Hint (hidden := true) "**ロボ**: ここは`push_neg at {h}`で進められるよ。"
     push_neg at h
-    Hint (hidden := true) "**Du**: Also nach `{h}` existiert ja eine Person, die nicht trinkt. Könnte ich diese brauchen damit die Aussage trivialerweise wahr wird?
+    Hint (hidden := true) "**あなた**: つまり`{h}`の後、飲まない人物が存在する。これを使って命題を自明に真にできる？
 
-    **Robo**: Schau dir mal an wie man `obtain` auf die Annahme `{h}` anwenden könnte."
+    **ロボ**: 仮定`{h}`に`obtain`をどう適用するか見てみて。"
     choose p hp using h
     use p
     intro hp'
-    Hint (hidden := true) "**Robo**: Was siehst du, wenn du `{hp}` und `{hp'}` anschaust?"
+    Hint (hidden := true) "**ロボ**: `{hp}`と`{hp'}`を見て何がわかる？"
     contradiction
 
 
@@ -69,26 +66,26 @@ TheoremTab "Logic"
 
 Conclusion
 "
-**Du**: Verstehe. Aber jetzt habe ich auch wirklich genug von dieser Prädikatenlogik!
+**あなた**: わかった。でももうこの述語論理にはうんざりだ！
 
-**Robo**: Dann fliegen wir am besten weiter! Aber bevor du fragst – hier ist wieder ein Überblick, was du auf diesem Planeten gelernt hast.
+**ロボ**: なら早く出発しよう！でも聞く前に――この惑星で学んだことのまとめだ。
 
 
-|               | Beschreibung                |
-|:--------------|:----------------------------|
-| `∃`           | Existential-Quantifier      |
-| `∀`           | Forall-Quantifier           |
-| `Even n`      | `n` ist gerade              |
-| `Odd n`       | `n` ist ungerade            |
+|               | 説明                         |
+|:--------------|:-----------------------------|
+| `∃`           | 存在量化子                   |
+| `∀`           | 全称量化子                   |
+| `Even n`      | `n`は偶数                    |
+| `Odd n`       | `n`は奇数                    |
 
-|       | Taktik                    | Beispiel                                               |
-|:------|:--------------------------|:-------------------------------------------------------|
-| *13ᶜ* | `rw`                      | Umschreiben mit Gleichungen.                           |
-| 15    | `ring`                    | Löst Gleichungen mit `+, -, *, ^`.                     |
-| *4ᵇ*  | `decide`                  | Kann auch Aussagen zu konkreten Zahlen beantworten.    |
-| 16    | `unfold`                  | Setzt visuell die Bedeutung einer Definition ein.      |
-| 17    | `use`                     | Um ein `∃` im Goal anzugehen.                          |
-| 18    | `choose x hx using h`     | Um ein `∃` in den Annahmen zu zerlegen.                |
-| *8ᵇ*  | `intro`                   | Um ein `∀` im Goal anzugehen.                          |
-| 19    | `push_neg`                | Für `¬∃` und `¬∀` im Goal.                             |
+|       | タクティック                  | 例                                                     |
+|:------|:------------------------------|:-------------------------------------------------------|
+| *13ᶜ* | `rw`                          | 等式で書き換え。                                       |
+| 15    | `ring`                        | `+, -, *, ^`を含む方程式を解く。                       |
+| *4ᵇ*  | `decide`                      | 具体的な数値に関する命題も答えられる。                 |
+| 16    | `unfold`                      | 定義を視覚的に展開する。                               |
+| 17    | `use`                         | Goal中の`∃`に対して具体例を与える。                    |
+| 18    | `choose x hx using h`         | 仮定中の`∃`を分解する。                                |
+| *8ᵇ*  | `intro`                       | Goal中の`∀`に対処する。                                |
+| 19    | `push_neg`                    | Goal中の`¬∃`や`¬∀`に対して使用。                       |
 "

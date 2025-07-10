@@ -4,24 +4,24 @@ import Game.Metadata
 World "Vieta"
 Level 2
 
-Title "" -- "Anonyme Funktionen"
+Title "Anonyme Funktionen"
 
 Introduction
 "
-Wieder saust ein Pfeil vorbei.  Aber Vieta gibt euch seelenruhig das nächste Blatt.
+再び矢がかすめて飛んでいきます。しかしVietaは冷静に次の紙を渡してきます。
 "
 
 Statement : let f : ℤ → ℤ := fun x ↦ x ^ 2; f 2 = 4 := by
-  Hint"
-    **Robo**: Aha, das ist interessanter.  Hier ist
-    `fun (x : ℤ) ↦ x ^ 2` eine „anonyme Funktion“, nämlich die Abbildung $x↦x^2$.
+  Hint "
+    **Robo**: ああ、これはもっと興味深いですね。ここで
+    `fun (x : ℤ) ↦ x ^ 2` は「匿名関数」、つまり写像 $x↦x^2$ です。
 
-   **Du**:  Und was ist an ihr anonym?
+   **あなた**: そして、何が匿名なのですか？
 
-   **Robo**: Na, dass sie erst einmal keinen Namen hat.
-    Erst durch `f : ℤ → ℤ := …` erhält sie einen Namen.
+   **Robo**: そうですね、最初は名前がないということです。
+    `f : ℤ → ℤ := …` によって初めて名前が与えられます。
 
-  **Du**:  Ach so.  Ingesamt haben wir also die folgende Abbildung, ja?
+  **あなた**: なるほど。つまり全体として次のような写像ですね？
 
     $$
     \\begin\{aligned}
@@ -30,14 +30,14 @@ Statement : let f : ℤ → ℤ := fun x ↦ x ^ 2; f 2 = 4 := by
     \\end\{aligned}
     $$
 
-  Ich soll also zeigen $2^2=4$?
+  私は $2^2=4$ を示せばいいのですか？
 
-  **Robo**: Ja.
+  **Robo**: はい。
 
-  **Du**: Und wie mache ich das hier?
+  **あなた**: そしてここでどうすればいいですか？
 
-  **Robo**: Lean kann durch die meisten Abbildungsvorschriften hindurchsehen, also sollte `rfl`
-  hier reichen. Alternativ kannst du mit `simp [{f}]` explizit die Definition einsetzen."
+  **Robo**: Leanはほとんどの写像の定義を見通せるので、ここでは `rfl` で十分です。
+  別の方法として `simp [{f}]` で明示的に定義を代入することもできます。"
   Branch
     simp [f]
   rfl

@@ -14,9 +14,9 @@ open Function
 Statement {A B : Type} {f : A -> B} {g : B -> A} :
     RightInverse g f ↔ LeftInverse f g := by
   Hint "
-  **Du**: Ich vermute mal, dass soll heißen, `g` ist genau dann ein Rechtsinverses of `f`, wenn `f` ein Linksinverses von `g` ist.
+  **あなた**: おそらくこれは、`g`が`f`の右逆元であることと、`f`が`g`の左逆元であることは同値だと言っているのでしょう。
 
-  **Robo**:  Genau.  Aber wenn mich nicht alles täuscht, ist das in Leansch weniger ein Satz als vielmehr die Definition von `Function.RightInverse`.  Und dummerweise muss man tatsächlich `Function.RightInverse` statt schlicht `RightInverse` schreiben, weil `RightInverse` in Leansch mehrdeutig ist.
+  **ロボ**: その通りです。しかし私の記憶が正しければ、これはLeanでは定理というより`Function.RightInverse`の定義そのものです。残念ながら実際には`RightInverse`と書く代わりに`Function.RightInverse`と書かなければなりません。なぜなら`RightInverse`はLeanでは曖昧な表現だからです。
   "
   Branch
     unfold Function.RightInverse

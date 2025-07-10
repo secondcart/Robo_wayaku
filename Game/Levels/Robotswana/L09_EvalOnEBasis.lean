@@ -7,18 +7,18 @@ Title "" -- "Matrix"
 
 Introduction
 "
-Keine fünfzig Meter weiter kommt ihr auf eine kleine Anhöhe.
-Robo zeigt auf einen Punkt in der Ferne.
+50メートルも進まないうちに、小さな丘に到着しました。
+ロボが遠くの一点を指さします。
 
-**Robo**: Schau mal, da liegt es!
+**ロボ**: 見て、あそこにあるよ！
 
-**Du**: Und was *ist* das???
+**あなた**: それって何なの???
 
-**Robo**:  Weiß nicht.  Aber mein Gefühl sagt mir, diese Zettel sind eine Art Steckbrief.  Schau mal, hier ist noch einer.  Ich glaube, der sagt, wie groß es ist.
+**ロボ**: わからない。でも私の直感では、これらの紙は一種のプロフィールみたいなものだと思う。ほら、ここにもう一枚ある。これには大きさが書いてあると思うよ。
 "
 
 Conclusion "
-  **Du**: Okay. Lass uns vorsichtig näher gehen.
+  **あなた**: わかった。慎重に近づいてみよう。
 "
 
 open Nat Matrix StdBasisMatrix Finset
@@ -36,9 +36,9 @@ Statement Matrix.one_on_diag_ebasis {n : ℕ} (hn : n > 0) {f : Mat[n, n][ℝ] �
     ∀ i, f (E i i) = 1 := by
   intro i
   Hint "
-   Du überlegst ein bisschen und kritzelst auf dem Papier herum.  Nach einer Weile:
+   あなたは少し考え込み、紙に落書きを始めます。しばらくして：
 
-   **Du**: Ich glaube, ich habe eine Idee! Das `{n}`-fache der Gleichung kann ich mit den vorherigen Resultaten wie folgt nachrechnen:
+   **あなた**: 考えが浮かんだよ！この`{n}`倍の式は、以前の結果を使って次のように計算できると思う：
   $$
     \\begin\{aligned}
     n \\cdot f(E_\{i i})
@@ -49,18 +49,18 @@ Statement Matrix.one_on_diag_ebasis {n : ℕ} (hn : n > 0) {f : Mat[n, n][ℝ] �
     \\end\{aligned}
   $$
 
-  Der wesentlich Punkt ist, dass wir ja gesehen hatten, dass `f E i i` und `f E j j` für beliebige `i` und `j` gleich sind.  Also sind sie in der Summe austauschbar.
+  重要なポイントは、任意の`i`と`j`に対して`f E i i`と`f E j j`が等しいことがわかっていることです。つまり、総和の中で交換可能です。
 
-  **Robo**: Mmm.  Du willst jedenfalls zunächst ausnutzen, dass Multiplikation mit `{n}` injektiv ist?
-     Hatten wir dazu nicht mal ein Lemma? Mmm …
+  **ロボ**: うーん。とにかくまずは`{n}`を掛ける操作が単射であることを利用したいんだね？
+     それに関する補題があったんじゃない？うーん…
 
-  Robo überlegt eine Weile.
+  ロボはしばらく考え込む。
 
-  **Robo**:  Ich würds mal so versuchen:
+  **ロボ**: こうやってみたらどうかな：
      ```
      suffices h : n * f (E i i) = n * 1
      ```
-  Und dann weiter mit `mul_eq_mul_left_iff`.
+  そして`mul_eq_mul_left_iff`で進める。
   "
   -- apply nat_mul_inj' (n := n)
   -- BEGIN new alternative (cf. Prado)
@@ -69,49 +69,47 @@ Statement Matrix.one_on_diag_ebasis {n : ℕ} (hn : n > 0) {f : Mat[n, n][ℝ] �
     obtain h | h := h
     · assumption
     · Hint  "
-      **Robo**: In `{hn} : {n} > 0` und `{h} : n = 0` kann `omega`
-      bestimmt einen Widerspruch finden. Aber vielleicht versteckt sich in `{h}` gerade
-      noch eine implizite Einbettung von `ℕ` in `ℝ`.
-      Schreib vorsichtshalber erst einmal `simp at {h}`.
+      **ロボ**: `{hn} : {n} > 0`と`{h} : n = 0`では、`omega`が矛盾を見つけられるはずだよ。
+      でも`{h}`にはℕからℝへの暗黙の埋め込みが含まれているかもしれない。
+      念のためまず`simp at {h}`と書いてみて。
       "
       simp at h
       omega
   -- END
   Hint (hidden := true) "
-  **Robo**: Wenn ich dich richtig verstanden haben, willst du jetzt mehrmals `trans` anwenden, als erstes
-  `trans ∑ j : Fin {n}, f (E i i)`.
+  **ロボ**: 君の考えを正しく理解しているなら、今は複数回`trans`を適用したいんだね、最初に
+  `trans ∑ j : Fin {n}, f (E i i)`として。
   "
   Branch
     rw [←smul_eq_mul, ← LinearMap.map_smul]
-    Hint "**Robo**: Oh, das ist jetzt aber nicht das, was du eben aufgeschrieben hattest.
-      Könnte aber auch funktionieren.
-      Probier mal `trans {f} (∑ j : Fin {n}, E {i} {i})` als nächsten Schritt.
-      "
+    Hint "**ロボ**: あれ、これはさっき書いたのと違うね。
+      でもこれでもうまくいくかも。
+      次は`trans {f} (∑ j : Fin {n}, E {i} {i})`としてみて。"
     trans f (∑ x : Fin n, E i i)
-    · Hint "**Du**: Genau, jetzt müssen wir für diese erste Gleichheit nur die konstante Summe ausrechnen.
+    · Hint "**あなた**: そう、この最初の等式では定数の総和を計算するだけだよ。
 
-      **Robo**: `simp [E]` kann das sicher komplett vereinfachen." -- TODO: Better hint
+      **ロボ**: `simp [E]`で完全に簡約できるはずだよ。" -- TODO: Better hint
       simp [E] -- TODO: This is a bit magical in the sense that `simp; unfold E; simp` seems not to work
-    · Hint (hidden := true )"**Du**: Als nächstes ziehen wir die Funktion in die Summe rein."
-      Hint "**Du**: Und jetzt möchte ich die Gleichung durch einen Zwischenschritt
-      `{f} (∑ x, E x x)` zeigen."
+    · Hint (hidden := true )"**あなた**: 次に、関数を総和の中に入れよう。"
+      Hint "**あなた**: そして今度は、中間ステップとして
+      `{f} (∑ x, E x x)`を通じて等式を示したい。"
       trans f (∑ x, E x x)
       · Branch
           apply congr_arg
-          Hint "**Du**: Nein, das ist jetzt mathematisch falsch!"
-        Hint (hidden := true) "**Robo**: Jetzt wieder `congr`-`ext`?
+          Hint "**あなた**: いや、これは数学的に間違ってる！"
+        Hint (hidden := true) "**ロボ**: 今度は`congr`-`ext`？
 
-        **Du**: Nein, zuerst, die Funktion in die Summe rein, sonst klappt das nicht."
+        **あなた**: いや、まず関数を総和の中に入れないとダメだよ。"
         rw [map_sum]
-        Hint "**Du**: Nochmals!"
+        Hint "**あなた**: もう一度！"
         rw [map_sum]
         apply congr_arg
         ext j
-        Hint "**Du**: Und das war ein Resultat, welches wir auf dem Weg gefunden haben."
-        Hint (hidden := true) "**Robo**: `eq_on_diag_ebasis` sagt meine Speicherplatte."
+        Hint "**あなた**: これは私たちが途中で見つけた結果だよ。"
+        Hint (hidden := true) "**ロボ**: 私の記憶装置によると`eq_on_diag_ebasis`だ。"
         rw [eq_on_diag_ebasis] -- Lvl 5
         assumption
-      · Hint (hidden := true) "**Robo**: Das sieht nach `ebasis_diag_sum_eq_one` aus."
+      · Hint (hidden := true) "**ロボ**: これは`ebasis_diag_sum_eq_one`みたいだね。"
         rw [ebasis_diag_sum_eq_one] -- Lvl 4
         rw [h₂]
         simp
@@ -120,15 +118,15 @@ Statement Matrix.one_on_diag_ebasis {n : ℕ} (hn : n > 0) {f : Mat[n, n][ℝ] �
     · trans ∑ j : Fin n, f (E j j )
       · apply congr_arg
         ext
-        Hint (hidden := true) "**Robo**: Das hatten wir schon gesehen."
+        Hint (hidden := true) "**ロボ**: これはもう見たね。"
         rw [eq_on_diag_ebasis] -- Lvl 5
         assumption
       · trans f 1
-        · Hint (hidden := true) "**Robo**: Das Resultat, das du hier anwenden wolltest, hieß `eq_sum_apply_diag_ebasis`."
+        · Hint (hidden := true) "**ロボ**: ここで使いたかった結果は`eq_sum_apply_diag_ebasis`だったね。"
           rw [eq_sum_apply_diag_ebasis] -- Lvl 8
           · simp
           · assumption
-        · Hint (hidden := true) "**Robo**: Probier mal `rw [{h₂}]`."
+        · Hint (hidden := true) "**ロボ**: `rw [{h₂}]`を試してみて。"
           rw [h₂]
           simp
   -- · simp -- previously needed for `nat_mul_inj'`

@@ -3,19 +3,19 @@ import Game.Metadata
 World "Cantor"
 Level 1
 
-Title "" -- "Cantor's Diagonalargument"
+Title "Cantor's Diagonalargument"
 
 Introduction
 "
-**Cantor**: … Wir betrachten also eine Abbildung `f` von `A` in die Potenzmenge von `A`,
-und nun die Menge alle jener Elemente aus `A`, die nicht in ihrem Bild unter `f` liegen …
+**カントール**: … 我々は集合`A`からその冪集合への写像`f`を考え、
+そして`A`の要素で`f`による像に含まれないもの全ての集合を…
 
-Oh!  Ein Publikum. Nein, *zwei* Publikums!  Hört und seht, seht und staunt.
+おや！観客がいる。いや、*二人*の観客だ！聞け、見よ、驚くがいい。
 
-Er zieht aus seinem Zylinder einen Zettel, faltet ihn zu einer Schwalbe,
-und lässt ihn zu euch herunterfliegen.
+彼はシルクハットから紙片を取り出し、ツバメのように折りたたみ、
+あなた方へと飛ばしてくる。
 
-**Cantor**:  Wenn ich schon zwei Publikums habe, könnten die ja auch ein bisschen mitmachen, nicht wahr?
+**カントール**: 二人の観客がいるのなら、少し参加してもらおうじゃないか？
 "
 
 Conclusion ""
@@ -24,38 +24,37 @@ open Set Function
 
 Statement {A : Type} (f : A → Set A) : ¬ ∃ (a : A), f a = { x | x ∉ f x } := by
   --Hint "**Robo**: Denk daran, dass `mem_setOf` aus `Set` irgendwann hilfreich sein wird."
-  Hint "**Du**:  Ist also `Set A` die Potenzmenge von `A`?
+  Hint "**あなた**: つまり`Set A`は`A`の冪集合なの？
 
-  **Robo**: Ja, sozusagen.  Es ist die Menge, oder genauer der Typ, aller Teilmengen von `A`.
+  **ロボ**: まあそういうことだね。`A`の全ての部分集合の集合、より正確には型だ。
 
-  **Du**:  Und ich soll zeigen, dass … aha.  Vermutlich ein Widerspruchsbeweis, oder?
+  **あなた**: そして私が示すべきは…なるほど。おそらく背理法かな？
 
-  **Robo**:  Vermutlich.
+  **ロボ**: おそらくね。
   "
   Branch
     push_neg
     intro _a
     by_contra _ha
   by_contra h
-  Hint "**Cantor**:  Ja, ja, ja!  Und jetzt hübsch `{h}` zerlegen …"
-  Hint (hidden := true)"**Robo:  … mit `obtain`, wie immer."
+  Hint "**カントール**: よしよし！さあ`{h}`をきれいに分解しよう…"
+  Hint (hidden := true)"**ロボ: …いつものように`obtain`でね"
   obtain ⟨a, ha⟩ := h
-  Hint (strict := true) "**Du**: Jetzt vermutlich eine Fallunterscheidung zu `{a} ∈ {f} {a}`?"
-  Hint (hidden := true) (strict := true) "**Robo**: Das wäre `by_cases h₁ : {a} ∈ {f} {a}`."
+  Hint (strict := true) "**あなた**: 今度は`{a} ∈ {f} {a}`について場合分けする？"
+  Hint (hidden := true) (strict := true) "**ロボ**: `by_cases h₁ : {a} ∈ {f} {a}`だね"
   by_cases h₁ : a ∈ f a
-  Hint "Cantor reibt sich die Hände.
+  Hint "カントールは手を擦り合わせる。
 
-    **Cantor**:  Das sieht gut aus!
+    **カントール**: いい調子だ！
     "
   · Branch
       rw [ha] at h₁
       Hint "
-        **Cantor**: Gute Idee!  Fast richtig!
-        Aber ihr werdet die ursprünglich Annahme
-        `{h₁} : {a} ∈ {f} {a}` gleich noch einmal brauchen.
+        **カントール**: 良い考えだ！ほぼ正解！
+        だが元の仮定`{h₁} : {a} ∈ {f} {a}`がもう一度必要になるだろう。
 
-        **Robo**:  Okay, zurück und mit `have` weiter.
-        Oder mit `suffices : {a} ∉ {f} {a}`!
+        **ロボ**: 了解、戻って`have`で続けよう。
+        または`suffices : {a} ∉ {f} {a}`で！
         "
     suffices : a ∉ f a
     · contradiction
@@ -69,5 +68,5 @@ Statement {A : Type} (f : A → Set A) : ¬ ∃ (a : A), f a = { x | x ∉ f x }
 
 TheoremTab "Set"
 
-Conclusion "Cantor klatsch in die Hände und freut sich.
-Wie von Zauberhand fliegt der Zettel zu ihm zurück."
+Conclusion "カントールは手を叩いて喜ぶ。
+魔法のように紙片は彼のもとへ飛んで帰っていった。"

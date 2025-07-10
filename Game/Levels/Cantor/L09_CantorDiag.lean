@@ -8,11 +8,10 @@ Title ""
 
 Introduction
 "
-**Cantor**: Viel Glück!
+**カントール**: 幸運を祈る！
 "
 
-Conclusion "**Du**: Jetzt möchte ich aber mit dieser generellen Form, die ursprüngliche
-Aufgabe nochmals lösen."
+Conclusion "**あなた**: さて、この一般的な形式で元の問題を再度解決したいと思います。"
 
 open Function Set
 
@@ -20,47 +19,48 @@ open Function Set
 TheoremDoc cantor_diagonal as "cantor_diagonal" in "Function"
 
 Introduction "
-  **Cantor**:  Passt auf!  Alles wird klar.  Hier ist der Schlüssel!
-  Ihr müsst die Aussage von eben nur ein bisschen umformulieren.
+  **カントール**: 注意してください！すべてが明らかになります。これが鍵です！
+  先ほどの主張を少し言い換える必要があります。
 
-  Er wirft euch einen neuen Zettel zu.
+  彼は新しいメモをあなたに投げます。
 "
 
 Conclusion "
-  **Cantor**:  Bravo!
+  **カントール**: 素晴らしい！
 "
 
 Statement cantor_diagonal {A Y : Type} (f : A → A → Y) (hf : Surjective f) :
     ∀ s : Y → Y, Nonempty (fixedPoints s) := by
   Hint "
-    **Du**:  Wir sollen unter bestimmten Annahmen zeigen, dass *jede* Selbstabbildung `s : {Y} → {Y}`
-    einen Fixpunkt hat?  Gibt es nicht auf jeder Menge eine Selbstabbildung *ohne* Fixpunkte?
-    Zum Beispiel $n ↦ n + 1$ auf $ℕ$ oder $ℝ$ …
+    **あなた**: 特定の仮定の下で、*任意の*自己写像`s : {Y} → {Y}`が
+    不動点を持つことを示す必要がありますか？すべての集合上に不動点のない
+    自己写像が存在しないのでしょうか？
+    例えば、$ℕ$や$ℝ$上の$n ↦ n + 1$など...
 
-    **Robo**:  … oder die nicht-triviale Permutation auf $\\\{0,1\\}$?
+    **ロボ**: ...または$\\\{0,1\\}$上の非自明な置換？
 
-    Auch er ist anscheinend etwas verwirrt.
+    彼もどうやら少し混乱しているようです。
 
-    **Robo**: Also, wenn `Y` nicht gerade die Einpunktmenge ist,
-    sollte immer eine fixpunktfreie Selbstabbildung existieren.
+    **ロボ**: つまり、`Y`が一点集合でない限り、
+    常に不動点を持たない自己写像が存在するはずです。
 
-    **Cantor**:  Na, das ist ja gerade der Witz!  Wartet ab!
+    **カントール**: まあ、それがまさに面白いところです！待っててください！
     "
   intro s
-  Hint (hidden := true) "**Cantor**: Ihr müsst natürlich irgendwie die
-  Surjektivität von `{f}` ausnutzen. Aber ich hatte euch ja eben schon verraten,
-  von welcher Abbildung `{A} → {Y}`  ihr ein Urbild betrachten müsst …
+  Hint (hidden := true) "**カントール**: もちろん、`{f}`の全射性を
+  何らかの形で利用する必要があります。しかし、先ほどすでに、
+  どの写像`{A} → {Y}`の原像を考えればいいか教えましたね...
 
-  **Robo** *(zu Dir)*: Mmm … verstehst du, was er meint?
-  Natürlich könntest du jetzt eine Abbildung definieren mit
+  **ロボ** *(あなたに向かって)*: うーん...彼の言っていることがわかりますか？
+  もちろん、次のような写像を定義できます:
   ```
   let c : {A} → {Y} := fun a ↦ _
   ```
-  und dann von dieser Abbildung `c` ein Urbild betrachten.
-  Aber ich bin gerade etwas verloren.
+  そしてこの写像`c`の原像を考えます。
+  しかし、私は今少し迷子になっています。
   "
   let c : A → Y := fun (a : A) ↦ s (f a a)
-  Hint "**Cantor**: Gute Wahl!"
+  Hint "**カントール**: 良い選択です！"
   obtain ⟨a, ha⟩ := hf c
   use (f a a)
   unfold fixedPoints IsFixedPt

@@ -3,52 +3,46 @@ import Game.Metadata
 World "Implis"
 Level 1
 
-Title "" -- "Intro"
+Title "Intro"
 
 Introduction
 "
-**Operationsleiter**: Hier, zum Beispiel:
+**オペレーションマネージャー**: 例えば、ここを見てください:
 "
 
 Statement (A B : Prop) (hB : B) : A → (A ∧ B) := by
   Hint "
-    **Operationsleiter**: Die Arbeiter meinen, das wäre so richtig und wir würden das dringend
-    brauchen. Aber keiner kann es mir beweisen.
+      **オペレーションマネージャー**: 作業員たちはこれが正しく、私たちが緊急に必要としていると言っています。しかし誰も証明できません。
 
-    **Du**: Einen Moment. Das ist ja gerade so eine Implikation (`\\to`). Wir nehmen an,
-    dass `{B}` gilt, und wollen zeigen, dass dann gilt `{A}` impliziert `{A} und {B}`. Ja,
-    klar! Natürlich stimmt das.
+    **あなた**: ちょっと待ってください。これはまさに含意(`\\to`)ですね。`{B}`が成り立つと仮定し、`{A}`が`{A}かつ{B}`を意味することを示したいのです。はい、もちろん！確かに正しいです。
 
-    Der Operationsleiter sieht dich erwartungsvoll an.
+    オペレーションマネージャーは期待の眼差しであなたを見つめています。
 
-    **Du** *(leise zu Robo)*: Soll ich ihm `tauto` aufschreiben?
+    **あなた** *(ロボに小声で)*: `tauto`と書いてあげましょうか？
 
-    **Robo** *(leise zurück)*: So wie der aussieht, fürchte ich, das wird er auch nicht verstehen.
-      Schreib den Beweis lieber aus.
+    **ロボ** *(小声で返答)*: 彼の様子を見ると、それも理解できないでしょう。証明を丁寧に書いてあげた方がいいです。
 
-    **Du**: Aber wie denn? Ich glaube, ich würde als erstes gern so etwas sagen wie 'Nehmen wir
-    also an, `{A}` gilt …'
+    **あなた**: でもどうやって？まず『では、`{A}`が成り立つと仮定しましょう...』と言いたいのですが。
 
-    **Robo**: Ja, gute Idee. Wähle dazu für deine Annahme einfach einen Namen, zum Beispiel `h`,
-    und schreib `intro h`."
+    **ロボ**: はい、良い考えです。仮定に`h`のような名前を付けて、`intro h`と書いてください。
+    "
   intro hA
   Hint "
-    **Du**: Okay. Jetzt habe ich also sowohl `{A}` als auch `{B}` in meinen Annahmen und
-    muss `{A} ∧ {B}` zeigen.
+      **あなた**: わかりました。これで`{A}`と`{B}`の両方が仮定としてあり、`{A} ∧ {B}`を示す必要があります。
 
-    **Robo**: Genau. Und wie das geht, weißt du ja schon."
+    **ロボ**: その通りです。どうすればいいかはもうわかっていますね。
+    "
   constructor
   assumption
   assumption
 
 Conclusion
 "
-**Operationsleiter**: Perfekt! Danke schön!
+**オペレーションマネージャー**: 完璧です！ありがとう！
 
-Er geht zu einer Schalttafel und ein paar Knöpfe. Irgendwo setzt sich lautstark ein
-Förderband in Bewegung.
+彼は制御盤に行き、いくつかのボタンを押します。どこかで大きな音とともにベルトコンベアが動き始めます。
 
-**Operationsleiter**: Habt Ihr vielleicht noch ein paar Minuten?
+**オペレーションマネージャー**: もう少し時間がありますか？
 "
 
 

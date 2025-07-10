@@ -3,42 +3,40 @@ import Game.Metadata
 World "Implis"
 Level 11
 
-Title "" -- "Genau dann wenn"
+Title "Genau dann wenn"
 
 Introduction
 "
-**Operationsleiter**: Ah, die nächste Seite ist auch von diesem Kollegen.
-Aber da ist noch eine Notiz bei. Wir hatten hierfür schon einmal einen Beweis,
-aber den mochte er nicht. Er wollte einen Beweis, der weder `rw` noch `apply` verwendet!!
+**作戦責任者**: ああ、次のページもこの同僚のものだ。
+しかし、ここにメモが付いている。以前この問題の証明をしたことがあるが、
+彼は気に入らなかった。`rw`も`apply`も使わない証明を望んでいたんだ!!
 
-Er holt tief Luft und seuft.
+彼は深く息を吸い、ため息をつく。
 
-**Operationsleiter**: Ich glaube, der stellt sich immer viel dümmer, als er ist.
-Aber meint Ihr, Ihr schafft das?
+**作戦責任者**: 彼はいつも自分を実際よりずっと愚かだと装っていると思う。
+でも、君ならできると思うかい？
 "
 
 Statement (A B : Prop) : (A ↔ B) → (A → B) := by
-  Hint "**Du**: Hmm, mindestens mit der Implikation kann ich anfangen."
-  Hint (hidden := true) "**Robo**: Genau, das war `intro`."
+  Hint "**あなた**: うーん、少なくとも含意の部分から始められるかな。"
+  Hint (hidden := true) "**ロボ**: そうだね、それは`intro`だった。"
   intro h
   Hint "
-    **Du**: Also, ich kenne `rw [{h}]` und `apply ({h}.mp)`, aber das wollten wir ja
-    diesmal vermeiden.
+    **あなた**: えーと、`rw [{h}]`や`apply ({h}.mp)`は知ってるけど、今回はそれを避けたいんだよね。
 
-    **Robo**: Was du machen könntest, ist, mit `obtain ⟨mp, mpr⟩ := {h}` die Annahme
-    in zwei Teile aufteilen."
+    **ロボ**: できることは、`obtain ⟨mp, mpr⟩ := {h}`を使って仮定を2つに分けることだよ。"
   Branch
     intro
     Hint "
-      **Robo**: Hier müsstest du jetzt `rw [←{h}]` oder `apply {h}.mp` benutzen.
-      Geh lieber einen Schritt zurück, sodass das Goal `A → B` ist."
+        **ロボ**: ここでは`rw [←{h}]`か`apply {h}.mp`を使う必要がある。
+      一歩戻って、Goalが`A → B`になるようにした方がいいよ。"
   obtain ⟨mp, _mpr⟩ := h
-  Hint (hidden := true) "**Du**: Ah, und jetzt ist das Beweisziel in den Annahmen."
+  Hint (hidden := true) "**あなた**: ああ、これで証明目標が仮定の中にあるんだ。"
   assumption
 
 Conclusion
 "
-**Operationsleiter**: Perfekt, das sollte reichen!
+**作戦責任者**: 完璧、これで十分だ！
 "
 
 OnlyTactic intro obtain assumption

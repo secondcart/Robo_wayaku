@@ -5,27 +5,27 @@ Level 2
 
 Title ""
 
-Introduction "Der nächste Funkspruch sieht ein bisschen anders aus."
+Introduction "次の無線信号は少し違って見える。"
 
 namespace MvPolynomial
 
 Statement (x y : ℚ) : (x + y) ^ 2 = x ^ 2 + 2 * x * y + y ^ 2 := by
-  Hint "**Du**: Sind wir hier bei den anonymen Schulmathematikern?
-  Man rechnet das doch einfach aus, indem man die Terme umsortiert.
-  Was sollen wir da `binomi` zurückfunken?
+  Hint "**あなた**: ここは匿名の学校数学の場ですか？
+  項を並べ替えて計算するだけです。
+  `binomi`と返信する必要があるのでしょうか？
 
-  **Robo**: Nein, die Gleichung heißt in diesem Universum natürlich `add_pow_two`,
-  weil in der Formel zuerst ein “+” und dann ein “^2” steht.
-  Du könntest also `rw [add_pow_two]` benutzen.
-  Danach sieht die linke Seite exakt wie die rechte aus, und du bist fertig."
+  **ロボ**: いいえ、この宇宙ではこの等式は当然`add_pow_two`と呼ばれます。
+  式には最初に「+」、次に「^2」が来るからです。
+  ですから`rw [add_pow_two]`を使うことができます。
+  その後、左辺は右辺と完全に同じに見え、完了です。"
   Branch
     ring
   rw [add_pow_two]
 
 Conclusion "
-  Es kommt ein 👍 zurück.
+  👍が返ってきました。
 
-  **Robo**: Du hättest allerdings auch einfach `ring` sagen können.
+  **ロボ**: ただし、単に`ring`と言うこともできたでしょう。
   "
 
 NewTactic ring

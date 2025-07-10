@@ -3,35 +3,35 @@ import Game.Metadata
 World "Logo"
 Level 11
 
-Title "" -- "Und"
+Title "Und"
 
 Introduction
 "
-Langsam wird die Schlange kürzer. Die nächste Formalosophin, ebenfalls häkelnd, hat folgendes Anliegen.
+徐々に蛇は短くなっていきます。次の編み物をしている形式哲学者が、次のような要望を持っています。
 "
 
 Statement (A B C : Prop) (h : A ∧ (B ∧ C)) : B := by
   Hint "
-    **Du**: Jetzt müssen wir wohl die Annahme de-konstruieren.
+    **あなた**: そろそろ仮定を分解する必要がありそうだ。
 
-    **Robo**: Ja, genau. Das geht am einfachsten mit `obtain ⟨h₁, h₂⟩ := {h}`.
+    **ロボ**: はい、その通りです。最も簡単な方法は`obtain ⟨h₁, h₂⟩ := {h}`を使うことです。
 
-    **Du**: Moment, wie schreib ich *das* denn hier auf?
+    **あなた**: 待って、どうやって書けばいいんだっけ？
 
-    **Robo**: Die bleiden Klammern schreibst du als `\\<` und `\\>`, oder gleichzeitig als `\\<>`.
-    Und h₁ schreibst du einfach als `h\\1`. Aber du kannst dir auch einfach andere Namen
-    für `h₁` und `h₂`, zum Beispiel `obtain ⟨hA, hBC⟩ := {h}`."
+    **ロボ**: 角括弧は`\\<`と`\\>`で書くか、まとめて`\\<>`と書きます。
+    h₁は単に`h\\1`と書けます。でも`h₁`や`h₂`の代わりに他の名前を使っても構いません。
+    例えば`obtain ⟨hA, hBC⟩ := {h}`のように。"
   Branch
     obtain ⟨_h₁, _h₂⟩ := h
-    Hint "**Robo**: Das sieht doch schon besser aus! Gleich nochmal!"
+    Hint "**ロボ**: だいぶ良くなってきました！もう一度やってみましょう！"
   obtain ⟨_h₁, g, _h₃⟩ := h
-  Hint (hidden := true) "**Robo**: Du hast einen Beweis dafür in den *Annahmen*."
+  Hint (hidden := true) "**ロボ**: あなたはその証明を*仮定*の中に持っています。"
   assumption
 
 Conclusion
 "
-**Robo**: Du hättest das übrigens auch direkt verschachtelt schreiben können:
-`obtain ⟨h₁, h₂ , h₃⟩ := h`.
+**ロボ**: ちなみに、これは直接ネストして書くこともできました:
+`obtain ⟨h₁, h₂ , h₃⟩ := h`。
 "
 
 NewTactic obtain

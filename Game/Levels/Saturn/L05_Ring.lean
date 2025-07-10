@@ -51,8 +51,8 @@ Statement (z a b : ℤ) (h2b : 2*b = 100) (hb2 : b^2 = -100*a - a^2) (h :  z = (
 TheoremTab "+ *"
 
 Conclusion "
-  “Bestanden” heißt es kurz und knapp vom anonymen Funker.
+  「合格」と匿名の通信士が簡潔に伝えてくる。
 
-  **Robo**: Ich glaube, der Antrieb hat sich jetzt genügend regeniert.
-  Nichts wie weg!
+  **ロボ**: エンジンが十分に回復したようです。
+  さっさと出発しましょう！
 "

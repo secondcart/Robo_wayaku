@@ -7,27 +7,28 @@ Level 11
 Title ""
 
 Introduction "
-  **Cantor**:  Einfacher?  Weiß nicht.  Aber eleganter!
+  **カントール**: 簡単？わからないな。でもエレガントだ！
 
-  Er macht drei Saltos rückwarts und kommt
-  dann mit einem weiteren Zettel für euch zurück.
+  彼は後方宙返りを3回して、
+  あなたたちへの新しいメモを持って戻ってきた。
 
-  **Cantor**:  Schaut mal!  Jetzt könnt ihr mit demselben Argument zeigen,
-  dass die Menge der Folgen natürlicher Zahlen, also die Menge der Abbildungen `ℕ → ℕ`,
-  überabzählbar ist!
+  **カントール**: 見て！これで同じ論法を使って、
+  自然数列の集合、つまり写像`ℕ → ℕ`の集合が
+  非可算であることを示せるよ！
 
-  Und dann im Flüsterton:
+  そして小声で：
 
-  **Cantor**:  Es gibt in diesem Zelt überabzählbar viele Plätze!
+  **カントール**: このテントには非可算な数の席があるんだ！
 "
 
 Conclusion "
-  **Robo**:  Vielen Dank für die Vorstellung!
+  **ロボ**: ご紹介ありがとうございました！
 
-  **Du**:  Aber schade, dass es so wenige Zuschauer gibt!
+  **あなた**: でも観客が少なくて残念だね！
 
-  **Cantor**:  Zauberei ist eben nicht für jedermann.  Gute Weiterreise!
+  **カントール**: 魔法は誰にでも理解できるものじゃないからね。良い旅を！
 "
+
 
 open Nat Set Function
 
@@ -37,9 +38,9 @@ Statement : ¬ ∃ f : ℕ → ℕ → ℕ, Surjective f := by
   by_contra hf
   apply cantor_diagonal at hf
   Hint (hidden := true) "
-    **Du**:  Wie hieß noch einmal die Abbildung `n ↦ n + 1`?
+    **あなた**: 写像`n ↦ n + 1`って何て言うんだっけ？
 
-    **Robo**: `succ`
+    **ロボ**: `succ`
   "
   specialize hf succ
   obtain ⟨n, hn⟩ := hf

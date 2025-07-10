@@ -27,7 +27,7 @@ open Finset
 namespace Nat
 
 Statement : ¬ Set.Finite { p : ℕ | Prime p} := by
-  Hint "**ロボ**: もちろん, やりましょう。
+  Hint "**Robo**: もちろん, やりましょう。
   これは典型的な背理法の証明です:
   もし素数が有限個しかないなら, 全ての素数の積に1を足した数は
   どの素数でも割り切れません。

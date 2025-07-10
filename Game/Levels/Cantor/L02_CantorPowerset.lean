@@ -43,15 +43,15 @@ Statement {A : Type} : ¬ ∃ f : A → Set A, Surjective f := by
   要するに「べき集合は常に元の集合より大きい」ということですね。
   背理法だったと思います。
 
-  **ロボ**: はい, ですが`push_neg`と`intro f`から始めるのが良いでしょう。"
+  **Robo**: はい, ですが`push_neg`と`intro f`から始めるのが良いでしょう。"
   push_neg
   intro f
   by_contra hf
   Hint "**カントール**: さて, どう思いますか？おそらく`f`によってカバーされない集合があるのではないでしょうか？"
-  Hint (hidden := true) "**ロボ**: 先ほどの集合を試してみてください！
+  Hint (hidden := true) "**Robo**: 先ほどの集合を試してみてください！
   まず`let s := \{ a | a ∉ {f} a }`で導入できます。"
   let s := { a | a ∉ f a }
-  Hint "**ロボ**: 素晴らしい！
+  Hint "**Robo**: 素晴らしい！
   これで例えば`specialize {hf} {s}`と続けられます。
   後で`simp`を使うときは`simp [{s}]`とすれば, `simp`が定義を見通してくれます。"
   specialize hf s
@@ -59,9 +59,9 @@ Statement {A : Type} : ¬ ∃ f : A → Set A, Surjective f := by
   obtain ⟨a, ha⟩ := hf
   Hint "**カントール**: そうだ！
 
-  **あなた**: ロボ, 今こそ先ほどの結果を使えるのでは？
+  **あなた**: Robo, 今こそ先ほどの結果を使えるのでは？
 
-  **ロボ**: すみません, 全てが早すぎました！保存するのを忘れたようです。"
+  **Robo**: すみません, 全てが早すぎました！保存するのを忘れたようです。"
   by_cases h : a ∈ f a
   · suffices hn : a ∉ f a
     · contradiction

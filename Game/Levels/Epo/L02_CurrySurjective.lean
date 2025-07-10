@@ -16,9 +16,9 @@ Statement {A B : Type} (f : ℕ → A → B) : ¬ Surjective f ↔ ∃ g : A →
   Hint "
   **あなた**: `ℕ → A → B`…この連続した矢印はどう読むのですか？
 
-  **ロボ**: これは`ℕ → (A → B)`と読みます。自然数`ℕ`からAからBへの写像の集合`A → B`への写像です。これは, あなたがここで示すべきことを読み進めると明らかになります。"
+  **Robo**: これは`ℕ → (A → B)`と読みます。自然数`ℕ`からAからBへの写像の集合`A → B`への写像です。これは, あなたがここで示すべきことを読み進めると明らかになります。"
   Hint (hidden := true) "
-  **ロボ**: `constructor`で始めるか, `unfold Surjective`で始めてから`push_neg`が役立つかどうか確認すると良いでしょう。"
+  **Robo**: `constructor`で始めるか, `unfold Surjective`で始めてから`push_neg`が役立つかどうか確認すると良いでしょう。"
   Branch
     constructor
     · intro h
@@ -28,7 +28,7 @@ Statement {A B : Type} (f : ℕ → A → B) : ¬ Surjective f ↔ ∃ g : A →
       use w
       intro n
       Hint "
-      **ロボ**: `ne_comm`が役立つかもしれません。
+      **Robo**: `ne_comm`が役立つかもしれません。
       `ne_comm`の主張は`a ≠ b ↔ b ≠ a`です。"
       rw [ne_comm]
       apply hw
@@ -41,11 +41,11 @@ Statement {A B : Type} (f : ℕ → A → B) : ¬ Surjective f ↔ ∃ g : A →
   unfold Surjective
   push_neg
   Hint "
-  **ロボ**: `ne_comm`が役立つかもしれません。
+  **Robo**: `ne_comm`が役立つかもしれません。
   `ne_comm`の主張は`a ≠ b ↔ b ≠ a`です。
   "
   Hint (hidden := true) "
-  **ロボ**: 多くの量化子があるため, ここでは`rw [ne_comm]`は機能しません。
+  **Robo**: 多くの量化子があるため, ここでは`rw [ne_comm]`は機能しません。
   代わりに`simp [ne_comm]`を試してみてください。
   "
   simp [ne_comm]

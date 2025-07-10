@@ -23,7 +23,7 @@ Statement Injective.exists_unique_of_mem_range {A B : Type} {f : A → B} (hf : 
     ∃! a, f a = b := by
   Hint "**あなた**: `∃! a` でまず使用したい要素 `a` を構築します…
 
-  **ロボ**: …そして `use a` と `simp` を適用します。その通りです。
+  **Robo**: …そして `use a` と `simp` を適用します。その通りです。
   "
   obtain ⟨a, ha⟩ := hb
   use a

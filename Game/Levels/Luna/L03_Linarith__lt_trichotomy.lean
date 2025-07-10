@@ -28,7 +28,7 @@ Statement lt_trichotomy: ∀ a b : ℝ, a < b ∨ a = b ∨ b < a := by
   Hint (strict := true)"
     **あなた**: 場合分け？？
 
-    **ロボ**: はい, 試してみてください。例えば最初に`by_cases h_leq : {a} ≤ {b}`, 次に`by_cases h_lt : {a} < {b}`で。
+    **Robo**: はい, 試してみてください。例えば最初に`by_cases h_leq : {a} ≤ {b}`, 次に`by_cases h_lt : {a} < {b}`で。
   "
   by_cases h_leq : a ≤ b
   · by_cases h_lt : a < b

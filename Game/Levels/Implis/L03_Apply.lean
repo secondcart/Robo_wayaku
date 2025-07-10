@@ -18,12 +18,12 @@ Introduction
 
 Statement (A B : Prop) (h : A) (hAB : A → B) : B := by
   Hint "
-    **ロボ**: おそらく, 与えられた含意を適用する方がより洗練された方法だったでしょう。
+    **Robo**: おそらく, 与えられた含意を適用する方がより洗練された方法だったでしょう。
     `apply hAB at h`を試してみてください。"
   Branch
     apply hAB
     Hint "
-      **ロボ**: 私は`… at h`と言いました。しかし, 単に`apply hAB`だけでも機能するようです。
+      **Robo**: 私は`… at h`と言いました。しかし, 単に`apply hAB`だけでも機能するようです。
       これで, `hAB`を証明目標`B`に適用し, あとは`A`を証明するだけです。
     "
     assumption

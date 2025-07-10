@@ -25,7 +25,7 @@ Statement Icc_subset_Icc_iff (a₁ b₁ a₂ b₂ : ℕ) :
 a₁ ≤ b₁ →  (Icc a₁ b₁ ⊆ Icc a₂ b₂ ↔ a₂ ≤ a₁ ∧ b₁ ≤ b₂) := by
   -- unfold Icc -- optional
   Hint (hidden := true) "
-    **ロボ**: ここではまた`subset_iff`が役立つかもしれません。どうしてもわからなかったら, `simp`を試してみて。
+    **Robo**: ここではまた`subset_iff`が役立つかもしれません。どうしてもわからなかったら, `simp`を試してみて。
     "
   rw [subset_iff]
   simp
@@ -35,7 +35,7 @@ a₁ ≤ b₁ →  (Icc a₁ b₁ ⊆ Icc a₂ b₂ ↔ a₂ ≤ a₁ ∧ b₁ �
   · -- omega -- still fails here
     intro h
     Hint (hidden := true) "
-      **ロボ**: 仮定`{h}`を何らかの形で利用する必要があります。
+      **Robo**: 仮定`{h}`を何らかの形で利用する必要があります。
       `{h}`を不等式`a₁ ≤ b₁`や`a₁ ≤ a₁`に適用してみてはどうでしょう！
       （不等式`a₁ ≤ a₁`は`have`を使って表現するのがベストです）
     "

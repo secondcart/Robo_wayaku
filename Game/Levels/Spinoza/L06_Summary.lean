@@ -22,10 +22,10 @@ Statement (n : ℕ) (h : Odd (n ^ 2)) : Odd n := by
   Hint "
     小惑星の重力圏から無事に離脱したら, 再び問題に取り掛かります。
 
-    **ロボット**: よし, 今回は `by_contra g` から始めよう！"
+    **Roboット**: よし, 今回は `by_contra g` から始めよう！"
   by_contra g
-  Hint "**ロボット**: 今度は `Odd (n ^ 2)` との矛盾を導きたいな。"
-  Hint (hidden := true) "**ロボット**: つまり `suffices d : ¬ Odd (n ^ 2)` だ。"
+  Hint "**Roboット**: 今度は `Odd (n ^ 2)` との矛盾を導きたいな。"
+  Hint (hidden := true) "**Roboット**: つまり `suffices d : ¬ Odd (n ^ 2)` だ。"
   suffices d : ¬ Odd (n ^ 2)
   contradiction
   rw [←even_iff_not_odd] at *
@@ -35,7 +35,7 @@ Statement (n : ℕ) (h : Odd (n ^ 2)) : Odd n := by
 DisabledTactic contrapose revert
 
 Conclusion "
-**ロボット**: ブラボー！ベネディクトゥスが教えてくれたことをまとめましょう。
+**Roboット**: ブラボー！ベネディクトゥスが教えてくれたことをまとめましょう。
 
 
 | **戦術**      | **目的**                                              |

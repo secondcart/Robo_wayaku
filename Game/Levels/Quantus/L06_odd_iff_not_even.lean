@@ -14,13 +14,13 @@ Statement (i : ℕ): (-1 : ℤ)^i  + (-1 : ℤ)^(i+1) = 0 := by
   Hint (hidden := true) "
     **あなた**:  iが偶数か奇数かで場合分けしたいと思います。
 
-    **ロボット**:  それではやってみてください。例えば`by_cases h : Even i`で。
+    **Roboット**:  それではやってみてください。例えば`by_cases h : Even i`で。
   "
   Branch
     by_cases h : Odd i
     swap  -- TODO: check whether this triggers in the correct moment
     Hint "
-      **ロボット**:  `odd_iff_not_even`を使えば, `¬Odd`を`Even`に変換できます。
+      **Roboット**:  `odd_iff_not_even`を使えば, `¬Odd`を`Even`に変換できます。
       "
     rw [← even_iff_not_odd] at h
   by_cases h : Even i
@@ -33,7 +33,7 @@ Statement (i : ℕ): (-1 : ℤ)^i  + (-1 : ℤ)^(i+1) = 0 := by
       ring
     · assumption
   · Hint "
-      **ロボット**:  `odd_iff_not_even`を使えば, `¬Even`を`Odd`に変換できます。
+      **Roboット**:  `odd_iff_not_even`を使えば, `¬Even`を`Odd`に変換できます。
     "
     rw [← odd_iff_not_even] at h
     rw [Odd.neg_pow]

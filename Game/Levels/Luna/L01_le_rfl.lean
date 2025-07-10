@@ -18,7 +18,7 @@ Introduction
 "
 
 Statement (n : ℕ) : n ≤ n := by
-  Hint "**ロボ**: `rfl`でどう？"
+  Hint "**Robo**: `rfl`でどう？"
   rfl
 
 Conclusion "

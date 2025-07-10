@@ -25,7 +25,7 @@ Statement {n : ℕ} {t : ℝ} (A : Matrix (Fin n) (Fin n) ℝ) :
   rw [trace_sub]
   rw [trace_smul]
   rw [trace_one]
-  Hint "**ロボ**: この最後のステップは`card_fin`です。もちろん, 私たちが遊びを楽しんでいなければ`simp`でもできますよ。"
+  Hint "**Robo**: この最後のステップは`card_fin`です。もちろん, 私たちが遊びを楽しんでいなければ`simp`でもできますよ。"
   rw [card_fin]
 
 /---/

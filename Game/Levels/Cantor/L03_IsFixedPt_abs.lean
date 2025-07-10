@@ -34,27 +34,27 @@ Statement : ∀ (x : ℝ), IsFixedPt (fun (x : ℝ) ↦ |x|) x ↔ 0 ≤ x := by
 -- The function here is simply called `abs` in mathlib,
 -- but let's not introduced too much additional notation
 -- when it's only needed once.
-  Hint "**ロボ**: `|x|`は単に実数`x`の通常の絶対値です。
+  Hint "**Robo**: `|x|`は単に実数`x`の通常の絶対値です。
   `IsFixedPt`の意味は`unfold`で調べられるでしょう。"
   unfold IsFixedPt
   Hint "**あなた**: えっと…
 
-  **ロボ**: `IsFixedPt`はおそらく「固定点である」という意味でしょう。
+  **Robo**: `IsFixedPt`はおそらく「固定点である」という意味でしょう。
   いずれにせよ, `IsFixedPt f x`は明らかに`f x = x`を意味します。
   "
   intro x
   constructor
-  Hint "**ロボ**: ここまでは順調です。"
+  Hint "**Robo**: ここまでは順調です。"
   · intro h
     rw [← h]
     --Branch
     --  positivity
     clear h
-    Hint "**ロボ**: `simp`を試してみましょう。"
+    Hint "**Robo**: `simp`を試してみましょう。"
     simp -- only [abs_nonneg]
   · intro h
     -- rw [abs_of_nonneg h]
-    Hint (hidden := true) "**ロボ**: `simp`を試してみましょう。"
+    Hint (hidden := true) "**Robo**: `simp`を試してみましょう。"
     simp
     assumption
 

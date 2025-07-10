@@ -17,7 +17,7 @@ Statement : ¬ ∃ (n : ℕ), ∀ (k : ℕ) , Odd (n + k) := by
   Branch
     unfold Odd
     Hint "
-      **ロボ**: この解法は少し難しすぎるようです。
+      **Robo**: この解法は少し難しすぎるようです。
       `Odd`を保持したままにして, 
       最終的に`even_iff_not_odd`を使えるようにした方が良いでしょう！"
   push_neg
@@ -25,29 +25,29 @@ Statement : ¬ ∃ (n : ℕ), ∀ (k : ℕ) , Odd (n + k) := by
   Branch
     unfold Odd
     Hint "
-      **ロボ**: この解法は少し難しすぎるようです。
+      **Robo**: この解法は少し難しすぎるようです。
       `Odd`を保持したままにして, 
       最終的に`even_iff_not_odd`を使えるようにした方が良いでしょう！"
   Hint "
-    **ロボ**: ここで`use`を使って数値を指定し, その後おそらく
+    **Robo**: ここで`use`を使って数値を指定し, その後おそらく
     補題`even_iff_not_odd`を使う必要があります。
 
     **あなた**: 今すぐ`even_iff_not_odd`を適用できますか？
 
-    **ロボ**: いいえ, `rw`は量化子内で書き換えできません。
+    **Robo**: いいえ, `rw`は量化子内で書き換えできません。
 
     **あなた**: ではどうすればいいのですか？
 
-    **ロボ**: それは後で教えます, 大勢の前ではやりません。
+    **Robo**: それは後で教えます, 大勢の前ではやりません。
     今は`use`で適切な数値を指定してから書き換えることをお勧めします。"
   Branch
     use n + 2
-    Hint "**ロボ**: 良い選択です！これで`even_iff_not_odd`が使えます。"
+    Hint "**Robo**: 良い選択です！これで`even_iff_not_odd`が使えます。"
   Branch
     use n + 4
-    Hint "**ロボ**: 良い選択です！これで`even_iff_not_odd`が使えます。"
+    Hint "**Robo**: 良い選択です！これで`even_iff_not_odd`が使えます。"
   use n
-  Hint "**ロボ**: 良い選択です！これで`even_iff_not_odd`が使えます。"
+  Hint "**Robo**: 良い選択です！これで`even_iff_not_odd`が使えます。"
   rw [← even_iff_not_odd]
   Branch
     tauto

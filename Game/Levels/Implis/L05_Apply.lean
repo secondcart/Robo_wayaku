@@ -7,7 +7,7 @@ Title "Implikation"
 
 Introduction
 "
-次のページは少し複雑に見えます。混乱しないように, ロボがすぐにさまざまな含意を図式にまとめます。
+次のページは少し複雑に見えます。混乱しないように, Roboがすぐにさまざまな含意を図式にまとめます。
   $$
   \\begin{CD}
        A  @>{f}>> B @<{g}<< C    \\\\
@@ -25,36 +25,36 @@ Statement
   Hint "
     **あなた**: つまり, $A \\Rightarrow I$ の含意の経路を見つけなければならない。
 
-    **ロボ**: どう始めるか考えてみよう…また `intro` かな？"
+    **Robo**: どう始めるか考えてみよう…また `intro` かな？"
 
   intro hyp
-  Hint (hidden := true) "**ロボ**: やっぱり `apply` でしょ。"
+  Hint (hidden := true) "**Robo**: やっぱり `apply` でしょ。"
   Branch
     apply r
-    Hint "**ロボ**: これは行き止まりみたいだ…"
+    Hint "**Robo**: これは行き止まりみたいだ…"
   Branch
     apply p
     Branch
       apply j
-      Hint "**ロボ**: これは良くないね。"
+      Hint "**Robo**: これは良くないね。"
     apply l
     Branch
       apply n
-      Hint "**ロボ**: うーん, 何か間違ってる…"
+      Hint "**Robo**: うーん, 何か間違ってる…"
     apply i
     Branch
       apply g
-      Hint "**ロボ**: 待って！道を間違えたよ。"
+      Hint "**Robo**: 待って！道を間違えたよ。"
     apply f
     assumption
   Branch
     apply h at hyp
-    Hint "**ロボ**: 本当にそれでいい？"
+    Hint "**Robo**: 本当にそれでいい？"
   apply f at hyp
   apply i at hyp
   Branch
     apply k at hyp
-    Hint "**ロボ**: えっと…"
+    Hint "**Robo**: えっと…"
   apply l at hyp
   apply p at hyp
   assumption

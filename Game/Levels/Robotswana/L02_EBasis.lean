@@ -13,7 +13,7 @@ Introduction
 "
 
 Conclusion "
-  **ロボ**: この`E.mul_of_ne`も保存しておこう, いつか役に立つかもしれない。
+  **Robo**: この`E.mul_of_ne`も保存しておこう, いつか役に立つかもしれない。
 
   **あなた**: でも今は, 誰がこれらのメモをここに落としたのか, あるいは捨てたのか気になってきた。さあ, 先に進もう。
 "
@@ -29,7 +29,7 @@ Statement Matrix.E.mul_of_ne {n : ℕ} (i j : Fin n) {k l : Fin n} (h : j ≠ k)
   これで正しいはずだ。
   "
   unfold E
-  Hint (hidden := true) "**ロボ**: ただし, `simp`は仮定`{h}`を明示的に必要とすることを忘れないで！"
+  Hint (hidden := true) "**Robo**: ただし, `simp`は仮定`{h}`を明示的に必要とすることを忘れないで！"
   simp [h]
 
 TheoremTab "Matrix"

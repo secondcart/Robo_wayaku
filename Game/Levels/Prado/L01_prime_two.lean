@@ -5,7 +5,7 @@ Level 1
 
 Title ""
 
-Introduction "**ロボ**: はは, そうだね。私たちは知っている。
+Introduction "**Robo**: はは, そうだね。私たちは知っている。
 
 彼は素早くLeanの言語で声明を書き上げ, あなたに差し出した。
 "
@@ -16,7 +16,7 @@ TheoremDoc Nat.prime_two as "prime_two" in "ℕ"
 namespace Nat
 
 Statement prime_two : Prime 2 := by
-  Hint "**ロボ** *(囁きながら)*: これはとても簡単だよ。`2`は具体的な数字で, 
+  Hint "**Robo** *(囁きながら)*: これはとても簡単だよ。`2`は具体的な数字で, 
   素数かどうかを判定するアルゴリズムがあるから, `decide`を使うだけでいいんだ！"
   decide
 

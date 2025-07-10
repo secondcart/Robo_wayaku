@@ -21,15 +21,15 @@ Statement :
   Hint (strict := true) "
     **あなた**: ここで`fixedPoints f`はおそらくすべての不動点の集合ですか？
 
-    **ロボット**: 試してみてください - `unfold`がまた役立つはずです。
+    **Roboット**: 試してみてください - `unfold`がまた役立つはずです。
   "
   unfold fixedPoints
   Hint (strict := true)  "
-    **ロボット**: 良さそうです。そして今すぐ`unfold IsFixedPt`もするのが良いでしょう。
+    **Roboット**: 良さそうです。そして今すぐ`unfold IsFixedPt`もするのが良いでしょう。
   "
   unfold IsFixedPt
   Hint (strict := true) (hidden := true) "
-    **ロボット**: `simp`はいつでも試してみる価値があります…
+    **Roboット**: `simp`はいつでも試してみる価値があります…
   "
   simp
   /-

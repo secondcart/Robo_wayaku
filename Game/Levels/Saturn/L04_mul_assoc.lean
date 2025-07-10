@@ -10,7 +10,7 @@ Introduction "また無線信号が届いた。"
 namespace MvPolynomial
 
 Statement (a b c : MvPolynomial (Fin 4) ℕ ) : a * b * c = a * (b * c) := by
-  Hint "**ロボ** ここでは `mul_assoc` を使うといいよ。あるいは *また* `ring` でも…"
+  Hint "**Robo** ここでは `mul_assoc` を使うといいよ。あるいは *また* `ring` でも…"
   ring
 
 Conclusion "
@@ -19,14 +19,14 @@ Conclusion "
   **あなた**: でも待って, 今回は係数が `ℕ` だったよね！
   これは環じゃないし, `ℕ` を係数とする多項式も環を成さないよ。
 
-  **ロボ**: そうかもね。でも `ring` は半環と呼ばれるものでも使えるんだ。
+  **Robo**: そうかもね。でも `ring` は半環と呼ばれるものでも使えるんだ。
 
   **あなた**: へえ…
 
   匿名のファンカーは, エンドゲームの準備ができているか, 
   それとも彼の惑星を何周か回りたいか知りたがっている。
 
-  「準備OK」とロボが返信した。
+  「準備OK」とRoboが返信した。
 "
 
 NewTactic ring

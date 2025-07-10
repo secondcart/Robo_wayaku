@@ -33,20 +33,20 @@ Statement Matrix.zero_on_offDiag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[ℝ]
     -- match the first goal and proof state
     -- of an incorrect attempt further below!
   Branch
-    Hint "**ロボ**: ここで`{h₁}`をどう使えるでしょうか？
+    Hint "**Robo**: ここで`{h₁}`をどう使えるでしょうか？
 
     **あなた**: 今回は`E i j`を積`E i j * E j j`と書いてみたらどうでしょう？
 
-    **ロボ**: なぜそうするのですか？
+    **Robo**: なぜそうするのですか？
 
     **あなた**: この積で因子を入れ替えるとゼロになります！`E.mul_of_ne`のようなものでしたよね。"
-    Hint (hidden := true) "**ロボ**: そうですか。では`trans f (E i j * E j j)`を試してみてください。"
+    Hint (hidden := true) "**Robo**: そうですか。では`trans f (E i j * E j j)`を試してみてください。"
     trans f (E i j * E j j)
     · Hint (hidden := true) "**あなた**: ええと, これは定義から明らかです。
 
-      **ロボ**: `unfold E`を忘れずに, または`E`の定義を使用するように`simp`に伝えてください(`simp [E]`)。"
+      **Robo**: `unfold E`を忘れずに, または`E`の定義を使用するように`simp`に伝えてください(`simp [E]`)。"
       simp [E]
-    · Hint "**ロボ**: ここで可換にしたいのですか？
+    · Hint "**Robo**: ここで可換にしたいのですか？
 
       **あなた**: その通りです！"
       Branch
@@ -55,7 +55,7 @@ Statement Matrix.zero_on_offDiag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[ℝ]
         -- first goal and proof state are identical to first proof
         -- reached in a correct solution (see (***) in first Branch above)
         simp
-        Hint "**ロボ**: おや。これは間違っているようです。"
+        Hint "**Robo**: おや。これは間違っているようです。"
       rw [h₁]
       rw [E.mul_of_ne] -- Lvl 2
       · simp

@@ -15,11 +15,11 @@ Statement :
   Hint "
     **あなた**: うーん, これは少し難しいですね…
 
-    **ロボ**: 私も今は良いアイデアが浮かびません。
+    **Robo**: 私も今は良いアイデアが浮かびません。
 
     すると観衆の中から誰かが囁きます: `StrictMono`…
 
-    **ロボ**: ああ, そうですね。`StrictMono.injective`という補題があります:
+    **Robo**: ああ, そうですね。`StrictMono.injective`という補題があります:
     厳密単調な写像はすべて単射です。
     そして写像が単調であることを示すための補題もたくさんあります。
     例えば:
@@ -29,13 +29,13 @@ Statement :
     `Odd.strictMono_pow` - 奇数の`n`に対して`x ↦ x ^ n`は厳密単調です
 
     これで試してみましょうか？"
-  Hint (hidden := true) "**ロボ**: `apply`が使えますよ"
+  Hint (hidden := true) "**Robo**: `apply`が使えますよ"
   Branch
     intro a b
-    Hint "**ロボ**: この方法は難しすぎるようです。最初からやり直した方が良さそうです！"
+    Hint "**Robo**: この方法は難しすぎるようです。最初からやり直した方が良さそうです！"
   Branch
     intro a b h
-    Hint "**ロボ**: この方法は難しすぎるようです。最初からやり直した方が良さそうです！"
+    Hint "**Robo**: この方法は難しすぎるようです。最初からやり直した方が良さそうです！"
   apply StrictMono.injective
   apply StrictMono.add
   · Branch
@@ -50,7 +50,7 @@ Statement :
     Hint (hidden := true) "
       **あなた**: それとも…？
 
-      **ロボ**: いえいえ, できますよ。`unfold`で`StrictMono`の定義を覗いてみてください
+      **Robo**: いえいえ, できますよ。`unfold`で`StrictMono`の定義を覗いてみてください
     "
     intro a b
     simp

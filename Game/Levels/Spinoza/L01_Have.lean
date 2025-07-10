@@ -17,18 +17,18 @@ Statement (A B : Prop) (h : A → ¬ B) (k : A ∧ B) : False := by
 
     **ベネディクトゥス**: …適切な中間結果を準備するべきです。
 
-    **ロボ**: そうだ！また`have`を使ってみて！具体的には`have g : ¬ B`！"
+    **Robo**: そうだ！また`have`を使ってみて！具体的には`have g : ¬ B`！"
   have g : ¬ B
   · Hint "
       **あなた**: え？今これを正しいと仮定しただけ？
 
-      **ロボ**: いや, 使う前にこれを証明する必要がありますよ。"
-    Hint (hidden := true) "**ロボ**: `apply`が役立つはず"
+      **Robo**: いや, 使う前にこれを証明する必要がありますよ。"
+    Hint (hidden := true) "**Robo**: `apply`が役立つはず"
     apply h
     assumption
   Hint "**あなた**: そして, 2つの仮定が矛盾する場合はどうするんでしたっけ？
 
-  **ロボ**: `contradiction`です。"
+  **Robo**: `contradiction`です。"
   contradiction
 
 Conclusion "**ベネディクトゥス**: 良さそうですね！"

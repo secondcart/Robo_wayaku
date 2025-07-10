@@ -15,15 +15,15 @@ Introduction
 
 あなたは頭を掻く。
 
-**ロボ**: 当然だよ。これは有人惑星ならどこでも同じさ！
+**Robo**: 当然だよ。これは有人惑星ならどこでも同じさ！
 
 **あなた**: え？
 
-**ロボ**: これは「飲み手のパラドックス」のバージョンだよ！知らないの？なら手元のライブラリで調べてみたら！*どのバーにも, その人が飲むと全員が飲むという性質を持つ人物がいる*。正確には：空でないバーならね。
+**Robo**: これは「飲み手のパラドックス」のバージョンだよ！知らないの？なら手元のライブラリで調べてみたら！*どのバーにも, その人が飲むと全員が飲むという性質を持つ人物がいる*。正確には：空でないバーならね。
 
 **あなた**: 信じられない。
 
-**ロボ**: 私は信じるよ。むしろ, 君が証明できるとさえ思ってる。ほら, 試してみて！
+**Robo**: 私は信じるよ。むしろ, 君が証明できるとさえ思ってる。ほら, 試してみて！
 "
 
 Statement {People : Type} [h_nonempty : Nonempty People] (isDrinking : People → Prop) :
@@ -36,28 +36,28 @@ Statement {People : Type} [h_nonempty : Nonempty People] (isDrinking : People �
   Hint (hidden := true) "
     **あなた**: で, どう始めれば？
 
-    **ロボ**: 言った通り, 手元のライブラリを見るのが一番だよ。
+    **Robo**: 言った通り, 手元のライブラリを見るのが一番だよ。
     正しければ, 場合分けが役立つと思う。`∀ (y : {People}), {isDrinking} y`が真か偽かでね。
     "
-  Hint (hidden := true) "**ロボ**: `by_cases`を見てみて。"
+  Hint (hidden := true) "**Robo**: `by_cases`を見てみて。"
   by_cases h : ∀ y, isDrinking y
   · Hint (hidden := true) "
       **あなた**: で, 誰を選べば？
 
-      **ロボ**: 関係ないんじゃない？仮定`h_nonempty`から誰かいることはわかってる。"
+      **Robo**: 関係ないんじゃない？仮定`h_nonempty`から誰かいることはわかってる。"
     obtain ⟨someone⟩ := h_nonempty
     use someone
     intro
     assumption
-  · Hint (hidden := true) "**ロボ**: ここは`push_neg at {h}`で進められるよ。"
+  · Hint (hidden := true) "**Robo**: ここは`push_neg at {h}`で進められるよ。"
     push_neg at h
     Hint (hidden := true) "**あなた**: つまり`{h}`の後, 飲まない人物が存在する。これを使って命題を自明に真にできる？
 
-    **ロボ**: 仮定`{h}`に`obtain`をどう適用するか見てみて。"
+    **Robo**: 仮定`{h}`に`obtain`をどう適用するか見てみて。"
     choose p hp using h
     use p
     intro hp'
-    Hint (hidden := true) "**ロボ**: `{hp}`と`{hp'}`を見て何がわかる？"
+    Hint (hidden := true) "**Robo**: `{hp}`と`{hp'}`を見て何がわかる？"
     contradiction
 
 
@@ -68,7 +68,7 @@ Conclusion
 "
 **あなた**: わかった。でももうこの述語論理にはうんざりだ！
 
-**ロボ**: なら早く出発しよう！でも聞く前に――この惑星で学んだことのまとめだ。
+**Robo**: なら早く出発しよう！でも聞く前に――この惑星で学んだことのまとめだ。
 
 
 |               | 説明                         |

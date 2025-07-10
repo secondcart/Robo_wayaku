@@ -13,7 +13,7 @@ open Function Set
 
 Statement {A B : Type} {f : A → B} : Surjective f ↔ range f = univ := by
   Hint "
-    **ロボ**: ここで`range f`は`f`の全画像集合です:
+    **Robo**: ここで`range f`は`f`の全画像集合です:
     ```
       range f = \{f a | a : A}
               = \{  b | ∃ a, f a = b}
@@ -34,14 +34,14 @@ Statement {A B : Type} {f : A → B} : Surjective f ↔ range f = univ := by
   example : range f = f '' univ := by
     simp   -- (rfl fails)
   -/
-  Hint (hidden := true)  "**ロボ**: `consturctor`から始めてみましょう。"
+  Hint (hidden := true)  "**Robo**: `consturctor`から始めてみましょう。"
   Branch
     symm
     apply eq_univ_iff_forall  -- will be introduced in PIAZZA (TODO)
   constructor
   · intro hf
     Hint (hidden := true) "
-      **ロボ**: また集合の等式を示す必要がありますね？つまり`ext`です。
+      **Robo**: また集合の等式を示す必要がありますね？つまり`ext`です。
       "
     ext b
     Branch
@@ -69,7 +69,7 @@ NewTheorem Set.mem_range
 Conclusion "
   **アラプカ**: これもきれいですね。
 
-  **ロボ**: ところで, あなたはこの惑星全体を絵で埋め尽くしたんですか？
+  **Robo**: ところで, あなたはこの惑星全体を絵で埋め尽くしたんですか？
 
   **アラプカ**: いいえ。これは世代を超えた課題です。
   最初の模様要素は私の高祖祖父が刻みました。

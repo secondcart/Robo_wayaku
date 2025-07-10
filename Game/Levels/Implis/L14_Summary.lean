@@ -11,9 +11,9 @@ Introduction
 前任者から引き継いだもので, これを解決できれば全てがうまくいくと言っていました。
 しかし私には難しすぎて挑戦する気にもなりませんでした。試してみますか？
 
-**あなた**: もちろん見せて！ロボ, ここまで5分間で学んだ理論的なことをまとめて表示してくれる？
+**あなた**: もちろん見せて！Robo, ここまで5分間で学んだ理論的なことをまとめて表示してくれる？
 
-**ロボ**: 概要はこちらです：
+**Robo**: 概要はこちらです：
 
 ## 表記/用語
 
@@ -48,10 +48,10 @@ set_option tactic.hygienic false
 Statement imp_iff_not_or {A B : Prop} : (A → B) ↔ ¬ A ∨ B := by
   Hint "**あなた** *(小声)*: これって`→`の定義じゃない？
 
-  **ロボ** *(小声)*: そう見えるかも。でもLeanでは単なる同値です"
+  **Robo** *(小声)*: そう見えるかも。でもLeanでは単なる同値です"
   constructor
   intro h
-  Hint (hidden := true) "**ロボ**: また`by_cases`が使えるかも"
+  Hint (hidden := true) "**Robo**: また`by_cases`が使えるかも"
   Branch
     by_cases A
 
@@ -62,14 +62,14 @@ Statement imp_iff_not_or {A B : Prop} : (A → B) ↔ ¬ A ∨ B := by
   assumption
   left
   assumption
-  Hint (hidden := true) "**ロボ**: 含意はいつも`intro`で攻めるんだ"
+  Hint (hidden := true) "**Robo**: 含意はいつも`intro`で攻めるんだ"
   intro h
   intro ha
   Branch
     by_cases ha : A
   Branch
     by_cases A
-  Hint (hidden := true) "**ロボ**: 仮定`h`を`obtain`で分割してみたら？"
+  Hint (hidden := true) "**Robo**: 仮定`h`を`obtain`で分割してみたら？"
   obtain h | h :=  h
   contradiction
   assumption
@@ -88,10 +88,10 @@ Conclusion "
 これも前任者から引き継いだものです。住所が分からないので郵便局が引き取ってくれません。
 届けてもらえませんか？
 
-**あなた**: もちろん！ロボ, ちょっと。
+**あなた**: もちろん！Robo, ちょっと。
 
-ロボは小包を受け取り, 内部に消えさせた。
+Roboは小包を受け取り, 内部に消えさせた。
 オペレーションマネージャーは驚いた顔で見つめた。
 
-**ロボ**: 心配ない, 私は何も消化しません！
+**Robo**: 心配ない, 私は何も消化しません！
 "

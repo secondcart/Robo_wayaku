@@ -19,16 +19,16 @@ Introduction
 
 Statement (A B : Prop) : (A ↔ B) → (A → B) := by
   Hint "**あなた**: うーん, 少なくとも含意の部分から始められるかな。"
-  Hint (hidden := true) "**ロボ**: そうだね, それは`intro`だった。"
+  Hint (hidden := true) "**Robo**: そうだね, それは`intro`だった。"
   intro h
   Hint "
     **あなた**: えーと, `rw [{h}]`や`apply ({h}.mp)`は知ってるけど, 今回はそれを避けたいんだよね。
 
-    **ロボ**: できることは, `obtain ⟨mp, mpr⟩ := {h}`を使って仮定を2つに分けることだよ。"
+    **Robo**: できることは, `obtain ⟨mp, mpr⟩ := {h}`を使って仮定を2つに分けることだよ。"
   Branch
     intro
     Hint "
-        **ロボ**: ここでは`rw [←{h}]`か`apply {h}.mp`を使う必要がある。
+        **Robo**: ここでは`rw [←{h}]`か`apply {h}.mp`を使う必要がある。
       一歩戻って, Goalが`A → B`になるようにした方がいいよ。"
   obtain ⟨mp, _mpr⟩ := h
   Hint (hidden := true) "**あなた**: ああ, これで証明目標が仮定の中にあるんだ。"

@@ -13,9 +13,9 @@ Statement (A : Finset ℕ) (h : ∀ a ∈ A, Prime a) : 0 < (∏ a ∈ A, a) := 
   Hint "**あなた**: この行は実際に読めます。
   `∏ a ∈ A, a` は確かにLeanでAのすべての数値の積を表しているのでしょうか？
 
-  **ロボ**: はい！そして次の行も意味が通ります: `apply prod_pos`."
+  **Robo**: はい！そして次の行も意味が通ります: `apply prod_pos`."
   apply prod_pos
-  Hint "**ロボ**: しかしその後は再び完全な無意味な内容です。
+  Hint "**Robo**: しかしその後は再び完全な無意味な内容です。
   ただ, この主張自体は正しいと思います。さあ, 私たち自身で解決しましょう。"
   intro a ha
   specialize h a ha

@@ -14,24 +14,24 @@ Statement (A B C : Prop) (f : A → B) (g : B → C) : A → C := by
   Hint "
     **あなた**: 含意 $A \\Rightarrow B \\Rightarrow C$ を $A \\Rightarrow C$ に結合する必要がある？
 
-    **ロボ**: また `intro` から始めてみたら？"
+    **Robo**: また `intro` から始めてみたら？"
   intro h
   Hint "
     **作戦責任者**: 私はこの時点でまず `have hB : B` と記録しておくね。
 
-    **ロボ**: 私の好みから言うと少し余計だな。
+    **Robo**: 私の好みから言うと少し余計だな。
     まあ, やってもいいけど。
 
-    **ロボ** *(あなたへ)*: さあ, やってみて！
+    **Robo** *(あなたへ)*: さあ, やってみて！
   "
   have hB : B := by
     Hint "
-    **ロボ**: まずは `B` を証明できるね…
+    **Robo**: まずは `B` を証明できるね…
   "
     apply f
     assumption
   Hint "
-      **ロボ**: …それができたら, `{hB} : {B}` が仮定として使えるよ。
+      **Robo**: …それができたら, `{hB} : {B}` が仮定として使えるよ。
   "
   apply g
   assumption

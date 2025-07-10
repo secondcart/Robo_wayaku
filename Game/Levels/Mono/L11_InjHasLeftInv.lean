@@ -22,12 +22,12 @@ Statement injective_iff_hasLeftInverse {A B : Type} [hA : Nonempty A]  (f : A �
     **あなた**: なるほど。エポソ派は, 写像が全射であることと右逆元を持つことが同値であることを証明したかったのですね。
     そしてここのモノソ派は, 写像が単射であることと左逆元を持つことが同値であることを証明したかったのですね。
 
-    **ロボ**: はい, ただし彼らはこの追加条件`Nonempty A`が必要な点が違います。
+    **Robo**: はい, ただし彼らはこの追加条件`Nonempty A`が必要な点が違います。
   "
   Hint (hidden := true) "
       **あなた**: 具体的に左逆元をどう構築すればいいか分かりません。
 
-      **ロボ**: 先ほど証明した命題を思い出してください: ` ∀ b : B, ∃ a : A, …`
+      **Robo**: 先ほど証明した命題を思い出してください: ` ∀ b : B, ∃ a : A, …`
       これがあれば, おそらく`choose`を使って求められる左逆元を選択できます。
       ただ残念ながらこの命題には名前がついていません。
       おそらく`have`で再度定式化し, 証明し直す必要があるでしょう。
@@ -71,7 +71,7 @@ Statement injective_iff_hasLeftInverse {A B : Type} [hA : Nonempty A]  (f : A �
   · /- Injective f → HasLeftInverse f
        exactly L09_injOfHasLeftInv, now without hints-/
     Hint (hidden := true) "
-      **ロボ**: これは前に証明した内容ですね…しかし保存し忘れていました。
+      **Robo**: これは前に証明した内容ですね…しかし保存し忘れていました。
       証明を覚えていますか？
     "
     intro hL

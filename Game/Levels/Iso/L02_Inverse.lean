@@ -24,17 +24,17 @@ Statement bijective_iff_has_inverse {A B : Type} (f : A → B) :
   これは基本的に, EpoとMonoで既に示したことと同じです。
   これらの主張を保存していましたか？
 
-  **ロボ**: はい, しかしここでそれらを展開すると眉を上げられるでしょう。
+  **Robo**: はい, しかしここでそれらを展開すると眉を上げられるでしょう。
   代わりに, しっかり考えて, それがどうだったか思い出しましょう。
   "
   constructor
   · intro h
     Hint (hidden := true)"
-      **ロボ**: まず`Bijective`を`obtain ⟨hinj, hsurj⟩  := {h}`で
+      **Robo**: まず`Bijective`を`obtain ⟨hinj, hsurj⟩  := {h}`で
       `Injective`と`Surjective`に分解してみてください！"
     obtain ⟨finj, fsurj⟩  := h
     Hint (hidden := true)"
-      **ロボ**: 全射性から, 各`y : B`には原像`x : A`があることが分かります。
+      **Robo**: 全射性から, 各`y : B`には原像`x : A`があることが分かります。
       `choose`を使って逆写像を構築できませんか？"
     choose g hg using fsurj
     Hint "
@@ -47,9 +47,9 @@ Statement bijective_iff_has_inverse {A B : Type} (f : A → B) :
     · --Branch
       --  apply rightInverse_of_injective_of_leftInverse finj  -- das ist Mono, L08, aber wir haben das Lemma nicht gespeichert.
       --  assumption
-      Hint (hidden := true)"**ロボ**: `simp [LeftInverse]`で証明目標を簡略化できます。"
+      Hint (hidden := true)"**Robo**: `simp [LeftInverse]`で証明目標を簡略化できます。"
       simp [LeftInverse]
-      Hint (hidden := true) "**ロボ**: `intro`から始めてみては？"
+      Hint (hidden := true) "**Robo**: `intro`から始めてみては？"
       intro x
       have : f (g (f x)) = f x  := by rw [hR]
       Branch
@@ -60,13 +60,13 @@ Statement bijective_iff_has_inverse {A B : Type} (f : A → B) :
     · assumption
   · intro h
     --obtain ⟨g, hL, hR⟩ := h
-    Hint (hidden := true) "**ロボ**: `{h}`をできるだけ分解してください！"
+    Hint (hidden := true) "**Robo**: `{h}`をできるだけ分解してください！"
     obtain ⟨g, h⟩ := h
-    Hint (hidden := true) "**ロボ**: ANDもさらに分解！"
+    Hint (hidden := true) "**Robo**: ANDもさらに分解！"
     obtain ⟨hL, hR⟩  := h
     constructor
     Hint (hidden := true) "
-      **ロボ**: 単射性が難しい部分です。まず`intro`から始めてみてください。"
+      **Robo**: 単射性が難しい部分です。まず`intro`から始めてみてください。"
     · intro a b eq
       rw [← hL a, ← hL b]
       --Branch
@@ -75,12 +75,12 @@ Statement bijective_iff_has_inverse {A B : Type} (f : A → B) :
         **あなた**: 引数`f a = f b`が等しいなら`g (f a) = g (f b)`も等しい—
         どう言えばいいんだっけ？
 
-      **ロボ**: `f a = f b`があるなら, 単に`rw`を使えますよ。"
+      **Robo**: `f a = f b`があるなら, 単に`rw`を使えますよ。"
       rw [eq]
     · intro b
       use g b
       Hint (hidden := true) "
-        **ロボ**: ここでは`RightInverse`の仮定を`rw`で使えます。"
+        **Robo**: ここでは`RightInverse`の仮定を`rw`で使えます。"
       rw [hR]
 
 
@@ -91,10 +91,10 @@ Conclusion
 "
 イソソフたちはとても満足そうでした。
 
-**ロボ**: 私たちはもう一度...カプセル化できますか？
+**Robo**: 私たちはもう一度...カプセル化できますか？
 
 **イソソフ**: もちろん！ しかし順序よく進めましょう。
 私たちが双方向でカプセルを使い始めてから, また事故が増えています。
 
-ロボはさらに3往復します。その後, あなたたちはさらに進みます。
+Roboはさらに3往復します。その後, あなたたちはさらに進みます。
 "

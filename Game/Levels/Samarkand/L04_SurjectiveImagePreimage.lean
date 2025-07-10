@@ -19,7 +19,7 @@ f '' (f ⁻¹' T) = T := by
   Hint "
     **あなた**:  これさっきもやったんじゃない？
 
-    **ロボ**:  いいえ。さっきは包含関係 `image_preimage_subset` だけでした：
+    **Robo**:  いいえ。さっきは包含関係 `image_preimage_subset` だけでした：
     ```
     f '' (f ⁻¹' T) ⊆ T
     ```

@@ -14,25 +14,25 @@ Introduction "
 
 Statement (l m n x : ℝ) (h₁ : l ≤ m) (h₂ : m ≤ n) : l ≤ x ∧ x ≤ n → ¬ (m ≤ x ∧ x ≤ n) → x ≤ m := by
   Hint "
-    **あなた** (*ロボへ*): ここでは`omega`も`linarith`も使えません。
+    **あなた** (*Roboへ*): ここでは`omega`も`linarith`も使えません。
 
-    **ロボ**: `linarith`に少し手助けが必要なようです。
+    **Robo**: `linarith`に少し手助けが必要なようです。
     まずは標準的に, 2つの含意を`intro`で解きましょう。
   "
   intro hn hx
   Hint "
-    **ロボ**: そして, 仮定`{hx}`をもう少し読みやすくします。
+    **Robo**: そして, 仮定`{hx}`をもう少し読みやすくします。
     `push_neg at {hx}`を試してみては？
   "
   push_neg at hx
   Hint "
-    **ロボ**: うーん… `{hx} : m ≤ x → n < x`はまだ最適ではありません。
+    **Robo**: うーん… `{hx} : m ≤ x → n < x`はまだ最適ではありません。
     しかし, `→`の意味はわかっていますね。`imp_iff_or_not`で`rw`してみましょう！
   "
   --linarith (config := {splitNe := true, splitHypotheses := true}) -- fails
   rw [imp_iff_or_not] at hx
   Hint "
-    **ロボ**: よし。これで良くなりました。そして, `{hx}`を`obtain`で
+    **Robo**: よし。これで良くなりました。そして, `{hx}`を`obtain`で
     2つの部分に分割できます。
   "
   --linarith (config := {splitNe := true, splitHypotheses := true}) -- fails

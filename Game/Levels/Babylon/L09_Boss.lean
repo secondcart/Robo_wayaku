@@ -27,7 +27,7 @@ Statement (m : ℕ) : (∑ i ∈ Icc 0 m, (i : ℚ) ^3) = (∑ i ∈  Icc 0 m, i
       · simp
         rw [n_ih]
         Hint (hidden := true) "
-          **ロボ**: `arithmetic_sum`は既に証明済みだということを覚えておいてください。
+          **Robo**: `arithmetic_sum`は既に証明済みだということを覚えておいてください。
         "
         rw [arithmetic_sum]
         simp

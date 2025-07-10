@@ -12,7 +12,7 @@ open Nat
 
 Statement (i : ℕ) (h : Odd i): (-1 : ℤ)^i  + 1 = 0 := by
   Hint "
-    **ロボ**: ここは`Odd.neg_pow`を使えば解けると思います。
+    **Robo**: ここは`Odd.neg_pow`を使えば解けると思います。
   "
   rw [Odd.neg_pow]
   ring

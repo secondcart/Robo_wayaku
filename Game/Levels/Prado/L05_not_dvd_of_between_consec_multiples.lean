@@ -8,9 +8,9 @@ Level 5
 Title ""
 
 Introduction
-"**あなた** *(ロボに向かって)*: もっと面白いものをちょうだい！
+"**あなた** *(Roboに向かって)*: もっと面白いものをちょうだい！
 
-**ロボ**: これはどうかな？
+**Robo**: これはどうかな？
 "
 
 /---/
@@ -21,7 +21,7 @@ Statement not_dvd_of_between_consec_multiples {m n k : ℕ} (h1 : n * k < m) (h2
   Hint "
   **あなた**: `by_contra`を使う？
 
-  **ロボ**: それでいけるかもしれないね。
+  **Robo**: それでいけるかもしれないね。
   おそらく`lt_of_mul_lt_mul_left`という補題が必要になるだろう。
   `a b c : ℕ`に対して, 仮定`a * b < a * c`から`b < c`を導くものだ。
   "

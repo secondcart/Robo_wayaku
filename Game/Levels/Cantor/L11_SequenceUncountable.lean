@@ -22,7 +22,7 @@ Introduction "
 "
 
 Conclusion "
-  **ロボ**: ご紹介ありがとうございました！
+  **Robo**: ご紹介ありがとうございました！
 
   **あなた**: でも観客が少なくて残念だね！
 
@@ -40,7 +40,7 @@ Statement : ¬ ∃ f : ℕ → ℕ → ℕ, Surjective f := by
   Hint (hidden := true) "
     **あなた**: 写像`n ↦ n + 1`って何て言うんだっけ？
 
-    **ロボ**: `succ`
+    **Robo**: `succ`
   "
   specialize hf succ
   obtain ⟨n, hn⟩ := hf

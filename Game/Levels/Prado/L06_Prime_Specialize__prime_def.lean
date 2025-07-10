@@ -9,18 +9,18 @@ Title ""
 Introduction "
 **あなた**: よし。それで, 素数をどう扱うか教えてくれる？
 
-**ロボ**: 素数に関する課題があるか見てみよう…これなんかどうかな？"
+**Robo**: 素数に関する課題があるか見てみよう…これなんかどうかな？"
 
 
 namespace Nat
 
 Statement (a p : ℕ) (hp : Prime p) (h : 2 ≤ a) (ha : a ∣ p) : a = p := by
   Hint "
-    **ロボ**: ここで`(hp : Prime p)`はもちろん`p`が素数であるという仮定だ。
+    **Robo**: ここで`(hp : Prime p)`はもちろん`p`が素数であるという仮定だ。
     この仮定を使うには, `rw [prime_def] at hp`とするのがベストだよ。"
   Branch
     unfold Prime at hp
-    Hint "**ロボ**: いや, それはやめた方がいい。`Prime`をunfoldしないで！
+    Hint "**Robo**: いや, それはやめた方がいい。`Prime`をunfoldしないで！
     そうすると全てが難しくなるだけだ。私が言ったように`rw [prime_def] at hp`を使うんだ。"
   rw [prime_def] at hp
   Hint "**あなた**: なるほど。素数とは2以上の自然数で, 1と自分自身でのみ割り切れる数なんだ。聞き覚えがあるな。"
@@ -28,7 +28,7 @@ Statement (a p : ℕ) (hp : Prime p) (h : 2 ≤ a) (ha : a ∣ p) : a = p := by
   Hint "
     **あなた**: 今度は`{hp}`を`{a}`に適用したいんだよね？
 
-    **ロボ**: それなら`have hp' := {hp} {a}`と言えばいい。もしくはもっとエレガントに：
+    **Robo**: それなら`have hp' := {hp} {a}`と言えばいい。もしくはもっとエレガントに：
     `specialize {hp} {a}`。
   "
   Branch
@@ -48,7 +48,7 @@ Statement (a p : ℕ) (hp : Prime p) (h : 2 ≤ a) (ha : a ∣ p) : a = p := by
     -- Hint "**Robo**:  Statt `have` könntest du hier übrigens auch `specialize {hp} {a} {ha}` verwenden."
   specialize hp a ha
   obtain hp | hp := hp
-  · Hint (hidden := true) "**ロボ**: `linarith`を試してみて。`{a} = 1`と`2 ≤ {a}`の矛盾を見つけてくれるはずだ。"
+  · Hint (hidden := true) "**Robo**: `linarith`を試してみて。`{a} = 1`と`2 ≤ {a}`の矛盾を見つけてくれるはずだ。"
     linarith
   · assumption
 

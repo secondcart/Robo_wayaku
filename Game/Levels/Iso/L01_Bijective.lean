@@ -15,7 +15,7 @@ Statement :
     let f := fun (n : ℤ) ↦ n + 1
     Bijective f := by
   Hint "
-    **ロボ** *(小声で)*: `Bijective f` は `Injective f ∧ Surjective f` と定義されています。
+    **Robo** *(小声で)*: `Bijective f` は `Injective f ∧ Surjective f` と定義されています。
 
     **あなた**: それならとても簡単ですね！"
   unfold Bijective

@@ -8,7 +8,7 @@ Title ""
 
 Introduction
 "
-**カントール**: 幸運を祈る! 
+**Cantor**: 幸運を祈る! 
 "
 
 Conclusion "**あなた**: さて, この一般的な形式で元の問題を再度解決したいと思います. "
@@ -19,14 +19,14 @@ open Function Set
 TheoremDoc cantor_diagonal as "cantor_diagonal" in "Function"
 
 Introduction "
-  **カントール**: 注意してください! すべてが明らかになります. これが鍵です! 
+  **Cantor**: 注意してください! すべてが明らかになります. これが鍵です! 
   先ほどの主張を少し言い換える必要があります. 
 
   彼は新しいメモをあなたに投げます. 
 "
 
 Conclusion "
-  **カントール**: 素晴らしい! 
+  **Cantor**: 素晴らしい! 
 "
 
 Statement cantor_diagonal {A Y : Type} (f : A → A → Y) (hf : Surjective f) :
@@ -44,10 +44,10 @@ Statement cantor_diagonal {A Y : Type} (f : A → A → Y) (hf : Surjective f) :
     **Robo**: つまり, `Y`が一点集合でない限り, 
     常に不動点を持たない自己写像が存在するはずです. 
 
-    **カントール**: まあ, それがまさに面白いところです! 待っててください! 
+    **Cantor**: まあ, それがまさに面白いところです! 待っててください! 
     "
   intro s
-  Hint (hidden := true) "**カントール**: もちろん, `{f}`の全射性を
+  Hint (hidden := true) "**Cantor**: もちろん, `{f}`の全射性を
   何らかの形で利用する必要があります. しかし, 先ほどすでに, 
   どの写像`{A} → {Y}`の原像を考えればいいか教えましたね...
 
@@ -60,7 +60,7 @@ Statement cantor_diagonal {A Y : Type} (f : A → A → Y) (hf : Surjective f) :
   しかし, 私は今少し迷子になっています. 
   "
   let c : A → Y := fun (a : A) ↦ s (f a a)
-  Hint "**カントール**: 良い選択です! "
+  Hint "**Cantor**: 良い選択です! "
   obtain ⟨a, ha⟩ := hf c
   use (f a a)
   unfold fixedPoints IsFixedPt

@@ -6,7 +6,7 @@ World "Samarkand"
 Level 2
 Title "Bild/Urbild"
 
-Introduction "アラプカがもう一つ課題を出しています. "
+Introduction "Arapukaがもう一つ課題を出しています. "
 
 Statement {A B C : Type} (f : A → B) (g : B → C) : image (g ∘ f) = (image g) ∘ (image f) := by
   Hint "
@@ -45,5 +45,5 @@ example : image f = fun S ↦ f '' S := by
 NewDefinition Set.image Set.preimage
 
 Conclusion "
-  **アラプカ**: 素敵, 素敵. 
+  **Arapuka**: 素敵, 素敵. 
 "

@@ -9,7 +9,7 @@ Level 5
 Title ""
 
 Introduction "
-  **リナ:** 同じ質問をもう一度, 今度はℝで! 
+  **Lina:** 同じ質問をもう一度, 今度はℝで! 
 "
 
 Statement (l m n x : ℝ) (h₁ : l ≤ m) (h₂ : m ≤ n) : l ≤ x ∧ x ≤ n → ¬ (m ≤ x ∧ x ≤ n) → x ≤ m := by

@@ -8,7 +8,7 @@ Title "" -- ""
 open Set
 
 Introduction "
-  **アラプカ**:  これも手伝ってもらえるかな? 
+  **Arapuka**:  これも手伝ってもらえるかな? 
   "
 /---/
 TheoremDoc Function.Surjective.image_preimage as "Surjective.image_preimage" in "Function"
@@ -38,5 +38,5 @@ f '' (f ⁻¹' T) = T := by
     · assumption
 
 Conclusion "
-  **アラプカ**:  本当に助かります! 
+  **Arapuka**:  本当に助かります! 
 "

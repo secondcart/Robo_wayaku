@@ -9,7 +9,7 @@ Title ""
 Introduction ""
 
 Conclusion "
-  **カントール**: おや, もう終わったのかい? ? 
+  **Cantor**: おや, もう終わったのかい? ? 
 
   **Robo**: まだメモが1枚残ってるよ. 
 "

@@ -62,7 +62,7 @@ Statement  (n : ℕ) (hn : 3 ≤ n) : ∑ i ∈ Icc 0 n, (i^3 - 3 * i^2 + 2*i : 
     have h : i = 0 ∨ i = 1 ∨ i = 2 := by
       Hint (hidden := true) "
         **Robo**: 何らかの`simp`と`omega`の組み合わせで解決するはず. 
-        ルナでもうまくいったよ. 
+        Lunaでもうまくいったよ. 
       "
       simp at h0 h3
       omega

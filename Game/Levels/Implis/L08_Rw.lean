@@ -7,7 +7,7 @@ Title "Genau dann, wenn"
 
 Introduction
 "
-**オペレーションマネージャー**: ここで, これについて何か言えることはありますか? 
+**作業責任者**: ここで, これについて何か言えることはありますか? 
 "
 
 Statement (A B C D : Prop) (h₁ : C ↔ D) (h₂ : A ↔ B) (h₃ : A ↔ D) : B ↔ C := by
@@ -37,7 +37,7 @@ Statement (A B C D : Prop) (h₁ : C ↔ D) (h₂ : A ↔ B) (h₃ : A ↔ D) : 
 
 Conclusion
 "
-**オペレーションマネージャー**: この調子で進めれば, この山を全部片付けられますね! 
+**作業責任者**: この調子で進めれば, この山を全部片付けられますね! 
 "
 
 NewTactic rw

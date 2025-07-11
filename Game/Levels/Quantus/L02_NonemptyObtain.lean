@@ -15,19 +15,19 @@ Statement (A : Type) (h : Nonempty A) : ∃ a : A, a = a := by
   Hint "
     **あなた**: これは何ですか?  `A` は「型」? 
 
-    **Roboット** `A` は単に集合と考えてください…
+    **Robo** `A` は単に集合と考えてください…
 
     **あなた** …仮定 `h` によると空ではない? 
 
-    **Roboット** その通り. 
+    **Robo** その通り. 
 
     **あなた** そして, `A` に要素が存在することを示せばいい? 
 
-    **Roboット** 正解です. 
+    **Robo** 正解です. 
 
     **あなた** それは仮定から直接導かれるのでは? 
 
-    **Roboット** これは `obtain` で「分解」できる仮定です. 
+    **Robo** これは `obtain` で「分解」できる仮定です. 
     `obtain ⟨a⟩ := h` を試してみてください. 
   "
   obtain ⟨a⟩ := h
@@ -35,4 +35,4 @@ Statement (A : Type) (h : Nonempty A) : ∃ a : A, a = a := by
 
 NewDefinition Exists
 
-Conclusion "控えめな拍手が送られます. 形式哲学者たちはひそひそ話をしています. "
+Conclusion "控えめな拍手が送られます. Formalosophenたちはひそひそ話をしています. "

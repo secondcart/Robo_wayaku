@@ -5,7 +5,7 @@ Level 3
 
 Title "Widerspruch"
 
-Introduction "**ベネディクトゥス**: ここに別のバリエーションがあります. "
+Introduction "**Benedictus**: ここに別のバリエーションがあります. "
 
 Statement (A B : Prop) (g : A → B) (b : ¬ B) : ¬ A := by
   Hint "
@@ -28,7 +28,7 @@ Statement (A B : Prop) (g : A → B) (b : ¬ B) : ¬ A := by
   apply g
   assumption
 
-Conclusion "**ベネディクトゥス**: あなたの上達が早いのがわかります! "
+Conclusion "**Benedictus**: あなたの上達が早いのがわかります! "
 
 
 NewTactic by_contra

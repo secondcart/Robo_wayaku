@@ -77,5 +77,5 @@ Statement  (I : Finset ℕ) : ∑ i ∈ I, ((-1 : ℤ)^i + 1) = 2*card { i ∈ I
 TheoremTab "∑ Π"
 
 Conclusion "
-  **バビロニア人**: よくできました. 
+  **Babylonier人**: よくできました. 
 "

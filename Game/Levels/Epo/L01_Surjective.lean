@@ -17,7 +17,7 @@ Statement :
     Surjective f := by
   Hint "**あなた**: `Surjective f`の定義は`∀ y, (∃ x, f x = y)`だと推測していますが, 正しいでしょうか? 
 
-  **Roboット**: そうだと思います. `unfold Surjective`で中身を見ることができます. 必ずしも必要ではありませんが. "
+  **Robo**: そうだと思います. `unfold Surjective`で中身を見ることができます. 必ずしも必要ではありませんが. "
   unfold Surjective
   intro y
   use y-1

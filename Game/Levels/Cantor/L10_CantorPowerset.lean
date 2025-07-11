@@ -8,7 +8,7 @@ Title ""
 
 Introduction
 "
-**カントール**: さあ, この美しい対角線論法を使って, `A → Set A`の全射写像が存在しないことをもう一度示してみよう! 
+**Cantor**: さあ, この美しい対角線論法を使って, `A → Set A`の全射写像が存在しないことをもう一度示してみよう! 
 `Set A`を`A → Prop`と解釈するだけだ! 
 
 **あなた**: え? 
@@ -42,14 +42,14 @@ Statement {A : Type} : ¬ ∃ f : A → Set A, Surjective f := by
   Branch
     clear hf
     let _C := { a | a ∉ f a }
-    Hint "**カントール**: いやいや! 私の美しい定理`cantor_diagonal`を使うんだよ! "
+    Hint "**Cantor**: いやいや! 私の美しい定理`cantor_diagonal`を使うんだよ! "
   Branch
     specialize hf { a | a ∉ f a }
-    Hint "**カントール**: いやいや! 私の美しい定理`cantor_diagonal`を使うんだよ! "
+    Hint "**Cantor**: いやいや! 私の美しい定理`cantor_diagonal`を使うんだよ! "
   apply cantor_diagonal at hf  -- L09
   -- now see L05
   Hint (hidden := true) (strict := true) "
-  **カントール**: `¬ .`には不動点がないことはもう考えたんじゃないのかい? "
+  **Cantor**: `¬ .`には不動点がないことはもう考えたんじゃないのかい? "
   specialize hf (¬ .) -- or specialize h Not -- or specializa h (fun A ↦ ¬ A)
   obtain ⟨a, hA⟩ := hf
   unfold fixedPoints IsFixedPt at hA

@@ -7,7 +7,7 @@ Level 7
 Title "Preimage of the inverse"
 
 Introduction "
-  **アラプカ**: さて, 本当に難しい課題がまだ残っています. 
+  **Arapuka**: さて, 本当に難しい課題がまだ残っています. 
 "
 
 open Function Set
@@ -32,5 +32,5 @@ Statement  {A B : Type} {f : A → B} {g : B → A}
   assumption
 
 Conclusion "
-  **アラプカ**: わあ! あなたたちは本当に素晴らしいです. 
+  **Arapuka**: わあ! あなたたちは本当に素晴らしいです. 
 "

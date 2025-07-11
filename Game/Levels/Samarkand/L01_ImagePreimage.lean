@@ -9,7 +9,7 @@ Title "" -- "Bild/Urbild"
 
 
 Introduction "
-**アラプカ**: 私が長い間考えていることがいくつかあります. 
+**Arapuka**: 私が長い間考えていることがいくつかあります. 
 もしかしたらあなたたちが助けてくれるかもしれません. 例えば：…
 
 彼女はあなたたちに命題を口述します. Roboがそれを書き留めます. 
@@ -58,4 +58,4 @@ example : f ⁻¹' T = { a | f a ∈ T} := by
 
 NewDefinition Set.fimage Set.fpreimage
 
-Conclusion "**アラプカ**: 素晴らしい. "
+Conclusion "**Arapuka**: 素晴らしい. "

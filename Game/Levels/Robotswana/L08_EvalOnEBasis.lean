@@ -62,8 +62,8 @@ Statement Matrix.eq_sum_apply_diag_ebasis {n : ℕ} {f : Mat[n,n][ℝ] →ₗ[�
       rw [matrix_eq_sum_ebasis A]
       Hint "**あなた**: `rw`は良くないな. 複雑すぎる. `nth_rw`で試してみよう. "
   nth_rw 1 [matrix_eq_sum_ebasis A] -- Lvl 3
-  Hint "**あなた** (*心の中で*): 線形性を使う…そして水のことを考えないように…バビロンには十分な水があった…何をしてたんだっけ? "
-  Hint "**Robo** (*どこからか*): `map_sum`みたいだね. バビロンでは見なかったと思うけど, 想像してるんだろう. でも`simp`はこの補題を知ってるはず. "
+  Hint "**あなた** (*心の中で*): 線形性を使う…そして水のことを考えないように…Babylonには十分な水があった…何をしてたんだっけ? "
+  Hint "**Robo** (*どこからか*): `map_sum`みたいだね. Babylonでは見なかったと思うけど, 想像してるんだろう. でも`simp`はこの補題を知ってるはず. "
   Branch
     simp
   rw [map_sum] -- simp knows this

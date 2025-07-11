@@ -8,7 +8,7 @@ Level 6
 Title ""
 
 Introduction
-"**リサ**: 私もやってみていい? ほら. "
+"**Ritha**: 私もやってみていい? ほら. "
 
 open Finset
 namespace Robo.ZZ.Finset
@@ -21,7 +21,7 @@ Statement insert_Icc_eq_Icc_add_one_right {a b : ℤ} (h : a ≤ b + 1) :
   Hint "
     **あなた**: Iccって何? 
 
-    **リサ**: 左閉右閉の**閉**区間よ. 
+    **Ritha**: 左閉右閉の**閉**区間よ. 
 
     **Robo**: ℕでは`Icc a b`を[a, b]や$\\\{a, a+1,\\dots,b\\}$と書くでしょう. 
     示すべきは：
@@ -35,7 +35,7 @@ Statement insert_Icc_eq_Icc_add_one_right {a b : ℤ} (h : a ≤ b + 1) :
     **Robo:** すぐに`simp`も使いましょう. 
   "
   simp
-  Hint "リサがまた何か書いている. "
+  Hint "Rithaがまた何か書いている. "
   omega
 
 

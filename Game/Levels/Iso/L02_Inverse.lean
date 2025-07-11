@@ -7,7 +7,7 @@ Level 2
 Title "Inverse"
 Introduction
 "
-**イソソフ**:  …そして本題に入りましょう. 
+**Isosoph**:  …そして本題に入りましょう. 
 "
 
 namespace Function
@@ -89,11 +89,11 @@ DisabledTheorem Function.injective_iff_hasLeftInverse Function.surjective_iff_ha
 
 Conclusion
 "
-イソソフたちはとても満足そうでした. 
+Isosophたちはとても満足そうでした. 
 
 **Robo**: 私たちはもう一度...カプセル化できますか? 
 
-**イソソフ**: もちろん!  しかし順序よく進めましょう. 
+**Isosoph**: もちろん!  しかし順序よく進めましょう. 
 私たちが双方向でカプセルを使い始めてから, また事故が増えています. 
 
 Roboはさらに3往復します. その後, あなたたちはさらに進みます. 

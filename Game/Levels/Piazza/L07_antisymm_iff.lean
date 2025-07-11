@@ -7,7 +7,7 @@ Title "Antisymmetrie"
 
 Introduction
 "
-**集合**: そして私はこの同値性が好きです. 
+**Set**: そして私はこの同値性が好きです.
 "
 
 open Set

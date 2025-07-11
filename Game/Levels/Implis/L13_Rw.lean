@@ -12,15 +12,15 @@ Introduction
 lemma not_not (A : Prop) : ¬¬A ↔ A
 ```
 
-**作戦責任者**: これでできるかな? 
+**作戦責任者**: これでできるかな?
 "
 
 Statement (A B C : Prop) : (A ∧ (¬¬C)) ∨ (¬¬B) ∧ C ↔ (A ∧ C) ∨ B ∧ (¬¬C) := by
   Hint "
-    **Robo**: `not_not`のように`↔`や`=`を持つ補題は, `rw [not_not]`でも使用できます. "
+    **Robo**: `not_not`のように`↔`や`=`を持つ補題は, `rw [not_not]`という形で使用できます. "
   rw [not_not]
   Hint "
-    **あなた**: え, なぜこれで`¬¬`の2つが書き換わったの? 
+    **あなた**: え, なぜこれで`¬¬`の2つが書き換わったの?
 
     **Robo**: `rw`は最初に見つけたものだけを書き換えるので, `¬¬C`が対象です. ただしこれは複数回出現するので, すべて置換されます…
 
@@ -29,15 +29,15 @@ Statement (A B C : Prop) : (A ∧ (¬¬C)) ∨ (¬¬B) ∧ C ↔ (A ∧ C) ∨ B
 
 Conclusion
 "
-**あなた**: もう終わったの…? 
+**あなた**: もう終わったの…?
 
-**Robo**: はい, `rw`はその後自動で`rfl`を呼び出そうとしますが, 今回はそれが成功しました. 
+**Robo**: はい, `rw`はその後自動で`rfl`を呼び出そうとしますが, 今回はそれが成功しました.
 "
 
 OnlyTactic rw
 
 
-/-- Statt dieser Aussage können oft auch die Taktiken `tauto` oder `simp` verwendet werden. -/
+/-- この声明の代わりに、しばしば`tauto`や`simp`というtacticも使用可能です。 -/
 TheoremDoc Classical.not_not as "not_not" in "Logic"
 NewTheorem Classical.not_not
 TheoremTab "Logic"

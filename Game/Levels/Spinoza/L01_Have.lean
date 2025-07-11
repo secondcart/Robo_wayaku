@@ -7,7 +7,7 @@ Title ""
 
 Introduction
 "
-**ベネディクトゥス**: ほら, 見てください. これはあなたのために準備したものです. 
+**Benedictus**: ほら, 見てください. これはあなたのために準備したものです. 
 "
 Statement (A B : Prop) (h : A → ¬ B) (k : A ∧ B) : False := by
   Hint "**あなた**: まずはこのAND（`∧`）を分解する必要がありそうですね. "
@@ -15,7 +15,7 @@ Statement (A B : Prop) (h : A → ¬ B) (k : A ∧ B) : False := by
   Hint (strict := true) "
     **あなた**: そして今…
 
-    **ベネディクトゥス**: …適切な中間結果を準備するべきです. 
+    **Benedictus**: …適切な中間結果を準備するべきです. 
 
     **Robo**: そうだ! また`have`を使ってみて! 具体的には`have g : ¬ B`! "
   have g : ¬ B
@@ -31,7 +31,7 @@ Statement (A B : Prop) (h : A → ¬ B) (k : A ∧ B) : False := by
   **Robo**: `contradiction`です. "
   contradiction
 
-Conclusion "**ベネディクトゥス**: 良さそうですね! "
+Conclusion "**Benedictus**: 良さそうですね! "
 
 --NewTactic «have»  -- now introduced very briefly in Implis
 DisabledTactic «suffices» tauto

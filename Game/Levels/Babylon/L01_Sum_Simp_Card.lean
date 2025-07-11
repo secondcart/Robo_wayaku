@@ -7,7 +7,7 @@ Title ""
 
 Introduction
 "
-**バビロニア人**: 各塔には碑文があります. そこに, なぜその塔が建てられたのかを詳しく読むことができます. 例えば, ここにあります. 
+**Babylonier人**: 各塔には碑文があります. そこに, なぜその塔が建てられたのかを詳しく読むことができます. 例えば, ここにあります. 
 "
 
 open Nat Finset
@@ -19,7 +19,7 @@ Statement (I : Finset ℕ) : (∑ i ∈ I, 1) = card I := by
 
     **Robo**: …$I$の要素の数, つまり$I$のカーディナリティです. 
 
-    **バビロニア人**: そして, これを証明できますか? 
+    **Babylonier人**: そして, これを証明できますか? 
 
     **Robo** *(あなたに向かって)*: 最初に`simp`を試してみることをお勧めします. 
     これは本当に強力な戦術で, 多くの項を単純化します. "
@@ -27,7 +27,7 @@ Statement (I : Finset ℕ) : (∑ i ∈ I, 1) = card I := by
 
 TheoremTab "∑ Π"
 
-Conclusion "**バビロニア人**: よくできました, これで合っています! "
+Conclusion "**Babylonier人**: よくできました, これで合っています! "
 
 NewDefinition Finset.card
 

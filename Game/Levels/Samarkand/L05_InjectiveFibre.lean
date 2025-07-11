@@ -6,7 +6,7 @@ Level 5
 Title "Range of Injective"
 
 Introduction "
-  **アラプカ**: 私にも単射写像について質問があります. 
+  **Arapuka**: 私にも単射写像について質問があります. 
 "
 
 open Set
@@ -35,5 +35,5 @@ Statement Injective.exists_unique_of_mem_range {A B : Type} {f : A → B} (hf : 
     rw [ha',ha]
 
 Conclusion "
-  アラプカはまだじっと動かずにいますが, 幸せそうに見えます. 
+  Arapukaはまだじっと動かずにいますが, 幸せそうに見えます. 
 "

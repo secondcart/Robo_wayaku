@@ -10,7 +10,7 @@ Introduction
 ""
 
 Conclusion "
-  **カントール**: その調子で続けてください! 
+  **Cantor**: その調子で続けてください! 
 
   彼はサボテンをスズメと交換しました. 
 "
@@ -21,15 +21,15 @@ Statement :
   Hint (strict := true) "
     **あなた**: ここで`fixedPoints f`はおそらくすべての不動点の集合ですか? 
 
-    **Roboット**: 試してみてください - `unfold`がまた役立つはずです. 
+    **Robo**: 試してみてください - `unfold`がまた役立つはずです. 
   "
   unfold fixedPoints
   Hint (strict := true)  "
-    **Roboット**: 良さそうです. そして今すぐ`unfold IsFixedPt`もするのが良いでしょう. 
+    **Robo**: 良さそうです. そして今すぐ`unfold IsFixedPt`もするのが良いでしょう. 
   "
   unfold IsFixedPt
   Hint (strict := true) (hidden := true) "
-    **Roboット**: `simp`はいつでも試してみる価値があります…
+    **Robo**: `simp`はいつでも試してみる価値があります…
   "
   simp
   /-

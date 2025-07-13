@@ -7,7 +7,7 @@ Level 7
 Title ""
 
 Introduction
-"ガウスの塔のすぐ隣に, 再び空き地があります.  今回は看板に次のように書かれています："
+"Gaussの塔のすぐ隣に, 再び空き地があります.  今回は看板に次のように書かれています："
 
 open Finset
 open Robo.ZZ.Finset -- temporary solution to make correct version of `insert_Icc_eq_Icc_add_one_right` available
@@ -17,7 +17,7 @@ Statement  (n : ℕ) : ∑ i ∈ Icc (-n : ℤ) n, i = 0 := by
     Hint "
       **あなた**:  $\\sum_\{i=-n}^{n} i = 0$ – はい, これは正しいようです. 
 
-      **Robo**: 先ほどのガウス和と同じように証明できるはずです…
+      **Robo**: 先ほどのGauss和と同じように証明できるはずです…
       ただし, `insert_Icc_eq_Icc_add_one_right` の後には
       `insert_Icc_eq_Icc_sub_one_left` も必要になるでしょう. 
     "

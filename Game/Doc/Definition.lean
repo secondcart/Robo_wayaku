@@ -246,7 +246,7 @@ DefinitionDoc False as "False"
 DefinitionDoc Not as "¬"
 
 /--
-等式に関する有用なタクティク：`rfl`, `rw`, `trans`
+等式に関する有用なtactic：`rfl`, `rw`, `trans`
 -/
 DefinitionDoc Eq as "＝"
 

@@ -8,14 +8,14 @@ Title "" -- "Arithmetische Summe"
 
 Introduction
 "
-**Babylon人**: さあ, 私たちの最も美しい塔の一つをお見せしましょう! 
+**Babylonier**: さあ, 私たちの最も美しい塔の一つをお見せしましょう! 
 
 道は険しい山道を登っていきます. 山頂で待つ塔は, 実に壮大なものです. 
 
-**Robo**: これは有名な『Babylonのガウス塔』に違いありません! 
+**Robo**: これは有名な『BabylonのGauss塔』に違いありません! 
 それについて一度読んだことがあります. 
 
-**Babylon人**: その通り. ガウスはBabylon人でした! 
+**Babylonier**: その通り. GaussはBabylonierでした! 
 "
 
 open Finset
@@ -35,7 +35,7 @@ Statement arithmetic_sum (n : ℕ) :
     \\sum_\{i = 0}^n i = \\tfrac\{1}\{2} \\cdot n \\cdot (n + 1)
     $$
 
-  ガウス少年がとても簡単な証明をしたという話ではありませんでしたか? 
+  Gauss少年がとても簡単な証明をしたという話ではありませんでしたか? 
 
   **Robo**: 歴史の話はわかりません. 私は単に`n`についての帰納法を使うでしょう. 
   それはLeanでは`induction n with d hd`です! 

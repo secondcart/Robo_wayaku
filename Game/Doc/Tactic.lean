@@ -3,7 +3,7 @@ import GameServer.Commands
 /--
 `apply`を使用すると, 含意`hAB : A → B`を適用できます：
 
-| 前          | タクティク       | 後                  |
+| 前          | tactic       | 後                  |
 |:------------|:----------------|:-------------------|
 | `⊢ B`       | `apply hAB`     | `⊢ A`              |
 | `h : A`     | `apply hAB at h`| `h : B`            |
@@ -13,12 +13,12 @@ import GameServer.Commands
 TacticDoc apply
 
 /--
-タクティク`assumption`は, 仮定の1つが証明目標と完全に一致する場合に証明を完了します.
+tactic`assumption`は, 仮定の1つが証明目標と完全に一致する場合に証明を完了します.
 -/
 TacticDoc assumption
 
 /--
-タクティク`by_cases h : P`は, `P`が真か偽かの場合分けを開始します.
+tactic`by_cases h : P`は, `P`が真か偽かの場合分けを開始します.
 例えば, `by_cases h : a = b`は`a = b`と`a ≠ b`の場合に分けます.
 
 証明目標は複製され, 最初の「コピー」には仮定`(h : P)`が追加され,
@@ -27,20 +27,20 @@ TacticDoc assumption
 TacticDoc by_cases
 
 /--
-タクティク`by_contra h`は矛盾による証明を開始します.
+tactic`by_contra h`は矛盾による証明を開始します.
 現在の証明目標が`P`の場合, `by_contra h`は新しい仮定`(h : ¬P)`を生成し,
 証明目標を`False`に設定します.
 
-## 関連タクティク
+## 関連tactic
 * 矛盾証明の最後には通常`contradiction`が使用されます：
-  このタクティクは, 明らかに矛盾する2つの仮定を見つけた場合に証明を完了します.
+  このtacticは, 明らかに矛盾する2つの仮定を見つけた場合に証明を完了します.
 * 証明目標が`A → B`の形式の場合, `contrapose`を使用して対偶による証明を開始できます.
 -/
 TacticDoc by_contra
 
 /--
 `change t`は証明目標を`t`に変更します. 前提として, `t`と古い証明目標が定義的に等しい必要があります.
-これは特に, タクティクが証明目標が実際に必要な項と定義的に等しいことを認識しない場合に役立ちます.
+これは特に, tacticが証明目標が実際に必要な項と定義的に等しいことを認識しない場合に役立ちます.
 
 ## 例
 現在の証明状況：
@@ -64,43 +64,43 @@ TacticDoc change
 TacticDoc choose
 
 /--
-タクティク`constructor`は証明目標を構成要素に分割します：
+tactic`constructor`は証明目標を構成要素に分割します：
 
 | 前          | 後                  |
 |:------------|:-------------------|
 | `⊢ A ∧ B`   | `⊢ A`と`⊢ B`       |
 | `⊢ A ↔ B`   | `⊢ A → B`と`⊢ B → A` |
 
-## 関連タクティク
+## 関連tactic
 * 仮定は`obtain`で構成要素に分解できます.
 * `A ∨ B`を証明するには, `left`または`right`でどちらかを選択する必要があります.
 -/
 TacticDoc constructor
 
 /--
-タクティク`contradiction`は, 仮定に矛盾がある場合に証明を完了します.
+tactic`contradiction`は, 仮定に矛盾がある場合に証明を完了します.
 矛盾は例えば以下のように見えます：
 
 * `h : n ≠ n`
 * `h : A`と`h' : ¬A`
 * `h : False`
 
-## 関連タクティク
+## 関連tactic
 通常, `contradiction`は`by_contra`で開始された矛盾証明を完了するために使用されます.
 -/
 TacticDoc contradiction
 
 /--
-タクティク`contrapose`は`A → B`の形式の証明目標を`¬B → ¬A`に変更し,
+tactic`contrapose`は`A → B`の形式の証明目標を`¬B → ¬A`に変更し,
 対偶による証明を開始します.
 
-## 関連タクティク
+## 関連tactic
 `revert h`は`contrapose`を使用する前に仮定を含意の前提として記述するのに役立ちます.
 -/
 TacticDoc contrapose
 
 /--
-タクティク`exact h`は, 項`h`が証明目標と一致する場合に証明を完了します.
+tactic`exact h`は, 項`h`が証明目標と一致する場合に証明を完了します.
 -/
 TacticDoc exact
 
@@ -129,7 +129,7 @@ TacticDoc fin_cases
 TacticDoc funext
 
 /--
-`generalize`は証明目標を一般化できます.
+`generalize`は証明目標を一般化できます:
 例えば, `generalize h : a = b`は証明目標のすべての`a`を`b`に置き換えます.
 
 ## 例
@@ -142,7 +142,7 @@ TacticDoc generalize
 `have h : P`は中間結果を導入します.
 その後, この中間結果を証明してからメインの証明を続行します.
 
-## 関連タクティク
+## 関連tactic
 `suffices h : P`も同様ですが, まずメインの証明を続行し,
 最後に中間結果を証明します.
 -/
@@ -151,14 +151,14 @@ TacticDoc «have»
 /--
 `if … then … else`を使用して, 2つの定義分岐を持つ関数を定義できます.
 
-## 関連タクティク
+## 関連tactic
 * `h : A`がある場合, `rw [if_pos h]`で`if A then B else C`を`B`に簡約できます.
 * `h : ¬ A`がある場合, `rw [if_neg h]`で`if A then B else C`を`C`に簡約できます.
 -/
 TacticDoc «if»
 
 /--
-タクティク`induction n`は`n`に関する帰納法による証明を実行します.
+tactic`induction n`は`n`に関する帰納法による証明を実行します.
 `induction n with d hd`で帰納変数（`d`）と帰納仮定（`hd`）に名前を付けられます.
 
 ## ゲーム内の変更
@@ -168,14 +168,14 @@ TacticDoc «if»
 TacticDoc induction
 
 /--
-タクティク`intro`は`A → B`または`∀ x, P x`の証明目標に使用されます.
+tactic`intro`は`A → B`または`∀ x, P x`の証明目標に使用されます.
 
-| 前          | タクティク     | 後                  |
+| 前          | tactic     | 後                  |
 |:------------|:-------------|:-------------------|
 | `⊢ A → B`   | `intro h`    | `h : A`, `⊢ B`     |
 | `⊢ ∀ x, P x`| `intro x hx` | `x : X`, `hx : P x`|
 
-## 関連タクティク
+## 関連tactic
 `revert h`は`intro h`の逆を行います.
 -/
 TacticDoc intro
@@ -183,45 +183,45 @@ TacticDoc intro
 /--
 証明目標が`A ∨ B`の場合, `left`で左側を示すことを選択します.
 
-## 関連タクティク
+## 関連tactic
 `right`で右側を選択できます.
 -/
 TacticDoc left
 
 /--
-タクティク`let`は一時的な定義を導入します.
+`let`は一時的な定義を導入します:
 例えば, `let x : ℕ := 5 ^ 2`です.
 -/
 TacticDoc «let»
 
 /--
-タクティク`linarith`は, 与えられた等式や不等式から線形の等式や不等式が導かれることを示せます.
+`linarith`は, 与えられた等式や不等式から線形の等式や不等式が導かれることを示せます.
 -/
 TacticDoc linarith
 
 /--
-タクティク`omega`は, `ℕ`または`ℤ`における線形の等式や不等式が,
+`omega`は, `ℕ`または`ℤ`における線形の等式や不等式が,
 与えられた等式や不等式から導かれることを示せます.
 -/
 TacticDoc omega
 
 /--
-タクティク`push_neg`は否定を量化子の前に移動します：
+`push_neg`は否定を量化子の前に移動します：
 
 | 前          | 後              |
 |:------------|:---------------|
 | `¬∀ x, P x` | `∃ x, ¬P x`    |
 | `¬∃ x, P x` | `∀ x, ¬P x`    |
 
-## 関連タクティク
+## 関連tactic
 `not_forall`と`not_exists`は`rw`で個別に適用できます.
 -/
 TacticDoc push_neg
 
 /--
-タクティク`obtain`は仮定を構成要素に分解します:
+tactic`obtain`は仮定を構成要素に分解します:
 
-| 前                | タクティク               | 後                          |
+| 前                | tactic               | 後                          |
 |:------------------|:-----------------------|:---------------------------|
 | `h : A ∧ B`       | `obtain ⟨h₁, h₂⟩ := h` | `h₁ : A`, `h₂ : B`          |
 | `h : A ↔ B`       | `obtain ⟨h₁, h₂⟩ := h` | `h₁ : A → B`, `h₂ : B → A`  |
@@ -232,33 +232,33 @@ TacticDoc push_neg
 TacticDoc obtain
 
 /--
-`refine' { .. }`は構造体（例：$R$-加群）をタクティクモードで個々の証明目標に分割するために必要です.
+`refine' { .. }`は構造体（例：$R$-加群）をtacticモードで個々の証明目標に分割するために必要です.
 -/
 TacticDoc refine'
 
 /--
-タクティク`revert h`は仮定`h`を含意の前提として証明目標に追加します.
+tactic`revert h`は仮定`h`を含意の前提として証明目標に追加します.
 
-## 関連タクティク
+## 関連tactic
 `intro h`は`revert h`の逆を行います.
 -/
 TacticDoc revert
 
 /--
-タクティク`rfl`は`X = X`を証明します. 正確には, `A`と`B`が定義的に等しい場合に`A = B`を証明します.
+tactic`rfl`は`X = X`を証明します. 正確には, `A`と`B`が定義的に等しい場合に`A = B`を証明します.
 -/
 TacticDoc rfl
 
 /--
 証明目標が`A ∨ B`の場合, `right`で右側を示すことを選択します.
 
-## 関連タクティク
+## 関連tactic
 `left`で左側を選択できます.
 -/
 TacticDoc right
 
 /--
-タクティク`ring`は`+, -, *, ^`の操作を含む等式を半環（特にℕ, ℤ, ℚ, ℝ）で証明します.
+tactic`ring`は`+, -, *, ^`の操作を含む等式を半環（特にℕ, ℤ, ℚ, ℝ）で証明します.
 -/
 TacticDoc ring
 
@@ -273,7 +273,7 @@ TacticDoc ring
 TacticDoc rw
 
 /--
-タクティク`simp`は多くの補題を適用して式を簡約します.
+tactic`simp`は多くの補題を適用して式を簡約します.
 
 ## バリエーション
 * `simp [h]`は追加で仮定`h`を使用します.
@@ -295,13 +295,13 @@ TacticDoc specialize
 `suffices h : P`は, 証明目標が`P`から導かれることを示す証明セクションを開始します.
 その後, `P`を証明します.
 
-## 関連タクティク
+## 関連tactic
 `have h : P`も同様ですが, まず`P`を証明してからメインの証明を続行します.
 -/
 TacticDoc «suffices»
 
 /--
-タクティク`symm`は証明目標の等式（`=`）または同値（`↔`）の両側を交換します.
+tactic`symm`は証明目標の等式（`=`）または同値（`↔`）の両側を交換します.
 
 ## バリエーション
 * `symm at h`は仮定`h`で操作します.
@@ -310,7 +310,7 @@ TacticDoc «suffices»
 TacticDoc symm
 
 /--
-タクティク`trans`は等式または同値に中間ステップを挿入します.
+tactic`trans`は等式または同値に中間ステップを挿入します:
 
 | 前          | 後                  |
 |:------------|:-------------------|
@@ -320,7 +320,7 @@ TacticDoc symm
 TacticDoc trans
 
 /--
-タクティク`decide`は単純なアルゴリズムで決定可能な命題を証明します.
+tactic`decide`は単純なアルゴリズムで決定可能な命題を証明します.
 例えば：
 - `Even 4`
 - `2 ≤ 5`
@@ -333,7 +333,7 @@ TacticDoc decide
 `unfold F`は証明目標で定義`F`を展開します.
 `unfold F at h`は仮定`h`で同じことを行います.
 
-## 関連タクティク
+## 関連tactic
 `unfold F`と`simp only [F]`はほぼ同じです.
 -/
 TacticDoc unfold
@@ -344,9 +344,9 @@ TacticDoc unfold
 TacticDoc use
 
 /--
-タクティク`tauto`は論理的同語反復を証明します.
+tactic`tauto`は論理的同語反復を証明します.
 
-## 関連タクティク
+## 関連tactic
 場合によっては, `generalize`で証明目標を抽象化する必要があります.
 -/
 TacticDoc tauto

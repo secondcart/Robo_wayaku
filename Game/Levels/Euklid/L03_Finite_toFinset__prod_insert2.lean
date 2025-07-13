@@ -5,8 +5,8 @@ Level 3
 Title ""
 
 Introduction "
-  次の開いた本を見つけるには, かなり歩かなければなりません. 
-  Roboは, 帰り道がわかるように赤い糸を巻き始めました. 
+  次の開いた本を見つけるには, かなり歩かなければなりません.
+  Roboは, 帰り道がわかるように赤い糸を巻き始めました.
 "
 
 open Finset
@@ -15,40 +15,40 @@ namespace Nat
 Statement (hf : Set.Finite { p : ℕ | Prime p}) : ∃ (a : ℕ), a > 0 ∧ ∀ (p : ℕ), Prime p → p ∣ a := by
   -- tauto -- If we don't insist a > 0, tauto solves this!
   Hint "**Robo**: おお! これは面白そうですね：
-  素数が有限個しかないと仮定すると, 
-  すべての素数で割り切れる正の自然数が存在することになります. 
+  素数が有限個しかないと仮定すると,
+  すべての素数で割り切れる正の自然数が存在することになります.
 
   **あなた**: はい, 少しばかげているように聞こえますが正しいです. 証明は? 最初の行に
-  `let all_primes := hf.toFinset`とあります. これは何か意味がありますか? 
+  `let all_primes := hf.toFinset`とあります. これは何か意味がありますか?
 
-  **Robo**: 非常に意味があります! 
-  この主張を示すためには, すべての素数の積を考える必要があります. 
+  **Robo**: 非常に意味があります!
+  この主張を示すためには, すべての素数の積を考える必要があります.
   そしてこれを構文的に可能にするためには, すべての素数の集合を
   `Finset`として扱う必要があります. 最初の行はまさにそれを行います：仮定`hf`を使って
   `\{ p : ℕ | Prime p} : Set ℕ`から有限部分集合`\{ p : ℕ | Prime p} : Finset ℕ`
-  を作ります. 
+  を作ります.
 
-  **あなた**: わかりました, 試してみます. 
+  **あなた**: わかりました, 試してみます.
   "
   let all_primes := hf.toFinset
   Hint "
-    **あなた**: 次の行は? 
+    **あなた**: 次の行は?
 
     `all_primes.bubblewrap = blister cong foo`
 
-    これも意味がありますか? 
+    これも意味がありますか?
 
-    **Robo**: いいえ, これはまた非常にナンセンスです. 
-  先ほど言ったように, これらの数の積を使いたいでしょう. 
+    **Robo**: いいえ, これはまた非常にナンセンスです.
+  先ほど言ったように, これらの数の積を使いたいでしょう.
   積記号は`\\prod`と書きます. "
   use ∏ p ∈ all_primes, p
   Hint "
-    **Robo**: ブラボー. 
+    **Robo**: ブラボー.
 
-    **あなた**: 今非常に役立ついくつかのことを以前示したのでは? 
+    **あなた**: 今非常に役立ついくつかのことを以前示したのでは?
 
-    **Robo**: おっと. はい, しましたが, 残念ながら保存していませんでした. 
-  議論がどのように進んだかをもう一度再構築する必要があります. 
+    **Robo**: おっと. はい, しましたが, 残念ながら保存していませんでした.
+  議論がどのように進んだかをもう一度再構築する必要があります.
     "
   constructor
   · Hint "**Robo**: ここでは`Finset.prod_pos`が再び役立つでしょう. "
@@ -63,7 +63,7 @@ Statement (hf : Set.Finite { p : ℕ | Prime p}) : ∃ (a : ℕ), a > 0 ∧ ∀ 
     have hp' : p ∈ all_primes := by
       Hint (hidden := true) "
         **Robo**: ここで`simp`が機能しない場合, `simp`に
-        `all_primes`の定義を教える必要があるかもしれません. つまり`simp [all_primes]`です. 
+        `all_primes`の定義を教える必要があるかもしれません. つまり`simp [all_primes]`です.
         "
       simp [all_primes]
       assumption
@@ -73,20 +73,20 @@ Statement (hf : Set.Finite { p : ℕ | Prime p}) : ∃ (a : ℕ), a > 0 ∧ ∀ 
     · simp
 
 
-/-- Ist eine Teilmenge `A : Set T` mit der Annahme `h : Set.Finite A` gegeben,
-so ist `h.toFinset : Finset T` dieselbe Teilmenge `A`,
-aber nun explizit als endliche Teilmenge aufgefasst. -/
+/-- 集合`T`の部分集合`A : Set T`と仮定`h : Set.Finite A`
+が与えられたとき, `h.toFinset : Finset T`は同じ部分集合`A`ですが,
+今度は明示的に有限部分集合として扱われます. -/
 TheoremDoc Set.Finite.toFinset as "toFinset" in "Set"
 
 NewTheorem Set.Finite.toFinset
 NewDefinition Set.Finite
 
 Conclusion "
-  床にいくつかの本が置かれている通路に入ります. 
-  しかしどれも開かれていません. 
-  次の交差点で, 再び床に本が置かれた別の通路が分かれています. 
+  床にいくつかの本が置かれている通路に入ります.
+  しかしどれも開かれていません.
+  次の交差点で, 再び床に本が置かれた別の通路が分かれています.
 
-  **あなた**: これはたぶん手がかりですか? 
+  **あなた**: これはたぶん手がかりですか?
 
-  **Robo**: それを追いましょう! 
+  **Robo**: それを追いましょう!
  "

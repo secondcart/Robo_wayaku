@@ -344,7 +344,7 @@ TacticDoc unfold
 TacticDoc use
 
 /--
-tactic`tauto`は論理的同語反復を証明します.
+`tauto`はトートロジーを証明します.
 
 ## 関連tactic
 場合によっては, `generalize`で証明目標を抽象化する必要があります.

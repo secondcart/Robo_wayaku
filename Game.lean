@@ -76,6 +76,8 @@ Info
 [Robo](https://github.com/hhu-adam/Robo)
 
 ただし, 準拠した和訳ではない.
+また, 本サイトのリポジトリは以下である.
+https://github.com/secondcart/Robo_wayaku
 以下は, 元のGame Infoをそのまま載せている.
 ## Projekt ADAM
 

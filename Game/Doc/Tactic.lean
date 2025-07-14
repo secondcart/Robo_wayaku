@@ -227,7 +227,7 @@ TacticDoc push_neg
 | `h : A ↔ B`       | `obtain ⟨h₁, h₂⟩ := h` | `h₁ : A → B`, `h₂ : B → A`  |
 | `h : Nonempty X`  | `obtain ⟨x⟩ := h`      | `x : X`                     |
 | `h : ∃ x : X, P x`| `obtain ⟨x, hx⟩ := h`  | `x : X`, `hx : P x`         |
-| `h : A ∨ B`       | `obtain h \| h := h`   | `h : A`または`h : B`の目標  |
+| `h : A ∨ B`       | `obtain h | h := h`   | `h : A`または`h : B`の目標  |
 -/
 TacticDoc obtain
 

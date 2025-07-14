@@ -13,7 +13,7 @@ import GameServer.Commands
 TacticDoc apply
 
 /--
-tactic`assumption`は, 仮定の1つが証明目標と完全に一致する場合に証明を完了します.
+`assumption`は, 仮定の1つが証明目標と完全に一致する場合に証明を完了します.
 -/
 TacticDoc assumption
 
@@ -64,7 +64,7 @@ TacticDoc change
 TacticDoc choose
 
 /--
-tactic`constructor`は証明目標を構成要素に分割します：
+`constructor`は証明目標を構成要素に分割します.
 
 | 前          | 後                  |
 |:------------|:-------------------|
@@ -78,7 +78,7 @@ tactic`constructor`は証明目標を構成要素に分割します：
 TacticDoc constructor
 
 /--
-tactic`contradiction`は, 仮定に矛盾がある場合に証明を完了します.
+`contradiction`は, 仮定に矛盾がある場合に証明を完了します.
 矛盾は例えば以下のように見えます：
 
 * `h : n ≠ n`
@@ -219,7 +219,7 @@ TacticDoc omega
 TacticDoc push_neg
 
 /--
-tactic`obtain`は仮定を構成要素に分解します:
+`obtain`は仮定を構成要素に分解します.
 
 | 前                | tactic               | 後                          |
 |:------------------|:-----------------------|:---------------------------|
@@ -245,7 +245,7 @@ tactic`revert h`は仮定`h`を含意の前提として証明目標に追加し�
 TacticDoc revert
 
 /--
-tactic`rfl`は`X = X`を証明します. 正確には, `A`と`B`が定義的に等しい場合に`A = B`を証明します.
+`rfl`は`X = X`を証明します. 正確には, `A`と`B`が定義的に等しい場合に`A = B`を証明します.
 -/
 TacticDoc rfl
 
@@ -310,7 +310,7 @@ tactic`symm`は証明目標の等式（`=`）または同値（`↔`）の両側
 TacticDoc symm
 
 /--
-tactic`trans`は等式または同値に中間ステップを挿入します:
+`trans`は等式または同値に中間ステップを挿入します:
 
 | 前          | 後                  |
 |:------------|:-------------------|
@@ -320,7 +320,7 @@ tactic`trans`は等式または同値に中間ステップを挿入します:
 TacticDoc trans
 
 /--
-tactic`decide`は単純なアルゴリズムで決定可能な命題を証明します.
+`decide`は単純なアルゴリズムで決定可能な命題を証明します.
 例えば：
 - `Even 4`
 - `2 ≤ 5`

@@ -3,18 +3,18 @@ import Game.Metadata
 World "Implis"
 Level 7
 
-Title "Genau dann, wenn"
+Title "であるとき, かつそのときに限り2"
 
 Introduction
 "
-**作戦責任者**: ここにもこんなものがあります. 
+**作戦責任者** ここにもこんなものがあります.
 "
 
 Statement (A B : Prop) (h : A ↔ B) : B ↔ A := by
   Hint "
-    **あなた**: これはただ逆になっただけだ. 
+    **あなた** これはただ逆になっただけだ.
 
-    **Robo**: それ用のツールを知っています. `symm` または `symm at {h}` を使えば, どちらかを反転できます. "
+    **Robo** それ用のツールを知っています. `symm` または `symm at {h}` を使えば, どちらかを反転できます. "
   Branch
     symm at h
     assumption
@@ -23,7 +23,13 @@ Statement (A B : Prop) (h : A ↔ B) : B ↔ A := by
 
 Conclusion
 "
-**作戦責任者**: これは簡単でしたね. でも次の問題はもっと難しそうです. 
+**作戦責任者** これは簡単でしたね. でも次の問題はもっと難しそうです.
+
+# 今回学んだこと
+
+## Tactics
+### symm
+- `symm`は証明目標の等式（=）または同値（↔）の両側を交換します.
 "
 
 NewTactic symm

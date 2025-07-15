@@ -209,7 +209,7 @@ DefinitionDoc And as "∧"
 DefinitionDoc Or as "∨"
 
 /--
-`A → B` は「`A` ならば `B`」という含意.
+`A → B` は「`A` ならば `B`」を意味する.
 -/
 DefinitionDoc Arrow as "→"
 

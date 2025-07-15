@@ -18,7 +18,7 @@ TacticDoc apply
 TacticDoc assumption
 
 /--
-tactic`by_cases h : P`は, `P`が真か偽かの場合分けを開始します.
+`by_cases h : P`は, `P`が真か偽かの場合分けを開始します.
 例えば, `by_cases h : a = b`は`a = b`と`a ≠ b`の場合に分けます.
 
 証明目標は複製され, 最初の「コピー」には仮定`(h : P)`が追加され,
@@ -168,7 +168,7 @@ tactic`induction n`は`n`に関する帰納法による証明を実行します.
 TacticDoc induction
 
 /--
-tactic`intro`は`A → B`または`∀ x, P x`の証明目標に使用されます.
+`intro`は`A → B`または`∀ x, P x`の証明目標に使用されます.
 
 | 前          | tactic     | 後                  |
 |:------------|:-------------|:-------------------|
@@ -237,7 +237,7 @@ TacticDoc obtain
 TacticDoc refine'
 
 /--
-tactic`revert h`は仮定`h`を含意の前提として証明目標に追加します.
+`revert h`は仮定`h`を含意の前提として証明目標に追加します.
 
 ## 関連tactic
 `intro h`は`revert h`の逆を行います.
@@ -301,7 +301,7 @@ TacticDoc specialize
 TacticDoc «suffices»
 
 /--
-tactic`symm`は証明目標の等式（`=`）または同値（`↔`）の両側を交換します.
+`symm`は証明目標の等式（`=`）または同値（`↔`）の両側を交換します.
 
 ## バリエーション
 * `symm at h`は仮定`h`で操作します.
@@ -312,7 +312,7 @@ TacticDoc symm
 /--
 `trans`は等式または同値に中間ステップを挿入します:
 
-| 前          | 後                  |
+| 変更前          | 変更後                  |
 |:------------|:-------------------|
 | `⊢ A = C`   | `⊢ A = B`と`⊢ B = C`|
 | `⊢ A ↔ C`   | `⊢ A ↔ B`と`⊢ B ↔ C`|

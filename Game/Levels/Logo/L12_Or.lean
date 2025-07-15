@@ -3,7 +3,7 @@ import Game.Metadata
 World "Logo"
 Level 12
 
-Title "Oder"
+Title "または"
 
 Introduction
 "
@@ -16,18 +16,30 @@ Statement (A B : Prop) (hA : A) : A ∨ (¬ B) := by
 
     **Robo** いいえ, もっと簡単です. ORの命題を証明するときは, 左側か右側のどちらかを証明すればいいんです.
 
-    **あなた** それで, Formalosophenにどっちを証明したいかどう説明すれば? もちろん`{A}`を証明したいんだけど!
+    **あなた** それで, Formalosophにどっちを証明したいかどう説明すれば? もちろん`{A}`を証明したいんだけど!
 
     **Robo** `left`か`right`で. わかりやすいでしょ? "
   Branch
     right
-    Hint "**Robo** 左右が苦手だなんて知らなかったわ. もう一度試してみて. "
+    Hint "**Robo** 左右が苦手だなんて知らなかった. もう一度試してみて. "
   left
   assumption
 
 Conclusion
 "
-このFormalosophenも満足して去っていきました.
+このFormalosophも満足して去っていきました.
+
+# 今回学んだこと
+
+## Tactics
+### left
+- 証明目標が `A ∨ B` の場合, `left` で左側を示すことを選択します.
+### right
+- 証明目標が `A ∨ B` の場合, `right` で右側を示すことを選択します.
+
+## Definitions
+### ∨
+- `A ∨ B` は `A` または `B` の少なくとも一方が真である命題.
 "
 
 NewDefinition Or

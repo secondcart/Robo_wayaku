@@ -3,7 +3,7 @@ import Game.Metadata
 World "Logo"
 Level 13
 
-Title "Oder"
+Title "または2"
 
 Introduction
 "
@@ -23,7 +23,7 @@ Statement (A B : Prop) (h : (A ∧ B) ∨ A) : A := by
 **Robo** まあ楽しませてあげようよ.
 もうすぐ終わるし, もっと面白い惑星に行けるんだから.
 
-**あなた** じゃあ, また `obtain …` を使うの?
+**あなた** また `obtain …` を使うの?
 
 **Robo** そうだよ. でも今回は `obtain ⟨h₁, h₂⟩ := {h}` じゃなくて `obtain h | h := {h}` だよ"
   obtain h | h := h

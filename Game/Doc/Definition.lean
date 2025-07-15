@@ -204,7 +204,7 @@ DefinitionDoc «Prop» as "Prop"
 DefinitionDoc And as "∧"
 
 /--
-`A ∨ B`（「または」）は `A` または `B` の少なくとも一方が真である命題.
+`A ∨ B` は `A` または `B` の少なくとも一方が真である命題.
 -/
 DefinitionDoc Or as "∨"
 

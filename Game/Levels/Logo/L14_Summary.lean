@@ -3,7 +3,7 @@ import Game.Metadata
 World "Logo"
 Level 14
 
-Title "Zusammenfassung"
+Title "まとめ"
 
 Introduction
 "
@@ -75,7 +75,7 @@ Conclusion
 "
 **Robo** ブラボー! さあ, 新しい列ができる前にここを離れよう!
 
-女王 *Logisinde* はその間に眠りにつき, あなたたちはこっそりと逃げ出します.
+*Logisinde* 女王はその間に眠りにつき, あなたたちはこっそりと逃げ出します.
 "
 
 DisabledTactic tauto

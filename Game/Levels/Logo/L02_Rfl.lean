@@ -24,16 +24,6 @@ Statement :
 Conclusion
 "
 **家臣** ああ, その通りです. はい, まったく正しいです. 私はいつもそれを忘れてしまいます. `rfl`, `rfl`, `rfl`…
-
-# 今回学んだこと
-
-## Tactics
-### rfl
-- `X=X` を証明します. 正確には, `A` と `B` が定義的に等しい場合に `A=B` を証明します.
-
-## Definition
-### `=`
-- 等式. 有用なtacticとして, `rfl`, `rw`, `trans` がある.
 "
 
 NewDefinition Eq

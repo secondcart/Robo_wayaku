@@ -37,12 +37,6 @@ Statement (A B C : Prop) (f : A → B) (g : B → C) : A → C := by
   assumption
 
 Conclusion "**作戦責任者** 君たちは本当にすごい!
-
-# 今回学んだこと
-
-## Tactics
-### have
-- `have h : P`は中間結果を導入します. その後, この中間結果を証明してからメインの証明を続行します.
 "
 
 NewTactic «have»  -- introduced here already so that Luna becomes independent of Spinoza

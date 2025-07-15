@@ -41,21 +41,6 @@ Conclusion
 **Robo** 素晴らしい!
 
 彼はこれらの質問を楽しんでいるようです.
-
-# 今回学んだこと
-
-## Tactics
-### constructor
-- `constructor`は証明目標を構成要素に分割します.
-
-| 前          | 後                  |
-|:------------|:-------------------|
-| `⊢ A ∧ B`   | `⊢ A`と`⊢ B`       |
-| `⊢ A ↔ B`   | `⊢ A → B`と`⊢ B → A` |
-
-## Definitions
-### ∧
-- `A ∧ B` は `A` と `B` がともに真である命題.
 "
 
 NewDefinition And

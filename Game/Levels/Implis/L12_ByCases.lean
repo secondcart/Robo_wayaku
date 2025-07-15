@@ -30,16 +30,6 @@ Statement (A : Prop) : ¬A ∨ A := by
 Conclusion
 "
 作戦責任者は納得して頷いた.
-
-# 今回学んだこと
-
-## Tactics
-### by_cases
-- `by_cases h : P`は, `P`が真か偽かの場合分けを開始します.
-例えば, `by_cases h : a = b`は`a = b`と`a ≠ b`の場合に分けます.
-
-証明目標は複製され, 最初の「コピー」には仮定`(h : P)`が追加され,
-2番目の「コピー」には仮定`(h : ¬P)`が追加されます.
 "
 
 NewTactic by_cases

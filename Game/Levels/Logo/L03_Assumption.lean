@@ -36,12 +36,6 @@ Statement (n : ℕ) (h₁ : 10 > n) (h₂ : 1 < n) (h₃ : n ≠ 5) : 1 < n := b
 Conclusion
 "
 **家臣** すごい! この問題でどれだけ頭を悩ませたか!
-
-# 今回学んだこと
-
-## Tactics
-### assumption
-- `assumption`は, 仮定の1つが証明目標と完全に一致する場合に証明を完了します.
 "
 
 NewTactic assumption

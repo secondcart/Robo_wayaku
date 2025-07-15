@@ -34,17 +34,6 @@ Conclusion
 **あなた** これは背理法だったの?
 
 **Robo** いえいえ, 背理法はもっと違うものです. ここでの論点は, 仮定の中に`contradiction`があるので, どんな命題でも導かれるということです.
-
-# 今回学んだこと
-
-## Tactics
-### contradiction
-- `contradiction`は, 仮定に矛盾がある場合に証明を完了します.
-矛盾は例えば以下のように見えます：
-
-* `h : n ≠ n`
-* `h : A`と`h' : ¬A`
-* `h : False`
 "
 
 NewTactic contradiction

@@ -28,18 +28,6 @@ Statement (A B : Prop) (hA : A) : A ∨ (¬ B) := by
 Conclusion
 "
 このFormalosophも満足して去っていきました.
-
-# 今回学んだこと
-
-## Tactics
-### left
-- 証明目標が `A ∨ B` の場合, `left` で左側を示すことを選択します.
-### right
-- 証明目標が `A ∨ B` の場合, `right` で右側を示すことを選択します.
-
-## Definitions
-### ∨
-- `A ∨ B` は `A` または `B` の少なくとも一方が真である命題.
 "
 
 NewDefinition Or

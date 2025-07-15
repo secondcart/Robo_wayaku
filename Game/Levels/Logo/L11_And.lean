@@ -32,20 +32,6 @@ Conclusion
 "
 **Robo** ちなみに, これは直接ネストして書くこともできました.
 `obtain ⟨h₁, h₂ , h₃⟩ := h`.
-
-# 今回学んだこと
-
-## Tactics
-### obtain
-- `obtain`は仮定を構成要素に分解します:
-
-| 前                | tactic               | 後                          |
-|:------------------|:-----------------------|:---------------------------|
-| `h : A ∧ B`       | `obtain ⟨h₁, h₂⟩ := h` | `h₁ : A`, `h₂ : B`          |
-| `h : A ↔ B`       | `obtain ⟨h₁, h₂⟩ := h` | `h₁ : A → B`, `h₂ : B → A`  |
-| `h : Nonempty X`  | `obtain ⟨x⟩ := h`      | `x : X`                     |
-| `h : ∃ x : X, P x`| `obtain ⟨x, hx⟩ := h`  | `x : X`, `hx : P x`         |
-| `h : A ∨ B`       | `obtain h | h := h`   | `h : A`または`h : B`の目標  |
 "
 
 NewTactic obtain

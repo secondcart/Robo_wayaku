@@ -41,16 +41,6 @@ Conclusion
 **Logisinde** (少し当惑して) ええ, 確かに正しいです.
 でも*この*惑星ではそれでうまくいくと思わないでください!
 私の家臣は`tauto`を理解しません. もっと努力が必要ですよ.
-
-# 今回学んだこと
-
-## Tactics
-### tauto
-- トートロジーを証明する.
-
-## Definition
-### Prop
-- 命題
 "
 
 NewDefinition «Prop»

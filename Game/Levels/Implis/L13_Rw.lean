@@ -32,14 +32,6 @@ Conclusion
 **あなた** もう終わったの…?
 
 **Robo** はい, `rw`はその後自動で`rfl`を呼び出そうとしますが, 今回はそれが成功しました.
-
-# 今回学んだこと
-
-## Theorems
-### not_not
-- {a} : ¬¬a ↔ a
-この声明の代わりに, しばしば`tauto`や`simp`というtacticも使用可能です.
-
 "
 
 OnlyTactic rw

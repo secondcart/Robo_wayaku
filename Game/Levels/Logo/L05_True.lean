@@ -26,23 +26,6 @@ Conclusion
 **あなた** *(Roboに向かって)* この`decide`をいつも使えないのですか?
 
 **Robo** いいえ, `decide`は特別な状況, つまり命題が真かどうかを決定する簡単なアルゴリズムがある場合にのみ機能します.
-
-# 今回学んだこと
-
-## Tactics
-### decide
-- `decide`は単純なアルゴリズムで決定可能な命題を証明します. 例えば：
-  - `Even 4`
-  - `2 ≤ 5`
-  - `4 ≠ 6`
-  - `Prime 7`
-
-## Definitions
-### False
-- `False : Prop` は常に偽な命題.
-
-### True
-- `True : Prop` は常に真な命題.
 "
 
 NewDefinition True False

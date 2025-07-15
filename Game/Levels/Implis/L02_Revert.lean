@@ -36,12 +36,6 @@ Statement (A B : Prop) (hA : A) (h : A → B) : B := by
   assumption
 
 Conclusion "作戦責任者は喜んであなたの解答を受け取り, 電話に手を伸ばします.
-
-# 今回学んだこと
-
-## Tactics
-### revert
-- `revert h`は仮定`h`を含意の前提として証明目標に追加します.
 "
 
 NewTactic revert

@@ -27,12 +27,6 @@ Statement : ¬False := by
 Conclusion
 "
 妹は笑いながら兄の後を追いかけていった.
-
-# 今回学んだこと
-
-## Definitions
-### ¬
-- `¬ A` は `A` の否定.
 "
 
 NewDefinition False Not

@@ -38,13 +38,6 @@ Statement (A B C D : Prop) (h₁ : C ↔ D) (h₂ : A ↔ B) (h₃ : A ↔ D) : 
 Conclusion
 "
 **作業責任者** この調子で進めれば, この山を全部片付けられますね!
-
-# 今回学んだこと
-
-## Tactics
-### rw
-- 等式`h : X = Y`または同値`h : X ↔ Y`がある場合, `rw [h]`で証明目標の`X`を`Y`に置き換えられます.
-  - `rw [←h]`は`h`を逆に適用し, `Y`を`X`に置き換えます.
 "
 
 NewTactic rw

@@ -32,19 +32,6 @@ Statement (A B : Prop) (h : A) (hAB : A → B) : B := by
   assumption
 
 Conclusion "今度は電話での会話がうまくいっているようです.
-
-# 今回学んだこと
-
-## Tactics
-### apply
-- `apply`を使用すると, `hAB : A → B`を適用できます：
-
-| 前          | tactic       | 後                  |
-|:------------|:----------------|:-------------------|
-| `⊢ B`       | `apply hAB`     | `⊢ A`              |
-| `h : A`     | `apply hAB at h`| `h : B`            |
-
-どちらの場合も, `hAB`は仮定として与えられるか, 既知の補題として使用できます.
 "
 
 NewTactic apply

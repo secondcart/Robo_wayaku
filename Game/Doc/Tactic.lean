@@ -258,7 +258,7 @@ TacticDoc rfl
 TacticDoc right
 
 /--
-tactic`ring`は`+, -, *, ^`の操作を含む等式を半環（特にℕ, ℤ, ℚ, ℝ）で証明します.
+`ring`は`+, -, *, ^`の操作を含む等式を半環（特にℕ, ℤ, ℚ, ℝ）で証明します.
 -/
 TacticDoc ring
 

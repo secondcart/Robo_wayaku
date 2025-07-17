@@ -10,7 +10,7 @@ Title ""
 
 Introduction
 "
-  **Lina**:  ここにまだ何かあるわ. 
+  **Lina**  ここにまだ何かあるわ.
 "
 
 Statement (l m n x : ℕ) (h₁ : l ≤ m) (h₂ : m ≤ n) : l ≤ x ∧ x ≤ n → ¬ (m ≤ x ∧ x ≤ n) → x ≤ m := by
@@ -20,5 +20,5 @@ Statement (l m n x : ℕ) (h₁ : l ≤ m) (h₂ : m ≤ n) : l ≤ x ∧ x ≤ 
 TheoremTab "ℕ"
 
 Conclusion "
-  **Lina**:  はい, わかった, 私のミスね. 
+  **Lina**  はい, わかった, 私のミスね.
 "

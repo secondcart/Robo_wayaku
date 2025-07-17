@@ -3,32 +3,32 @@ import Game.Metadata
 World "Spinoza"
 Level 3
 
-Title "Widerspruch"
+Title "矛盾"
 
-Introduction "**Benedictus**: ここに別のバリエーションがあります. "
+Introduction "**Benedictus** ここに別のバリエーションがあります. "
 
 Statement (A B : Prop) (g : A → B) (b : ¬ B) : ¬ A := by
   Hint "
-    **Robo**: ゴールにある`¬`は, しばしば矛盾による証明を行いたいことを意味します. 
+    **Robo** ゴールにある`¬`は, しばしば矛盾による証明を行いたいことを意味します.
 
-    **あなた**: どうやってやるの? `contradiction`を使う? 
+    **あなた** どうやってやるの? `contradiction`を使う?
 
-    **Robo**: `by_contra h`で矛盾による証明を開始します. `contradiction`で終了します. "
+    **Robo** `by_contra h`で矛盾による証明を開始します. `contradiction`で終了します. "
   by_contra h
   Hint "
-    **Robo**: 今, あなたは仮定`{h} : {A}`を持っています. これを使って矛盾を導く必要があります. 
+    **Robo** 今, あなたは仮定`{h} : {A}`を持っています. これを使って矛盾を導く必要があります.
 
     例えば, `suffices`を使って導きたい矛盾を指定できます. `suffices k : B`のように. "
   suffices k : B
   Hint "
-    **あなた**: ああ, 今は単に仮定`{B}`と`¬{B}`が矛盾していると言えますね. "
+    **あなた** ああ, 今は単に仮定`{B}`と`¬{B}`が矛盾していると言えますね. "
   contradiction
   Hint "
-    **Robo**: そして今, この矛盾に至る中間結果を導く必要があります. "
+    **Robo** そして今, この矛盾に至る中間結果を導く必要があります. "
   apply g
   assumption
 
-Conclusion "**Benedictus**: あなたの上達が早いのがわかります! "
+Conclusion "**Benedictus** あなたの上達が早いのがわかります! "
 
 
 NewTactic by_contra

@@ -7,18 +7,18 @@ Title ""
 
 Introduction
 "
-**Mem**: 私ももう一度質問させてください! 
+**Mem** 私ももう一度質問させてください!
 "
 
 open Set Nat -- Nat is opened in case someone wants to use `Nat.even_iff_not_odd` here
 
 Statement : {2, 7} ⊆ {2} ∪ { n : ℕ | Odd n} := by
   Hint (hidden := true) "
-    **Robo**: 私はまた`intro`から始めます. 
+    **Robo** 私はまた`intro`から始めます.
   "
   intro x
   Hint (hidden := true) "
-    **Robo**: もう一度`intro`を! 
+    **Robo** もう一度`intro`を!
   "
   intro hx
   simp at *
@@ -31,5 +31,5 @@ Statement : {2, 7} ⊆ {2} ∪ { n : ℕ | Odd n} := by
 TheoremTab "Set"
 
 Conclusion "
-**Mem**: はい, 素晴らしい! でもあなたたちは早く覚えましたね! 
+**Mem** はい, 素晴らしい! でもあなたたちは早く覚えましたね!
 "

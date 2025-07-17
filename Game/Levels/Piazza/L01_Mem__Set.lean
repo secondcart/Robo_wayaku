@@ -8,16 +8,16 @@ Title ""
 
 Introduction
 "
-**Fin**:  ええ, もちろん. 例えばこれなんかどうでしょう.
+**Fin**  ええ, もちろん. 例えばこれなんかどうでしょう.
 "
 
 open Set
 
 Statement : 1 ∈ ({1, 6, 4} : Set ℕ) := by
   Hint "
-    **あなた**: これで合ってる?
+    **あなた** これで合ってる?
 
-    **Robo**: たぶんね. かなり*tauto*的に見えるでしょ?
+    **Robo** たぶんね. かなり*tauto*的に見えるでしょ?
     "
   tauto
 
@@ -25,7 +25,7 @@ NewDefinition Mem Set
 TheoremTab "Set"
 
 Conclusion "
-**Set**: 君たちも集合論に少し詳しいんだね?
+**Set** 君たちも集合論に少し詳しいんだね?
 
-**Robo**: まあ, *ちょっと*ね.
+**Robo** まあ, *ちょっと*ね.
 "

@@ -6,7 +6,7 @@ Level 13
 Title ""
 
 Introduction "
-  **Fin**: さて, みんなどう思う? これでまた全員のピスタチオが家に帰れたかな? 
+  **Fin** さて, みんなどう思う? これでまた全員のピスタチオが家に帰れたかな?
 "
 
 /---/
@@ -21,11 +21,11 @@ Statement insert_erase {A : Type} {s : Finset A} {a : A} (h : a ∈ s) :
   ext b
   simp
   Hint (hidden := true) "
-    **Fin**: {b} = a かどうかで場合分けしてみたらどうかな
+    **Fin** {b} = a かどうかで場合分けしてみたらどうかな
   "
   Branch
     constructor
-    Hint "**Fin**: そうそう, そのやり方でいけるよ"
+    Hint "**Fin** そうそう, そのやり方でいけるよ"
     · intro h
       obtain h₁ | ⟨ h₂, h₃ ⟩ := h
       rw [← h₁] at h
@@ -46,6 +46,6 @@ Statement insert_erase {A : Type} {s : Finset A} {a : A} (h : a ∈ s) :
 
 TheoremTab "Set"
 
-Conclusion "子供たちは笑いながら, あなたたちを囲むように輪を作り, 二人には理解できない言葉で歌を歌います. そして走り去っていきます. 
+Conclusion "子供たちは笑いながら, あなたたちを囲むように輪を作り, 二人には理解できない言葉で歌を歌います. そして走り去っていきます.
 
-**Robo**: 私たち, もう飛び立てるみたいだね"
+**Robo** 私たち, もう飛び立てるみたいだね"

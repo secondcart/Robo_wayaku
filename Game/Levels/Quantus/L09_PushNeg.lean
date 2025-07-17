@@ -3,21 +3,21 @@ import Game.Metadata
 World "Quantus"
 Level 9
 
-Title "PushNeg"
+Title "push_neg2"
 
 Introduction
 "
-長い議論の末, Formalosophenたちはついに以下の問題に合意しました.
+長い議論の末, Formalosophたちはついに以下の問題に合意しました.
 "
 
 open Nat
 
 Statement : ¬ ∃ (n : ℕ), ∀ (k : ℕ) , Odd (n + k) := by
-  Hint "**あなた**: おや. 一番左に`¬`がありますね. 驚きました…"
+  Hint "**あなた** おや. 一番左に`¬`がありますね. 驚きました…"
   Branch
     unfold Odd
     Hint "
-      **Robo**: この解法は少し難しすぎるようです.
+      **Robo** この解法は少し難しすぎるようです.
       `Odd`を保持したままにして,
       最終的に`even_iff_not_odd`を使えるようにした方が良いでしょう! "
   push_neg
@@ -25,29 +25,29 @@ Statement : ¬ ∃ (n : ℕ), ∀ (k : ℕ) , Odd (n + k) := by
   Branch
     unfold Odd
     Hint "
-      **Robo**: この解法は少し難しすぎるようです.
+      **Robo** この解法は少し難しすぎるようです.
       `Odd`を保持したままにして,
       最終的に`even_iff_not_odd`を使えるようにした方が良いでしょう! "
   Hint "
-    **Robo**: ここで`use`を使って数値を指定し, その後おそらく
+    **Robo** ここで`use`を使って数値を指定し, その後おそらく
     補題`even_iff_not_odd`を使う必要があります.
 
-    **あなた**: 今すぐ`even_iff_not_odd`を適用できますか?
+    **あなた** 今すぐ`even_iff_not_odd`を適用できますか?
 
-    **Robo**: いいえ, `rw`は量化子内で書き換えできません.
+    **Robo** いいえ, `rw`は量化子内で書き換えできません.
 
-    **あなた**: ではどうすればいいのですか?
+    **あなた** ではどうすればいいのですか?
 
-    **Robo**: それは後で教えます, 大勢の前ではやりません.
+    **Robo** それは後で教えます, 大勢の前ではやりません.
     今は`use`で適切な数値を指定してから書き換えることをお勧めします. "
   Branch
     use n + 2
-    Hint "**Robo**: 良い選択です! これで`even_iff_not_odd`が使えます. "
+    Hint "**Robo** 良い選択です! これで`even_iff_not_odd`が使えます. "
   Branch
     use n + 4
-    Hint "**Robo**: 良い選択です! これで`even_iff_not_odd`が使えます. "
+    Hint "**Robo** 良い選択です! これで`even_iff_not_odd`が使えます. "
   use n
-  Hint "**Robo**: 良い選択です! これで`even_iff_not_odd`が使えます. "
+  Hint "**Robo** 良い選択です! これで`even_iff_not_odd`が使えます. "
   rw [← even_iff_not_odd]
   Branch
     tauto
@@ -65,10 +65,10 @@ NewTheorem not_exists Classical.not_forall
 
 Conclusion
 "
-Formalosophenたちは大興奮です.
+Formalosophたちは大興奮です.
 拍手が収まった後, あなたも一度質問しました.
 
-**あなた** 誰かこの形式ばった宇宙で, 道案内してくれませんか?
+**あなた** 誰かこの形式的な宇宙で, 道案内してくれませんか?
 
 **全員** はい, はい.
 
